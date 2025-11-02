@@ -1,39 +1,103 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
 import 'package:hiragana/app/data/enums/hiragana.dart';
 
 class VocabMatchingPage extends StatelessWidget {
-  VocabMatchingPage({Key? key}) : super(key: key);
+  VocabMatchingPage({Key? key, required this.title}) : super(key: key);
   final ttsController = Get.put(TtsController());
+
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Vocab Matching"),
+        title: Text(title),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ListView.builder(
-          itemBuilder: (context, index) {
-            minnaLesson1.entries.elementAt(index);
-            final entry = minnaLesson1.entries.elementAt(index);
-            final prompt = entry.key;
-            final answers = entry.value;
-            return ListTile(
-              leading: Text('${index + 1}'),
-              subtitle: Text(prompt),
-              title: Text(answers[0]),
-              trailing: IconButton(
-                onPressed: () async {
-                  await ttsController.stop();
-                  await ttsController.speak(answers[0]);
+        child: Column(
+          spacing: 20,
+          children: [
+            Expanded(
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  minnaLesson1.entries.elementAt(index);
+                  final entry = minnaLesson1.entries.elementAt(index);
+                  final prompt = entry.key;
+                  final answers = entry.value;
+                  return Obx(
+                    () => AnimatedContainer(
+                      margin: EdgeInsets.symmetric(vertical: 5.0),
+                      color: ttsController.speakingWord.value == answers[0]
+                          ? Get.theme.colorScheme.secondaryContainer
+                          : null,
+                      duration: Duration(milliseconds: 300),
+                      child: ListTile(
+                        // leading: Text('${index + 1}'),
+                        subtitle: Text(prompt),
+                        title: Text(
+                          answers[0],
+                          style: GoogleFonts.notoSansJavanese(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20,
+                              color: Get.theme.colorScheme.tertiary),
+                        ),
+                        leading: Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
+                          children: [
+                            Text("  ${index + 1}  "),
+                            IconButton(
+                              onPressed: () async {
+                                await ttsController.stop();
+                                await ttsController.speak(answers[0]);
+                              },
+                              icon: Icon(Icons.voice_chat),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  );
                 },
-                icon: Icon(Icons.voice_chat),
+                itemCount: minnaLesson1.length,
               ),
-            );
-          },
-          itemCount: minnaLesson1.length,
+            ),
+          ],
+        ),
+      ),
+      floatingActionButton: Obx(
+        () => SpeedDial(
+          animatedIcon: AnimatedIcons.menu_close,
+          icon: Icons.play_arrow,
+          activeIcon: Icons.close,
+          children: [
+            SpeedDialChild(
+              child: Icon(
+                ttsController.isSpeaking.value ? Icons.stop : Icons.play_arrow,
+              ),
+              label: ttsController.isSpeaking.value ? "Stop" : 'Play All',
+              onTap: ttsController.isSpeaking.value
+                  ? () async {
+                      await ttsController.stop();
+                    }
+                  : () async {
+                      ttsController.isSpeaking.value = true;
+                      for (var entry in minnaLesson1.entries) {
+                        final answers = entry.value;
+                        // if(e)
+                        if (!ttsController.isSpeaking.value) {
+                          break;
+                        }
+                        await ttsController.speak(answers[0]);
+                      }
+                      ttsController.isSpeaking.value = false;
+                    },
+            ),
+          ],
         ),
       ),
     );

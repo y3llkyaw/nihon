@@ -17,7 +17,11 @@ class VocabPage extends StatelessWidget {
               title: Text("Vocabulary Lesson 1"),
               trailing: Icon(Icons.arrow_forward),
               onTap: () {
-                Get.to(() => VocabMatchingPage());
+                Get.to(
+                  () => VocabMatchingPage(
+                    title: "Vocabulary Lesson 1",
+                  ),
+                );
               },
             ),
           ],
