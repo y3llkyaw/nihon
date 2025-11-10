@@ -22,7 +22,11 @@ class MobileViewLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Hiragana"),
+        title: Title(
+          color: Colors.black,
+          title: "Hello",
+          child: Text("Hiraku"),
+        ),
       ),
       body: Obx(
         () => homeController.currentIndex.value == 0

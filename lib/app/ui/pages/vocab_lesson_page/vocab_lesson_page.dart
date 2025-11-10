@@ -3,18 +3,25 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
-import 'package:hiragana/app/data/enums/hiragana.dart';
+import 'package:hiragana/app/ui/pages/vocab_training/vocab_training_page.dart';
 
-class VocabMatchingPage extends StatelessWidget {
-  VocabMatchingPage({Key? key, required this.title}) : super(key: key);
+class VocabLessonPage extends StatelessWidget {
+  VocabLessonPage({Key? key, required this.title, required this.lesson})
+      : super(key: key);
   final ttsController = Get.put(TtsController());
+  final Map<String, List<String>> lesson;
 
   final String title;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        centerTitle: true,
+        title: Title(
+          color: Colors.black,
+          title: title,
+          child: Text(title),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -24,8 +31,8 @@ class VocabMatchingPage extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                 itemBuilder: (context, index) {
-                  minnaLesson1.entries.elementAt(index);
-                  final entry = minnaLesson1.entries.elementAt(index);
+                  lesson.entries.elementAt(index);
+                  final entry = lesson.entries.elementAt(index);
                   final prompt = entry.key;
                   final answers = entry.value;
                   return Obx(
@@ -63,7 +70,7 @@ class VocabMatchingPage extends StatelessWidget {
                     ),
                   );
                 },
-                itemCount: minnaLesson1.length,
+                itemCount: lesson.length,
               ),
             ),
           ],
@@ -86,7 +93,7 @@ class VocabMatchingPage extends StatelessWidget {
                     }
                   : () async {
                       ttsController.isSpeaking.value = true;
-                      for (var entry in minnaLesson1.entries) {
+                      for (var entry in lesson.entries) {
                         final answers = entry.value;
                         // if(e)
                         if (!ttsController.isSpeaking.value) {
@@ -96,6 +103,13 @@ class VocabMatchingPage extends StatelessWidget {
                       }
                       ttsController.isSpeaking.value = false;
                     },
+            ),
+            SpeedDialChild(
+              label: "Start Quiz",
+              onTap: () {
+                Get.to(VocabTrainingPage());
+              },
+              child: Icon(Icons.quiz),
             ),
           ],
         ),
