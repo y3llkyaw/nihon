@@ -3,6 +3,7 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
+import 'package:hiragana/app/ui/pages/vocab_flash_card_page/vocab_flash_card_page.dart';
 import 'package:hiragana/app/ui/pages/vocab_training/vocab_training_page.dart';
 
 class VocabLessonPage extends StatelessWidget {
@@ -110,6 +111,13 @@ class VocabLessonPage extends StatelessWidget {
                 Get.to(VocabTrainingPage());
               },
               child: Icon(Icons.quiz),
+            ),
+            SpeedDialChild(
+              label: "Flash Cards",
+              onTap: () {
+                Get.to(VocabFlashCardPage());
+              },
+              child: Icon(Icons.add_card_sharp),
             ),
           ],
         ),

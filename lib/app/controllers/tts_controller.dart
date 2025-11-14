@@ -9,6 +9,7 @@ class TtsController extends GetxController {
   final FlutterTts tts = FlutterTts();
   final speakingWord = ''.obs;
   final isSpeaking = false.obs;
+  final duration = 0.obs;
 
   Completer<void>? _speechCompleter;
 
@@ -16,7 +17,7 @@ class TtsController extends GetxController {
   void onInit() async {
     super.onInit();
     await tts.setLanguage("ja-JP"); // Japanese voice
-    await tts.setSpeechRate(0.5); // adjust speaking speed
+    await tts.setSpeechRate(1); // adjust speaking speed
     await tts.setVolume(1.0);
 
     // native handlers to complete the completer when speech ends/errors
@@ -47,13 +48,15 @@ class TtsController extends GetxController {
         speechSynthesis.cancel();
         const utter = new SpeechSynthesisUtterance('$safeText');
         utter.lang = 'ja-JP';
-        utter.rate = 0.9;
+        utter.rate = 1.0;
         speechSynthesis.speak(utter);
       """
       ]);
 
       final estimatedMs = math.min(10000, math.max(800, text.length * 250));
+      duration.value = estimatedMs;
       try {
+        
         await Future.delayed(Duration(milliseconds: estimatedMs));
       } finally {
         if (speakingWord.value == text) speakingWord.value = "";
