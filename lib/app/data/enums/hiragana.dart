@@ -195,7 +195,7 @@ final Map<String, String> hiraganaMap = {
   'ぴょ': 'pyo',
 };
 
-final vocabLessons = [minnaLesson1, minnaLesson2];
+final vocabLessons = [minnaLesson1, minnaLesson2, minnaLesson3];
 final minnaLesson1 = {
   'ကျွန်တော်၊ ကျွန်မ': [
     'わたし',
@@ -456,4 +456,247 @@ final minnaLesson2 = {
   'ဂျပန် (နိုင်ငံ)': ['にほん', '日本'],
   'အင်္ဂလိပ် (ဘာသာစကား)': ['えいご', '英語'],
   'ဂျပန် (ဘာသာစကား)': ['にほんご', '日本語'],
+};
+final minnaLesson3 = {
+  "ဒီမှာ၊ ဒီနေရာ": [
+    "ここ",
+    "ここ",
+    "https://cdn-icons-png.flaticon.com/512/3097/3097204.png"
+  ],
+  "အဲဒီမှာ၊ အဲဒီနေရာ": [
+    "そこ",
+    "そこ",
+    "https://cdn-icons-png.flaticon.com/512/3097/3097204.png"
+  ],
+  "ဟိုမှာ၊ ဟိုနေရာ": [
+    "あそこ",
+    "あそこ",
+    "https://cdn-icons-png.flaticon.com/512/3097/3097204.png"
+  ],
+  "ဘယ်မှာလဲ": [
+    "どこ",
+    "どこ",
+    "https://cdn-icons-png.flaticon.com/512/3097/3097202.png"
+  ],
+  "ဒီဘက်မှာ (ယဉ်ကျေး)": [
+    "こちら",
+    "こちら",
+    "https://cdn-icons-png.flaticon.com/512/4992/4992743.png"
+  ],
+  "ဟိုဘက်မှာ (ယဉ်ကျေး)": [
+    "そちら",
+    "そちら",
+    "https://cdn-icons-png.flaticon.com/512/4992/4992743.png"
+  ],
+  "ဟိုးဘက်မှာ (ယဉ်ကျေး)": [
+    "あちら",
+    "あちら",
+    "https://cdn-icons-png.flaticon.com/512/4992/4992743.png"
+  ],
+  "ဘယ်ဘက်မှာလဲ (ယဉ်ကျေး)": [
+    "どちら",
+    "どちら",
+    "https://cdn-icons-png.flaticon.com/512/4992/4992745.png"
+  ],
+  "စာသင်ခန်း": [
+    "きょうしつ",
+    "教室",
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+  ],
+  "ထမင်းစားခန်း/ ထမင်းဆိုင်": [
+    "しょくどう",
+    "食堂",
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+  ],
+  "ရုံးခန်း": [
+    "じむしょ",
+    "事務所",
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+  ],
+  "အစည်းအဝေးခန်း": [
+    "かいぎしつ",
+    "会議室",
+    "https://cdn-icons-png.flaticon.com/512/5110/5110191.png"
+  ],
+  "စုံစမ်းရန်ကောင်တာ": [
+    "うけつけ",
+    "受付",
+    "https://cdn-icons-png.flaticon.com/512/4603/4603612.png"
+  ],
+  "ဧည့်ခန်း၊ ဟိုတယ်ဧည့်ခန်း": [
+    "ロビー",
+    "ロビー",
+    "https://cdn-icons-png.flaticon.com/512/2855/2855776.png"
+  ],
+  "အခန်း": [
+    "へや",
+    "部屋",
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+  ],
+  "အိမ်သာ": [
+    "トイレ",
+    "トイレ",
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+  ],
+  "လှေခါး": [
+    "かいだん",
+    "階段",
+    "https://cdn-icons-png.flaticon.com/512/5193/5193910.png"
+  ],
+  "ဓါတ်လှေခါး": [
+    "エレベーター",
+    "エレベーター",
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+  ],
+  "စက်လှေခါး": [
+    "エスカレーター",
+    "エスカレーター",
+    "https://cdn-icons-png.flaticon.com/512/5323/5323419.png"
+  ],
+  "အလိုအလျောက်ဈေးရောင်းသည့်စက်": [
+    "じどうはんばいき",
+    "自動販売機",
+    "https://cdn-icons-png.flaticon.com/512/3757/3757731.png"
+  ],
+  "တယ်လီဖုန်း": [
+    "でんわ",
+    "電話",
+    "https://cdn-icons-png.flaticon.com/512/126/126509.png"
+  ],
+  "နိုင်ငံ": [
+    "くに",
+    "国",
+    "https://cdn-icons-png.flaticon.com/512/1261/1261689.png"
+  ],
+  "ကုမ္ပဏီ": [
+    "かいしゃ",
+    "会社",
+    "https://www.entrepreneur.com/wp-content/uploads/sites/2/2016/06/20150805204041-google-company-building-corporate.jpeg"
+  ],
+  "အိမ်": [
+    "うち",
+    "うち",
+    "https://www.bhg.com/thmb/H9VV9JNnKl-H1faFXnPlQfNprYw=/1799x0/filters:no_upscale():strip_icc()/white-modern-house-curved-patio-archway-c0a4a3b3-aa51b24d14d0464ea15d36e05aa85ac9.jpg"
+  ],
+  "ဖိနပ်": ["くつ", "靴", "https://upload.wikimedia.org/wikipedia/commons/d/dc/74892143_f94145facb.jpg"],
+  "လည်စည်း (Necktie)": [
+    "ネクタイ",
+    "ネクタイ",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Krawaty.jpg/250px-Krawaty.jpg"
+  ],
+  "ဝိုင်": [
+    "ワイン",
+    "ワイン",
+    "https://en.wikipedia.org/wiki/Red_wine"
+  ],
+  "အရောင်းကောင်တာ": [
+    "うりば",
+    "売り場",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Cash_Registers.JPG/1200px-Cash_Registers.JPG"
+  ],
+  "မြေအောက်": [
+    "ちか",
+    "地下",
+    "https://upload.wikimedia.org/wikipedia/commons/2/27/Tenjin_Chikagai%28Tenjin_Underground_City%29_-_02.JPG"
+  ],
+  "~အထပ်": [
+    "～かい",
+    "～階",
+    "https://cdn-icons-png.flaticon.com/512/569/569947.png"
+  ],
+  "ဘယ်နှစ်ထပ်": [
+    "なんがい",
+    "何階",
+    "https://i.pinimg.com/736x/d1/4f/fa/d14ffa353b68eca67faaab4db73030f9.jpg"
+  ],
+  "ဂျပန်ပိုက်ဆံ (ယန်း)": [
+    "えん",
+    "円",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Series_F_10000_yen_front.jpg/250px-Series_F_10000_yen_front.jpg"
+  ],
+  "ဘယ်လောက်လဲ": [
+    "いくら",
+    "いくら",
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+  ],
+  "တစ်ရာ": [
+    "ひゃく",
+    "百",
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+  ],
+  "တစ်ထောင်": [
+    "せん",
+    "千",
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+  ],
+  "တစ်သောင်း": [
+    "まん",
+    "万",
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+  ],
+  "တောင်းပန်ပါတယ်၊ တစ်ဆိတ်လောက်": [
+    "すみません",
+    "すみません",
+    "https://cdn-icons-png.flaticon.com/512/6364/6364087.png"
+  ],
+  "ကျေးဇူးပါ။": [
+    "どうも",
+    "どうも",
+    "https://cdn-icons-png.flaticon.com/512/2528/2528577.png"
+  ],
+  "ကြိုဆိုပါတယ်": [
+    "いらっしゃいませ",
+    "いらっしゃいませ",
+    "https://cdn-icons-png.flaticon.com/512/4028/4028308.png"
+  ],
+  "[~ကို] ပြပါ": [
+    "～をみせてください",
+    "～を見せてください",
+    "https://cdn-icons-png.flaticon.com/512/2776/2776008.png"
+  ],
+  "ဒါဆိုရင်/ ကဲ": [
+    "じゃ",
+    "じゃあ",
+    "https://cdn-icons-png.flaticon.com/512/412/412852.png"
+  ],
+  "[~ကို] ပေးပါ": [
+    "～をください",
+    "～をください",
+    "https://cdn-icons-png.flaticon.com/512/1255/1255850.png"
+  ],
+  "အီတလီ": [
+    "イタリア",
+    "イタリア",
+    "https://cdn-icons-png.flaticon.com/512/197/197626.png"
+  ],
+  "ဆွစ်ဇာလန်": [
+    "スイス",
+    "スイス",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flag_of_Switzerland_%28Pantone%29.svg/1920px-Flag_of_Switzerland_%28Pantone%29.svg.png"
+  ],
+  "ပြင်သစ်": [
+    "フランス",
+    "フランス",
+    "https://cdn-icons-png.flaticon.com/512/197/197560.png"
+  ],
+  "ဂျကာတာ": [
+    "ジャカルタ",
+    "ジャカルタ",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+  ],
+  "ဘန်ကောက်": [
+    "バンコク",
+    "バンコク",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157079.png"
+  ],
+  "ဘာလင်": [
+    "ベルリン",
+    "ベルリン",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157080.png"
+  ],
+  "ရှင်းအိုဆာကာ": [
+    "しんおおさか",
+    "新大阪",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157081.png"
+  ]
 };

@@ -7,7 +7,10 @@ import 'package:hiragana/app/data/enums/hiragana.dart';
 import 'package:hiragana/app/ui/pages/vocab_flash_card_page/flash_card_widget.dart';
 
 class VocabFlashCardPage extends StatelessWidget {
-  VocabFlashCardPage({Key? key}) : super(key: key);
+  VocabFlashCardPage({Key? key, required this.lesson}) : super(key: key);
+
+  final Map<String, List<String>> lesson;
+
   final controller = Get.put(VocabFlashCardPageController());
   final TtsController tts = Get.put(TtsController());
 
@@ -28,9 +31,9 @@ class VocabFlashCardPage extends StatelessWidget {
                 height: Get.height * 0.8,
                 child: Stack(
                   children: List.generate(
-                    minnaLesson1.length,
+                    lesson.length,
                     (index) {
-                      final e = minnaLesson1.entries.elementAt(index);
+                      final e = lesson.entries.elementAt(index);
                       return Obx(
                         () => AnimatedPositioned(
                           curve: Curves.easeInExpo,
@@ -49,7 +52,7 @@ class VocabFlashCardPage extends StatelessWidget {
                             duration:
                                 Duration(milliseconds: tts.duration.value),
                             child: FlashCardWidget(
-                              number: index+1,
+                                number: index + 1,
                                 onClick: () async {
                                   controller.watchedList.add(e.key);
                                   await tts.speak(e.value[0]);

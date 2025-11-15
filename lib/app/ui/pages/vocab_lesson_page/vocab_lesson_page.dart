@@ -115,7 +115,9 @@ class VocabLessonPage extends StatelessWidget {
             SpeedDialChild(
               label: "Flash Cards",
               onTap: () {
-                Get.to(VocabFlashCardPage());
+                Get.to(VocabFlashCardPage(
+                  lesson: lesson,
+                ));
               },
               child: Icon(Icons.add_card_sharp),
             ),
