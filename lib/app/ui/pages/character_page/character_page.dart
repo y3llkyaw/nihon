@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:hiragana/app/controllers/character_table_controller.dart';
 import 'package:hiragana/app/data/enums/hiragana.dart';
 import 'package:hiragana/app/ui/global_widgets/custom_chip.dart';
-import 'package:hiragana/app/ui/pages/character_matching_page/character_matching_page.dart';
+import 'package:hiragana/app/ui/pages/character_matching_page/matching_page.dart';
 
 class CharacterPage extends StatelessWidget {
   CharacterPage({Key? key}) : super(key: key);
@@ -34,7 +34,7 @@ class CharacterPage extends StatelessWidget {
                 ),
                 onPressed: characterTableController.selectedHiragana.length > 4
                     ? () {
-                        Get.to(() => CharacterMatchingPage());
+                        Get.to(() =>MatchingPage());
                       }
                     : null,
                 label: Text(

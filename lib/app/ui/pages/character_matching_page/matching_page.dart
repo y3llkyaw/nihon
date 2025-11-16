@@ -4,12 +4,14 @@ import 'package:hiragana/app/controllers/character_match_controller.dart';
 import 'package:hiragana/app/ui/global_widgets/custom_chip.dart';
 import 'package:hiragana/app/ui/layouts/main/main_layout.dart';
 
-class CharacterMatchingPage extends StatelessWidget {
-  CharacterMatchingPage({Key? key}) : super(key: key);
+class MatchingPage extends StatelessWidget {
+  MatchingPage({Key? key, this.isVocabMatching = false}): super(key: key);
   final CharacterMatchController cmc = Get.put(CharacterMatchController());
+  final bool isVocabMatching;
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Character Matching"),

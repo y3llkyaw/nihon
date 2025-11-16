@@ -1,9 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
 import 'package:hiragana/app/controllers/vocab_flash_card_page_controller.dart';
-import 'package:hiragana/app/data/enums/hiragana.dart';
 import 'package:hiragana/app/ui/pages/vocab_flash_card_page/flash_card_widget.dart';
 
 class VocabFlashCardPage extends StatelessWidget {
@@ -27,8 +28,53 @@ class VocabFlashCardPage extends StatelessWidget {
           ),
           child: Column(
             children: [
-              Container(
-                height: Get.height * 0.8,
+              Obx(
+                () => Column(
+                  spacing: 20,
+                  children: [
+                    Row(
+                      spacing: 10,
+                      children: [
+                        Switch(
+                          value: controller.isMeaningShown.value,
+                          onChanged: (value) {
+                            controller.isMeaningShown.value = value;
+                          },
+                        ),
+                        Text(
+                          "Show Meaning",
+                          style: GoogleFonts.notoSansJavanese(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                    Row(
+                      spacing: 10,
+                      children: [
+                        AnimatedSwitcher(
+                          switchInCurve: Curves.easeInExpo,
+                          switchOutCurve: Curves.easeInExpo,
+                          duration: Duration(milliseconds: 300),
+                          child: Switch(
+                              value: controller.isRomajiShown.value,
+                              onChanged: (value) {
+                                controller.isRomajiShown.value = value;
+                              }),
+                        ),
+                        Text(
+                          "Show Romaji",
+                          style: GoogleFonts.notoSansJavanese(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: Get.height * 0.7,
                 child: Stack(
                   children: List.generate(
                     lesson.length,
@@ -38,7 +84,7 @@ class VocabFlashCardPage extends StatelessWidget {
                         () => AnimatedPositioned(
                           curve: Curves.easeInExpo,
                           top: Get.height * 0.15,
-                          left: controller.watchedList.contains(e.key)
+                          right: controller.watchedList.contains(e.key)
                               ? 700
                               : Get.width * 0.04,
                           duration: Duration(
@@ -47,7 +93,7 @@ class VocabFlashCardPage extends StatelessWidget {
                           child: AnimatedRotation(
                             curve: Curves.easeInCirc,
                             turns: controller.watchedList.contains(e.key)
-                                ? 0.1
+                                ?- 0.1
                                 : 0,
                             duration:
                                 Duration(milliseconds: tts.duration.value),
@@ -56,8 +102,10 @@ class VocabFlashCardPage extends StatelessWidget {
                                 onClick: () async {
                                   controller.watchedList.add(e.key);
                                   await tts.speak(e.value[0]);
+                                  controller.watchedList.add(e.key);
                                 },
-                                image: e.value[2],
+                                romaji: e.value[2],
+                                image: e.value[3],
                                 hiragana: e.value[0],
                                 kenji: e.value[1],
                                 meaning: e.key),
@@ -68,31 +116,34 @@ class VocabFlashCardPage extends StatelessWidget {
                   ).reversed.toList(),
                 ),
               ),
-              Spacer(),
-              Row(
-                children: [
-                  Text("Created By Yell Htet Kyaw"),
-                  IconButton(onPressed: () {}, icon: Icon(Icons.email)),
-                  // IconButton(onPressed: () {}, icon: Icon(Icons.media_bluetooth_off)),
-                ],
-              )
             ],
           ),
         ),
-        floatingActionButton: SpeedDial(
-          animatedIcon: AnimatedIcons.menu_close,
+        floatingActionButton: Column(
+          spacing: 20,
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            SpeedDialChild(
-              label: "play all",
-              child: Icon(Icons.play_arrow),
-              onTap: () {},
+            SpeedDial(
+              animatedIcon: AnimatedIcons.menu_close,
+              children: [
+                SpeedDialChild(
+                  label: "play all",
+                  child: Icon(Icons.play_arrow),
+                  onTap: () {},
+                ),
+                SpeedDialChild(
+                  label: "restart",
+                  child: Icon(Icons.restart_alt),
+                  onTap: () {
+                    controller.watchedList.clear();
+                  },
+                ),
+              ],
             ),
-            SpeedDialChild(
-              label: "restart",
-              child: Icon(Icons.restart_alt),
-              onTap: () {
-                controller.watchedList.clear();
-              },
+            FloatingActionButton(
+              shape: CircleBorder(),
+              onPressed: () {},
+              child: Icon(Icons.speaker),
             ),
           ],
         ));
