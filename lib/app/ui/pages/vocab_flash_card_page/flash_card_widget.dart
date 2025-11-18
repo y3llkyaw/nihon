@@ -13,9 +13,11 @@ class FlashCardWidget extends StatelessWidget {
     required this.romaji,
     required this.meaning,
     required this.onClick,
+    this.isImageShow = true,
   }) : super(key: key);
 
   final String image;
+  final bool isImageShow;
   final int number;
   final String meaning;
   final String romaji;
@@ -67,43 +69,56 @@ class FlashCardWidget extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(
-                  width: 150,
-                  height: 150,
-                  child: Image.network(
-                    image,
-                  ),
-                ),
-                SizedBox(height: 20),
-                Text(
-                  hiragana,
-                  style: GoogleFonts.notoSansJavanese(
-                    color: Get.theme.colorScheme.tertiary,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 30,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                AnimatedOpacity(
-                  opacity: flashCardPageController.isRomajiShown.value ? 1 : 0,
-                  duration: Duration(milliseconds: 300),
-                  child: Text(
-                    romaji,
-                    style: GoogleFonts.roboto(
-                      color: Get.theme.colorScheme.tertiary,
-                      fontSize: 20,
+                isImageShow
+                    ? Column(
+                        children: [
+                          SizedBox(
+                            width: 150,
+                            height: 150,
+                            child: Image.network(
+                              image,
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                        ],
+                      )
+                    : SizedBox.shrink(),
+                Column(
+                  spacing: 20,
+                  children: [
+                    Text(
+                      hiragana,
+                      style: GoogleFonts.notoSansJavanese(
+                        color: Get.theme.colorScheme.tertiary,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
+                      ),
+                      textAlign: TextAlign.center,
                     ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                SizedBox(height: 20),
-                AnimatedOpacity(
-                  opacity: flashCardPageController.isMeaningShown.value ? 1 : 0,
-                  duration: Duration(milliseconds: 300),
-                  child: Text(
-                    meaning,
-                    textAlign: TextAlign.center,
-                  ),
+                    AnimatedOpacity(
+                      opacity:
+                          flashCardPageController.isRomajiShown.value ? 1 : 0,
+                      duration: Duration(milliseconds: 300),
+                      child: Text(
+                        romaji,
+                        style: GoogleFonts.roboto(
+                          color: Get.theme.colorScheme.tertiary,
+                          fontSize: 20,
+                        ),
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                    // SizedBox(height: 20),
+                    AnimatedOpacity(
+                      opacity:
+                          flashCardPageController.isMeaningShown.value ? 1 : 0,
+                      duration: Duration(milliseconds: 300),
+                      child: Text(
+                        meaning,
+                        textAlign: TextAlign.center,
+                      ),
+                    ),
+                  ],
                 ),
                 SizedBox(height: 20),
               ],

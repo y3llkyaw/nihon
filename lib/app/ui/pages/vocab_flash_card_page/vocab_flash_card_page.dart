@@ -23,91 +23,131 @@ class VocabFlashCardPage extends StatelessWidget {
         ),
         body: Padding(
           padding: EdgeInsetsGeometry.symmetric(
-            horizontal: 20,
+            horizontal: 0,
             vertical: 10,
           ),
           child: Column(
             children: [
               Obx(
-                () => Column(
-                  spacing: 20,
-                  children: [
-                    Row(
-                      spacing: 10,
-                      children: [
-                        Switch(
-                          value: controller.isMeaningShown.value,
-                          onChanged: (value) {
-                            controller.isMeaningShown.value = value;
-                          },
-                        ),
-                        Text(
-                          "Show Meaning",
-                          style: GoogleFonts.notoSansJavanese(
-                            fontWeight: FontWeight.bold,
+                () => Padding(
+                  padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
+                  child: Column(
+                    spacing: 10,
+                    children: [
+                      Row(
+                        spacing: 10,
+                        children: [
+                          Switch(
+                            value: controller.isMeaningShown.value,
+                            onChanged: (value) {
+                              controller.isMeaningShown.value = value;
+                            },
                           ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      spacing: 10,
-                      children: [
-                        AnimatedSwitcher(
-                          switchInCurve: Curves.easeInExpo,
-                          switchOutCurve: Curves.easeInExpo,
-                          duration: Duration(milliseconds: 300),
-                          child: Switch(
-                              value: controller.isRomajiShown.value,
-                              onChanged: (value) {
-                                controller.isRomajiShown.value = value;
-                              }),
-                        ),
-                        Text(
-                          "Show Romaji",
-                          style: GoogleFonts.notoSansJavanese(
-                            fontWeight: FontWeight.bold,
+                          Text(
+                            "Show Meaning",
+                            style: GoogleFonts.notoSansJavanese(
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                      Row(
+                        spacing: 10,
+                        children: [
+                          AnimatedSwitcher(
+                            switchInCurve: Curves.easeInExpo,
+                            switchOutCurve: Curves.easeInExpo,
+                            duration: Duration(milliseconds: 300),
+                            child: Switch(
+                                value: controller.isRomajiShown.value,
+                                onChanged: (value) {
+                                  controller.isRomajiShown.value = value;
+                                }),
+                          ),
+                          Text(
+                            "Show Romaji",
+                            style: GoogleFonts.notoSansJavanese(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        spacing: 10,
+                        children: [
+                          Switch(
+                            value: controller.isAutoSlide.value,
+                            onChanged: (value) {
+                              controller.isAutoSlide.value = value;
+                            },
+                          ),
+                          Text(
+                            "Auto Slide",
+                            style: GoogleFonts.notoSansJavanese(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        spacing: 10,
+                        children: [
+                          Switch(
+                            value: controller.isImageShow.value,
+                            onChanged: (value) {
+                              controller.isImageShow.value = value;
+                            },
+                          ),
+                          Text(
+                            "Image Shown",
+                            style: GoogleFonts.notoSansJavanese(
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Spacer(),
-              CarouselSlider(
-                items: List.generate(
-                  lesson.length,
-                  (index) {
-                    final e = lesson.entries.elementAt(index);
-                    return FlashCardWidget(
-                      number: index + 1,
-                      onClick: () async {
-                        controller.watchedList.add(e.key);
-                        await tts.speak(e.value[0]);
-                        controller.watchedList.add(e.key);
-                      },
-                      romaji: e.value[2],
-                      image: e.value[3],
-                      hiragana: e.value[0],
-                      kenji: e.value[1],
-                      meaning: e.key,
-                    );
-                  },
-                ).toList(),
-                options: CarouselOptions(
-                  onPageChanged: (index, reason) async {
-                    final e = lesson.entries.elementAt(index);
-                    controller.watchedList.add(e.key);
-                    await tts.speak(e.value[0]);
-                    controller.watchedList.add(e.key);
-                  },
-                  height: Get.height * 0.5,
-                  enlargeCenterPage: true,
+              Obx(
+                () => CarouselSlider(
+                  items: List.generate(
+                    lesson.length,
+                    (index) {
+                      final e = lesson.entries.elementAt(index);
+                      return FlashCardWidget(
+                        isImageShow: controller.isImageShow.value,
+                        number: index + 1,
+                        onClick: () async {
+                          controller.watchedList.add(e.key);
+                          await tts.speak(e.value[0]);
+                          controller.watchedList.add(e.key);
+                        },
+                        romaji: e.value[2],
+                        image: e.value[3],
+                        hiragana: e.value[0],
+                        kenji: e.value[1],
+                        meaning: e.key,
+                      );
+                    },
+                  ).toList(),
+                  options: CarouselOptions(
+                    autoPlay: controller.isAutoSlide.value,
+                    autoPlayInterval: Duration(seconds: 2),
+                    onPageChanged: (index, reason) async {
+                      final e = lesson.entries.elementAt(index);
+                      controller.watchedList.add(e.key);
+                      await tts.speak(e.value[0]);
+                      controller.watchedList.add(e.key);
+                    },
+                    height: Get.height * 0.5,
+                    enlargeCenterPage: true,
+                  ),
                 ),
               ),
-              SizedBox(
-                height: Get.height * 0.2,
-              ),
+              Spacer()
             ],
           ),
         ),
@@ -132,11 +172,11 @@ class VocabFlashCardPage extends StatelessWidget {
                 ),
               ],
             ),
-            FloatingActionButton(
-              shape: CircleBorder(),
-              onPressed: () {},
-              child: Icon(Icons.speaker),
-            ),
+            // FloatingActionButton(
+            //   shape: CircleBorder(),
+            //   onPressed: () {},
+            //   child: Icon(Icons.speaker),
+            // ),
           ],
         ));
   }
