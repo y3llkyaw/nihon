@@ -102,7 +102,7 @@ class FlashCardWidget extends StatelessWidget {
                       child: Text(
                         romaji,
                         style: GoogleFonts.roboto(
-                          color: Get.theme.colorScheme.tertiary,
+                          // color: Get.theme.colorScheme.tertiary,
                           fontSize: 20,
                         ),
                         textAlign: TextAlign.center,
@@ -115,6 +115,10 @@ class FlashCardWidget extends StatelessWidget {
                       duration: Duration(milliseconds: 300),
                       child: Text(
                         meaning,
+                        style: GoogleFonts.roboto(
+                          color: Get.theme.colorScheme.tertiary,
+                          fontSize: 20,
+                        ),
                         textAlign: TextAlign.center,
                       ),
                     ),
