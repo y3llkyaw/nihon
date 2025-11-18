@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
@@ -73,48 +73,40 @@ class VocabFlashCardPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(
-                height: Get.height * 0.7,
-                child: Stack(
-                  children: List.generate(
-                    lesson.length,
-                    (index) {
-                      final e = lesson.entries.elementAt(index);
-                      return Obx(
-                        () => AnimatedPositioned(
-                          curve: Curves.easeInExpo,
-                          top: Get.height * 0.15,
-                          right: controller.watchedList.contains(e.key)
-                              ? 700
-                              : Get.width * 0.04,
-                          duration: Duration(
-                            milliseconds: tts.duration.value,
-                          ),
-                          child: AnimatedRotation(
-                            curve: Curves.easeInCirc,
-                            turns: controller.watchedList.contains(e.key)
-                                ?- 0.1
-                                : 0,
-                            duration:
-                                Duration(milliseconds: tts.duration.value),
-                            child: FlashCardWidget(
-                                number: index + 1,
-                                onClick: () async {
-                                  controller.watchedList.add(e.key);
-                                  await tts.speak(e.value[0]);
-                                  controller.watchedList.add(e.key);
-                                },
-                                romaji: e.value[2],
-                                image: e.value[3],
-                                hiragana: e.value[0],
-                                kenji: e.value[1],
-                                meaning: e.key),
-                          ),
-                        ),
-                      );
-                    },
-                  ).reversed.toList(),
+              Spacer(),
+              CarouselSlider(
+                items: List.generate(
+                  lesson.length,
+                  (index) {
+                    final e = lesson.entries.elementAt(index);
+                    return FlashCardWidget(
+                      number: index + 1,
+                      onClick: () async {
+                        controller.watchedList.add(e.key);
+                        await tts.speak(e.value[0]);
+                        controller.watchedList.add(e.key);
+                      },
+                      romaji: e.value[2],
+                      image: e.value[3],
+                      hiragana: e.value[0],
+                      kenji: e.value[1],
+                      meaning: e.key,
+                    );
+                  },
+                ).toList(),
+                options: CarouselOptions(
+                  onPageChanged: (index, reason) async {
+                    final e = lesson.entries.elementAt(index);
+                    controller.watchedList.add(e.key);
+                    await tts.speak(e.value[0]);
+                    controller.watchedList.add(e.key);
+                  },
+                  height: Get.height * 0.5,
+                  enlargeCenterPage: true,
                 ),
+              ),
+              SizedBox(
+                height: Get.height * 0.2,
               ),
             ],
           ),
