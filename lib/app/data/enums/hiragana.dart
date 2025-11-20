@@ -803,3 +803,88 @@ final minnaLesson3 = {
     "https://cdn-icons-png.flaticon.com/512/2157/2157081.png"
   ]
 };
+
+final List<Map<String, dynamic>> katakanaTable = [
+  {
+    'consonant': '',
+    'katakana': ['ア', 'イ', 'ウ', 'エ', 'オ'],
+    'romaji': ['a', 'i', 'u', 'e', 'o'],
+  },
+  {
+    'consonant': 'k',
+    'katakana': ['カ', 'キ', 'ク', 'ケ', 'コ'],
+    'romaji': ['ka', 'ki', 'ku', 'ke', 'ko'],
+  },
+  {
+    'consonant': 's',
+    'katakana': ['サ', 'シ', 'ス', 'セ', 'ソ'],
+    'romaji': ['sa', 'shi', 'su', 'se', 'so'],
+  },
+  {
+    'consonant': 't',
+    'katakana': ['タ', 'チ', 'ツ', 'テ', 'ト'],
+    'romaji': ['ta', 'chi', 'tsu', 'te', 'to'],
+  },
+  {
+    'consonant': 'n',
+    'katakana': ['ナ', 'ニ', 'ヌ', 'ネ', 'ノ'],
+    'romaji': ['na', 'ni', 'nu', 'ne', 'no'],
+  },
+  {
+    'consonant': 'h',
+    'katakana': ['ハ', 'ヒ', 'フ', 'ヘ', 'ホ'],
+    'romaji': ['ha', 'hi', 'fu', 'he', 'ho'],
+  },
+  {
+    'consonant': 'm',
+    'katakana': ['マ', 'ミ', 'ム', 'メ', 'モ'],
+    'romaji': ['ma', 'mi', 'mu', 'me', 'mo'],
+  },
+  {
+    'consonant': 'y',
+    'katakana': ['ヤ', '', 'ユ', '', 'ヨ'],
+    'romaji': ['ya', '', 'yu', '', 'yo'],
+  },
+  {
+    'consonant': 'r',
+    'katakana': ['ラ', 'リ', 'ル', 'レ', 'ロ'],
+    'romaji': ['ra', 'ri', 'ru', 're', 'ro'],
+  },
+  {
+    'consonant': 'w',
+    'katakana': ['ワ', '', '', '', 'ヲ'],
+    'romaji': ['wa', '', '', '', 'wo'],
+  },
+  {
+    'consonant': 'n',
+    'katakana': ['ン', '', '', '', ''],
+    'romaji': ['n', '', '', '', ''],
+  },
+];
+
+bool isHiragana(String char) {
+  return hiraganaMap.containsKey(char);
+}
+
+bool isKatakana(String char) {
+  return katakanaMap.containsKey(char);
+}
+
+final Map<String, String> katakanaMap = {
+  'ア': 'a', 'イ': 'i', 'ウ': 'u', 'エ': 'e', 'オ': 'o',
+  'カ': 'ka', 'キ': 'ki', 'ク': 'ku', 'ケ': 'ke', 'コ': 'ko',
+  'サ': 'sa', 'シ': 'shi', 'ス': 'su', 'セ': 'se', 'ソ': 'so',
+  'タ': 'ta', 'チ': 'chi', 'ツ': 'tsu', 'テ': 'te', 'ト': 'to',
+  'ナ': 'na', 'ニ': 'ni', 'ヌ': 'nu', 'ネ': 'ne', 'ノ': 'no',
+  'ハ': 'ha', 'ヒ': 'hi', 'フ': 'fu', 'ヘ': 'he', 'ホ': 'ho',
+  'マ': 'ma', 'ミ': 'mi', 'ム': 'mu', 'メ': 'me', 'モ': 'mo',
+  'ヤ': 'ya', 'ユ': 'yu', 'ヨ': 'yo',
+  'ラ': 'ra', 'リ': 'ri', 'ル': 'ru', 'レ': 're', 'ロ': 'ro',
+  'ワ': 'wa', 'ヲ': 'wo',
+  'ン': 'n',
+};
+
+final Map<String, String> characterMap = {
+  ...hiraganaMap,
+  ...katakanaMap,
+};

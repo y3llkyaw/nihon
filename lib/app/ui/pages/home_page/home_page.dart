@@ -28,6 +28,33 @@ class MobileViewLayout extends StatelessWidget {
           child: Text("Hiraku"),
         ),
       ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
+              ),
+              child: Text(
+                'Hiraku',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onPrimary,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.code),
+              title: const Text('Developed by'),
+              subtitle: const Text('Yell Htet Kyaw'),
+              onTap: () {
+                Get.back();
+              },
+            ),
+          ],
+        ),
+      ),
       body: Obx(
         () => homeController.currentIndex.value == 0
             ? CharacterPage()

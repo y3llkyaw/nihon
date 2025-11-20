@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomChip extends StatelessWidget {
   const CustomChip({
     Key? key,
-    required this.hira,
+    required this.character,
     this.roma = "",
     this.isSelected = false,
     this.padding = 8.0,
@@ -16,14 +16,14 @@ class CustomChip extends StatelessWidget {
 
   final bool isSelected;
   final VoidCallback? onTap;
-  final String hira;
+  final String character;
   final String roma;
   final double padding;
   final bool isDone;
 
   @override
   Widget build(BuildContext context) {
-    if (hira == "") {
+    if (character == "") {
       return SizedBox.shrink();
     }
     return InkWell(
@@ -56,7 +56,7 @@ class CustomChip extends StatelessWidget {
             children: [
               SizedBox(height: 5.h),
               Text(
-                hira,
+                character,
                 style: GoogleFonts.notoSansJavanese(
                   color: isDone
                       ? Get.theme.colorScheme.onSecondaryContainer

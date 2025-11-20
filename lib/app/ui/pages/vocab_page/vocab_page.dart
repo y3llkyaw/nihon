@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hiragana/app/data/enums/hiragana.dart';
-import 'package:hiragana/app/ui/pages/vocab_lesson_page/vocab_lesson_page.dart';
+import 'package:hiragana/app/routes/app_routes.dart';
 
 class VocabPage extends StatelessWidget {
   const VocabPage({Key? key}) : super(key: key);
@@ -19,11 +19,9 @@ class VocabPage extends StatelessWidget {
                 title: Text("Vocabulary Lesson ${index + 1}"),
                 trailing: Icon(Icons.arrow_forward),
                 onTap: () {
-                  Get.to(
-                    () => VocabLessonPage(
-                      lesson: vocabLessons[index],
-                      title: "Vocabulary Lesson 1",
-                    ),
+                  Get.toNamed(
+                    "${AppRoutes.VOCABULARY}${AppRoutes.VOCAB_LESSON}"
+                        .replaceFirst(':lesson', '${index + 1}'),
                   );
                 },
               );

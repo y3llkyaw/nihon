@@ -7,10 +7,12 @@ import 'app/data/services/translations_service.dart';
 import 'app/routes/app_pages.dart';
 import 'app/routes/app_routes.dart';
 import 'app/ui/layouts/main/main_layout.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DependecyInjection.init();
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 

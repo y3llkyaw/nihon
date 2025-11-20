@@ -1,15 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../../layouts/main/main_layout.dart';
+import 'package:hiragana/app/routes/app_routes.dart';
 
-import '../../../controllers/unknown_route_controller.dart';
+class UnknownRoutePage extends StatelessWidget {
+  const UnknownRoutePage({Key? key}) : super(key: key);
 
-class UnknownRoutePage extends GetView<UnknownRouteController> {
-      const UnknownRoutePage ({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const MainLayout(
-        child: Text('UnknownRoute'),
-      );
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text(
+              '404',
+              style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 20),
+            const Text(
+              'Page Not Found',
+              style: TextStyle(fontSize: 20),
+            ),
+            const SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => Get.offAllNamed(AppRoutes.HOME),
+              child: const Text('Go to Home'),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

@@ -43,7 +43,7 @@ class VocabMatchingPage extends StatelessWidget {
                     opacity: 1,
                     duration: Duration(milliseconds: 300),
                     child: CustomChip(
-                      hira: value,
+                      character: value,
                       padding: 0,
                       onTap: () {},
                     ),

@@ -32,18 +32,18 @@ class MatchingPage extends StatelessWidget {
                       Obx(
                         () => Column(
                           spacing: 20.h,
-                          children: cmc.selectedHiraganaList
-                              .map((hiragana) => CustomChip(
+                          children: cmc.selectedCharacterList
+                              .map((character) => CustomChip(
                                     isDone:
-                                        cmc.doneCharacters.contains(hiragana),
+                                        cmc.doneCharacters.contains(character),
                                     isSelected:
-                                        cmc.selectedCharacter.value == hiragana,
-                                    hira: hiragana,
-                                    onTap: cmc.doneCharacters.contains(hiragana)
+                                        cmc.selectedCharacter.value == character,
+                                    character: character,
+                                    onTap: cmc.doneCharacters.contains(character)
                                         ? null
                                         : () {
                                             cmc.selectCharacter(
-                                                hiragana, context);
+                                                character, context);
                                           },
                                   ))
                               .toList(),
@@ -63,7 +63,7 @@ class MatchingPage extends StatelessWidget {
                                       : () {
                                           cmc.selectRomaji(romaji, context);
                                         },
-                                  hira: romaji,
+                                  character: romaji,
                                 ),
                               )
                               .toList(),

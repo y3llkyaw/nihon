@@ -14,8 +14,10 @@ class CharacterMatchController extends GetxController {
 
   var doneCharacters = [].obs;
 
-  final RxList<String> selectedHiraganaList = <String>[].obs;
+  final RxList<String> selectedCharacterList = <String>[].obs;
   final RxList<String> selectedRomajiList = <String>[].obs;
+
+  late final Map<String, String> _characterMap;
 
   @override
   void onInit() {
@@ -24,11 +26,18 @@ class CharacterMatchController extends GetxController {
   }
 
   void onStartup() {
-    selectedHiraganaList.assignAll(_characterTableController.selectedHiragana);
-    selectedHiraganaList.shuffle();
-    log("Selected Characters: ${_characterTableController.selectedHiragana}");
-    for (var hiragana in selectedHiraganaList) {
-      var romaji = hiraganaMap[hiragana];
+    selectedCharacterList.assignAll(_characterTableController.gameCharacters);
+    selectedCharacterList.shuffle();
+
+    if (selectedCharacterList.isNotEmpty &&
+        isHiragana(selectedCharacterList.first)) {
+      _characterMap = hiraganaMap;
+    } else {
+      _characterMap = katakanaMap;
+    }
+
+    for (var character in selectedCharacterList) {
+      var romaji = _characterMap[character];
       if (romaji != null) {
         selectedRomajiList.add(romaji);
       }
@@ -74,7 +83,7 @@ class CharacterMatchController extends GetxController {
               borderRadius: BorderRadius.circular(8.r),
             ),
             child: Text(
-              '${selectedCharacter.value}  ${hiraganaMap[selectedCharacter.value]}',
+              '${selectedCharacter.value}  ${_characterMap[selectedCharacter.value]}',
               style: GoogleFonts.notoSansJavanese(
                 fontWeight: FontWeight.bold,
                 color: Get.theme.colorScheme.tertiary,
@@ -85,7 +94,7 @@ class CharacterMatchController extends GetxController {
         ],
       ),
     );
-    if (hiraganaMap[selectedCharacter.value] == selectedRomaji.value) {
+    if (_characterMap[selectedCharacter.value] == selectedRomaji.value) {
       doneCharacters.add(selectedCharacter.value);
       doneCharacters.add(selectedRomaji.value);
       log(doneCharacters.toString());
@@ -113,7 +122,7 @@ class CharacterMatchController extends GetxController {
                 borderRadius: BorderRadius.circular(8.r),
               ),
               child: Text(
-                '${selectedCharacter.value}  ${hiraganaMap[selectedCharacter.value]}',
+                '${selectedCharacter.value}  ${_characterMap[selectedCharacter.value]}',
                 style: GoogleFonts.notoSansJavanese(
                   fontWeight: FontWeight.bold,
                   color: Get.theme.colorScheme.tertiary,

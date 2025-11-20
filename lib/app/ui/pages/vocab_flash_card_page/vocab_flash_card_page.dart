@@ -5,12 +5,16 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
 import 'package:hiragana/app/controllers/vocab_flash_card_page_controller.dart';
+import 'package:hiragana/app/data/enums/hiragana.dart';
 import 'package:hiragana/app/ui/pages/vocab_flash_card_page/flash_card_widget.dart';
 
 class VocabFlashCardPage extends StatelessWidget {
-  VocabFlashCardPage({Key? key, required this.lesson}) : super(key: key);
+  VocabFlashCardPage({Key? key}) : super(key: key);
 
-  final Map<String, List<String>> lesson;
+  final String lessonId = Get.parameters['lesson']!;
+  late final int lessonIndex = int.parse(lessonId) - 1;
+  late final Map<String, List<String>> lesson =
+      vocabLessons[lessonIndex].cast<String, List<String>>();
 
   final controller = Get.put(VocabFlashCardPageController());
   final TtsController tts = Get.put(TtsController());
