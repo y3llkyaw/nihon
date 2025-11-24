@@ -195,7 +195,7 @@ final Map<String, String> hiraganaMap = {
   'ぴょ': 'pyo',
 };
 
-final vocabLessons = [minnaLesson1, minnaLesson2, minnaLesson3];
+final vocabLessons = [minnaLesson1, minnaLesson2, minnaLesson3, minnaLesson4];
 
 final minnaLesson1 = {
   'ကျွန်တော်၊ ကျွန်မ': [
@@ -804,6 +804,368 @@ final minnaLesson3 = {
   ]
 };
 
+final minnaLesson4 = {
+  "ထသည်။ နိုးသည်": [
+    "おきます",
+    "起きます",
+    "okimasu",
+    "https://cdn-icons-png.flaticon.com/512/3217/3217431.png"
+  ],
+  "အိပ်သည်။": [
+    "ねます",
+    "寝ます",
+    "nemasu",
+    "https://cdn-icons-png.flaticon.com/512/3069/3069172.png"
+  ],
+  "အလုပ်လုပ်သည်": [
+    "はたらきます",
+    "働きます",
+    "hatarakimasu",
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+  ],
+  "အနားယူသည်။": [
+    "やすみます",
+    "休みます",
+    "yasumimasu",
+    "https://cdn-icons-png.flaticon.com/512/3069/3069185.png"
+  ],
+  "စာကျက်သည်။": [
+    "べんきょうします",
+    "勉強します",
+    "benkyō shimasu",
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+  ],
+  "ပြီးဆုံးသည်။": [
+    "おわります",
+    "終わります",
+    "owarimasu",
+    "https://cdn-icons-png.flaticon.com/512/2920/2920745.png"
+  ],
+  "ကုန်တိုက်": [
+    "デパート",
+    "デパート",
+    "depāto",
+    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
+  ],
+  "ဘဏ်": [
+    "ぎんこう",
+    "銀行",
+    "ginkō",
+    "https://cdn-icons-png.flaticon.com/512/3134/3134914.png"
+  ],
+  "စာတိုက်": [
+    "ゆうびんきょく",
+    "郵便局",
+    "yūbinkyoku",
+    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
+  ],
+  "စာကြည့်တိုက်": [
+    "としょかん",
+    "図書館",
+    "toshokan",
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+  ],
+  "အနုပညာပြတိုက်": [
+    "びじゅつかん",
+    "美術館",
+    "bijutsukan",
+    "https://cdn-icons-png.flaticon.com/512/3134/3134812.png"
+  ],
+  "အခု": [
+    "いま",
+    "今",
+    "ima",
+    "https://cdn-icons-png.flaticon.com/512/3421/3421019.png"
+  ],
+  "--နာရီ": [
+    "～じ",
+    "～時",
+    "～ji",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+  ],
+  "မိနစ်": [
+    "ふん/ぷん",
+    "分",
+    "fun/pun",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+  ],
+  "တစ်ဝက်": [
+    "はん",
+    "半",
+    "han",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+  ],
+  "ဘယ်နှစ်နာရီ၊ ဘယ်အချိန်": [
+    "なんじ",
+    "何時",
+    "nanji",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+  ],
+  "ဘယ်နှစ်မိနစ်": [
+    "なんぷん",
+    "何分",
+    "nanpun",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+  ],
+  "မနက်ပိုင်း am": [
+    "ごぜん",
+    "午前",
+    "gozen",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+  ],
+  "နေ့ခင်းပိုင်း၊ ညနေပိုင်း pm": [
+    "ごご",
+    "午後",
+    "gogo",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+  ],
+  "မနက်": [
+    "あさ",
+    "朝",
+    "asa",
+    "https://cdn-icons-png.flaticon.com/512/3069/3069170.png"
+  ],
+  "နေ့လည်": [
+    "ひる",
+    "昼",
+    "hiru",
+    "https://cdn-icons-png.flaticon.com/512/3069/3069170.png"
+  ],
+  "ည": [
+    "ばん/よる",
+    "晩/夜",
+    "ban/yoru",
+    "https://cdn-icons-png.flaticon.com/512/3069/3069170.png"
+  ],
+  "တစ်နေ့က": [
+    "おととい",
+    "一昨日",
+    "ototoi",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "မနေ့က": [
+    "きのう",
+    "昨日",
+    "kinō",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "ဒီနေ့": [
+    "きょう",
+    "今日",
+    "kyō",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "မနက်ဖန်": [
+    "あした/あす",
+    "明日",
+    "ashita/asu",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "သဘက်ခါ": [
+    "あさって",
+    "明後日",
+    "asatte",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "ဒီမနက်": [
+    "けさ",
+    "今朝",
+    "kesa",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "ဒီည": [
+    "こんばん",
+    "今晩",
+    "konban",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "နားရက်၊ အားလပ်ရက်": [
+    "やすみ",
+    "休み",
+    "yasumi",
+    "https://cdn-icons-png.flaticon.com/512/3069/3069185.png"
+  ],
+  "နေလည်နားချိန်": [
+    "ひるやすみ",
+    "昼休み",
+    "hiruyasumi",
+    "https://cdn-icons-png.flaticon.com/512/3069/3069185.png"
+  ],
+  "စာမေးပွဲ": [
+    "しけん",
+    "試験",
+    "shiken",
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+  ],
+  "အစည်းအဝေး": [
+    "かいぎ",
+    "会議",
+    "kaigi",
+    "https://cdn-icons-png.flaticon.com/512/5110/5110191.png"
+  ],
+  "ရုပ်ရှင်": [
+    "えいが",
+    "映画",
+    "eiga",
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+  ],
+  "မနက်တိုင်း": [
+    "まいあさ",
+    "毎朝",
+    "maiasa",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "ညတိုင်း": [
+    "まいばん",
+    "毎晩",
+    "maiban",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "နေတိုင်း": [
+    "まいにち",
+    "毎日",
+    "mainichi",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "တနင်္လာနေ့": [
+    "げつようび",
+    "月曜日",
+    "getsuyōbi",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "အင်္ဂါနေ့": [
+    "かようび",
+    "火曜日",
+    "kayōbi",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "ဗုဒ္ဓဟူးနေ့": [
+    "すいようび",
+    "水曜日",
+    "suiyōbi",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "ကြာသပတေးနေ့": [
+    "もくようび",
+    "木曜日",
+    "mokuyōbi",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "သောကြာနေ့": [
+    "きんようび",
+    "金曜日",
+    "kin'yōbi",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "စနေနေ့": [
+    "どようび",
+    "土曜日",
+    "doyōbi",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "တနင်္ဂနွေနေ့": [
+    "にちようび",
+    "日曜日",
+    "nichiyōbi",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "ဘာနေ့": [
+    "なんようび",
+    "何曜日",
+    "nan'yōbi",
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+  ],
+  "--မှ စ၍": [
+    "～から",
+    "～から",
+    "～ kara",
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+  ],
+  "--အထိ": [
+    "～まで",
+    "～まで",
+    "～ made",
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+  ],
+  "--နှင့်": [
+    "～と～",
+    "～と～",
+    "～ to ～",
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+  ],
+  "ဒုက္ခများမှာဘဲနော်": [
+    "たいへんですね",
+    "大変ですね",
+    "taihen desu ne",
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+  ],
+  "နံပါတ်": [
+    "ばんごう",
+    "番号",
+    "bangō",
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+  ],
+  "ဘာနံပါတ်": [
+    "なんばん",
+    "何番",
+    "nanban",
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+  ],
+  "အဲဒီမှာ၊ အဲဒီဘက်မှာ (ယဉ်ကျေး)": [
+    "そちら",
+    "そちら",
+    "sochira",
+    "https://cdn-icons-png.flaticon.com/512/4992/4992743.png"
+  ],
+  "နယူးယောက်မြို့": [
+    "ニューヨーク",
+    "ニューヨーク",
+    "Nyūyōku",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+  ],
+  "ပီကင်းမြို့": [
+    "ペキン",
+    "北京",
+    "Pekin",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+  ],
+  "လော့စ်အိန်ဂျယ်လစ်မြို့": [
+    "ロサンゼルス",
+    "ロサンゼルス",
+    "Rosanzerusu",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+  ],
+  "လန်ဒန်မြို့": [
+    "ロンドン",
+    "ロンドン",
+    "Rondon",
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+  ],
+  "Asuka စားသောက်ဆိုင်": [
+    "あすか",
+    "アスカ",
+    "Asuka",
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+  ],
+  "Apple ဘဏ်": [
+    "アップルぎんこう",
+    "アップル銀行",
+    "Appuru Ginkō",
+    "https://cdn-icons-png.flaticon.com/512/3134/3134914.png"
+  ],
+  "Midori စာကြည့်တိုက်": [
+    "みどりとしょかん",
+    "みどり図書館",
+    "Midori Toshokan",
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+  ],
+  "Yamato အနုပညာပြတိုက်": [
+    "やまとびじゅつかん",
+    "やまと美術館",
+    "Yamato Bijutsukan",
+    "https://cdn-icons-png.flaticon.com/512/3134/3134812.png"
+  ]
+};
 final List<Map<String, dynamic>> katakanaTable = [
   {
     'consonant': '',
@@ -871,16 +1233,51 @@ bool isKatakana(String char) {
 }
 
 final Map<String, String> katakanaMap = {
-  'ア': 'a', 'イ': 'i', 'ウ': 'u', 'エ': 'e', 'オ': 'o',
-  'カ': 'ka', 'キ': 'ki', 'ク': 'ku', 'ケ': 'ke', 'コ': 'ko',
-  'サ': 'sa', 'シ': 'shi', 'ス': 'su', 'セ': 'se', 'ソ': 'so',
-  'タ': 'ta', 'チ': 'chi', 'ツ': 'tsu', 'テ': 'te', 'ト': 'to',
-  'ナ': 'na', 'ニ': 'ni', 'ヌ': 'nu', 'ネ': 'ne', 'ノ': 'no',
-  'ハ': 'ha', 'ヒ': 'hi', 'フ': 'fu', 'ヘ': 'he', 'ホ': 'ho',
-  'マ': 'ma', 'ミ': 'mi', 'ム': 'mu', 'メ': 'me', 'モ': 'mo',
-  'ヤ': 'ya', 'ユ': 'yu', 'ヨ': 'yo',
-  'ラ': 'ra', 'リ': 'ri', 'ル': 'ru', 'レ': 're', 'ロ': 'ro',
-  'ワ': 'wa', 'ヲ': 'wo',
+  'ア': 'a',
+  'イ': 'i',
+  'ウ': 'u',
+  'エ': 'e',
+  'オ': 'o',
+  'カ': 'ka',
+  'キ': 'ki',
+  'ク': 'ku',
+  'ケ': 'ke',
+  'コ': 'ko',
+  'サ': 'sa',
+  'シ': 'shi',
+  'ス': 'su',
+  'セ': 'se',
+  'ソ': 'so',
+  'タ': 'ta',
+  'チ': 'chi',
+  'ツ': 'tsu',
+  'テ': 'te',
+  'ト': 'to',
+  'ナ': 'na',
+  'ニ': 'ni',
+  'ヌ': 'nu',
+  'ネ': 'ne',
+  'ノ': 'no',
+  'ハ': 'ha',
+  'ヒ': 'hi',
+  'フ': 'fu',
+  'ヘ': 'he',
+  'ホ': 'ho',
+  'マ': 'ma',
+  'ミ': 'mi',
+  'ム': 'mu',
+  'メ': 'me',
+  'モ': 'mo',
+  'ヤ': 'ya',
+  'ユ': 'yu',
+  'ヨ': 'yo',
+  'ラ': 'ra',
+  'リ': 'ri',
+  'ル': 'ru',
+  'レ': 're',
+  'ロ': 'ro',
+  'ワ': 'wa',
+  'ヲ': 'wo',
   'ン': 'n',
 };
 
