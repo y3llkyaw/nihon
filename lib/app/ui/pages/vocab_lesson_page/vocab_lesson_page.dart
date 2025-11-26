@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
@@ -7,7 +6,7 @@ import 'package:hiragana/app/controllers/character_match_controller.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
 import 'package:hiragana/app/data/enums/hiragana.dart';
 import 'package:hiragana/app/routes/app_routes.dart';
-import 'package:hiragana/app/ui/pages/character_matching_page/matching_page.dart';
+import 'package:hiragana/app/ui/pages/vocab_training/vocab_training_page.dart';
 
 class VocabLessonPage extends StatelessWidget {
   VocabLessonPage({Key? key}) : super(key: key);
@@ -129,7 +128,7 @@ class VocabLessonPage extends StatelessWidget {
             SpeedDialChild(
               label: "Start Quiz",
               onTap: () {
-                Get.to(() => MatchingPage());
+                Get.to(() => VocabTrainingPage(lesson: lesson));
               },
               child: Icon(Icons.quiz),
             ),

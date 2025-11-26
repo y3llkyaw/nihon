@@ -11,12 +11,14 @@ class CustomChip extends StatelessWidget {
     this.isSelected = false,
     this.padding = 8.0,
     this.onTap,
+    this.fontSize = 24.0,
     this.isDone = false,
   }) : super(key: key);
 
   final bool isSelected;
   final VoidCallback? onTap;
   final String character;
+  final double fontSize;
   final String roma;
   final double padding;
   final bool isDone;
@@ -32,7 +34,7 @@ class CustomChip extends StatelessWidget {
       child: ClipRRect(
         borderRadius: BorderRadius.circular(20.r),
         child: AnimatedContainer(
-          width: 100.w,
+          width: 150.w,
           padding:
               EdgeInsets.symmetric(horizontal: padding.w, vertical: padding.h),
           curve: Curves.easeInOut,
@@ -62,7 +64,7 @@ class CustomChip extends StatelessWidget {
                       ? Get.theme.colorScheme.onSecondaryContainer
                       : Get.theme.colorScheme.tertiary,
                   fontWeight: FontWeight.bold,
-                  fontSize: Get.textTheme.titleMedium?.fontSize,
+                  fontSize: fontSize,
                 ),
               ),
               roma != ""

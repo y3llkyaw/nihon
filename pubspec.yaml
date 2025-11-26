@@ -25,12 +25,12 @@ dependencies:
   flutter_tts: ^4.2.3
   flutter_speed_dial: ^7.0.0
   carousel_slider: ^5.1.1
+  audioplayers: ^6.5.1
 
 dev_dependencies:
   build_runner:
   freezed:
 
-  
   # #to make native splash screen
   # # 1) change path image_path
   # # 2) run commened -> flutter pub run flutter_native_splash:create
@@ -66,5 +66,6 @@ flutter:
     - assets/image/
     - assets/animation/
     - assets/fonts/
+    - assets/audios/
 
   uses-material-design: true
