@@ -34,14 +34,44 @@ class MobileViewLayout extends StatelessWidget {
           children: [
             DrawerHeader(
               decoration: BoxDecoration(
+                image: DecorationImage(
+                  opacity: 0.9,
+                  fit: BoxFit.cover,
+                  image: AssetImage(
+                    'assets/image/bg.png',
+                  ),
+                ),
                 color: Theme.of(context).colorScheme.primary,
               ),
-              child: Text(
-                'Hiraku',
-                style: TextStyle(
-                  color: Theme.of(context).colorScheme.onPrimary,
-                  fontSize: 24,
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+                    color: Colors.grey.withValues(alpha: 0.6),
+                    child: Text(
+                      'Hiraku',
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.onPrimary,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.symmetric(vertical: 5),
+                    color: Colors.grey.withValues(alpha: 0.6),
+                    child: Text(
+                      "Learn Japanese Easily",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.onPrimary,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
             ListTile(

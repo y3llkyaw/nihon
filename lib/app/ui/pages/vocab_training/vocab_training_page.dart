@@ -67,7 +67,7 @@ class VocabTrainingPage extends StatelessWidget {
                     children: [
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        spacing: 10,
+                        spacing: 5,
                         children: burmese
                             .map((e) => CustomChip(
                                   onTap: () => vtc.selectBurmese(e, context),
@@ -81,7 +81,7 @@ class VocabTrainingPage extends StatelessWidget {
                       ),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        spacing: 10,
+                        spacing: 5,
                         children: japanese
                             .map(
                               (e) => CustomChip(
@@ -104,7 +104,7 @@ class VocabTrainingPage extends StatelessWidget {
               }).toList(),
               options: CarouselOptions(
                 viewportFraction: 1,
-                height: 700,
+                height: Get.height * 0.7,
               ),
             ),
           ],

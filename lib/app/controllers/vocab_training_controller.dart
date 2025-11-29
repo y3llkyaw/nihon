@@ -51,13 +51,30 @@ class VocabTrainingController extends GetxController {
       BuildContext context, String burmese, String correctJapanese) {
     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
       backgroundColor: Get.theme.colorScheme.errorContainer,
-      content: Text(
-        "$correctJapanese - $burmese",
-        textAlign: TextAlign.center,
-        style: GoogleFonts.notoSansJavanese(
-          fontSize: 24,
-          color: Get.theme.colorScheme.onErrorContainer,
-          fontWeight: FontWeight.bold,
+      content: Center(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              correctJapanese,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.notoSansJavanese(
+                fontSize: 20,
+                color: Get.theme.colorScheme.tertiary,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              burmese,
+              textAlign: TextAlign.center,
+              style: GoogleFonts.notoSansMyanmar(
+                fontSize: Get.theme.textTheme.bodyMedium!.fontSize,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
         ),
       ),
       duration: const Duration(milliseconds: 3000),
