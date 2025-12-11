@@ -1,16 +1,33 @@
-# hiragana
+# 🇯🇵 Nihongo Guide
 
-A new Flutter project.
+## 🌟 Project Overview
 
-## Getting Started
+**Nihongo Guide** is a modern, comprehensive, and interactive mobile/web application designed to help Japanese language learners, from beginners taking their first steps with kana to advanced students tackling complex Kanji. Built with the Flutter framework for a fast, beautiful, and cross-platform experience, this guide aims to be your go-to reference and study tool for all things Japanese.
 
-This project is a starting point for a Flutter application.
+* **Live Application:** [https://nihongoguide.vercel.app/](https://nihongoguide.vercel.app/)
+* **Status:** Active Development
+---
 
-A few resources to get you started if this is your first Flutter project:
+## ✨ Key Features for Learning
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The application is structured to provide clear, actionable tools for effective language acquisition:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+| Category | Feature | Description |
+| :--- | :--- | :--- |
+| **Interactive Practice** | **Matching Characters Game** | A fun game to quickly test and reinforce recognition of Hiragana and Katakana characters. |
+| **Active Recall** | **Custom Flashcards System** |  Flashcard decks for vocabulary and Kanji(upcomming), featuring spaced repetition (SRS) support. |
+| **Aural Training** | **Text-to-Voice (TTS)** | Playback for all Kana, vocabulary, and example sentences to master correct pronunciation. |
+
+---
+
+## 💻 Technology Stack
+
+This project is built using modern cross-platform technologies for performance and maintainability.
+
+* **Frontend Framework:** Flutter (Dart)
+* **Language:** Dart
+* **State Management:** [GETX]
+* **Database/Backend:** [Firebase (upcomming)]
+
+---
+
