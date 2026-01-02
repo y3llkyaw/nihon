@@ -11,74 +11,81 @@ class CharacterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 2,
-      child: Padding(
-        padding: const EdgeInsets.all(10),
-        child: Column(
-          children: [
-            Text(
-              'select characters you want to learn.',
-              style: Get.textTheme.titleSmall,
-            ),
-            Obx(
-              () => ElevatedButton.icon(
-                iconAlignment: IconAlignment.end,
-                icon: Icon(Icons.arrow_forward),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor:
-                      characterTableController.selectedCharacters.length > 4
-                          ? Get.theme.colorScheme.primaryContainer
-                          : null,
-                ),
-                onPressed: () {
-                  final tabIndex = DefaultTabController.of(context).index;
-                  final selected = characterTableController.selectedCharacters;
-                  List<String> gameCharacters;
-                  if (tabIndex == 0) {
-                    // Hiragana
-                    gameCharacters =
-                        selected.where((c) => isHiragana(c)).toList();
-                  } else {
-                    // Katakana
-                    gameCharacters =
-                        selected.where((c) => isKatakana(c)).toList();
-                  }
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Character Tables"),
+      ),
+      body: DefaultTabController(
+        length: 2,
+        child: Padding(
+          padding: const EdgeInsets.all(10),
+          child: Column(
+            children: [
+              Text(
+                'select characters you want to learn.',
+                style: Get.textTheme.titleSmall,
+              ),
+              Obx(
+                () => ElevatedButton.icon(
+                  iconAlignment: IconAlignment.end,
+                  icon: Icon(Icons.arrow_forward),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor:
+                        characterTableController.selectedCharacters.length > 4
+                            ? Get.theme.colorScheme.primaryContainer
+                            : null,
+                  ),
+                  onPressed: () {
+                    final tabIndex = DefaultTabController.of(context).index;
+                    final selected =
+                        characterTableController.selectedCharacters;
+                    List<String> gameCharacters;
+                    if (tabIndex == 0) {
+                      // Hiragana
+                      gameCharacters =
+                          selected.where((c) => isHiragana(c)).toList();
+                    } else {
+                      // Katakana
+                      gameCharacters =
+                          selected.where((c) => isKatakana(c)).toList();
+                    }
 
-                  if (gameCharacters.length > 4) {
-                    characterTableController.setGameCharacters(gameCharacters);
-                    Get.to(() => MatchingPage());
-                  } else {
-                    Get.snackbar(
-                      "Not enough characters",
-                      "Please select at least 5 characters from the current tab to start the training.",
-                      snackPosition: SnackPosition.BOTTOM,
-                    );
-                  }
-                },
-                label: Text(
-                  "Continue",
-                  style: Get.textTheme.bodySmall!.copyWith(
-                    color: Get.theme.colorScheme.onPrimaryContainer,
+                    if (gameCharacters.length > 4) {
+                      characterTableController
+                          .setGameCharacters(gameCharacters);
+                      Get.to(() => MatchingPage());
+                    } else {
+                      Get.snackbar(
+                        "Not enough characters",
+                        "Please select at least 5 characters from the current tab to start the training.",
+                        snackPosition: SnackPosition.BOTTOM,
+                      );
+                    }
+                  },
+                  label: Text(
+                    "Continue",
+                    style: Get.textTheme.bodySmall!.copyWith(
+                      color: Get.theme.colorScheme.onPrimaryContainer,
+                    ),
                   ),
                 ),
               ),
-            ),
-            const TabBar(
-              tabs: [
-                Tab(text: 'Hiragana'),
-                Tab(text: 'Katakana'),
-              ],
-            ),
-            Expanded(
-              child: TabBarView(
-                children: [
-                  _buildTable(hiraganaTable, 'hiragana'),
-                  _buildTable(katakanaTable, 'katakana'),
+              const TabBar(
+                tabs: [
+                  Tab(text: 'Hiragana'),
+                  Tab(text: 'Katakana'),
                 ],
               ),
-            ),
-          ],
+              Expanded(
+                child: TabBarView(
+                  children: [
+                    _buildTable(hiraganaTable, 'hiragana'),
+                    _buildTable(katakanaTable, 'katakana'),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

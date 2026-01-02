@@ -39,40 +39,35 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            spacing: 15,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  StatsCard(
-                    cardWidthFactor: 0.6,
-                    title: 'STREAK',
-                    icon: CupertinoIcons.flame_fill,
-                    numberOfDays: 10,
-                  ),
-                  StatsCard(
-                    cardWidthFactor: 0.6,
-                    title: 'LEARNED',
-                    icon: CupertinoIcons.book_fill,
-                    color: Colors.blue,
-                    numberOfDays: 190,
-                  ),
-                ],
-              ),
-              ProgressCard(),
-              WordOtDay(),
-              StudyMode(),
-              SizedBox(
-                height: 20,
-              )
-            ],
-          ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          // spacing: 15,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                StatsCard(
+                  cardWidthFactor: 0.6,
+                  title: 'STREAK',
+                  icon: CupertinoIcons.flame_fill,
+                  numberOfDays: 10,
+                ),
+                StatsCard(
+                  cardWidthFactor: 0.6,
+                  title: 'LEARNED',
+                  icon: CupertinoIcons.book_fill,
+                  color: Colors.blue,
+                  numberOfDays: 190,
+                ),
+              ],
+            ),
+            ProgressCard(),
+            WordOtDay(),
+            StudyMode(),
+          ],
         ),
       ),
     );

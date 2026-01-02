@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hiragana/app/ui/pages/character_page/character_page.dart';
+import 'package:hiragana/app/ui/pages/vocab_page/vocab_page.dart';
 
 class StudyMode extends StatelessWidget {
   const StudyMode({Key? key}) : super(key: key);
@@ -17,23 +19,29 @@ class StudyMode extends StatelessWidget {
             fontWeight: FontWeight.bold,
           ),
         ),
-        StudyModeListTile(
-          icon: CupertinoIcons.tags_solid,
-          title: "Vocabulary Flashcards",
-          subtitle: "Practice vocabulary with flashcards",
-          color: Colors.yellow,
+        InkWell(
+          borderRadius: BorderRadius.circular(30),
+          onTap: () => {
+            Get.to(VocabPage(), transition: Transition.rightToLeft),
+          },
+          child: StudyModeListTile(
+            icon: CupertinoIcons.tags_solid,
+            title: "Vocabulary Flashcards",
+            subtitle: "Practice vocabulary with flashcards",
+            color: Colors.yellow,
+          ),
         ),
-        StudyModeListTile(
-          icon: CupertinoIcons.table_fill,
-          title: "Characters Tables",
-          subtitle: "Review and Practice hiragana and katakana charts ",
-          color: Colors.indigo,
-        ),
-        StudyModeListTile(
-          icon: CupertinoIcons.game_controller,
-          title: "Vocabulary Matching Game",
-          subtitle: "Practice vocabulary with flashcards",
-          color: Colors.lightGreenAccent,
+        InkWell(
+          borderRadius: BorderRadius.circular(30),
+          onTap: () => {
+            Get.to(CharacterPage(), transition: Transition.rightToLeft),
+          },
+          child: StudyModeListTile(
+            icon: CupertinoIcons.table_fill,
+            title: "Characters Tables",
+            subtitle: "Review and Practice hiragana and katakana charts ",
+            color: Colors.indigo,
+          ),
         ),
       ],
     );

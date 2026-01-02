@@ -9,7 +9,7 @@ import '../ui/pages/vocab_lesson_page/vocab_lesson_page.dart';
 import '../ui/pages/vocab_page/vocab_page.dart';
 import 'app_routes.dart';
 
-const _defaultTransition = Transition.native;
+const _defaultTransition = Transition.rightToLeft;
 
 class AppPages {
   static final unknownRoutePage = GetPage(
