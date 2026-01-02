@@ -2022,7 +2022,7 @@ final minnaLesson7 = {
     "nengajō",
     "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
   ],
-  "punch": [
+  "စက္ကူဖောက်စက်": [
     "パンチ",
     "パンチ",
     "panchi",
@@ -2040,7 +2040,7 @@ final minnaLesson7 = {
     "serotēpu",
     "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
   ],
-  "ခဲဖျတ်": [
+  "ခဲဖျက်": [
     "けしゴム",
     "消しゴム",
     "keshigomu",
@@ -2205,7 +2205,7 @@ final minnaLesson8 = {
     "yūmei [na]",
     "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
   ],
-  "ဖေါ်ွေသော။ ကြင်နာတတ်သော": [
+  "ဖေါ်ရွေသော။ ကြင်နာတတ်သော": [
     "しんせつ [な]",
     "親切 [な]",
     "shinsetsu [na]",
@@ -2505,7 +2505,7 @@ final minnaLesson8 = {
     "Fuji-san",
     "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
   ],
-  "စာမူရိုင်း ၇ယောက်ရှေးရုပ်ရှင်": [
+  "စာမူရိုင်း ၇ယောက်ရှေးခေတ်ရုပ်ရှင်": [
     "しちにんのさむらい",
     "「七人の侍」",
     "Shichinin no Samurai",

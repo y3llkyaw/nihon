@@ -3,7 +3,6 @@ import 'dart:math' as math;
 import 'package:flutter/foundation.dart';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
-import 'dart:js' as js;
 
 class TtsController extends GetxController {
   final FlutterTts tts = FlutterTts();
@@ -40,30 +39,6 @@ class TtsController extends GetxController {
   Future<void> speak(String text) async {
     speakingWord.value = text;
 
-    if (kIsWeb) {
-      // use browser speech synthesis via JS and await estimated duration
-      final safeText = text.replaceAll("'", r"\'").replaceAll('\n', ' ');
-      js.context.callMethod('eval', [
-        """
-        speechSynthesis.cancel();
-        const utter = new SpeechSynthesisUtterance('$safeText');
-        utter.lang = 'ja-JP';
-        utter.rate = 1.0;
-        speechSynthesis.speak(utter);
-      """
-      ]);
-
-      final estimatedMs = math.min(10000, math.max(800, text.length * 250));
-      duration.value = estimatedMs;
-      try {
-        
-        await Future.delayed(Duration(milliseconds: estimatedMs));
-      } finally {
-        if (speakingWord.value == text) speakingWord.value = "";
-      }
-      return;
-    }
-
     // native path: use completer + flutter_tts handlers
     _speechCompleter = Completer<void>();
     try {
@@ -90,15 +65,7 @@ class TtsController extends GetxController {
     }
     _speechCompleter = null;
     try {
-      if (kIsWeb) {
-        js.context.callMethod('eval', [
-          """
-        speechSynthesis.stop();
-        """
-        ]);
-      } else {
-        await tts.stop();
-      }
+      await tts.stop();
     } catch (e) {
       try {
         await tts.stop();

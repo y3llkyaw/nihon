@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:hiragana/app/routes/middlewares.dart';
 
 import '../bindings/home_binding.dart';
-import '../ui/pages/home_page/home_page.dart';
+import '../ui/pages/container_page/container_page.dart';
 import '../ui/pages/unknown_route_page/unknown_route_page.dart';
 import '../ui/pages/vocab_flash_card_page/vocab_flash_card_page.dart';
 import '../ui/pages/vocab_lesson_page/vocab_lesson_page.dart';
@@ -22,7 +22,7 @@ class AppPages {
     unknownRoutePage,
     GetPage(
       name: AppRoutes.HOME,
-      page: () => const HomePage(),
+      page: () => const ContainerPage(),
       binding: HomeBinding(),
       transition: _defaultTransition,
     ),

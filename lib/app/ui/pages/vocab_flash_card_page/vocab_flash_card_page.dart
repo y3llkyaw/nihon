@@ -93,23 +93,23 @@ class VocabFlashCardPage extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Row(
-                        spacing: 10,
-                        children: [
-                          Switch(
-                            value: controller.isImageShow.value,
-                            onChanged: (value) {
-                              controller.isImageShow.value = value;
-                            },
-                          ),
-                          Text(
-                            "Image Shown",
-                            style: GoogleFonts.notoSansJavanese(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
+                      // Row(
+                      //   spacing: 10,
+                      //   children: [
+                      //     Switch(
+                      //       value: controller.isImageShow.value,
+                      //       onChanged: (value) {
+                      //         controller.isImageShow.value = value;
+                      //       },
+                      //     ),
+                      //     Text(
+                      //       "Image Shown",
+                      //       style: GoogleFonts.notoSansJavanese(
+                      //         fontWeight: FontWeight.bold,
+                      //       ),
+                      //     ),
+                      //   ],
+                      // ),
                     ],
                   ),
                 ),
