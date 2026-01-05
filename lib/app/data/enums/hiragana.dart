@@ -222,320 +222,594 @@ final vocabLessons = [
   minnaLesson24,
   minnaLesson25,
 ];
-
 final minnaLesson1 = {
   'ကျွန်တော်၊ ကျွန်မ': [
     'わたし',
     '私',
     'watashi',
-    'https://cdn-icons-png.flaticon.com/512/4140/4140048.png'
+    'https://cdn-icons-png.flaticon.com/512/4140/4140048.png',
+    'わたしは マイクです。\n(ကျွန်တော်က မိုက်ပါ။)'
   ],
   'ခင်ဗျာ၊ မင်း၊ နင်': [
     'あなた',
     'あなた',
     'anata',
-    'https://cdn-icons-png.flaticon.com/512/4140/4140054.png'
+    'https://cdn-icons-png.flaticon.com/512/4140/4140054.png',
+    'あなたは がくせいですか。\n(ခင်ဗျားက ကျောင်းသားလား။)'
   ],
   'ဟိုလူ (ရိုးရိုးအသုံး)': [
     'あのひと',
     'あの人',
     'ano hito',
-    'https://cdn-icons-png.flaticon.com/512/4140/4140037.png'
+    'https://cdn-icons-png.flaticon.com/512/4140/4140037.png',
+    'あのひとは きむらさんです。\n(ဟိုလူက ခိမုရပါ။)'
   ],
   'ဟိုလူ (ယဉ်ကျေးသောအသုံး)': [
     'あのかた',
     'あの方',
     'ano kata',
-    'https://cdn-icons-png.flaticon.com/512/4140/4140061.png'
+    'https://cdn-icons-png.flaticon.com/512/4140/4140061.png',
+    'あのかたは どなたですか。\n(ဟိုပုဂ္ဂိုလ်က ဘယ်သူပါလဲ။)'
   ],
   '(နာမည်နောက်က တင်သုံးသည့်ခေါ်နည်း)': [
     '～さん',
     '～さん',
     '～san',
-    'https://cdn-icons-png.flaticon.com/512/166/166258.png'
+    'https://cdn-icons-png.flaticon.com/512/166/166258.png',
+    'あの方は ミラーさんです。\n(ဟိုလူက မစ္စတာမီလာ ဖြစ်ပါတယ်။)'
   ],
   '(ကလေးများအတွက် ချစ်စွာခေါ်နည်း)': [
     '～ちゃん',
     '～ちゃん',
     '～chan',
-    'https://cdn-icons-png.flaticon.com/512/2922/2922510.png'
+    'https://cdn-icons-png.flaticon.com/512/2922/2922510.png',
+    'たろうちゃんは ８さいです。\n(တာရိုလေးက ၈ နှစ်ပါ။)'
   ],
   '--လူမျိုး (ဥပမာ アメリカじん = အမေရိကန်လူမျိုး)': [
     '～じん',
     '～人',
     '～jin',
-    'https://cdn-icons-png.flaticon.com/512/921/921347.png'
+    'https://cdn-icons-png.flaticon.com/512/921/921347.png',
+    'かれは アメリカじんです。\n(သူက အမေရိကန်လူမျိုးပါ။)'
   ],
   'အမေရိကန်လူမျိုး': [
     'アメリカじん',
     'アメリカ人',
     'Amerika-jin',
-    'https://cdn-icons-png.flaticon.com/512/197/197484.png'
+    'https://cdn-icons-png.flaticon.com/512/197/197484.png',
+    'わたしは アメリカじんです。\n(ကျွန်တော်က အမေရိကန်လူမျိုးပါ။)'
   ],
   'ဆရာ၊ ဆရာမ': [
     'せんせい',
     '先生',
     'sensei',
-    'https://cdn-icons-png.flaticon.com/512/2784/2784465.png'
+    'https://cdn-icons-png.flaticon.com/512/2784/2784465.png',
+    'ワンさんは せんせいです。\n(ဝမ်ဆန်က ဆရာမ ဖြစ်ပါတယ်။)'
   ],
   'ဆရာ၊ ဆရာမ (အလုပ်အကိုင်)': [
     'きょうし',
     '教師',
     'kyōshi',
-    'https://cdn-icons-png.flaticon.com/512/3235/3235043.png'
+    'https://cdn-icons-png.flaticon.com/512/3235/3235043.png',
+    'わたしは きょうしです。\n(ကျွန်တော်က ကျောင်းဆရာပါ။)'
   ],
   'ကျောင်းသား၊ ကျောင်းသူ': [
     'がくせい',
     '学生',
     'gakusei',
-    'https://cdn-icons-png.flaticon.com/512/3135/3135755.png'
+    'https://cdn-icons-png.flaticon.com/512/3135/3135755.png',
+    'わたしは がくせいです。\n(ကျွန်တော်က ကျောင်းသားပါ။)'
   ],
   'ကုမ္ပဏီဝန်ထမ်း': [
     'かいしゃいん',
     '会社員',
     'kaishain',
-    'https://cdn-icons-png.flaticon.com/512/3135/3135692.png'
+    'https://cdn-icons-png.flaticon.com/512/3135/3135692.png',
+    'グプタさんは かいしゃいんです。\n(ဂုပုတဆန်က ကုမ္ပဏီဝန်ထမ်းပါ။)'
   ],
   '(ကုမ္ပဏီအတွင်း ဝန်ထမ်း)': [
     'しゃいん',
     '社員',
     'shain',
-    'https://cdn-icons-png.flaticon.com/512/681/681611.png'
+    'https://cdn-icons-png.flaticon.com/512/681/681611.png',
+    'わたしは IMCの しゃいんです。\n(ကျွန်တော်က IMC ကုမ္ပဏီဝန်ထမ်းပါ။)'
   ],
   'ဘဏ်ဝန်ထမ်း': [
     'ぎんこういん',
     '銀行員',
     'ginkōin',
-    'https://cdn-icons-png.flaticon.com/512/2830/2830060.png'
+    'https://cdn-icons-png.flaticon.com/512/2830/2830060.png',
+    'イーさんは ぎんこういんです。\n(အီးဆန်က ဘဏ်ဝန်ထမ်းပါ။)'
   ],
   'ဆရာဝန်': [
     'いしゃ',
     '医者',
     'isha',
-    'https://cdn-icons-png.flaticon.com/512/3774/3774299.png'
+    'https://cdn-icons-png.flaticon.com/512/3774/3774299.png',
+    'シュミットさんは いしゃです。\n(ရှုမစ်တိုဆန်က ဆရာဝန်ပါ။)'
   ],
   'သုတေသနပညာရှင်': [
     'けんきゅうしゃ',
     '研究者',
     'kenkyūsha',
-    'https://cdn-icons-png.flaticon.com/512/3845/3845837.png'
+    'https://cdn-icons-png.flaticon.com/512/3845/3845837.png',
+    'ワットさんは けんきゅうしゃです。\n(ဝပ်ဆန်က သုတေသနပညာရှင်ပါ။)'
   ],
   'တက္ကသိုလ်': [
     'だいがく',
     '大学',
     'daigaku',
-    'https://cdn-icons-png.flaticon.com/512/8074/8074800.png'
+    'https://cdn-icons-png.flaticon.com/512/8074/8074800.png',
+    'ここは だいがくです。\n(ဒီနေရာက တက္ကသိုလ်ပါ။)'
   ],
   'ဆေးရုံ': [
     'びょういん',
     '病院',
     'byōin',
-    'https://cdn-icons-png.flaticon.com/512/3004/3004458.png'
+    'https://cdn-icons-png.flaticon.com/512/3004/3004458.png',
+    '神戸（こうべ）びょういん\n(ခိုဘေးဆေးရုံ)'
   ],
   'ဘယ်သူ (ရိုးရိုး)': [
     'だれ',
     'だれ',
     'dare',
-    'https://cdn-icons-png.flaticon.com/512/4140/4140047.png'
+    'https://cdn-icons-png.flaticon.com/512/4140/4140047.png',
+    'あのひとは だれですか。\n(ဟိုလူက ဘယ်သူလဲ။)'
   ],
   'ဘယ်သူ (ယဉ်ကျေး)': [
     'どなた',
     'どなた',
     'donata',
-    'https://cdn-icons-png.flaticon.com/512/4140/4140044.png'
+    'https://cdn-icons-png.flaticon.com/512/4140/4140044.png',
+    'あのかたは どなたですか。\n(ဟိုပုဂ္ဂိုလ်က ဘယ်သူပါလဲ။)'
   ],
   'အသက် -- နှစ်': [
     '～さい',
     '～歳',
     '～sai',
-    'https://cdn-icons-png.flaticon.com/512/992/992700.png'
+    'https://cdn-icons-png.flaticon.com/512/992/992700.png',
+    'わたしは ２０さいです。\n(ကျွန်တော်က အသက် ၂၀ ပါ။)'
   ],
   'အသက်ဘယ်နှစ်နှစ်လဲ': [
     'なんさい',
     '何歳',
     'nansai',
-    'https://cdn-icons-png.flaticon.com/512/4712/4712108.png'
+    'https://cdn-icons-png.flaticon.com/512/4712/4712108.png',
+    'サントスさんは なんさいですか。\n(ဆန်းတိုးစ်ဆန်က အသက်ဘယ်လောက်လဲ။)'
   ],
   'အသက်ဘယ်နှစ်နှစ်လဲ (ယဉ်ကျေး)': [
     'おいくつ',
     'おいくつ',
     'oikutsu',
-    'https://cdn-icons-png.flaticon.com/512/4712/4712108.png'
+    'https://cdn-icons-png.flaticon.com/512/4712/4712108.png',
+    'おいくつですか。\n(အသက် ဘယ်လောက်ပါလဲ။)'
   ],
   'ဟုတ်တယ်': [
     'はい',
     'はい',
     'hai',
-    'https://cdn-icons-png.flaticon.com/512/709/709510.png'
+    'https://cdn-icons-png.flaticon.com/512/709/709510.png',
+    'はい、そうです。\n(ဟုတ်ကဲ့၊ ဟုတ်ပါတယ်။)'
   ],
   'မဟုတ်ဘူး': [
     'いいえ',
     'いいえ',
     'īe',
-    'https://cdn-icons-png.flaticon.com/512/753/753345.png'
+    'https://cdn-icons-png.flaticon.com/512/753/753345.png',
+    'いいえ、ちがいます。\n(ဟင့်အင်း၊ မဟုတ်ပါဘူး။)'
   ],
   'တွေ့ရတာ၀မ်းသာပါတယ်': [
     'はじめまして',
     '初めまして',
     'hajimemashite',
-    'https://cdn-icons-png.flaticon.com/512/456/456212.png'
+    'https://cdn-icons-png.flaticon.com/512/456/456212.png',
+    'はじめまして。マイクです。\n(တွေ့ရတာဝမ်းသာပါတယ်။ မိုက်ပါ။)'
   ],
   '-- ကနေ လာပါတယ်': [
     '～からきました',
     '～から来ました',
     '～ kara kimashita',
-    'https://cdn-icons-png.flaticon.com/512/197/197606.png'
+    'https://cdn-icons-png.flaticon.com/512/197/197606.png',
+    'アメリカから きました。\n(အမေရိကကနေ လာပါတယ်။)'
   ],
   'ကျေးဇူးပြု၍ ရင်းရင်းနီးနီးဆက်ဆံပါလို့ တောင်းဆိုချင်ပါတယ်': [
     'どうぞ、よろしく おねがいします',
     'どうぞ、よろしく お願いします',
     'dōzo, yoroshiku onegaishimasu',
-    'https://cdn-icons-png.flaticon.com/512/4712/4712109.png'
+    'https://cdn-icons-png.flaticon.com/512/4712/4712109.png',
+    'どうぞ よろしく [おねがいします]。\n(ကျေးဇူးပြုပြီး ခင်ခင်မင်မင် ဆက်ဆံပေးပါ။)'
   ],
   'တောင်းပန်ပါတယ် (မေးခွန်းမေးချင်သောအခါ)': [
     'しつれいですが',
     '失礼ですが',
     'shitsurei desu ga',
-    'https://cdn-icons-png.flaticon.com/512/6364/6364087.png'
+    'https://cdn-icons-png.flaticon.com/512/6364/6364087.png',
+    'しつれいですが、おなまえは？\n(တောင်းပန်ပါတယ်၊ နာမည်ဘယ်လိုခေါ်ပါသလဲ။)'
   ],
   'နာမည်ဘယ်လိုခေါ်ပါသလဲ': [
     'おなまえは？',
     'お名前は？',
     'o namae wa?',
-    'https://cdn-icons-png.flaticon.com/512/1077/1077063.png'
+    'https://cdn-icons-png.flaticon.com/512/1077/1077063.png',
+    'しつれいですが、おなまえは？\n(တောင်းပန်ပါတယ်၊ နာမည်ဘယ်လိုခေါ်ပါသလဲ။)'
   ],
   'ဤသူမှာ ～ さん ဖြစ်ပါတယ်': [
     'こちらは～さんです',
     'こちらは～さんです',
     'kochira wa ～-san desu',
-    'https://cdn-icons-png.flaticon.com/512/4140/4140039.png'
+    'https://cdn-icons-png.flaticon.com/512/4140/4140039.png',
+    'こちらは ミラーさんです。\n(ဒီလူကတော့ မစ္စတာမီလာပါ။)'
   ],
   'အမေရိကာ (နိုင်ငံ)': [
     'アメリカ',
     'アメリカ',
     'Amerika',
-    'https://cdn-icons-png.flaticon.com/512/197/197484.png'
+    'https://cdn-icons-png.flaticon.com/512/197/197484.png',
+    'わたしは アメリカから きました。\n(ကျွန်တော် အမေရိကကနေ လာပါတယ်။)'
   ],
   'အင်္ဂလန် (နိုင်ငံ)': [
     'イギリス',
     'イギリス',
     'Igirisu',
-    'https://cdn-icons-png.flaticon.com/512/197/197374.png'
+    'https://cdn-icons-png.flaticon.com/512/197/197374.png',
+    'ワットさんは イギリスじんです。\n(ဝပ်ဆန်က အင်္ဂလန်လူမျိုးပါ။)'
   ],
   'အိန္ဒြိယ (နိုင်ငံ)': [
     'インド',
     'インド',
     'Indo',
-    'https://cdn-icons-png.flaticon.com/512/197/197419.png'
+    'https://cdn-icons-png.flaticon.com/512/197/197419.png',
+    'ラオさんは インドじんです。\n(ရာအိုဆန်က အိန္ဒိယလူမျိုးပါ။)'
   ],
   'အင်ဒိုနီးရှား (နိုင်ငံ)': [
     'インドネシア',
     'インドネシア',
     'Indoneshia',
-    'https://cdn-icons-png.flaticon.com/512/197/197561.png'
+    'https://cdn-icons-png.flaticon.com/512/197/197561.png',
+    'カリナさんは インドネシアじんです。\n(ခရီနာဆန်က အင်ဒိုနီးရှားလူမျိုးပါ။)'
   ],
   'တောင်ကိုရီးယား (နိုင်ငံ)': [
     'かんこく',
     '韓国',
     'Kankoku',
-    'https://cdn-icons-png.flaticon.com/512/197/197582.png'
+    'https://cdn-icons-png.flaticon.com/512/197/197582.png',
+    'イさんは かんこくじんです。\n(အီးဆန်က ကိုရီးယားလူမျိုးပါ။)'
   ],
   'ထိုင်း (နိုင်ငံ)': [
     'タイ',
     'タイ',
     'Tai',
-    'https://cdn-icons-png.flaticon.com/512/197/197452.png'
+    'https://cdn-icons-png.flaticon.com/512/197/197452.png',
+    'タワポンさんは タイじんです。\n(တာဝပ်ပွန်းဆန်က ထိုင်းလူမျိုးပါ။)'
   ],
   'တရုတ် (နိုင်ငံ)': [
     'ちゅうごく',
     '中国',
     'Chūgoku',
-    'https://cdn-icons-png.flaticon.com/512/197/197375.png'
+    'https://cdn-icons-png.flaticon.com/512/197/197375.png',
+    'ワンさんは ちゅうごくじんです。\n(ဝမ်ဆန်က တရုတ်လူမျိုးပါ။)'
   ],
   'ဂျာမနီ (နိုင်ငံ)': [
     'ドイツ',
     'ドイツ',
     'Doitsu',
-    'https://cdn-icons-png.flaticon.com/512/197/197571.png'
+    'https://cdn-icons-png.flaticon.com/512/197/197571.png',
+    'シュミットさんは ドイツじんです。\n(ရှုမစ်တိုဆန်က ဂျာမန်လူမျိုးပါ။)'
   ],
   'ဂျပန် (နိုင်ငံ)': [
     'にほん',
     '日本',
     'Nihon',
-    'https://cdn-icons-png.flaticon.com/512/197/197604.png'
+    'https://cdn-icons-png.flaticon.com/512/197/197604.png',
+    'きむらさんは にほんじんです。\n(ခိမုရဆန်က ဂျပန်လူမျိုးပါ။)'
   ],
   'ဘရာဇီး (နိုင်ငံ)': [
     'ブラジル',
     'ブラジル',
     'Burajiru',
-    'https://cdn-icons-png.flaticon.com/512/197/197386.png'
+    'https://cdn-icons-png.flaticon.com/512/197/197386.png',
+    'サントスさんは ブラジルじんです。\n(ဆန်းတိုးစ်ဆန်က ဘရာဇီးလူမျိုးပါ။)'
   ],
 };
 
 final minnaLesson2 = {
   // I. ညွှန်းဆိုသောနာမ်စားများ (Demonstratives)
-  'ဒါ (ဤဟာ)': ['これ', 'これ', 'kore', ''],
-  'အဲ့ဒါ (နီးကပ်သူ)': ['それ', 'それ', 'sore', ''],
-  'ဟိုဟာ (ဝေးသူ)': ['あれ', 'あれ', 'are', ''],
-  'ဘယ်ဟာ': ['どれ', 'どれ', 'dore', ''],
-
-  'ဤအရာ (နာမ်ရှေ့တွင်)': ['この', 'この', 'kono', ''],
-  'အဲ့ဒီအရာ (နာမ်ရှေ့တွင်)': ['その', 'その', 'sono', ''],
-  'ဟိုအရာ (နာမ်ရှေ့တွင်)': ['あの', 'あの', 'ano', ''],
-  'ဘယ်အရာ (နာမ်ရှေ့တွင်)': ['どの', 'どの', 'dono', ''],
+  'ဒါ (ဤဟာ)': [
+    'これ', 
+    'これ', 
+    'kore', 
+    '', 
+    'これは じしょです。\n(ဒါက အဘိဓာန်ဖြစ်ပါတယ်။)'
+  ],
+  'အဲ့ဒါ (နီးကပ်သူ)': [
+    'それ', 
+    'それ', 
+    'sore', 
+    '', 
+    'それは わたしの かさです。\n(အဲဒါက ကျွန်တော့်ရဲ့ ထီးပါ။)'
+  ],
+  'ဟိုဟာ (ဝေးသူ)': [
+    'あれ', 
+    'あれ', 
+    'are', 
+    '', 
+    'あれは だれのかばんですか。\n(ဟိုဟာက ဘယ်သူ့အိတ်လဲ။)'
+  ],
+  'ဘယ်ဟာ': [
+    'どれ', 
+    'どれ', 
+    'dore', 
+    '', 
+    'サントスさんのかさは どれですか。\n(ဆန်းတိုးစ်ဆန်ရဲ့ထီးက ဘယ်ဟာလဲ။)'
+  ],
+  'ဤအရာ (နာမ်ရှေ့တွင်)': [
+    'この', 
+    'この', 
+    'kono', 
+    '', 
+    'このほんは わたしのです。\n(ဒီစာအုပ်က ကျွန်တော့်ဟာပါ။)'
+  ],
+  'အဲ့ဒီအရာ (နာမ်ရှေ့တွင်)': [
+    'その', 
+    'その', 
+    'sono', 
+    '', 
+    'そのかばんは だれのですか。\n(အဲဒီအိတ်က ဘယ်သူ့ဟာလဲ။)'
+  ],
+  'ဟိုအရာ (နာမ်ရှေ့တွင်)': [
+    'あの', 
+    'あの', 
+    'ano', 
+    '', 
+    'あのかたは どなたですか。\n(ဟိုပုဂ္ဂိုလ်က ဘယ်သူပါလဲ။)'
+  ],
+  'ဘယ်အရာ (နာမ်ရှေ့တွင်)': [
+    'どの', 
+    'どの', 
+    'dono', 
+    '', 
+    'どのかぎが わたしのですか。\n(ဘယ်သော့က ကျွန်တော့်ဟာလဲ။)'
+  ],
 
   // II. နာမ်များ (Nouns)
-  'စာအုပ်': ['ほん', '本', 'hon', ''],
-  'အဘိဓာန်': ['じしょ', '辞書', 'jisho', ''],
-  'မဂ္ဂဇင်း': ['ざっし', '雑誌', 'zasshi', ''],
-  'သတင်းစာ': ['しんぶん', '新聞', 'shinbun', ''],
-  'နုတ်စာအုပ်': ['ノート', 'ノート', 'nōto', ''], // Note book
-  'မှတ်စုစာအုပ်': ['てちょう', '手帳', 'techō', ''], // Pocket book, diary
-  'လုပ်ငန်းကတ်/ နာမည်ကတ်': ['めいし', '名刺', 'meishi', ''],
-  'ကတ်': ['カード', 'カード', 'kādo', ''],
-  'ခဲတံ': ['えんぴつ', '鉛筆', 'enpitsu', ''],
-  'ဘောပင်': ['ボールペン', 'ボールペン', 'bōrupen', ''],
-  'စက်ခဲတံ (Sharp Pencil)': ['シャープペンシル', 'シャープペンシル', 'shāpu penshiru', ''],
-  'သော့': ['かぎ', '鍵', 'kagi', ''],
-  'နာရီ': ['とけい', '時計', 'tokei', ''],
-  'ထီး': ['かさ', '傘', 'kasa', ''],
-  'အိတ်': ['かばん', 'かばん', 'kaban', ''],
-  'စီဒီ': ['CD', 'CD', 'shīdī', ''],
-  'တယ်လီဗီးရှင်း': ['テレビ', 'テレビ', 'terebi', ''],
-  'ရေဒီယို': ['ラジオ', 'ラジオ', 'rajio', ''],
-  'ကင်မရာ': ['カメラ', 'カメラ', 'kamera', ''],
-  'ကွန်ပျူတာ': ['コンピューター', 'コンピューター', 'konpyūtā', ''],
-  'ကား': ['くるま', '車', 'kuruma', ''],
-  'စားပွဲ': ['つくえ', '机', 'tsukue', ''],
-  'ချောကလက်': ['チョコレート', 'チョコレート', 'chokorēto', ''],
-  'လက်ဆောင် (အမှတ်တရ)': ['おみやげ', 'おみやげ', 'omiyage', ''],
-
-  // III. အခြားစကားလုံးများနှင့် နှုတ်ဆက်စကားများ (Others & Greetings)
-  'ဒါဟုတ်လား၊ ဒီလိုလား': ['そうですか', 'そうですか', 'sō desu ka', ''],
-  'မဟုတ်ပါဘူး၊ မမှန်ပါဘူး': ['ちがいます', '違います', 'chigaimasu', ''],
-  'ကျေးဇူးတင်ပါတယ် (အတိုချုပ်)': ['どうも', 'どうも', 'dōmo', ''],
+  'စာအုပ်': [
+    'ほん', 
+    '本', 
+    'hon', 
+    '', 
+    'これは えいごの ほんです。\n(ဒါက အင်္ဂလိပ်စာအုပ် ဖြစ်ပါတယ်။)'
+  ],
+  'အဘိဓာန်': [
+    'じしょ', 
+    '辞書', 
+    'jisho', 
+    '', 
+    'これは カメラの じっしです。\n(ဒါက ကင်မရာမဂ္ဂဇင်းပါ။)'
+  ],
+  'မဂ္ဂဇင်း': [
+    'ざっし', 
+    '雑誌', 
+    'zasshi', 
+    '', 
+    'これは くるまの ざっしです。\n(ဒါက ကားမဂ္ဂဇင်း ဖြစ်ပါတယ်။)'
+  ],
+  'သတင်းစာ': [
+    'しんぶん', 
+    '新聞', 
+    'shinbun', 
+    '', 
+    'それは しんぶんですか。\n(အဲဒါ သတင်းစာလား။)'
+  ],
+  'နုတ်စာအုပ်': [
+    'ノート', 
+    'ノート', 
+    'nōto', 
+    '', 
+    'このノートは わたしのです。\n(ဒီမှတ်စုစာအုပ်က ကျွန်တော့်ဟာပါ။)'
+  ],
+  'မှတ်စုစာအုပ်': [
+    'てちょう', 
+    '手帳', 
+    'techō', 
+    '', 
+    'このてちょうは ミラーさんのです。\n(ဒီဒိုင်ယာရီက မစ္စတာမီလာဟာပါ။)'
+  ],
+  'လုပ်ငန်းကတ်/ နာမည်ကတ်': [
+    'めいし', 
+    '名刺', 
+    'meishi', 
+    '', 
+    'これは わたしの めいしです。\n(ဒါက ကျွန်တော့်ရဲ့ လိပ်စာကတ်ပါ။)'
+  ],
+  'ကတ်': [
+    'カード', 
+    'カード', 
+    'kādo', 
+    '', 
+    'これは テレホンカードです。\n(ဒါက တယ်လီဖုန်းကတ်ပါ။)'
+  ],
+  'ခဲတံ': [
+    'えんぴつ', 
+    '鉛筆', 
+    'enpitsu', 
+    '', 
+    'それは えんぴつですか。\n(အဲဒါ ခဲတံလား။)'
+  ],
+  'ဘောပင်': [
+    'ボールペン', 
+    'ボールペン', 
+    'bōrupen', 
+    '', 
+    'このボールペンを ください。\n(ဒီဘောပင်ကို ပေးပါ။)'
+  ],
+  'စက်ခဲတံ (Sharp Pencil)': [
+    'シャープペンシル', 
+    'シャープペンシル', 
+    'shāpu penshiru', 
+    '', 
+    'これは シャープペンシルです。\n(ဒါက စက်ခဲတံ ဖြစ်ပါတယ်။)'
+  ],
+  'သော့': [
+    'かぎ', 
+    '鍵', 
+    'kagi', 
+    '', 
+    'これは くるまの かぎです。\n(ဒါက ကားသော့ ဖြစ်ပါတယ်။)'
+  ],
+  'နာရီ': [
+    'とけい', 
+    '時計', 
+    'tokei', 
+    '', 
+    'このとけいは かれのです。\n(ဒီနာရီက သူ့ဟာပါ။)'
+  ],
+  'ထီး': [
+    'かさ', 
+    '傘', 
+    'kasa', 
+    '', 
+    'あれは わたしのかさでは ありません。\n(ဟိုဟာ ကျွန်တော့်ထီး မဟုတ်ပါဘူး။)'
+  ],
+  'အိတ်': [
+    'かばん', 
+    'かばん', 
+    'kaban', 
+    '', 
+    'そのかばんは すてきですね。\n(အဲဒီအိတ်က လှလိုက်တာနော်။)'
+  ],
+  'စီဒီ': [
+    'CD', 
+    'CD', 
+    'shīdī', 
+    '', 
+    'これは にほんごの CDです。\n(ဒါက ဂျပန်စာ CD ပါ။)'
+  ],
+  'တယ်လီဗီးရှင်း': [
+    'テレビ', 
+    'テレビ', 
+    'terebi', 
+    '', 
+    'テレビを みます。\n(တီဗီ ကြည့်တယ်။)'
+  ],
+  'ရေဒီယို': [
+    'ラジオ', 
+    'ラジオ', 
+    'rajio', 
+    '', 
+    'ラジオを ききます。\n(ရေဒီယို နားထောင်တယ်။)'
+  ],
+  'ကင်မရာ': [
+    'カメラ', 
+    'カメラ', 
+    'kamera', 
+    '', 
+    'このカメラは たかいですか。\n(ဒီကင်မရာက ဈေးကြီးလား။)'
+  ],
+  'ကွန်ပျူတာ': [
+    'コンピューター', 
+    'コンピューター', 
+    'konpyūtā', 
+    '', 
+    'コンピューターの かいしゃ。\n(ကွန်ပျူတာ ကုမ္ပဏီ။)'
+  ],
+  'ကား': [
+    'くるま', 
+    '車', 
+    'kuruma', 
+    '', 
+    'これは トヨタの くるまです。\n(ဒါက တိုယိုတာကား ဖြစ်ပါတယ်။)'
+  ],
+  'စားပွဲ': [
+    'つくえ', 
+    '机', 
+    'tsukue', 
+    '', 
+    'これは わたしの つくえです。\n(ဒါက ကျွန်တော့်စားပွဲပါ။)'
+  ],
+  'ချောကလက်': [
+    'チョコレート', 
+    'チョコレート', 
+    'chokorēto', 
+    '', 
+    'どうぞ、チョコレートです。\n(ရော့၊ ချောကလက်ပါ။)'
+  ],
+  'လက်ဆောင် (အမှတ်တရ)': [
+    'おみやげ', 
+    'おみやげ', 
+    'omiyage', 
+    '', 
+    'これは おみやげです。\n(ဒါက လက်ဆောင်ပါ။)'
+  ],
+  'ဒါဟုတ်လား၊ ဒီလိုလား': [
+    'そうですか', 
+    'そうですか', 
+    'sō desu ka', 
+    '', 
+    'A: あのひとは がくせいです。\nB: そうですか。\n(A: ဟိုလူက ကျောင်းသားပါ။ B: ဟုတ်လား/အဲလိုလား။)'
+  ],
+  'မဟုတ်ပါဘူး၊ မမှန်ပါဘူး': [
+    'ちがいます', 
+    '違います', 
+    'chigaimasu', 
+    '', 
+    'いいえ、ちがいます。\n(ဟင့်အင်း၊ မဟုတ်ပါဘူး။)'
+  ],
+  'ကျေးဇူးတင်ပါတယ် (အတိုချုပ်)': [
+    'どうも', 
+    'どうも', 
+    'dōmo', 
+    '', 
+    'どうも [ありがとうございます]。\n(ကျေးဇူးတင်ပါတယ်။)'
+  ],
   'ကျေးဇူးအထူးတင်ပါတယ်': [
     'どうもありがとうございます',
     'どうもありがとうございます',
     'dōmo arigatō gozaimasu',
-    ''
+    '',
+    'おみやげ、どうもありがとうございます。\n(လက်ဆောင်အတွက် ကျေးဇူးအထူးတင်ပါတယ်။)'
   ],
   'အခုကစပြီး ကျေးဇူးပြုပြီး ကူညီပါ': [
     'これからおせわになります',
     'これからお世話になります',
     'korekara o-sewa ni narimasu',
-    ''
+    '',
+    'どうぞ よろしく、これからおせわになります。\n(တွေ့ရတာဝမ်းသာပါတယ်၊ အခုကစပြီး ကူညီပါဦးနော်။)'
   ],
   'ကျွန်တော် (ကျွန်မ) နဲ့လည်း ရင်းရင်းနီးနီးဆက်ဆံပါ': [
     'こちらこそよろしく',
     'こちらこそよろしく',
     'kochira koso yoroshiku',
-    ''
+    '',
+    'A: よろしく おねがいします。\nB: こちらこそよろしく。\n(A: ကူညီပါဦးနော်။ B: ကျွန်တော့်ဘက်ကလည်း အလားတူပါ။)'
   ],
-  'ကျေးဇူးပြု၍ (တောင်းဆိုရာတွင်)': ['おねがいします', 'お願いします', 'onegaishimasu', ''],
-  'ဂျပန် (နိုင်ငံ)': ['にほん', '日本', 'Nihon', ''],
-  'အင်္ဂလိပ် (ဘာသာစကား)': ['えいご', '英語', 'eigo', ''],
-  'ဂျပန် (ဘာသာစကား)': ['にほんご', '日本語', 'Nihongo', ''],
+  'ကျေးဇူးပြု၍ (တောင်းဆိုရာတွင်)': [
+    'おねがいします', 
+    'お願いします', 
+    'onegaishimasu', 
+    '', 
+    'よろしく おねがいします。\n(ကျေးဇူးပြုပြီး ကူညီပါ/ခင်မင်ပါ။)'
+  ],
+  'ဂျပန် (နိုင်ငံ)': [
+    'にほん', 
+    '日本', 
+    'Nihon', 
+    '', 
+    'わたしは にほんから きました。\n(ကျွန်တော် ဂျပန်ကနေ လာပါတယ်။)'
+  ],
+  'အင်္ဂလိပ် (ဘာသာစကား)': [
+    'えいご', 
+    '英語', 
+    'eigo', 
+    '', 
+    'これは えいごの ほんです。\n(ဒါက အင်္ဂလိပ်စာအုပ်ပါ။)'
+  ],
+  'ဂျပန် (ဘာသာစကား)': [
+    'にほんご', 
+    '日本語', 
+    'Nihongo', 
+    '', 
+    'これは にほんごの ほんです。\n(ဒါက ဂျပန်စာအုပ်ပါ။)'
+  ],
 };
 
 final minnaLesson3 = {
@@ -543,291 +817,282 @@ final minnaLesson3 = {
     "ここ",
     "ここ",
     "koko",
-    "https://cdn-icons-png.flaticon.com/512/3097/3097204.png"
+    "https://cdn-icons-png.flaticon.com/512/3097/3097204.png",
+    "ここは しょくどうです。\n(ဒီနေရာက ထမင်းစားခန်းပါ။)"
   ],
   "အဲဒီမှာ၊ အဲဒီနေရာ": [
     "そこ",
     "そこ",
     "soko",
-    "https://cdn-icons-png.flaticon.com/512/3097/3097204.png"
+    "https://cdn-icons-png.flaticon.com/512/3097/3097204.png",
+    "そこは トイレです。\n(အဲဒီနေရာက အိမ်သာပါ။)"
   ],
   "ဟိုမှာ၊ ဟိုနေရာ": [
     "あそこ",
     "あそこ",
     "asoko",
-    "https://cdn-icons-png.flaticon.com/512/3097/3097204.png"
+    "https://cdn-icons-png.flaticon.com/512/3097/3097204.png",
+    "あそこは じむしょです。\n(ဟိုနေရာက ရုံးခန်းပါ။)"
   ],
   "ဘယ်မှာလဲ": [
     "どこ",
     "どこ",
     "doko",
-    "https://cdn-icons-png.flaticon.com/512/3097/3097202.png"
+    "https://cdn-icons-png.flaticon.com/512/3097/3097202.png",
+    "トイレは どこですか。\n(အိမ်သာက ဘယ်မှာလဲ။)"
   ],
   "ဒီဘက်မှာ (ယဉ်ကျေး)": [
     "こちら",
     "こちら",
     "kochira",
-    "https://cdn-icons-png.flaticon.com/512/4992/4992743.png"
+    "https://cdn-icons-png.flaticon.com/512/4992/4992743.png",
+    "こちらは かいぎしつです。\n(ဒီဘက်က အစည်းအဝေးခန်းပါ။)"
   ],
   "ဟိုဘက်မှာ (ယဉ်ကျေး)": [
     "そちら",
     "そちら",
     "sochira",
-    "https://cdn-icons-png.flaticon.com/512/4992/4992743.png"
+    "https://cdn-icons-png.flaticon.com/512/4992/4992743.png",
+    "そちらは エレベーターです。\n(အဲဒီဘက်က ဓာတ်လှေကားပါ။)"
   ],
   "ဟိုးဘက်မှာ (ယဉ်ကျေး)": [
     "あちら",
     "あちら",
     "achira",
-    "https://cdn-icons-png.flaticon.com/512/4992/4992743.png"
+    "https://cdn-icons-png.flaticon.com/512/4992/4992743.png",
+    "あちらは お手洗い（おてあらい）です。\n(ဟိုးဘက်က အိမ်သာပါ။)"
   ],
   "ဘယ်ဘက်မှာလဲ (ယဉ်ကျေး)": [
     "どちら",
     "どちら",
     "dochira",
-    "https://cdn-icons-png.flaticon.com/512/4992/4992745.png"
+    "https://cdn-icons-png.flaticon.com/512/4992/4992745.png",
+    "エレベーターは どちらですか。\n(ဓာတ်လှေကားက ဘယ်ဘက်မှာပါလဲ။)"
   ],
   "စာသင်ခန်း": [
     "きょうしつ",
     "教室",
     "kyōshitsu",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "ここは きょうしつです。\n(ဒီနေရာက စာသင်ခန်းပါ။)"
   ],
   "ထမင်းစားခန်း/ ထမင်းဆိုင်": [
     "しょくどう",
     "食堂",
     "shokudō",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "しょくどうは どこですか。\n(ထမင်းစားခန်းက ဘယ်မှာလဲ။)"
   ],
   "ရုံးခန်း": [
     "じむしょ",
     "事務所",
     "jimusho",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "じむしょは あそこです。\n(ရုံးခန်းက ဟိုနားမှာပါ။)"
   ],
   "အစည်းအဝေးခန်း": [
     "かいぎしつ",
     "会議室",
     "kaigishitsu",
-    "https://cdn-icons-png.flaticon.com/512/5110/5110191.png"
+    "https://cdn-icons-png.flaticon.com/512/5110/5110191.png",
+    "かいぎしつは ２かいです。\n(အစည်းအဝေးခန်းက ဒုတိယထပ်မှာပါ။)"
   ],
   "စုံစမ်းရန်ကောင်တာ": [
     "うけつけ",
     "受付",
     "uketsuke",
-    "https://cdn-icons-png.flaticon.com/512/4603/4603612.png"
+    "https://cdn-icons-png.flaticon.com/512/4603/4603612.png",
+    "うけつけは ここです。\n(ကြိုဆိုရေးကောင်တာက ဒီမှာပါ။)"
   ],
   "ဧည့်ခန်း၊ ဟိုတယ်ဧည့်ခန်း": [
     "ロビー",
     "ロビー",
     "robī",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855776.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855776.png",
+    "ロビーは あそこです。\n(ဧည့်ခန်းက ဟိုနားမှာပါ။)"
   ],
   "အခန်း": [
     "へや",
     "部屋",
     "heya",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "ここは わたしの へやです。\n(ဒါက ကျွန်တော့်အခန်းပါ။)"
   ],
   "အိမ်သာ": [
     "トイレ",
     "トイレ",
     "toire",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "トイレは どこですか。\n(အိမ်သာ ဘယ်မှာလဲ။)"
   ],
   "လှေခါး": [
     "かいだん",
     "階段",
     "kaidan",
-    "https://cdn-icons-png.flaticon.com/512/5193/5193910.png"
+    "https://cdn-icons-png.flaticon.com/512/5193/5193910.png",
+    "かいだんは あそこです。\n(လှေကားက ဟိုနားမှာပါ။)"
   ],
   "ဓါတ်လှေခါး": [
     "エレベーター",
     "エレベーター",
     "erebētā",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "エレベーターは どちらですか。\n(ဓာတ်လှေကားက ဘယ်ဘက်မှာလဲ။)"
   ],
   "စက်လှေခါး": [
     "エスカレーター",
     "エスカレーター",
     "esukarētā",
-    "https://cdn-icons-png.flaticon.com/512/5323/5323419.png"
-  ],
-  "အလိုအလျောက်ဈေးရောင်းသည့်စက်": [
-    "じどうはんばいき",
-    "自動販売機",
-    "jidōhanbaiki",
-    "https://cdn-icons-png.flaticon.com/512/3757/3757731.png"
-  ],
-  "တယ်လီဖုန်း": [
-    "でんわ",
-    "電話",
-    "denwa",
-    "https://cdn-icons-png.flaticon.com/512/126/126509.png"
+    "https://cdn-icons-png.flaticon.com/512/5323/5323419.png",
+    "エスカレーターは ３かいです。\n(စက်လှေကားက ၃ ထပ်မှာပါ။)"
   ],
   "နိုင်ငံ": [
     "くに",
     "国",
     "kuni",
-    "https://cdn-icons-png.flaticon.com/512/1261/1261689.png"
+    "https://cdn-icons-png.flaticon.com/512/1261/1261689.png",
+    "おぐには どちらですか。\n(တိုင်းပြည်က ဘယ်ကပါလဲ။)"
   ],
   "ကုမ္ပဏီ": [
     "かいしゃ",
     "会社",
     "kaisha",
-    "https://www.entrepreneur.com/wp-content/uploads/sites/2/2016/06/20150805204041-google-company-building-corporate.jpeg"
+    "https://www.entrepreneur.com/wp-content/uploads/sites/2/2016/06/20150805204041-google-company-building-corporate.jpeg",
+    "かいしゃは どちらですか。\n(ကုမ္ပဏီက ဘယ်မှာလဲ။)"
   ],
   "အိမ်": [
     "うち",
     "うち",
     "uchi",
-    "https://www.bhg.com/thmb/H9VV9JNnKl-H1faFXnPlQfNprYw=/1799x0/filters:no_upscale():strip_icc()/white-modern-house-curved-patio-archway-c0a4a3b3-aa51b24d14d0464ea15d36e05aa85ac9.jpg"
+    "https://www.bhg.com/thmb/H9VV9JNnKl-H1faFXnPlQfNprYw=/1799x0/filters:no_upscale():strip_icc()/white-modern-house-curved-patio-archway-c0a4a3b3-aa51b24d14d0464ea15d36e05aa85ac9.jpg",
+    "うちは おおさかです。\n(အိမ်က အိုဆာကာမှာပါ။)"
   ],
   "ဖိနပ်": [
     "くつ",
     "靴",
     "kutsu",
-    "https://upload.wikimedia.org/wikipedia/commons/d/dc/74892143_f94145facb.jpg"
+    "https://upload.wikimedia.org/wikipedia/commons/d/dc/74892143_f94145facb.jpg",
+    "これは イタリアの くつです。\n(ဒါက အီတလီ ဖိနပ်ပါ။)"
   ],
   "လည်စည်း (Necktie)": [
     "ネクタイ",
     "ネクタイ",
     "nekutai",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Krawaty.jpg/250px-Krawaty.jpg"
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Krawaty.jpg/250px-Krawaty.jpg",
+    "このネクタイは 1,500えんです。\n(ဒီလည်စည်းက ၁၅၀၀ ယန်းပါ။)"
   ],
-  "ဝိုင်": ["ワイン", "ワイン", "wain", "https://en.wikipedia.org/wiki/Red_wine"],
+  "ဝိုင်": [
+    "ワイン", 
+    "ワイン", 
+    "wain", 
+    "https://en.wikipedia.org/wiki/Red_wine",
+    "これは フランスの ワインです。\n(ဒါက ပြင်သစ်ဝိုင်ပါ။)"
+  ],
   "အရောင်းကောင်တာ": [
     "うりば",
     "売り場",
     "uriba",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Cash_Registers.JPG/1200px-Cash_Registers.JPG"
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Cash_Registers.JPG/1200px-Cash_Registers.JPG",
+    "ワインうりばは ちか１かいです。\n(ဝိုင်အရောင်းကောင်တာက မြေအောက် ၁ ထပ်မှာပါ။)"
   ],
   "မြေအောက်": [
     "ちか",
     "地下",
     "chika",
-    "https://upload.wikimedia.org/wikipedia/commons/2/27/Tenjin_Chikagai%28Tenjin_Underground_City%29_-_02.JPG"
+    "https://upload.wikimedia.org/wikipedia/commons/2/27/Tenjin_Chikagai%28Tenjin_Underground_City%29_-_02.JPG",
+    "ちか１かい\n(မြေအောက် ၁ ထပ်)"
   ],
   "~အထပ်": [
     "～かい",
     "～階",
     "～kai",
-    "https://cdn-icons-png.flaticon.com/512/569/569947.png"
+    "https://cdn-icons-png.flaticon.com/512/569/569947.png",
+    "わたしのへやは ３かいです。\n(ကျွန်တော့်အခန်းက ၃ ထပ်မှာပါ။)"
   ],
   "ဘယ်နှစ်ထပ်": [
     "なんがい",
     "何階",
     "nangai",
-    "https://i.pinimg.com/736x/d1/4f/fa/d14ffa353b68eca67faaab4db73030f9.jpg"
+    "https://i.pinimg.com/736x/d1/4f/fa/d14ffa353b68eca67faaab4db73030f9.jpg",
+    "かいぎしつは なんがいですか。\n(အစည်းအဝေးခန်းက ဘယ်နှစ်ထပ်မှာလဲ။)"
   ],
   "ဂျပန်ပိုက်ဆံ (ယန်း)": [
     "えん",
     "円",
     "en",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Series_F_10000_yen_front.jpg/250px-Series_F_10000_yen_front.jpg"
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Series_F_10000_yen_front.jpg/250px-Series_F_10000_yen_front.jpg",
+    "ひゃくえん\n(ယန်း ၁၀၀)"
   ],
   "ဘယ်လောက်လဲ": [
     "いくら",
     "いくら",
     "ikura",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "このネクタイは いくらですか。\n(ဒီလည်စည်းက ဘယ်လောက်လဲ။)"
   ],
   "တစ်ရာ": [
     "ひゃく",
     "百",
     "hyaku",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "ひゃくえん\n(၁၀၀ ယန်း)"
   ],
   "တစ်ထောင်": [
     "せん",
     "千",
     "sen",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "せんえん\n(၁၀၀၀ ယန်း)"
   ],
   "တစ်သောင်း": [
     "まん",
     "万",
     "man",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "いちまんえん\n(၁၀၀၀၀ ယန်း)"
   ],
   "တောင်းပန်ပါတယ်၊ တစ်ဆိတ်လောက်": [
     "すみません",
     "すみません",
     "sumimasen",
-    "https://cdn-icons-png.flaticon.com/512/6364/6364087.png"
+    "https://cdn-icons-png.flaticon.com/512/6364/6364087.png",
+    "すみません。そのワインをみせてください。\n(တောင်းပန်ပါတယ်/တစ်ဆိတ်လောက်။ အဲဒီဝိုင်ကို ပြပေးပါ။)"
   ],
   "ကျေးဇူးပါ။": [
     "どうも",
     "どうも",
     "dōmo",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528577.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528577.png",
+    "どうも。\n(ကျေးဇူးပါ။)"
   ],
   "ကြိုဆိုပါတယ်": [
     "いらっしゃいませ",
     "いらっしゃいませ",
     "irasshaimase",
-    "https://cdn-icons-png.flaticon.com/512/4028/4028308.png"
+    "https://cdn-icons-png.flaticon.com/512/4028/4028308.png",
+    "いらっしゃいませ。\n(ကြိုဆိုပါတယ်။ - ဆိုင်ဝန်ထမ်းပြောစကား)"
   ],
   "[~ကို] ပြပါ": [
     "～をみせてください",
     "～を見せてください",
     "～ o misete kudasai",
-    "https://cdn-icons-png.flaticon.com/512/2776/2776008.png"
+    "https://cdn-icons-png.flaticon.com/512/2776/2776008.png",
+    "そのかばんを みせてください。\n(အဲဒီအိတ်ကို ပြပေးပါ။)"
   ],
   "ဒါဆိုရင်/ ကဲ": [
     "じゃ",
     "じゃあ",
     "jaa",
-    "https://cdn-icons-png.flaticon.com/512/412/412852.png"
+    "https://cdn-icons-png.flaticon.com/512/412/412852.png",
+    "じゃ、これを ください。\n(ကဲ/ဒါဆိုရင် ဒါကို ပေးပါ။)"
   ],
   "[~ကို] ပေးပါ": [
     "～をください",
     "～をください",
     "～ o kudasai",
-    "https://cdn-icons-png.flaticon.com/512/1255/1255850.png"
+    "https://cdn-icons-png.flaticon.com/512/1255/1255850.png",
+    "このシャツを ください。\n(ဒီရှပ်အင်္ကျီကို ပေးပါ။)"
   ],
-  "အီတလီ": [
-    "イタリア",
-    "イタリア",
-    "Itaria",
-    "https://cdn-icons-png.flaticon.com/512/197/197626.png"
-  ],
-  "ဆွစ်ဇာလန်": [
-    "スイス",
-    "スイス",
-    "Suisu",
-    "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Flag_of_Switzerland_%28Pantone%29.svg/1920px-Flag_of_Switzerland_%28Pantone%29.svg.png"
-  ],
-  "ပြင်သစ်": [
-    "フランス",
-    "フランス",
-    "Furansu",
-    "https://cdn-icons-png.flaticon.com/512/197/197560.png"
-  ],
-  "ဂျကာတာ": [
-    "ジャカルタ",
-    "ジャカルタ",
-    "Jakaruta",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
-  ],
-  "ဘန်ကောက်": [
-    "バンコク",
-    "バンコク",
-    "Bankoku",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157079.png"
-  ],
-  "ဘာလင်": [
-    "ベルリン",
-    "ベルリン",
-    "Berurin",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157080.png"
-  ],
-  "ရှင်းအိုဆာကာ": [
-    "しんおおさか",
-    "新大阪",
-    "Shin-Ōsaka",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157081.png"
-  ]
 };
 
 final minnaLesson4 = {
@@ -835,362 +1100,359 @@ final minnaLesson4 = {
     "おきます",
     "起きます",
     "okimasu",
-    "https://cdn-icons-png.flaticon.com/512/3217/3217431.png"
+    "https://cdn-icons-png.flaticon.com/512/3217/3217431.png",
+    "まいあさ ６じに おきます。\n(မနက်တိုင်း ၆ နာရီမှာ အိပ်ရာထပါတယ်။)"
   ],
   "အိပ်သည်။": [
     "ねます",
     "寝ます",
     "nemasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069172.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069172.png",
+    "きのう １１じに ねました。\n(မနေ့က ၁၁ နာရီမှာ အိပ်ခဲ့တယ်။)"
   ],
   "အလုပ်လုပ်သည်": [
     "はたらきます",
     "働きます",
     "hatarakimasu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "９じから ５じまで はたらきます。\n(၉ နာရီကနေ ၅ နာရီအထိ အလုပ်လုပ်တယ်။)"
   ],
   "အနားယူသည်။": [
     "やすみます",
     "休みます",
     "yasumimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069185.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069185.png",
+    "にちようびは やすみます。\n(တနင်္ဂနွေနေ့မှာ အနားယူတယ်။)"
   ],
   "စာကျက်သည်။": [
     "べんきょうします",
     "勉強します",
     "benkyō shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "まいにち にほんごを べんきょうします。\n(နေ့တိုင်း ဂျပန်စာ လေ့လာတယ်။)"
   ],
   "ပြီးဆုံးသည်။": [
     "おわります",
     "終わります",
     "owarimasu",
-    "https://cdn-icons-png.flaticon.com/512/2920/2920745.png"
+    "https://cdn-icons-png.flaticon.com/512/2920/2920745.png",
+    "しごとは ５じに おわります。\n(အလုပ်က ၅ နာရီမှာ ပြီးတယ်။)"
   ],
   "ကုန်တိုက်": [
     "デパート",
     "デパート",
     "depāto",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
+    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png",
+    "デパートは １０じからです。\n(ကုန်တိုက်က ၁၀ နာရီကနေ စပါတယ်။)"
   ],
   "ဘဏ်": [
     "ぎんこう",
     "銀行",
     "ginkō",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134914.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134914.png",
+    "ぎんこうは ３じまでです。\n(ဘဏ်က ၃ နာရီအထိပါ။)"
   ],
   "စာတိုက်": [
     "ゆうびんきょく",
     "郵便局",
     "yūbinkyoku",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png",
+    "ゆうびんきょくは どこですか。\n(စာတိုက်က ဘယ်မှာလဲ။)"
   ],
   "စာကြည့်တိုက်": [
     "としょかん",
     "図書館",
     "toshokan",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "としょかんへ いきます。\n(စာကြည့်တိုက်ကို သွားတယ်။)"
   ],
   "အနုပညာပြတိုက်": [
     "びじゅつかん",
     "美術館",
     "bijutsukan",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134812.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134812.png",
+    "びじゅつかんは １０じからです。\n(အနုပညာပြတိုက်က ၁၀ နာရီက စပါတယ်။)"
   ],
   "အခု": [
     "いま",
     "今",
     "ima",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421019.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421019.png",
+    "いま ４じ ５ふんです。\n(အခု ၄ နာရီ ၅ မိနစ်ပါ။)"
   ],
   "--နာရီ": [
     "～じ",
     "～時",
     "～ji",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "１じ（いちじ）\n(၁ နာရီ)"
   ],
   "မိနစ်": [
     "ふん/ぷん",
     "分",
     "fun/pun",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "５ふん（ごふん）、１０ぷん（じゅっぷん）\n(၅ မိနစ်၊ ၁၀ မိနစ်)"
   ],
   "တစ်ဝက်": [
     "はん",
     "半",
     "han",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "２じはんです。\n(၂ နာရီခွဲပါ။)"
   ],
   "ဘယ်နှစ်နာရီ၊ ဘယ်အချိန်": [
     "なんじ",
     "何時",
     "nanji",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "いま なんじですか。\n(အခု ဘယ်နှစ်နာရီလဲ။)"
   ],
   "ဘယ်နှစ်မိနစ်": [
     "なんぷん",
     "何分",
     "nanpun",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "なんぷん かかりますか。\n(ဘယ်နှစ်မိနစ် ကြာမလဲ။)"
   ],
   "မနက်ပိုင်း am": [
     "ごぜん",
     "午前",
     "gozen",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "ごぜん ７じです。\n(မနက် ၇ နာရီပါ။)"
   ],
   "နေ့ခင်းပိုင်း၊ ညနေပိုင်း pm": [
     "ごご",
     "午後",
     "gogo",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "ごご １じです。\n(နေ့လည် ၁ နာရီပါ။)"
   ],
   "မနက်": [
     "あさ",
     "朝",
     "asa",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069170.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069170.png",
+    "あさ ６じに おきます。\n(မနက် ၆ နာရီမှာ ထပါတယ်။)"
   ],
   "နေ့လည်": [
     "ひる",
     "昼",
     "hiru",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069170.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069170.png",
+    "ひる １２じまで はたらきます。\n(နေ့လည် ၁၂ နာရီအထိ အလုပ်လုပ်တယ်။)"
   ],
   "ည": [
     "ばん/よる",
     "晩/夜",
     "ban/yoru",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069170.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069170.png",
+    "よる １０じに ねます。\n(ည ၁၀ နာရီမှာ အိပ်တယ်။)"
   ],
   "တစ်နေ့က": [
     "おととい",
     "一昨日",
     "ototoi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "おとといは あめでした。\n(တစ်နေ့က မိုးရွာခဲ့တယ်။)"
   ],
   "မနေ့က": [
     "きのう",
     "昨日",
     "kinō",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "きのう べんきょうしました。\n(မနေ့က စာကျက်ခဲ့တယ်။)"
   ],
   "ဒီနေ့": [
     "きょう",
     "今日",
     "kyō",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "きょうは あついです。\n(ဒီနေ့ ပူတယ်။)"
   ],
   "မနက်ဖန်": [
     "あした/あす",
     "明日",
     "ashita/asu",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "あしたは やすみです。\n(မနက်ဖြန်က အားလပ်ရက်ပါ။)"
   ],
   "သဘက်ခါ": [
     "あさって",
     "明後日",
     "asatte",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "あさって かえります。\n(သဘက်ခါ ပြန်မယ်။)"
   ],
   "ဒီမနက်": [
     "けさ",
     "今朝",
     "kesa",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "けさ ５じに おきました。\n(ဒီမနက် ၅ နာရီမှာ ထခဲ့တယ်။)"
   ],
   "ဒီည": [
     "こんばん",
     "今晩",
     "konban",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "こんばん べんきょうします。\n(ဒီည စာကျက်မယ်။)"
   ],
   "နားရက်၊ အားလပ်ရက်": [
     "やすみ",
     "休み",
     "yasumi",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069185.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069185.png",
+    "あしたは やすみです。\n(မနက်ဖြန်က နားရက်ပါ။)"
   ],
   "နေလည်နားချိန်": [
     "ひるやすみ",
     "昼休み",
     "hiruyasumi",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069185.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069185.png",
+    "ひるやすみは １２じからです。\n(နေ့လည်နားချိန်က ၁၂ နာရီကနေ စတယ်။)"
   ],
   "စာမေးပွဲ": [
     "しけん",
     "試験",
     "shiken",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "しけんは なんじからですか。\n(စာမေးပွဲက ဘယ်အချိန် စမလဲ။)"
   ],
   "အစည်းအဝေး": [
     "かいぎ",
     "会議",
     "kaigi",
-    "https://cdn-icons-png.flaticon.com/512/5110/5110191.png"
+    "https://cdn-icons-png.flaticon.com/512/5110/5110191.png",
+    "かいぎを します。\n(အစည်းအဝေး လုပ်တယ်။)"
   ],
   "ရုပ်ရှင်": [
     "えいが",
     "映画",
     "eiga",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "えいがを みます。\n(ရုပ်ရှင် ကြည့်တယ်။)"
   ],
   "မနက်တိုင်း": [
     "まいあさ",
     "毎朝",
     "maiasa",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "まいあさ コーヒーを のみます。\n(မနက်တိုင်း ကော်ဖီ သောက်တယ်။)"
   ],
   "ညတိုင်း": [
     "まいばん",
     "毎晩",
     "maiban",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "まいばん べんきょうします。\n(ညတိုင်း စာကျက်တယ်။)"
   ],
   "နေတိုင်း": [
     "まいにち",
     "毎日",
     "mainichi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "まいにち はたらきます。\n(နေ့တိုင်း အလုပ်လုပ်တယ်။)"
   ],
   "တနင်္လာနေ့": [
     "げつようび",
     "月曜日",
     "getsuyōbi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "きょうは げつようびです。\n(ဒီနေ့က တနင်္လာနေ့ပါ။)"
   ],
   "အင်္ဂါနေ့": [
     "かようび",
     "火曜日",
     "kayōbi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "あしたは かようびです。\n(မနက်ဖြန်က အင်္ဂါနေ့ပါ။)"
   ],
   "ဗုဒ္ဓဟူးနေ့": [
     "すいようび",
     "水曜日",
     "suiyōbi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "しけんは すいようびです。\n(စာမေးပွဲက ဗုဒ္ဓဟူးနေ့ပါ။)"
   ],
   "ကြာသပတေးနေ့": [
     "もくようび",
     "木曜日",
     "mokuyōbi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "もくようびは やすみです。\n(ကြာသပတေးနေ့က အားလပ်ရက်ပါ။)"
   ],
   "သောကြာနေ့": [
     "きんようび",
     "金曜日",
     "kin'yōbi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "きんようびに あいましょう。\n(သောကြာနေ့ တွေ့ကြမယ်။)"
   ],
   "စနေနေ့": [
     "どようび",
     "土曜日",
     "doyōbi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "どようびは はたらきません。\n(စနေနေ့ အလုပ်မလုပ်ဘူး။)"
   ],
   "တနင်္ဂနွေနေ့": [
     "にちようび",
     "日曜日",
     "nichiyōbi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "にちようび デパートへ いきます。\n(တနင်္ဂနွေနေ့ ကုန်တိုက်သွားမယ်။)"
   ],
   "ဘာနေ့": [
     "なんようび",
     "何曜日",
     "nan'yōbi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "きょうは なんようびですか。\n(ဒီနေ့ ဘာနေ့လဲ။)"
   ],
   "--မှ စ၍": [
     "～から",
     "～から",
     "～ kara",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "９じから はたらきます。\n(၉ နာရီကနေ အလုပ်လုပ်တယ်။)"
   ],
   "--အထိ": [
     "～まで",
     "～まで",
     "～ made",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "５じまで はたらきます。\n(၅ နာရီအထိ အလုပ်လုပ်တယ်။)"
   ],
   "--နှင့်": [
     "～と～",
     "～と～",
     "～ to ～",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "どようびと にちようび\n(စနေနေ့နဲ့ တနင်္ဂနွေနေ့)"
   ],
   "ဒုက္ခများမှာဘဲနော်": [
     "たいへんですね",
     "大変ですね",
     "taihen desu ne",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "まいにち １０じまで はたらきます。たいへんですね。\n(နေ့တိုင်း ၁၀ နာရီအထိ အလုပ်လုပ်တယ်။ ဒုက္ခများတာပဲနော်။)"
   ],
   "နံပါတ်": [
     "ばんごう",
     "番号",
     "bangō",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "でんわばんごう\n(ဖုန်းနံပါတ်)"
   ],
   "ဘာနံပါတ်": [
     "なんばん",
     "何番",
     "nanban",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "でんわばんごうは なんばんですか。\n(ဖုန်းနံပါတ်က ဘယ်လောက်လဲ။)"
   ],
-  "အဲဒီမှာ၊ အဲဒီဘက်မှာ (ယဉ်ကျေး)": [
-    "そちら",
-    "そちら",
-    "sochira",
-    "https://cdn-icons-png.flaticon.com/512/4992/4992743.png"
-  ],
-  "နယူးယောက်မြို့": [
-    "ニューヨーク",
-    "ニューヨーク",
-    "Nyūyōku",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
-  ],
-  "ပီကင်းမြို့": [
-    "ペキン",
-    "北京",
-    "Pekin",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
-  ],
-  "လော့စ်အိန်ဂျယ်လစ်မြို့": [
-    "ロサンゼルス",
-    "ロサンゼルス",
-    "Rosanzerusu",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
-  ],
-  "လန်ဒန်မြို့": [
-    "ロンドン",
-    "ロンドン",
-    "Rondon",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
-  ],
-  "Asuka စားသောက်ဆိုင်": [
-    "あすか",
-    "アスカ",
-    "Asuka",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
-  ],
-  "Apple ဘဏ်": [
-    "アップルぎんこう",
-    "アップル銀行",
-    "Appuru Ginkō",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134914.png"
-  ],
-  "Midori စာကြည့်တိုက်": [
-    "みどりとしょかん",
-    "みどり図書館",
-    "Midori Toshokan",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
-  ],
-  "Yamato အနုပညာပြတိုက်": [
-    "やまとびじゅつかん",
-    "やまと美術館",
-    "Yamato Bijutsukan",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134812.png"
-  ]
 };
 
 final minnaLesson5 = {
@@ -1198,367 +1460,414 @@ final minnaLesson5 = {
     "いきます",
     "行きます",
     "ikimasu",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "スーパーへ いきます。\n(စူပါမားကတ်ကို သွားတယ်။)"
   ],
   "လာသည်": [
     "きます",
     "来ます",
     "kimasu",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "だれが きますか。\n(ဘယ်သူ လာမလဲ။)"
   ],
   "ပြန်သည် (အိမ်ပြန်သည်)": [
     "かえります",
     "帰ります",
     "kaerimasu",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "うちへ かえります。\n(အိမ်ကို ပြန်တယ်။)"
   ],
   "စာသင်ကျောင်း": [
     "がっこう",
     "学校",
     "gakkō",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "がっこうへ いきます。\n(ကျောင်းကို သွားတယ်။)"
   ],
   "super market": [
     "スーパー",
     "スーパー",
     "sūpā",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
+    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png",
+    "スーパーで かいます。\n(စူပါမားကတ်မှာ ဝယ်တယ်။)"
   ],
   "ဘူတာ": [
     "えき",
     "駅",
     "eki",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "えきまで バスで いきます。\n(ဘူတာအထိ ဘတ်စ်ကားနဲ့ သွားတယ်။)"
   ],
   "လေယာဉ်ပျံ": [
     "ひこうき",
     "飛行機",
     "hikōki",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "ひこうきで くにへ かえります。\n(လေယာဉ်ပျံနဲ့ နိုင်ငံကို ပြန်တယ်။)"
   ],
   "သင်္ဘော": [
     "ふね",
     "船",
     "fune",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "ふねで いきます。\n(သင်္ဘောနဲ့ သွားတယ်။)"
   ],
   "လျှပ်စစ်ရထား": [
     "でんしゃ",
     "電車",
     "densha",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "でんしゃで とうきょうへ いきます。\n(ရထားနဲ့ တိုကျိုကို သွားတယ်။)"
   ],
   "မြေအောက်ရထား": [
     "ちかてつ",
     "地下鉄",
     "chikatetsu",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "ちかてつで いきます。\n(မြေအောက်ရထားနဲ့ သွားတယ်။)"
   ],
   "ကျည်ဆံရထား": [
     "しんかんせん",
     "新幹線",
     "shinkansen",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "しんかんせんで おおさかへ いきます。\n(ကျည်ဆံရထားနဲ့ အိုဆာကာကို သွားတယ်။)"
   ],
   "ဘတ်စ်ကား": [
     "バス",
     "バス",
     "basu",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "バスで かえります。\n(ဘတ်စ်ကားနဲ့ ပြန်တယ်။)"
   ],
   "တက္ကစီ": [
     "タクシー",
     "タクシー",
     "takushī",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "タクシーで いきました。\n(တက္ကစီနဲ့ သွားခဲ့တယ်။)"
   ],
   "စက်ဘီး": [
     "じてんしゃ",
     "自転車",
     "jitensha",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "じてんしゃで がっこうへ いきます。\n(စက်ဘီးနဲ့ ကျောင်းကို သွားတယ်။)"
   ],
   "လမ်းလျှောက်ပြီး": [
     "あるいて",
     "歩いて",
     "aruite",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "あるいて かえりました。\n(လမ်းလျှောက်ပြီး ပြန်ခဲ့တယ်။)"
   ],
   "လူ": [
     "ひと",
     "人",
     "hito",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "あのひとは だれですか。\n(ဟိုလူက ဘယ်သူလဲ။)"
   ],
   "သူငယ်ချင်း": [
     "ともだち",
     "友達",
     "tomodachi",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ともだちと にほんへ きました。\n(သူငယ်ချင်းနဲ့ ဂျပန်ကို လာခဲ့တယ်။)"
   ],
   "သူချစ်သူ": [
     "かれ",
     "彼",
     "kare",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "かれと いきます。\n(ကောင်လေးနဲ့ သွားတယ်။)"
   ],
   "သူမ/ချစ်သူ": [
     "かのじょ",
     "彼女",
     "kanojo",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "かのじょと デートします。\n(ကောင်မလေးနဲ့ ဒိတ်လုပ်တယ်။)"
   ],
   "မိသားစု": [
     "かぞく",
     "家族",
     "kazoku",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "かぞくと にほんへ きました。\n(မိသားစုနဲ့ ဂျပန်ကို လာခဲ့တယ်။)"
   ],
   "တစ်ယောက်တည်း": [
     "ひとりで",
     "一人で",
     "hitori de",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ひとりで とうきょうへ いきます。\n(တစ်ယောက်တည်း တိုကျိုကို သွားတယ်။)"
   ],
   "ပြီးခဲ့တဲ့ အပတ်": [
     "せんしゅう",
     "先週",
     "senshū",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "せんしゅう いきました。\n(ပြီးခဲ့တဲ့အပတ်က သွားခဲ့တယ်။)"
   ],
   "အခု အပတ်": [
     "こんしゅう",
     "今週",
     "konshū",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "こんしゅうは いそがしいです。\n(ဒီအပတ်က အလုပ်များတယ်။)"
   ],
   "လာမဲ့ အပတ်": [
     "らいしゅう",
     "来週",
     "raishū",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "らいしゅう かえります。\n(လာမယ့်အပတ် ပြန်မယ်။)"
   ],
   "ပြီးခဲ့တဲ့ လ": [
     "せんげつ",
     "先月",
     "sengetsu",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "せんげつ にほんへ きました。\n(ပြီးခဲ့တဲ့လက ဂျပန်ကို လာခဲ့တယ်။)"
   ],
   "ဒီလ": [
     "こんげつ",
     "今月",
     "kongetsu",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "こんげつは やすみが ありません。\n(ဒီလက ပိတ်ရက်မရှိဘူး။)"
   ],
   "လာမဲ့ လ(နောက်လ)": [
     "らいげつ",
     "来月",
     "raigetsu",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "らいげつ くにへ かえります。\n(နောက်လ နိုင်ငံကို ပြန်မယ်။)"
   ],
   "မနှစ်က (ပြီးခဲ့တဲ့ နှစ်)": [
     "きょねん",
     "去年",
     "kyonen",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "きょねんの ８がつに きました。\n(မနှစ်က ၈ လပိုင်းမှာ လာခဲ့တယ်။)"
   ],
   "ဒီနှစ်": [
     "ことし",
     "今年",
     "kotoshi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "ことし けっこんします。\n(ဒီနှစ် လက်ထပ်မယ်။)"
   ],
   "နောက်နှစ်၊ နောင်နှစ်": [
     "らいねん",
     "来年",
     "rainen",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "らいねん だいがくへ いきます。\n(နောက်နှစ် တက္ကသိုလ်ကို သွားမယ်/တက်မယ်။)"
   ],
   "---နှစ်": [
     "～ねん",
     "～年",
     "～ nen",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "２０２５ねん\n(၂၀၂၅ ခုနှစ်)"
   ],
   "ဘာနှစ်လဲ": [
     "なんねん",
     "何年",
     "nan nen",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "いま なんねんですか。\n(အခု ဘာနှစ်လဲ/ဘယ်နှစ်ခုနှစ်လဲ။)"
   ],
   "---လ(ဇန်နဝါရီလ၊ ဖေဖော်ဝါရီလ)": [
     "～がつ",
     "～月",
     "～ gatsu",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "１がつ、２がつ\n(၁ လပိုင်း၊ ၂ လပိုင်း)"
   ],
   "ဘယ်လ": [
     "なんがつ",
     "何月",
     "nan gatsu",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "いま なんがつですか。\n(အခု ဘယ်လပိုင်းလဲ။)"
   ],
   "၁ ရက်": [
     "ついたち",
     "１日",
     "tsuitachi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "１がつ １にちは ついたちです。\n(၁ လပိုင်း ၁ ရက်နေ့က 'Tsuitachi' ဖြစ်ပါတယ်။)"
   ],
   "၂ ရက်": [
     "ふつか",
     "２日",
     "futsuka",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "ふつか\n(၂ ရက်နေ့)"
   ],
   "၃ ရက်": [
     "みっか",
     "３日",
     "mikka",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "みっか\n(၃ ရက်နေ့)"
   ],
   "၄ ရက်": [
     "よっか",
     "４日",
     "yokka",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "よっか\n(၄ ရက်နေ့)"
   ],
   "၅ ရက်": [
     "いつか",
     "５日",
     "itsuka",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "いつか\n(၅ ရက်နေ့)"
   ],
   "၆ ရက်": [
     "むいか",
     "６日",
     "muika",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "むいか\n(၆ ရက်နေ့)"
   ],
   "၇ ရက်": [
     "なのか",
     "７日",
     "nanoka",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "なのか\n(၇ ရက်နေ့)"
   ],
   "၈ ရက်": [
     "ようか",
     "８日",
     "yōka",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "ようか\n(၈ ရက်နေ့)"
   ],
   "၉ ရက်": [
     "ここのか",
     "９日",
     "kokonoka",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "ここのか\n(၉ ရက်နေ့)"
   ],
   "၁၀ ရက်": [
     "とおか",
     "１０日",
     "tōka",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "とおか\n(၁၀ ရက်နေ့)"
   ],
   "၁၄ ရက်": [
     "じゅうよっか",
     "１４日",
     "jūyokka",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "じゅうよっか\n(၁၄ ရက်နေ့)"
   ],
   "၂၀ ရက်": [
     "はつか",
     "２０日",
     "hatsuka",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "はつか\n(၂၀ ရက်နေ့)"
   ],
   "၂၄ ရက်": [
     "にじゅうよっか",
     "２４日",
     "nijūyokka",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "にじゅうよっか\n(၂၄ ရက်နေ့)"
   ],
   "---ရက်": [
     "～にち",
     "～日",
     "～ nichi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "１１にち（じゅういちにち）\n(၁၁ ရက်နေ့)"
   ],
   "ဘယ်ရက်": [
     "なんにち",
     "何日",
     "nan nichi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "きょうは なんにちですか。\n(ဒီနေ့ ဘယ်နှရက်နေ့လဲ။)"
   ],
   "ဘယ်တုန်းက၊ ဘယ်တော့": [
     "いつ",
     "いつ",
     "itsu",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "いつ きましたか。\n(ဘယ်တုန်းက လာတာလဲ။)"
   ],
   "မွေးနေ့": [
     "たんじょうび",
     "誕生日",
     "tanjōbi",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "たんじょうびは いつですか。\n(မွေးနေ့က ဘယ်တော့လဲ။)"
   ],
   "ဟုတ်တယ်နော်": [
     "そうですね",
     "そうですね",
     "sō desu ne",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "そうですね。７がつ５かです。\n(ဟုတ်တယ်နော်။ ၇ လပိုင်း ၅ ရက်နေ့ပါ။)"
   ],
   "ကျေးဇူးအများကြီးတင်ပါတယ်": [
     "[どうも]ありがとうございました",
-    "どうもありがとうございました",
+    "[どうも]ありがとうございました",
     "dōmo arigatō gozaimashita",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528577.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528577.png",
+    "どうも ありがとうございました。\n(ကျေးဇူးအများကြီးတင်ပါတယ်။)"
   ],
   "ရပါတယ်၊ ကြိုဆိုပါတယ်": [
     "どういたしまして",
     "どういたしまして",
     "dō itashimashite",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528577.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528577.png",
+    "A: ありがとうございます。 B: どういたしまして。\n(A: ကျေးဇူးတင်ပါတယ်။ B: ရပါတယ်။)"
   ],
   "ရထားစီးသော platform": [
     "～ばんせん",
     "～番線",
     "～ bansen",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "１ばんせん\n(ပလက်ဖောင်း အမှတ် ၁)"
   ],
   "နောက်ဟာ": [
     "つぎの",
     "次の",
     "tsugi no",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "つぎの でんしゃ\n(နောက်လာမယ့်ရထား)"
   ],
   "သာမာန်/ရိုးရိုးရထား": [
     "ふつう",
     "普通",
     "futsū",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "ふつうでんしゃ\n(ရိုးရိုးရထား)"
   ],
   "အမြန်ရထား": [
     "きゅうこう",
     "急行",
     "kyūkō",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "きゅうこうで いきます。\n(အမြန်ရထားနဲ့ သွားမယ်။)"
   ],
   "အထူးရထား": [
     "とっきゅう",
     "特急",
     "tokkyū",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
-  ],
-  "Koushien": [
-    "こうしえん",
-    "甲子園",
-    "Kōshien",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
-  ],
-  "အိုဆာကာရဲတိုက်": [
-    "おおさかじょう",
-    "大阪城",
-    "Ōsakajō",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "とっきゅうは たかいです。\n(အထူးရထားက ဈေးကြီးတယ်။)"
   ]
 };
 
@@ -1567,344 +1876,366 @@ final minnaLesson6 = {
     "たべます",
     "食べます",
     "tabemasu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "パンを たべます。\n(ပေါင်မုန့်ကို စားတယ်။)"
   ],
   "သောက်သည်။": [
     "のみます",
     "飲みます",
     "nomimasu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ジュースを のみます。\n(ဖျော်ရည်ကို သောက်တယ်။)"
   ],
   "ဆေးလိပ်သောက်သည်": [
     "すいます",
     "吸います",
     "suimasu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "たばこを すいます。\n(ဆေးလိပ် သောက်တယ်။)"
   ],
   "ကြည့်သည်": [
     "みます",
     "見ます",
     "mimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "テレビを みます。\n(တီဗီ ကြည့်တယ်။)"
   ],
   "နားထောင်သည်။": [
     "ききます",
     "聞きます",
     "kikimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "ラジオを ききます。\n(ရေဒီယို နားထောင်တယ်။)"
   ],
   "ဖတ်သည်။": [
     "よみます",
     "読みます",
     "yomimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "しんぶんを よみます。\n(သတင်းစာ ဖတ်တယ်။)"
   ],
   "ရေးသည်။": [
     "かきます",
     "書きます",
     "kakimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "てがみを かきます。\n(စာ ရေးတယ်။)"
   ],
   "ဝယ်သည်။": [
     "かいます",
     "買います",
     "kaimasu",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
+    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png",
+    "かばんを かいます。\n(အိတ်ကို ဝယ်တယ်။)"
   ],
   "ရိုက်သည်": [
     "とります",
     "撮ります",
     "torimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "しゃしんを とります。\n(ဓာတ်ပုံ ရိုက်တယ်။)"
   ],
   "(ဓါတ်ပုံကို)": [
     "[しゃしんを]とります",
     "[写真を]撮ります",
     "[shashin o] torimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "にわで しゃしんを とります。\n(ခြံထဲမှာ ဓာတ်ပုံရိုက်တယ်။)"
   ],
   "လုပ်သည်": [
     "します",
     "します",
     "shimasu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "しゅくだいを します。\n(အိမ်စာ လုပ်တယ်။)"
   ],
   "တွေ့သည်": [
     "あいます",
     "会います",
     "aimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ともだちに あいます。\n(သူငယ်ချင်းနဲ့ တွေ့တယ်။)"
   ],
   "(သူငယ်ချင်းနဲ့)": [
     "[ともだちに]あいます",
     "[友達に]会います",
     "[tomodachi ni] aimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "えきで ともだちに あいます。\n(ဘူတာမှာ သူငယ်ချင်းနဲ့ တွေ့တယ်။)"
   ],
   "ထမင်း": [
     "ごはん",
     "ご飯",
     "gohan",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ごはんを たべます。\n(ထမင်းစားတယ်။)"
   ],
   "မနက်စာ၊ မနက်ထမင်း": [
     "あさごはん",
     "朝ご飯",
     "asagohan",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "あさごはんは パンと たまごです。\n(မနက်စာက ပေါင်မုန့်နဲ့ ကြက်ဥပါ။)"
   ],
   "နေ့လည်စာ၊ နေ့လည်ထမင်း": [
     "ひるごはん",
     "昼ご飯",
     "hirugohan",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "いっしょに ひるごはんを たべませんか。\n(အတူတူ နေ့လည်စာ စားကြမလား။)"
   ],
   "ညစာ၊ ညထမင်း": [
     "ばんごはん",
     "晩ご飯",
     "bangohan",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "７じに ばんごはんを たべました。\n(၇ နာရီမှာ ညစာ စားခဲ့တယ်။)"
   ],
   "ပေါင်မုန့်": [
     "パン",
     "パン",
     "pan",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "パンと コーヒー\n(ပေါင်မုန့်နှင့် ကော်ဖီ)"
   ],
   "ကြက်ဥ": [
     "たまご",
     "卵",
     "tamago",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "たまごを たべますか。\n(ကြက်ဥ စားမလား။)"
   ],
   "အသား": [
     "にく",
     "肉",
     "niku",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "にくを かいました。\n(အသား ဝယ်ခဲ့တယ်။)"
   ],
   "ငါး": [
     "さかな",
     "魚",
     "sakana",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "さかなが すきです。\n(ငါး ကြိုက်တယ်။)"
   ],
   "ဟင်းသီးဟင်းရွတ်": [
     "やさい",
     "野菜",
     "yasai",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "やさいを たべます。\n(ဟင်းသီးဟင်းရွက် စားတယ်။)"
   ],
   "သစ်သီးဝလံ": [
     "くだもの",
     "果物",
     "kudamono",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "くだものを たべます。\n(သစ်သီး စားတယ်။)"
   ],
   "ရေ": [
     "みず",
     "水",
     "mizu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "みずを ください。\n(ရေ ပေးပါ။)"
   ],
   "ဂျပန်ရေနွေးကြမ်း": [
     "おちゃ",
     "お茶",
     "ocha",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "おちゃを のみます。\n(ရေနွေးကြမ်း သောက်တယ်။)"
   ],
   "လက်ဖက်ရည်": [
     "こうちゃ",
     "紅茶",
     "kōcha",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "こうちゃを かいました。\n(လက်ဖက်ရည် ဝယ်ခဲ့တယ်။)"
   ],
   "နွားနို့": [
     "ぎゅうにゅう",
     "牛乳",
     "gyūnyū",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ぎゅうにゅうを のみます。\n(နွားနို့ သောက်တယ်။)"
   ],
   "နွားနို့၊ နိုရည်": [
     "ミルク",
     "ミルク",
     "miruku",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ミルクを いれます。\n(နို့ ထည့်တယ်။)"
   ],
   "ဖျော်ရည်": [
     "ジュース",
     "ジュース",
     "jūsu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "リンゴジュース\n(ပန်းသီး ဖျော်ရည်)"
   ],
   "ဘီယာ": [
     "ビール",
     "ビール",
     "bīru",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ビールを のみますか。\n(ဘီယာ သောက်မလား။)"
   ],
   "အရက်": [
     "おさけ",
     "お酒",
     "osake",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "おさけを のみません。\n(အရက် မသောက်ဘူး။)"
   ],
   "ဆေးလိပ်": [
     "たばこ",
     "たばこ",
     "tabako",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "たばこを すいますか。\n(ဆေးလိပ် သောက်လား။)"
   ],
   "letter": [
     "てがみ",
     "手紙",
     "tegami",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png",
+    "てがみを かきました。\n(စာ ရေးခဲ့တယ်။)"
   ],
   "report အစီရင်ခံစာ": [
     "レポート",
     "レポート",
     "repōto",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "レポートを おくります。\n(အစီရင်ခံစာ ပို့မယ်။)"
   ],
   "ဓါတ်ပုံ": [
     "しゃしん",
     "写真",
     "shashin",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "しゃしんを とりました。\n(ဓာတ်ပုံ ရိုက်ခဲ့တယ်။)"
   ],
   "ဗီဒီယို": [
     "ビデオ",
     "ビデオ",
     "bideo",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "ビデオを みます。\n(ဗီဒီယို ကြည့်တယ်။)"
   ],
   "ဆိုင်": [
     "みせ",
     "店",
     "mise",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
+    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png",
+    "あのみせで かいました。\n(ဟိုဆိုင်မှာ ဝယ်ခဲ့တယ်။)"
   ],
   "ခြံဝင်း": [
     "にわ",
     "庭",
     "niwa",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "にわで あそびます。\n(ခြံထဲမှာ ကစားတယ်။)"
   ],
   "အိမ်စာ": [
     "しゅくだい",
     "宿題",
     "shukudai",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "しゅくだいを しましたか。\n(အိမ်စာ လုပ်ပြီးပြီလား။)"
   ],
   "တင်းနစ်အားကစား": [
     "テニス",
     "テニス",
     "tenisu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "テニスを します。\n(တင်းနစ် ကစားတယ်။)"
   ],
   "ဘောလုံးအားကစား": [
     "サッカー",
     "サッカー",
     "sakkā",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "サッカーを しました。\n(ဘောလုံး ကစားခဲ့တယ်။)"
   ],
   "ပန်းကြည့်ခြင်း": [
     "おはなみ",
     "お花見",
     "ohanami",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "あした おはなみを します。\n(မနက်ဖြန် ပန်းကြည့်ပွဲ လုပ်မယ်။)"
   ],
   "ဘာ": [
     "なに",
     "何",
     "nani",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "なにを しますか。\n(ဘာ လုပ်မလဲ။)"
   ],
   "အတူတူ": [
     "いっしょに",
     "一緒に",
     "issho ni",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "いっしょに いきましょう。\n(အတူတူ သွားကြရအောင်။)"
   ],
   "ခဏ၊ နည်းနည်း": [
     "ちょっと",
     "ちょっと",
     "chotto",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ちょっと やすみましょう。\n(ခဏလောက် နားကြရအောင်။)"
   ],
   "အမြဲတမ်း": [
     "いつも",
     "いつも",
     "itsumo",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いつも パンを たべます。\n(အမြဲတမ်း ပေါင်မုန့် စားတယ်။)"
   ],
   "တခါတလေ": [
     "ときどき",
     "時々",
     "tokidoki",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ときどき えいがを みます。\n(တစ်ခါတလေ ရုပ်ရှင် ကြည့်တယ်။)"
   ],
   "အဲဒီနောက်": [
     "それから",
     "それから",
     "sorekara",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "テレビを みました。それから べんきょうしました。\n(တီဗီ ကြည့်ခဲ့တယ်။ အဲဒီနောက် စာလေ့လာခဲ့တယ်။)"
   ],
   "အင်း": [
     "ええ",
     "ええ",
     "ee",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ええ、いいですね。\n(အင်း၊ ကောင်းသားပဲ။)"
   ],
   "ကောင်းတယ်နော်": [
     "いいですね",
     "いいですね",
     "ii desu ne",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あした おはなみを しませんか。いいですね。\n(မနက်ဖြန် ပန်းကြည့်ပွဲ မလုပ်ချင်ဘူးလား။ ကောင်းသားပဲ။)"
   ],
   "နားလည်ပါပြီ": [
     "わかりました",
     "わかりました",
     "wakarimashita",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "はい、わかりました。\n(ဟုတ်ကဲ့၊ နားလည်ပါပြီ။)"
   ],
   "ဘာလဲ": [
-    "なんでか",
+    "なんですか",
     "何ですか",
     "nan desu ka",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "すみません。･･･なんですか。\n(တစ်ဆိတ်လောက်။ ဘာပါလဲ။)"
   ],
-  "မက္ကဆီကို": [
-    "メキシコ",
-    "メキシコ",
-    "Mekishiko",
-    "https://cdn-icons-png.flaticon.com/512/197/197592.png"
-  ],
-  "အိုဆာကာကုန်တိုက်": [
-    "おおさかデパート",
-    "大阪デパート",
-    "Ōsaka Depāto",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
-  ],
-  "Tsuruya စားသောက်ဆိုင်": [
-    "つるや",
-    "つるや",
-    "Tsuruya",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
-  ],
-  "Furansu စူပါမားကတ်": [
-    "フランスや",
-    "フランス屋",
-    "Furansu-ya",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
-  ],
-  "Mainichi စူပါမားကတ်": [
-    "まいにちや",
-    "毎日屋",
-    "Mainichi-ya",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
-  ]
 };
 
 final minnaLesson7 = {
@@ -1912,266 +2243,303 @@ final minnaLesson7 = {
     "きります",
     "切ります",
     "kirimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "かみを きります。\n(စက္ကူကို ဖြတ်တယ်။)"
   ],
   "ပို့သည်။(ပစ္စည်း၊ စာ)": [
     "おくります",
     "送ります",
     "okurimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png",
+    "にもつを おくります。\n(ပစ္စည်း ပို့တယ်။)"
   ],
   "ပေးသည်။": [
     "あげます",
     "あげます",
     "agemasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ともだちに ほんを あげます。\n(သူငယ်ချင်းကို စာအုပ် ပေးတယ်။)"
   ],
   "ယူသည်။ လက်ခံရရှိသည်": [
     "もらいます",
     "もらいます",
     "moraimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ちちに とけいを もらいました。\n(အဖေ့ဆီက နာရီ ရခဲ့တယ်။)"
   ],
   "ငှါးသည်။ (သူများကိုငှါး)": [
     "かします",
     "貸します",
     "kashimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "ペンを かしました。\n(ဘောပင် ငှားပေးခဲ့တယ်။)"
   ],
   "ချေးငှါးသည်။(သူများဆီမှချေး)": [
     "かります",
     "借ります",
     "karimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "ともだちに おかねを かりました。\n(သူငယ်ချင်းဆီက ပိုက်ဆံ ချေးခဲ့တယ်။)"
   ],
   "သင်ကြားသည်": [
     "おしえます",
     "教えます",
     "oshiemasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "せんせいは がくせいに にほんごを おしえます。\n(ဆရာမက ကျောင်းသားတွေကို ဂျပန်စာ သင်ပေးတယ်။)"
   ],
   "သင်ယူသည်။": [
     "ならいます",
     "習います",
     "naraimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "せんせいに にほんごを ならいます。\n(ဆရာမဆီက ဂျပန်စာ သင်ယူတယ်။)"
   ],
   "ဖုန်းဆက်သည်": [
     "かけます[でんわを～]",
     "かけます[電話を～]",
     "kakemasu [denwa o ~]",
-    "https://cdn-icons-png.flaticon.com/512/126/126509.png"
+    "https://cdn-icons-png.flaticon.com/512/126/126509.png",
+    "ともだちに でんわを かけます。\n(သူငယ်ချင်းဆီ ဖုန်းဆက်တယ်။)"
   ],
   "လက်": [
     "て",
     "手",
     "te",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "てで ごはんを たべます。\n(လက်နဲ့ ထမင်းစားတယ်။)"
   ],
   "တူ(ထမင်းစားတဲ့တူ)": [
     "はし",
     "はし",
     "hashi",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "はしで たべます。\n(တူနဲ့ စားတယ်။)"
   ],
   "ဇွန်း": [
     "スプーン",
     "スプーン",
     "supūn",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "スプーンで カレーを たべます。\n(ဇွန်းနဲ့ ဟင်း စားတယ်။)"
   ],
   "ဓါး": [
     "ナイフ",
     "ナイフ",
     "naifu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ナイフで きります。\n(ဓားနဲ့ ဖြတ်တယ်။)"
   ],
   "ခက်ရင်း": [
     "フォーク",
     "フォーク",
     "fōku",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "フォークで たべます。\n(ခက်ရင်းနဲ့ စားတယ်။)"
   ],
   "ကတ်ကြေး": [
     "はさみ",
     "はさみ",
     "hasami",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "はさみで かみを きります。\n(ကတ်ကြေးနဲ့ စက္ကူ ညှပ်တယ်။)"
   ],
   "ကွန်ပျူတာ": [
     "パソコン",
     "パソコン",
     "pasokon",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "パソコンで えいがを みます。\n(ကွန်ပျူတာနဲ့ ရုပ်ရှင် ကြည့်တယ်။)"
   ],
   "လက်ကိုင်ဖုန်း": [
     "ケータイ",
     "ケータイ",
     "kētai",
-    "https://cdn-icons-png.flaticon.com/512/126/126509.png"
+    "https://cdn-icons-png.flaticon.com/512/126/126509.png",
+    "ケータイで しゃしんを とります。\n(ဖုန်းနဲ့ ဓာတ်ပုံ ရိုက်တယ်။)"
   ],
   "အီးမေးလ်": [
     "メール",
     "メール",
     "mēru",
-    "https://cdn-icons-png.flaticon.com/512/126/126509.png"
+    "https://cdn-icons-png.flaticon.com/512/126/126509.png",
+    "メールを おくります。\n(အီးမေးလ် ပို့တယ်။)"
   ],
   "new year card": [
     "ねんがじょう",
     "年賀状",
     "nengajō",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png",
+    "ねんがじょうを かきます。\n(နှစ်သစ်ကူးကတ် ရေးတယ်။)"
   ],
   "စက္ကူဖောက်စက်": [
     "パンチ",
     "パンチ",
     "panchi",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "パンチで あなを あけます。\n(စက္ကူဖောက်စက်နဲ့ အပေါက်ဖောက်တယ်။)"
   ],
   "stapler": [
     "ホッチキス",
     "ホッチキス",
     "hotchikisu",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "ホッチキスで とめます。\n(Stapler နဲ့ တွဲတယ်။)"
   ],
   "တိပ်": [
     "セロテープ",
     "セロテープ",
     "serotēpu",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "セロテープで はります。\n(တိပ်နဲ့ ကပ်တယ်။)"
   ],
   "ခဲဖျက်": [
     "けしゴム",
     "消しゴム",
     "keshigomu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "けしゴムで けします。\n(ခဲဖျက်နဲ့ ဖျက်တယ်။)"
   ],
   "စာရွက်": [
     "かみ",
     "紙",
     "kami",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "かみに かきます。\n(စာရွက်ပေါ်မှာ ရေးတယ်။)"
   ],
   "ပန်း": [
     "はな",
     "花",
     "hana",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "はなを あげます。\n(ပန်း ပေးတယ်။)"
   ],
   "ရှပ်အင်္ကျီ": [
     "シャツ",
     "シャツ",
     "shatsu",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "シャツを もらいました。\n(ရှပ်အင်္ကျီ ရခဲ့တယ်။)"
   ],
   "လက်ဆောင်": [
     "プレゼント",
     "プレゼント",
     "purezento",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "すてきな プレゼントですね。\n(လှပတဲ့ လက်ဆောင်လေးပဲနော်။)"
   ],
   "အထုပ်၊ ပါဆယ်အထုပ်": [
     "にもつ",
     "荷物",
     "nimotsu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png",
+    "にもつを おくりました。\n(ပစ္စည်း ပို့ခဲ့တယ်။)"
   ],
   "ပိုက်ဆံ": [
     "おかね",
     "お金",
     "okane",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "おかねが ありません。\n(ပိုက်ဆံ မရှိဘူး။)"
   ],
   "လက်မှတ်": [
     "きっぷ",
     "切符",
     "kippu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "きっぷを かいます。\n(လက်မှတ် ဝယ်တယ်။)"
   ],
   "ခရစ်စမတ်": [
     "クリスマス",
     "クリスマス",
     "Kurisumasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "クリスマスに プレゼントを あげます。\n(ခရစ္စမတ်မှာ လက်ဆောင် ပေးတယ်။)"
   ],
   "အဖေ(မိမိ၏ဖခင်ကိုခေါ်သောအခေါ်အဝေါ်)": [
     "ちち",
     "父",
     "chichi",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ちちに シャツを あげました。\n(အဖေ့ကို ရှပ်အင်္ကျီ ပေးခဲ့တယ်။)"
   ],
   "အမေ(မိမိ၏မိခင်ကိုခေါ်သောအခေါ်အဝေါ်)": [
     "はは",
     "母",
     "haha",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ははに はなを あげました。\n(အမေ့ကို ပန်း ပေးခဲ့တယ်။)"
   ],
   "အဖေ(သူတစ်ပါး၏အဖေကိုခေါ်သောအခေါ်အဝေါ်)": [
     "おとうさん",
     "お父さん",
     "otōsan",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おとうさんは おげんきですか。\n(အဖေ နေကောင်းလား။)"
   ],
   "အမေ(သူတစ်ပါး၏အမေကိုခေါ်သောအခေါ်အဝေါ်)": [
     "おかあさん",
     "お母さん",
     "okāsan",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おかあさんは おいくつですか。\n(အမေက အသက်ဘယ်လောက်လဲ။)"
   ],
   "မ---သေးဘူး": [
     "もう～",
     "もう～",
     "mō ~",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "もう たべましたか。\n(စားပြီးပြီလား။)"
   ],
   "အခုကစပြီး---": [
     "まだ",
     "まだ",
     "mada",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いいえ、まだです。\n(ဟင့်အင်း၊ မစားရသေးပါဘူး။)"
   ],
   "လှသော၊ စွဲမက်ဖွယ်ကောင်းသော": [
     "これから",
     "これから",
     "korekara",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "これから たべます。\n(အခုကစပြီး စားတော့မှာပါ။)"
   ],
   "ကြိုဆိုပါတယ်": [
     "いらっしゃい",
     "いらっしゃい",
     "irasshai",
-    "https://cdn-icons-png.flaticon.com/512/4028/4028308.png"
+    "https://cdn-icons-png.flaticon.com/512/4028/4028308.png",
+    "いらっしゃい。\n(ကြိုဆိုပါတယ်။)"
   ],
   "ကျေးဇူးပြုပြီး အိမ်ပေါ်တက်ပါ။": [
     "どうぞ、おあがりください",
     "どうぞ、おあがりください",
     "dōzo, oagari kudasai",
-    "https://cdn-icons-png.flaticon.com/512/4028/4028308.png"
+    "https://cdn-icons-png.flaticon.com/512/4028/4028308.png",
+    "どうぞ、おあがりください。\n(ကျေးဇူးပြုပြီး အိမ်ထဲဝင်ပါ။)"
   ],
   "ခွင့်ပြုပါ (သူတစ်ပါး၏ အခန်းသို့ဝင်ရန် ခွင့်တောင်းခြင်း)": [
     "しつれいします",
     "失礼します",
     "shitsurei shimasu",
-    "https://cdn-icons-png.flaticon.com/512/4028/4028308.png"
+    "https://cdn-icons-png.flaticon.com/512/4028/4028308.png",
+    "しつれいします。\n(ခွင့်ပြုပါဦး/အိမ်ထဲဝင်ပါရစေ။)"
   ],
   "စားပါမယ် (အစားအသောက်ကို မစားခင်တွင်ပြောသောစကား)": [
     "いただきます",
     "いただきます",
     "itadakimasu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "いただきます。\n(စားပါတော့မယ်။)"
   ],
   "(အစားအသောက်ကို စားပြီးသည့်အခါပြောသောစကား)": [
     "ごちそうさま [でした]",
     "ごちそうさま [でした]",
     "gochisōsama [deshita]",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ごちそうさまでした。\n(စားလို့ကောင်းခဲ့ပါတယ်။)"
   ],
-  "စပိန်": [
-    "スペイン",
-    "スペイン",
-    "Supein",
-    "https://cdn-icons-png.flaticon.com/512/197/197605.png"
-  ]
 };
 
 final minnaLesson8 = {
@@ -2179,338 +2547,359 @@ final minnaLesson8 = {
     "ハンサム [な]",
     "ハンサム [な]",
     "hansamu [na]",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ミラーさんは ハンサムです。\n(မစ္စတာမီလာက ခန့်ချောတယ်။)"
   ],
   "လှသော၊ ချောမောသော(မ)": [
     "きれい [な]",
     "きれい [な]",
     "kirei [na]",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "きれいな はなですね。\n(လှပတဲ့ ပန်းလေးပဲနော်။)"
   ],
   "တိတ်ဆိတ်သော": [
     "しずか [な]",
     "静か [な]",
     "shizuka [na]",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "ここは しずかです。\n(ဒီနေရာက တိတ်ဆိတ်တယ်။)"
   ],
   "စည်ကားသော": [
     "にぎやか [な]",
     "賑やか [な]",
     "nigiyaka [na]",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "とうきょうは にぎやかです。\n(တိုကျိုက စည်ကားတယ်။)"
   ],
   "နာမည်ကြီးသော": [
     "ゆうめい [な]",
     "有名 [な]",
     "yūmei [na]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ふじさんは ゆうめいです。\n(ဖူဂျီတောင်က နာမည်ကြီးတယ်။)"
   ],
   "ဖေါ်ရွေသော။ ကြင်နာတတ်သော": [
     "しんせつ [な]",
     "親切 [な]",
     "shinsetsu [na]",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ワンさんは しんせつです。\n(ဝမ်ဆန်က ကြင်နာတတ်တယ်။)"
   ],
   "ကျန်းမာသော၊ သန်မာသော": [
     "げんき [な]",
     "元気 [な]",
     "genki [na]",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おげんきですか。\n(နေကောင်းလား။)"
   ],
   "အားသော၊ အားလပ်သော": [
     "ひま [な]",
     "暇 [な]",
     "hima [na]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あしたは ひまですか。\n(မနက်ဖြန် အားလား။)"
   ],
   "အဆင်ပြေသော": [
     "べんり [な]",
     "便利 [な]",
     "benri [na]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ちかてつは べんりです。\n(မြေအောက်ရထားက အဆင်ပြေတယ်။)"
   ],
   "လှသော၊ စွဲမက်ဖွယ်ကောင်းသော": [
     "すてき [な]",
     "素敵 [な]",
     "suteki [na]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "すてきな カバンですね。\n(လှပတဲ့ အိတ်ကလေးပဲနော်။)"
   ],
   "ကြီးသော": [
     "おおきい",
     "大きい",
     "ōkii",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "おおきい いえ\n(အိမ်ကြီး)"
   ],
   "သေးသော": [
     "ちいさい",
     "小さい",
     "chiisai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ちいさい いえ\n(အိမ်သေးသေးလေး)"
   ],
   "သစ်သော၊ အသစ်ဖြစ်သော": [
     "あたらしい",
     "新しい",
     "atarashii",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あたらしい くるま\n(ကားသစ်)"
   ],
   "ဟောင်းသော": [
     "ふるい",
     "古い",
     "furui",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ふるい くるま\n(ကားဟောင်း)"
   ],
   "ကောင်းသော": [
     "いい/よい",
     "いい/良い",
     "ii/yoi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いい せんせい\n(ဆရာကောင်း)"
   ],
   "ဆိုးသော": [
     "わるい",
     "悪い",
     "warui",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "てんきが わるいです。\n(ရာသီဥတု ဆိုးတယ်။)"
   ],
   "ပူအိုက်သော": [
     "あつい",
     "暑い/熱い",
     "atsui",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "きょうは あついです。\n(ဒီနေ့ ပူတယ်။)"
   ],
   "ချမ်းသော(ရာသီဥတု)": [
     "さむい",
     "寒い",
     "samui",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "きょうは さむいです。\n(ဒီနေ့ ချမ်းတယ်။)"
   ],
   "အေးမြသော": [
     "つめたい",
     "冷たい",
     "tsumetai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "つめたい みず\n(ရေအေး)"
   ],
   "ခက်သော": [
     "むずかしい",
     "難しい",
     "muzukashii",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "にほんごは むずかしいです。\n(ဂျပန်စာက ခက်တယ်။)"
   ],
   "လွယ်သော": [
     "やさしい",
     "易しい",
     "yasashii",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "にほんごは やさしいです。\n(ဂျပန်စာက လွယ်တယ်။)"
   ],
   "မြင့်သော၊ ဈေးကြီးသော": [
     "たかい",
     "高い",
     "takai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "このほんは たかいです。\n(ဒီစာအုပ်က ဈေးကြီးတယ်။)"
   ],
   "သက်သာသော၊ ဈေးပေါသော": [
     "やすい",
     "安い",
     "yasui",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "このほんは やすいです。\n(ဒီစာအုပ်က ဈေးသက်သာတယ်။)"
   ],
   "နိမ့်သော": [
     "ひくい",
     "低い",
     "hikui",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ひくい やま\n(နိမ့်သော တောင်)"
   ],
   "စိတ်ဝင်စားစရာကောင်းသော": [
     "おもしろい",
     "おもしろい",
     "omoshiroi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "このえいがは おもしろいです。\n(ဒီရုပ်ရှင်က စိတ်ဝင်စားဖို့ကောင်းတယ်။)"
   ],
   "အရသာရှိသော": [
     "おいしい",
     "おいしい",
     "oishii",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "このパンは おいしいです。\n(ဒီပေါင်မုန့်က အရသာရှိတယ်။)"
   ],
   "အလုပ်များသော": [
     "いそがしい",
     "忙しい",
     "isogashii",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "まいにち いそがしいです。\n(နေ့တိုင်း အလုပ်များတယ်။)"
   ],
   "ပျော်ရွှင်သော": [
     "たのしい",
     "楽しい",
     "tanoshii",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "べんきょうは たのしいです。\n(စာလေ့လာတာ ပျော်စရာကောင်းတယ်။)"
   ],
   "ဖြူသော": [
     "しろい",
     "白い",
     "shiroi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "しろい シャツ\n(အင်္ကျီအဖြူ)"
   ],
   "မဲသော": [
     "くろい",
     "黒い",
     "kuroi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "くろい くつ\n(ဖိနပ်အမဲ)"
   ],
   "နီသော": [
     "あかい",
     "赤い",
     "akai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あかい りんご\n(ပန်းသီးအနီ)"
   ],
   "ပြာသော": [
     "あおい",
     "青い",
     "aoi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あおい うみ\n(ပင်လယ်ပြာ)"
   ],
   "ဆာကူရာပန်း၊ ချယ်ရီပန်း": [
     "さくら",
     "桜",
     "sakura",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "さくらが きれいです。\n(ချယ်ရီပန်းက လှပါတယ်။)"
   ],
   "တောတောင်": [
     "やま",
     "山",
     "yama",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "ふじさんは たかい やまです。\n(ဖူဂျီတောင်က မြင့်တဲ့ တောင်ဖြစ်ပါတယ်။)"
   ],
   "မြို့": [
     "まち",
     "町",
     "machi",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "きれいな まち\n(လှပတဲ့ မြို့)"
   ],
   "စားစရာ": [
     "たべもの",
     "食べ物",
     "tabemono",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "おいしい たべもの\n(အရသာရှိတဲ့ အစားအစာ)"
   ],
   "နေရာ": [
     "ところ",
     "所",
     "tokoro",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "しずかな ところ\n(တိတ်ဆိတ်တဲ့ နေရာ)"
   ],
   "အဆောင်": [
     "りょう",
     "寮",
     "ryō",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "りょうは ふるいです。\n(အဆောင်က ဟောင်းတယ်။)"
   ],
   "စားသောက်ဆိုင်": [
     "レストラン",
     "レストラン",
     "resutoran",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "きれいな レストランですね。\n(လှပတဲ့ စားသောက်ဆိုင်လေးပဲနော်။)"
   ],
   "နေထိုင်မှု": [
     "せいかつ",
     "生活",
     "seikatsu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "にほんの せいかつは たのしいです。\n(ဂျပန်က နေထိုင်မှုဘဝက ပျော်စရာကောင်းတယ်။)"
   ],
   "အလုပ်အကိုင်": [
     "おしごと",
     "お仕事",
     "oshigoto",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "おしごとは どうですか。\n(အလုပ်က ဘယ်လိုလဲ။)"
   ],
   "ဘယ်လိုလဲ": [
     "どう",
     "どう",
     "dō",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "にほんの せいかつは どうですか。\n(ဂျပန်က နေထိုင်မှုဘဝက ဘယ်လိုလဲ။)"
   ],
   "ဘယ်လိုမျိုး": [
     "どんな～",
     "どんな～",
     "donna ~",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "奈良は どんな まちですか。\n(နာရာက ဘယ်လိုမြို့မျိုးလဲ။)"
   ],
   "အလွန်": [
     "とても",
     "とても",
     "totemo",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "とても げんきです。\n(အရမ်း ကျန်းမာပါတယ်။)"
   ],
   "သိပ်--": [
     "あまり",
     "あまり",
     "amari",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あまり さむくないです。\n(သိပ် မချမ်းဘူး။)"
   ],
   "အဲဒီနောက်၊ ပြီးနောက်": [
     "そして",
     "そして",
     "soshite",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "きれいです。そして ゆうめいです。\n(လှတယ်။ ပြီးတော့ နာမည်ကြီးတယ်။)"
   ],
   "-ပေမဲ့လဲ-": [
     "～が、～",
     "～が、～",
     "～ ga, ～",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "おいしいですが、たかいです。\n(အရသာရှိပေမဲ့ ဈေးကြီးတယ်။)"
   ],
   "နေကောင်းလား(နှုတ်ဆက်သည့်အခါတွင်လည်းသုံးပါသည်)": [
     "おげんきですか",
     "お元気ですか",
     "ogenki desu ka",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おげんきですか。\n(နေကောင်းလား။)"
   ],
   "ဟုတ်တယ်နော်": [
     "そうですね",
     "そうですね",
     "sō desu ne",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "そうですね。\n(ဟုတ်တယ်နော်။)"
   ],
   "နောက်တစ်ခွက်": [
     "もういっぱい",
     "もう一杯",
     "mō ippai",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "コーヒー、もういっぱい いかがですか。\n(ကော်ဖီ နောက်တစ်ခွက်လောက် သောက်မလား။)"
   ],
   "ဘယ်လိုလဲဟင်": [
     "いかがですか",
     "いかがですか",
     "ikaga desu ka",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "おちゃ、いかがですか。\n(ရေနွေးကြမ်း သောက်မလား/ဘယ်လိုလဲ။)"
   ],
-  "ရှန်ဟိုင်း": [
-    "シャンハイ",
-    "シャンハイ",
-    "Shanhai",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
-  ],
-  "Kinkakuji ကျောင်းတော်": [
-    "きんかくじ",
-    "金閣寺",
-    "Kinkakuji",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
-  ],
-  "Nara ပန်းခြံ": [
-    "ならこうえん",
-    "奈良公園",
-    "Nara Kōen",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
-  ],
-  "ဖူဂျီတောင်": [
-    "ふじさん",
-    "富士山",
-    "Fuji-san",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
-  ],
-  "စာမူရိုင်း ၇ယောက်ရှေးခေတ်ရုပ်ရှင်": [
-    "しちにんのさむらい",
-    "「七人の侍」",
-    "Shichinin no Samurai",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
-  ]
 };
 
 final minnaLesson9 = {
@@ -2518,308 +2907,352 @@ final minnaLesson9 = {
     "わかります",
     "わかります",
     "wakarimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "にほんごが わかります。\n(ဂျပန်စာ နားလည်တယ်။)"
   ],
   "ရှိသည်။(သက်မဲ့)": [
     "あります",
     "あります",
     "arimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "くるまが あります。\n(ကား ရှိတယ်။)"
   ],
   "ကြိုက်သော": [
     "すき [な]",
     "好き [な]",
     "suki [na]",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "イタリアりょうりが すきです。\n(အီတလီအစားအစာ ကြိုက်တယ်။)"
   ],
   "မုန်းသော": [
     "きらい [な]",
     "嫌い [な]",
     "kirai [na]",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "さかなが きらいです。\n(ငါး မကြိုက်ဘူး။)"
   ],
   "တော်သော": [
     "じょうず [な]",
     "上手 [な]",
     "jōzu [na]",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "うたが じょうずですね。\n(သီချင်းဆို တော်တယ်နော်။)"
   ],
   "ညံ့သော": [
     "へた [な]",
     "下手 [な]",
     "heta [na]",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "テニスが へたです。\n(တင်းနစ်ကစားတာ ညံ့တယ်။)"
   ],
   "သောက်စရာ": [
     "のみもの",
     "飲み物",
     "nomimono",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "なにか のみものが ほしいです。\n(သောက်စရာ တစ်ခုခု လိုချင်တယ်။)"
   ],
   "ဟင်း၊ အစားအစာ": [
     "りょうり",
     "料理",
     "ryōri",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "イタリアりょうり\n(အီတလီ အစားအစာ)"
   ],
   "အားကစား": [
     "スポーツ",
     "スポーツ",
     "supōtsu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "スポーツが すきですか。\n(အားကစား ကြိုက်လား။)"
   ],
   "base ball": [
     "やきゅう",
     "野球",
     "yakyuu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "やきゅうを します。\n(ဘေ့စ်ဘော ကစားတယ်။)"
   ],
   "အက": [
     "ダンス",
     "ダンス",
     "dansu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "ダンスが じょうずです。\n(အက တော်တယ်။)"
   ],
   "ဂီတ": [
     "おんがく",
     "音楽",
     "ongaku",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "おんがくを ききます。\n(သီချင်း နားထောင်တယ်။)"
   ],
   "သီချင်း": [
     "うた",
     "歌",
     "uta",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "うたを うたいます。\n(သီချင်း ဆိုတယ်။)"
   ],
   "ရှေးဟောင်းသီချင်း": [
     "クラシック",
     "クラシック",
     "kurashikku",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "クラシックが すきです。\n(ဂန္ထဝင်သီချင်း ကြိုက်တယ်။)"
   ],
   "jass သီချင်း": [
     "ジャズ",
     "ジャズ",
     "jazu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "ジャズが わかりますか。\n(ဂျက်ဇ်ဂီတ နားလည်လား။)"
   ],
   "ဂီတဖျော်ဖြေပွဲ": [
     "コンサート",
     "コンサート",
     "konsāto",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "コンサートへ いきます。\n(ဂီတဖျော်ဖြေပွဲကို သွားတယ်။)"
   ],
   "ကာရာအိုကေ": [
     "カラオケ",
     "カラオケ",
     "karaoke",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "カラオケで うたいます。\n(ကာရာအိုကေမှာ သီချင်းဆိုတယ်။)"
   ],
   "ဂျပန်ရိုးရာဇာတ်ပွဲ": [
     "かぶき",
     "歌舞伎",
     "kabuki",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "かぶきを みます。\n(ခဘုခိပြဇာတ် ကြည့်တယ်။)"
   ],
   "ပန်းချီ": [
     "え",
     "絵",
     "e",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134812.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134812.png",
+    "えを かきます。\n(ပုံ ဆွဲတယ်။)"
   ],
   "စာလုံး": [
     "じ",
     "字",
     "ji",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "じを よみます。\n(စာ ဖတ်တယ်။)"
   ],
   "ဂျပန်စာလုံး": [
     "かんじ",
     "漢字",
     "kanji",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "かんじが わかりますか。\n(ခန်းဂျီး နားလည်လား။)"
   ],
   "ဟိရဂနစာလုံး": [
     "ひらがな",
     "ひらがな",
     "hiragana",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "ひらがなで かきます。\n(ဟိရဂနနဲ့ ရေးတယ်။)"
   ],
   "ခတခနစာလုံး": [
     "かたかな",
     "カタカナ",
     "katakana",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "カタカナが わかります。\n(ခတခန နားလည်တယ်။)"
   ],
   "ရိုးမာဂျိစာလုံး": [
     "ローマじ",
     "ローマ字",
     "rōmaji",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "ローマじで かきます。\n(Romaji နဲ့ ရေးတယ်။)"
   ],
   "ပိုက်ဆံအကြွေ": [
     "こまかいおかね",
     "細かいお金",
     "komakai okane",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "こまかいおかねが ありますか。\n(ပိုက်ဆံအကြွေ ရှိလား။)"
   ],
   "လက်မှတ်": [
     "チケット",
     "チケット",
     "chiketto",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "コンサートの チケット\n(ဂီတပွဲ လက်မှတ်)"
   ],
   "အချိန်": [
     "じかん",
     "時間",
     "jikan",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "じかんが ありません。\n(အချိန် မရှိဘူး။)"
   ],
   "ကိစ္စ": [
     "ようじ",
     "用事",
     "yōji",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ようじが あります。\n(ကိစ္စ ရှိတယ်။)"
   ],
   "ကတိ၊ ချိန်းဆိုထားခြင်း": [
     "やくそく",
     "約束",
     "yakusoku",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "やくそくが あります。\n(ချိန်းထားတာ ရှိတယ်။)"
   ],
   "အချိန်ပိုင်းအလုပ်": [
     "アルバイト",
     "アルバイト",
     "arubaito",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "アルバイトを します。\n(အချိန်ပိုင်းအလုပ် လုပ်တယ်။)"
   ],
   "ခင်ပွန်း(သူတပါး၏ ယောက်ျား)": [
     "ごしゅじん",
     "ご主人",
     "goshujin",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ごしゅじんは おげんきですか。\n(ခင်ပွန်းသည် နေကောင်းလား။)"
   ],
   "မိမိ၏ယောက်ျား": [
     "おっと/しゅじん",
     "夫/主人",
     "otto/shujin",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "しゅじんは かいしゃいんです。\n(ကျွန်မယောက်ျားက ကုမ္ပဏီဝန်ထမ်းပါ။)"
   ],
   "ဇနီး (သူတပါး၏ ဇနီး)": [
     "おくさん",
     "奥さん",
     "okusan",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おくさんは きれいですね。\n(ဇနီးသည်က လှတာပဲနော်။)"
   ],
   "မိမိ၏ဇနီး၊ မိန်းမ": [
     "つま/かない",
     "妻/家内",
     "tsuma/kanai",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "つまは せんせいです。\n(ကျွန်တော့်ဇနီးက ဆရာမပါ။)"
   ],
   "ကလေး": [
     "こども",
     "子ども",
     "kodomo",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "こどもが います。\n(ကလေး ရှိတယ်။)"
   ],
   "ကောင်းကောင်း၊ ခဏခဏ": [
     "よく",
     "よく",
     "yoku",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "にほんごが よく わかります。\n(ဂျပန်စာ ကောင်းကောင်း နားလည်တယ်။)"
   ],
   "အကြမ်းအားဖြင့်": [
     "だいたい",
     "だいたい",
     "daitai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "だいたい わかります。\n(အကြမ်းဖျင်း နားလည်တယ်။)"
   ],
   "အများကြီး၊ များများ": [
     "たくさん",
     "たくさん",
     "takusan",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "おかねが たくさん あります。\n(ပိုက်ဆံ အများကြီး ရှိတယ်။)"
   ],
   "နည်းနည်း": [
     "すこし",
     "少し",
     "sukoshi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "すこし わかります。\n(နည်းနည်း နားလည်တယ်။)"
   ],
   "လုံးဝ": [
     "ぜんぜん",
     "全然",
     "zenzen",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ぜんぜん わかりません。\n(လုံးဝ နားမလည်ဘူး။)"
   ],
   "စောစော၊ မြန်မြန်": [
     "はやく",
     "早く",
     "hayaku",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "はやく かえります。\n(စောစော ပြန်တယ်။)"
   ],
   "---ဖြစ်လို့": [
     "～から",
     "～から",
     "～ kara",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "じかんが ありませんから、･･･\n(အချိန် မရှိလို့...)"
   ],
   "ဘာဖြစ်လို့": [
     "どうして",
     "どうして",
     "dōshite",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "どうしてですか。\n(ဘာဖြစ်လို့လဲ။)"
   ],
   "ရပါတယ်": [
     "いいですよ",
     "いいですよ",
     "ii desu yo",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いいですよ。\n(ရပါတယ်။)"
   ],
   "စိတ်မကောင်းပါဘူး": [
     "ざんねん [ですが]",
     "残念です [が]",
     "zannen desu [ga]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ざんねんです。\n(စိတ်မကောင်းပါဘူး။)"
   ],
   "အော်--": [
     "ああ、",
     "ああ、",
     "ā,",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ああ、そうですか。\n(အော်၊ ဟုတ်လား။)"
   ],
   "အတူတူ ဘယ်လိုလဲဟင်": [
     "いっしょにいかがですか",
     "一緒 [に] いかがですか",
     "issho ni ikaga desu ka",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "いっしょに いかがですか。\n(အတူတူ ဘယ်လိုလဲဟင်။)"
   ],
   "နည်းနည်း၊ ခဏ၊ သိပ်ပြီးတော့-- (အကြောင်းအရာတစ်ခုကို ငြင်းသည့်အခါသုံးသည်)": [
     "[～は]ちょっと･･･",
     "[～は]ちょっと･･･",
     "[~ wa] chotto...",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "きょうは ちょっと･･･\n(ဒီနေ့ကတော့ နည်းနည်း...)"
   ],
   "မရဘူးလား": [
     "だめですか",
     "だめですか",
     "dame desu ka",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "だめですか。\n(မရဘူးလား။)"
   ],
   "နောက်တခါ---တောင်းဆိုပါတယ်": [
     "またこんどおねがいします",
     "また今度お願いします",
     "mata kondo onegai shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "また こんど おねがいします。\n(နောက်တစ်ခါမှပဲ နော်။)"
   ],
-  "ခရီးသွားခြင်း": [
-    "りょこう",
-    "旅行",
-    "ryokō",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
-  ]
 };
 
 final minnaLesson10 = {
@@ -2827,302 +3260,338 @@ final minnaLesson10 = {
     "あります",
     "あります",
     "arimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あそこに コンビニが あります。\n(ဟိုနားမှာ စတိုးဆိုင် ရှိတယ်။)"
   ],
   "ရှိသည်။ နေသည်။(သက်ရှိ)": [
     "います",
     "います",
     "imasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ロビーに 佐藤（さとう）さんが います。\n(ဧည့်ခန်းမှာ ဆာတိုးဆန် ရှိတယ်။)"
   ],
   "အမျိုးမျိုး": [
     "いろいろ [な]",
     "いろいろ [な]",
     "iroiro [na]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いろいろな もの\n(အမျိုးမျိုးသော ပစ္စည်းများ)"
   ],
   "အမျိုးသား၊ ယောက်ျားလေး": [
     "おとこのひと",
     "男の人",
     "otoko no hito",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おとこのひとが います。\n(အမျိုးသားတစ်ယောက် ရှိတယ်။)"
   ],
   "အမျိုးသမီး၊ မိန်းကလေး": [
     "おんなのひと",
     "女の人",
     "onna no hito",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おんなのひとが います。\n(အမျိုးသမီးတစ်ယောက် ရှိတယ်။)"
   ],
   "ကောင်လေး": [
     "おとこのこ",
     "男の子",
     "otoko no ko",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おとこのこが います。\n(ကောင်လေးတစ်ယောက် ရှိတယ်။)"
   ],
   "ကောင်မလေး": [
     "おんなのこ",
     "女の子",
     "onna no ko",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おんなのこが います。\n(ကောင်မလေးတစ်ယောက် ရှိတယ်။)"
   ],
   "ခွေး": [
     "いぬ",
     "犬",
     "inu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "にわに いぬが います。\n(ခြံထဲမှာ ခွေး ရှိတယ်။)"
   ],
   "ကြောင်": [
     "ねこ",
     "猫",
     "neko",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "つくえのしたに ねこが います。\n(စားပွဲအောက်မှာ ကြောင် ရှိတယ်။)"
   ],
   "ပန်ဒါ": [
     "パンダ",
     "パンダ",
     "panda",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "パンダが います。\n(ပန်ဒါ ရှိတယ်။)"
   ],
   "ဆင်": [
     "ぞう",
     "象",
     "zō",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "ぞうが います。\n(ဆင် ရှိတယ်။)"
   ],
   "သစ်ပင်": [
     "き",
     "木",
     "ki",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "こうえんに きが あります。\n(ပန်းခြံထဲမှာ သစ်ပင် ရှိတယ်။)"
   ],
   "အရာဝတ္ထု": [
     "もの",
     "物",
     "mono",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いろいろな もの\n(အမျိုးမျိုးသော ပစ္စည်းများ)"
   ],
   "ဓါတ်ခဲ": [
     "でんち",
     "電池",
     "denchi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "でんちが ありますか。\n(ဓာတ်ခဲ ရှိလား။)"
   ],
   "ဗူး": [
     "はこ",
     "箱",
     "hako",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "はこの なかに なにが ありますか。\n(ဘူးထဲမှာ ဘာရှိလဲ။)"
   ],
   "မီးခလုတ်": [
     "スイッチ",
     "スイッチ",
     "suicchi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "スイッチは ドアの みぎに あります。\n(မီးခလုတ်က တံခါးရဲ့ညာဘက်မှာ ရှိတယ်။)"
   ],
   "ရေခဲသေတ္တာ": [
     "れいぞうこ",
     "冷蔵庫",
     "reizōko",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "れいぞうこの なかに いろいろな ものが あります。\n(ရေခဲသေတ္တာထဲမှာ အမျိုးမျိုးသော ပစ္စည်းတွေ ရှိတယ်။)"
   ],
   "စားပွဲခုံ": [
     "テーブル",
     "テーブル",
     "tēburu",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "テーブルの うえ\n(စားပွဲပေါ်)"
   ],
   "အိပ်ရာ၊ ကုတင်": [
     "ベッド",
     "ベッド",
     "beddo",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "ベッドの した\n(ကုတင်အောက်)"
   ],
   "စင်(စာအုပ်စင်၊ ပန်းကန်စင်)": [
     "たな",
     "棚",
     "tana",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "たなの うえに ほんが あります。\n(စင်ပေါ်မှာ စာအုပ် ရှိတယ်။)"
   ],
   "တံခါး": [
     "ドア",
     "ドア",
     "doa",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "ドアの ちかく\n(တံခါးနား)"
   ],
   "ပြတင်းပေါက်": [
     "まど",
     "窓",
     "mado",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "まどの ちかくに つくえが あります。\n(ပြတင်းပေါက်နားမှာ စားပွဲ ရှိတယ်။)"
   ],
   "စာတိုက်ပုံး": [
     "ポスト",
     "ポスト",
     "posuto",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png",
+    "ポストは どこですか。\n(စာတိုက်ပုံး ဘယ်မှာလဲ။)"
   ],
   "အဆောက်အဦး": [
     "ビル",
     "ビル",
     "biru",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "たかい ビル\n(မြင့်တဲ့ အဆောက်အဦး)"
   ],
   "အလိုအလျောက်ငွေထုတ်စက်": [
     "ATM",
     "ATM",
     "Ē Tī Emu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "コンビニに ATMが あります。\n(စတိုးဆိုင်မှာ ATM ရှိတယ်။)"
   ],
   "convenience store": [
     "コンビニ",
     "コンビニ",
     "konbini",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
+    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png",
+    "ちかくに コンビニが あります。\n(အနီးနားမှာ စတိုးဆိုင် ရှိတယ်။)"
   ],
   "ပန်းခြံ": [
     "こうえん",
     "公園",
     "kōen",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "こうえんに さくらが あります。\n(ပန်းခြံထဲမှာ ချယ်ရီပန်း ရှိတယ်။)"
   ],
   "လက်ဖက်ရည်/ကော်ဖီဆိုင်": [
     "きっさてん",
     "喫茶店",
     "kissaten",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "えきのまえに きっさてんが あります。\n(ဘူတာရှေ့မှာ ကော်ဖီဆိုင် ရှိတယ်။)"
   ],
   "စာအုပ်ဆိုင်": [
     "ほんや",
     "本屋",
     "hon'ya",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
+    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png",
+    "ほんやは どこですか。\n(စာအုပ်ဆိုင် ဘယ်မှာလဲ။)"
   ],
   "---ဆိုင်": [
     "～や",
     "～屋",
     "～ ya",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
+    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png",
+    "パンや\n(မုန့်ဆိုင်)"
   ],
   "---ယာဉ်စီးတဲ့နေရာ": [
     "～のりば",
     "～乗り場",
     "～ noriba",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "タクシーのりば\n(တက္ကစီဂိတ်)"
   ],
   "ခရိုင် (prefecture)": [
     "けん",
     "県",
     "ken",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png",
+    "かながわけん\n(ခနဂါဝါ ခရိုင်)"
   ],
   "အပေါ်": [
     "うえ",
     "上",
     "ue",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "つくえの うえ\n(စားပွဲပေါ်)"
   ],
   "အောက်": [
     "した",
     "下",
     "shita",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いすの した\n(ထိုင်ခုံအောက်)"
   ],
   "ရှေ့၊ အရှေ့": [
     "まえ",
     "前",
     "mae",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "えきの まえ\n(ဘူတာရှေ့)"
   ],
   "နောက်၊ အနောက်": [
     "うしろ",
     "後ろ",
     "ushiro",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ドアの うしろ\n(တံခါးနောက်)"
   ],
   "ညာဘက်": [
     "みぎ",
     "右",
     "migi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "みぎに あります。\n(ညာဘက်မှာ ရှိတယ်။)"
   ],
   "ဘယ်ဘက်": [
     "ひだり",
     "左",
     "hidari",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ひだりに あります。\n(ဘယ်ဘက်မှာ ရှိတယ်။)"
   ],
   "အထဲ(မှာ)": [
     "なか",
     "中",
     "naka",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "はこの なか\n(ဘူးထဲ)"
   ],
   "အပြင်(မှာ)": [
     "そと",
     "外",
     "soto",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "そとに ひとが います。\n(အပြင်မှာ လူ ရှိတယ်။)"
   ],
   "အနား(မှာ)": [
     "そば",
     "そば",
     "soba",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "つくえの そば\n(စားပွဲနား)"
   ],
   "အနီးနား(မှာ)": [
     "ちかく",
     "近く",
     "chikaku",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "えきの ちかく\n(ဘူတာနား)"
   ],
   "နှစ်ခုကြား (မှာ)": [
     "あいだ",
     "間",
     "aida",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "とけいと めがねの あいだ\n(နာရီနဲ့ မျက်မှန်ကြား)"
   ],
   "---နဲ့---တွေ": [
     "～や～など",
     "～や～など",
     "～ ya ～ nado",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ほんや ペンなど\n(စာအုပ်တို့ ဘောပင်တို့...)"
   ],
   "(ယှက်ဖြစ်ရင်ခွင့်လွှတ်ပါ)": [
     "どうもすみません",
     "[どうも]すみません",
     "[dōmo] sumimasen",
-    "https://cdn-icons-png.flaticon.com/512/6364/6364087.png"
+    "https://cdn-icons-png.flaticon.com/512/6364/6364087.png",
+    "どうも すみません。\n(တောင်းပန်ပါတယ်/ကျေးဇူးတင်ပါတယ်။)"
   ],
   "ငံပြာရည်": [
     "ナンプラー",
     "ナンプラー",
     "nanpurā",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ナンプラーは ありますか。\n(ငံပြာရည် ရှိလား။)"
   ],
   "ကော်နာ": [
     "コーナー",
     "コーナー",
     "kōnā",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "スパイスコーナー\n(ဟင်းခတ်အမွှေးအကြိုင်ကော်နာ)"
   ],
   "အောက်ဆုံး": [
     "いちばんした",
     "一番下",
     "ichiban shita",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いちばんしたの たな\n(အောက်ဆုံးစင်)"
   ],
-  "တိုကျို ဒစ်စနေလန်း": [
-    "とうきょうディズニーランド",
-    "東京ディズニーランド",
-    "Tōkyō Dizunīrando",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
-  ],
-  "အာဂျီအာ စတိုးဆိုင်": [
-    "アジアストア",
-    "アジアストア",
-    "Ajia Sutoa",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
-  ]
 };
 
 final minnaLesson11 = {
@@ -3130,361 +3599,421 @@ final minnaLesson11 = {
     "います [こどもが]",
     "います [子どもが]",
     "imasu [kodomo ga]",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "こどもが ふたり います。\n(ကလေး နှစ်ယောက် ရှိတယ်။)"
   ],
   "နေသည်။ (ဂျပန်တွင်)": [
     "います [にほんに]",
     "います [日本に]",
     "imasu [Nihon ni]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "にほんに います。\n(ဂျပန်မှာ နေတယ်။)"
   ],
   "ကြာသည်။(အချိန်ကြာတယ်)": [
     "かかります",
     "かかります",
     "kakarimasu",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "３じかん かかります。\n(၃ နာရီ ကြာတယ်။)"
   ],
   "အနားယူသည် (ကုမ္ပဏီကို)": [
     "やすみます [かいしゃを]",
     "休みます [会社を]",
     "yasumimasu [kaisha o]",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069185.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069185.png",
+    "きょうは かいしゃを やすみます。\n(ဒီနေ့ ကုမ္ပဏီကို ခွင့်ယူမယ်/နားမယ်။)"
   ],
   "တစ်ခု": [
     "ひとつ",
     "１つ",
     "hitotsu",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "みかんを ひとつ たべました。\n(လိမ္မော်သီး တစ်လုံး စားခဲ့တယ်။)"
   ],
   "နှစ်ခု": [
     "ふたつ",
     "２つ",
     "futatsu",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "アイスクリームを ふたつ ください。\n(ရေခဲမုန့် နှစ်ခု ပေးပါ။)"
   ],
   "သုံးခု": [
     "みっつ",
     "３つ",
     "mittsu",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "つくえが みっつ あります。\n(စားပွဲ သုံးလုံး ရှိတယ်။)"
   ],
   "လေးခု": [
     "よっつ",
     "４つ",
     "yottsu",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "いすが よっつ あります。\n(ထိုင်ခုံ လေးလုံး ရှိတယ်။)"
   ],
   "ငါးခု": [
     "いつつ",
     "５つ",
     "itsutsu",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "りんごを いつつ かいました。\n(ပန်းသီး ငါးလုံး ဝယ်ခဲ့တယ်။)"
   ],
   "ခြောက်ခု": [
     "むっつ",
     "６つ",
     "muttsu",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "たまごが むっつ あります。\n(ကြက်ဥ ခြောက်လုံး ရှိတယ်။)"
   ],
   "ခုနှစ်ခု": [
     "ななつ",
     "７つ",
     "nanatsu",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "コップが ななつ あります。\n(ခွက် ခုနစ်လုံး ရှိတယ်။)"
   ],
   "ရှစ်ခု": [
     "やっつ",
     "８つ",
     "yattsu",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "やっつ\n(၈ ခု)"
   ],
   "ကိုးခု": [
     "ここのつ",
     "９つ",
     "kokonotsu",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "ここのつ\n(၉ ခု)"
   ],
   "ဆယ်ခု": [
     "とお",
     "１０",
     "tō",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "とお\n(၁၀ ခု)"
   ],
   "ဘယ်နှစ်ခု": [
     "いくつ",
     "いくつ",
     "ikutsu",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "みかんが いくつ ありますか。\n(လိမ္မော်သီး ဘယ်နှစ်လုံး ရှိသလဲ။)"
   ],
   "တစ်ယောက်": [
     "ひとり",
     "１人",
     "hitori",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ひとりで いきます。\n(တစ်ယောက်တည်း သွားမယ်။)"
   ],
   "နှစ်ယောက်": [
     "ふたり",
     "２人",
     "futari",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "きょうだいが ふたり います。\n(မောင်နှမ နှစ်ယောက် ရှိတယ်။)"
   ],
   "---ယောက်": [
     "～にん",
     "～人",
     "～ nin",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "３にん（さんにん）\n(၃ ယောက်)"
   ],
   "---စီး၊--လုံး (ကား၊ တီဗီ၊ ရေခဲ သေတ္တာ၊ ပန်ကာ စသည်များ)": [
     "～だい",
     "～台",
     "～ dai",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "くるまが ２だい あります。\n(ကား ၂ စီး ရှိတယ်။)"
   ],
   "---ရွက် (တံ ဆိပ်ခေါင်း၊ စာရွက်၊ စာအိတ်၊ ဓါတ်ပုံ၊ အင်္ကျီ စသည်များ)": [
     "～まい",
     "～枚",
     "～ mai",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "シャツが １まい あります。\n(ရှပ်အင်္ကျီ ၁ ထည် ရှိတယ်။)"
   ],
   "---ခေါက်(အကြိမ်အရေ)": [
     "～かい",
     "～回",
     "～ kai",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "いっかい（１かい）\n(၁ ကြိမ်)"
   ],
   "ပန်းသီး": [
     "りんご",
     "りんご",
     "ringo",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "りんごを かいました。\n(ပန်းသီး ဝယ်ခဲ့တယ်။)"
   ],
   "လိမ္မော်သီး": [
     "みかん",
     "みかん",
     "mikan",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "みかんが すきです。\n(လိမ္မော်သီး ကြိုက်တယ်။)"
   ],
   "Sandwich": [
     "サンドイッチ",
     "サンドイッチ",
     "sandoicchi",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "サンドイッチを つくります。\n(အသားညှပ်ပေါင်မုန့် လုပ်တယ်။)"
   ],
   "ဂျပန်မဆလာဟင်း": [
     "カレー [ライス]",
     "カレー [ライス]",
     "karē [raisu]",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "カレーライスを たべます。\n(ထမင်းနဲ့ဟင်း စားတယ်။)"
   ],
   "ရေခဲမုန့်": [
     "アイスクリーム",
     "アイスクリーム",
     "aisukurīmu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "アイスクリームは おいしいです。\n(ရေခဲမုန့်က အရသာရှိတယ်။)"
   ],
   "တံဆိပ်ခေါင်း": [
     "きって",
     "切手",
     "kitte",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png",
+    "きってを あつめます。\n(တံဆိပ်ခေါင်း စုဆောင်းတယ်။)"
   ],
   "post card": [
     "はがき",
     "はがき",
     "hagaki",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png",
+    "はがきを だします。\n(ပို့စ်ကတ် ပို့တယ်။)"
   ],
   "စာအိတ်": [
     "ふうとう",
     "封筒",
     "fūtō",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png",
+    "ふうとうに いれます。\n(စာအိတ်ထဲ ထည့်တယ်။)"
   ],
   "မိဘနှစ်ပါး": [
     "りょうしん",
     "両親",
     "ryōshin",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "りょうしんは げんきです。\n(မိဘတွေ ကျန်းမာတယ်။)"
   ],
   "မောင်နှစ်မ": [
     "きょうだい",
     "兄弟",
     "kyōdai",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "きょうだいが いますか。\n(မောင်နှမ ရှိလား။)"
   ],
   "အကို(မိမိ၏အကို)": [
     "あに",
     "兄",
     "ani",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "あには オーストラリアに います。\n(အစ်ကိုက ဩစတြေးလျမှာ ရှိတယ်။)"
   ],
   "အကို(သူတစ်ပါး၏အကို)": [
     "おにいさん",
     "お兄さん",
     "oniisan",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おにいさんは かいしゃいんですか。\n(အစ်ကိုက ကုမ္ပဏီဝန်ထမ်းလား။)"
   ],
   "အမ (မိမိ၏အမ)": [
     "あね",
     "姉",
     "ane",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "あねは けっこんしています。\n(အစ်မက အိမ်ထောင်ကျပြီးပြီ။)"
   ],
   "အမ(သူတစ်ပါး၏အမ)": [
     "おねえさん",
     "お姉さん",
     "oneesan",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おねえさんは おいくつですか。\n(အစ်မက အသက်ဘယ်လောက်လဲ။)"
   ],
   "မောင်၊ ညီ(မိမိ၏မောင်၊ ညီ)": [
     "おとうと",
     "弟",
     "otōto",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おとうとは がくせいです。\n(မောင်လေးက ကျောင်းသားပါ။)"
   ],
   "သူတစ်ပါး၏မောင်၊ ညီ": [
     "おとうとさん",
     "弟さん",
     "otōtosan",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おとうとさんが いますか。\n(ညီလေး ရှိလား။)"
   ],
   "ညီမ(မိမိ၏ညီမ)": [
     "いもうと",
     "妹",
     "imōto",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "いもうとは かわいいです。\n(ညီမလေးက ချစ်စရာကောင်းတယ်။)"
   ],
   "သူတစ်ပါး၏ညီမ": [
     "いもうとさん",
     "妹さん",
     "imōtosan",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "いもうとさんは どちらですか。\n(ညီမလေးက ဘယ်မှာလဲ။)"
   ],
   "နိုင်ငံခြား": [
     "がいこく",
     "外国",
     "gaikoku",
-    "https://cdn-icons-png.flaticon.com/512/1261/1261689.png"
+    "https://cdn-icons-png.flaticon.com/512/1261/1261689.png",
+    "がいこくへ いきたいです。\n(နိုင်ငံခြား သွားချင်တယ်။)"
   ],
   "နိုင်ငံခြားပညာတော်သင်ကျောင်းသား": [
     "りゅうがくせい",
     "留学生",
     "ryūgakusei",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "わたしは りゅうがくせいです。\n(ကျွန်တော်က နိုင်ငံခြားကျောင်းသားပါ။)"
   ],
   "--- (အချိန်ကြာသည်)": [
     "～じかん",
     "～時間",
     "～ jikan",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "２じかん\n(၂ နာရီကြာ)"
   ],
   "---ပတ်(ရက်သတ္တပတ်)": [
     "～しゅうかん",
     "～週間",
     "～ shūkan",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "３しゅうかん\n(၃ ပတ်)"
   ],
   "---လကြာ": [
     "～かげつ",
     "～ヶ月",
     "～ kagetsu",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "２かげつ\n(၂ လကြာ)"
   ],
   "---နှစ်": [
     "～ねん",
     "～年",
     "～ nen",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "１ねん\n(၁ နှစ်)"
   ],
   "လောက်(၁ နာရီလောက်)": [
     "ぐらい",
     "ぐらい",
     "gurai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "１じかんぐらい かかります。\n(၁ နာရီလောက် ကြာတယ်။)"
   ],
   "ဘယ်လောက်": [
     "どのぐらい",
     "どのぐらい",
     "dono gurai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "どのぐらい かかりますか。\n(ဘယ်လောက် ကြာမလဲ။)"
   ],
   "အားလုံး(အရာဝတ္ထု)": [
     "ぜんぶで",
     "全部で",
     "zenbu de",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ぜんぶで ５００えんです。\n(အားလုံးပေါင်း ယန်း ၅၀၀ ပါ။)"
   ],
   "အားလုံး(လူ၊ သက်ရှိ)": [
     "みんな",
     "みんな",
     "minna",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "みんな げんきです。\n(အားလုံး ကျန်းမာကြတယ်။)"
   ],
   "---တည်းဘဲ": [
     "～だけ",
     "～だけ",
     "～ dake",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "やすみは にちようびだけです。\n(နားရက်က တနင်္ဂနွေနေ့တစ်ရက်တည်းပါ။)"
   ],
   "နားလည်ပါပြီ": [
     "かしこまりました",
     "かしこまりました",
     "kashikomarimashita",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "はい、かしこまりました。\n(ဟုတ်ကဲ့၊ ကောင်းကောင်း နားလည်သဘောပေါက်ပါပြီ။)"
   ],
   "ကောင်းသောရာသီဥတုပါဘဲနော်": [
     "いいおてんきですね",
     "いいお天気ですね",
     "ii otenki desu ne",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いいおてんきですね。\n(ရာသီဥတု သာယာတယ်နော်။)"
   ],
   "အပြင်ထွက်တော့မလို့လား": [
     "おでかけですか",
     "おでかけですか",
     "odekake desu ka",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おでかけですか。\n(အပြင်ထွက်မလို့လား။)"
   ],
   "ခဏ---အထိ": [
     "ちょっと～まで",
     "ちょっと～まで",
     "chotto ~ made",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "ちょっと コンビニまで。\n(ခဏ စတိုးဆိုင်အထိပါ။)"
   ],
   "သွားပါနော်(နှုတ်ဆက်)": [
     "いってらっしゃい",
     "いってらっしゃい",
     "itterasshai",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "いってらっしゃい。\n(ကောင်းကောင်းသွားပါနော် - ကျန်ခဲ့သူက ပြောခြင်း)"
   ],
   "သွားပြီနော်(နှုတ်ဆက်)": [
     "いってきます",
     "行ってきます",
     "ittekimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "いってきます。\n(သွားပါတော့မယ် - သွားမယ့်သူက ပြောခြင်း)"
   ],
   "ရေကြောင်းဖြင့်ပေးပို့": [
     "ふなびん",
     "船便",
     "funabin",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png",
+    "ふなびんで おくります。\n(သင်္ဘောနဲ့ ပို့တယ်။)"
   ],
   "လေကြောင်းဖြင့်ပေးပို့": [
     "こうくうびん",
     "航空便",
     "kōkūbin",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421008.png",
+    "こうくうびんで おねがいします。\n(လေကြောင်းနဲ့ ပို့ပေးပါ။)"
   ],
   "ကျေးဇူးပြု၍": [
     "おねがいします",
     "お願いします",
     "onegai shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "これを おねがいします。\n(ဒါကို ကျေးဇူးပြုပါ။)"
   ],
   "Australia": [
     "オーストラリア",
     "オーストラリア",
     "Ōsutoraria",
-    "https://cdn-icons-png.flaticon.com/512/197/197576.png"
+    "https://cdn-icons-png.flaticon.com/512/197/197576.png",
+    "オーストラリアから きました。\n(ဩစတြေးလျကနေ လာပါတယ်။)"
   ]
 };
 
@@ -3493,313 +4022,365 @@ final minnaLesson12 = {
     "かんたん [な]",
     "簡単 [な]",
     "kantan [na]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "このテストは かんたんです。\n(ဒီစာမေးပွဲက လွယ်တယ်။)"
   ],
   "နီးသော": [
     "ちかい",
     "近い",
     "chikai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "えきから ちかいです。\n(ဘူတာကနေ နီးတယ်။)"
   ],
   "ဝေးသော": [
     "とおい",
     "遠い",
     "tōi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "がっこうは とおいです。\n(ကျောင်းက ဝေးတယ်။)"
   ],
   "မြန်သော(အရှိန်မြန်သော)": [
     "はやい",
     "速い",
     "hayai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あしが はやいです。\n(ခြေထောက် မြန်တယ်။ / အပြေးမြန်တယ်။)"
   ],
   "နှေးသော": [
     "おそい",
     "遅い",
     "osoi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "くるまが おそいです。\n(ကား နှေးတယ်။)"
   ],
   "များသော(လူ)": [
     "おおい [ひとが～]",
     "多い [人が～]",
     "ōi [hito ga ~]",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ひとが おおいです。\n(လူ များတယ်။)"
   ],
   "နည်းသော(လူ)": [
     "すくない [ひとが～]",
     "少ない [人が～]",
     "sukunai [hito ga ~]",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ひとが すくないです。\n(လူ နည်းတယ်။)"
   ],
   "နွေးသော": [
     "あたたかい",
     "暖かい",
     "atatakai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "きょうは あたたかいです。\n(ဒီနေ့ နွေးထွေးတယ်။)"
   ],
   "အေးမြသော": [
     "すずしい",
     "涼しい",
     "suzushii",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "へやは すずしいです。\n(အခန်းက အေးမြတယ်။)"
   ],
   "ချိုသော": [
     "あまい",
     "甘い",
     "amai",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "このケーキは あまいです。\n(ဒီကိတ်မုန့်က ချိုတယ်။)"
   ],
   "စပ်သော": [
     "からい",
     "辛い",
     "karai",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "カレーは からいです。\n(ဟင်းက စပ်တယ်။)"
   ],
   "လေးသော": [
     "おもい",
     "重い",
     "omoi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "かばんが おもいです。\n(အိတ်က လေးတယ်။)"
   ],
   "ပေါ့သော": [
     "かるい",
     "軽い",
     "karui",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "くつが かるいです。\n(ဖိနပ်က ပေါ့ပါးတယ်။)"
   ],
   "ရာသီဥတု": [
     "きせつ",
     "季節",
     "kisetsu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いい きせつですね。\n(ကောင်းတဲ့ ရာသီဥတုပဲနော်။)"
   ],
   "နွေဦးပေါက်": [
     "はる",
     "春",
     "haru",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "はるが すきです。\n(နွေဦးရာသီကို ကြိုက်တယ်။)"
   ],
   "နွေရာသီ": [
     "なつ",
     "夏",
     "natsu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "なつは あついです。\n(နွေရာသီက ပူတယ်။)"
   ],
   "ဆောင်းဦးပေါက်": [
     "あき",
     "秋",
     "aki",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あきに なりました。\n(ဆောင်းဦးရာသီ ရောက်ပြီ။)"
   ],
   "ဆောင်းရာသီ": [
     "ふゆ",
     "冬",
     "fuyu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ふゆは さむいです。\n(ဆောင်းရာသီက ချမ်းတယ်။)"
   ],
   "မိုးလေဝသ၊ ရာသီဥတု": [
     "てんき",
     "天気",
     "tenki",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いい てんきです。\n(ရာသီဥတု သာယာတယ်။)"
   ],
   "မိုး": [
     "あめ",
     "雨",
     "ame",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あめが ふっています。\n(မိုးရွာနေတယ်။)"
   ],
   "နှင်း": [
     "ゆき",
     "雪",
     "yuki",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ゆきが ふります。\n(နှင်းကျတယ်။)"
   ],
   "တိမ်ထူသော": [
     "くもり",
     "曇り",
     "kumori",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "きょうは くもりです。\n(ဒီနေ့ တိမ်ထူတယ်။)"
   ],
   "ဟိုတယ်": [
     "ホテル",
     "ホテル",
     "hoteru",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "ホテルに とまります。\n(ဟိုတယ်မှာ တည်းခိုတယ်။)"
   ],
   "လေဆိပ်": [
     "くうこう",
     "空港",
     "kūkō",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "くうこうへ いきます。\n(လေဆိပ်ကို သွားတယ်။)"
   ],
   "ပင်လယ်": [
     "うみ",
     "海",
     "umi",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "うみは ひろいです。\n(ပင်လယ်က ကျယ်တယ်။)"
   ],
   "ကမ္ဘာလောက": [
     "せかい",
     "世界",
     "sekai",
-    "https://cdn-icons-png.flaticon.com/512/1261/1261689.png"
+    "https://cdn-icons-png.flaticon.com/512/1261/1261689.png",
+    "せかいは ひろいです。\n(ကမ္ဘာကြီးက ကျယ်ဝန်းတယ်။)"
   ],
   "ပါတီပွဲ": [
     "パーティー",
     "パーティー",
     "pātī",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "パーティーを します。\n(ပါတီပွဲ လုပ်တယ်။)"
   ],
   "ပွဲတော်": [
     "おまつり",
     "お祭り",
     "omatsuri",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "おまつりは にぎやかです。\n(ပွဲတော်က စည်ကားတယ်။)"
   ],
   "ဂျပန် အမဲသား hot pot": [
     "すきやき",
     "すき焼き",
     "sukiyaki",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "すきやきを たべます。\n(Sukiyaki စားတယ်။)"
   ],
   "ရှိမိ": [
     "さしみ",
     "刺身",
     "sashimi",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "さしみが すきです。\n(အသားစိမ်း ကြိုက်တယ်။)"
   ],
   "ဆူရှီ": [
     "[お]すし",
     "[お]すし",
     "[o]sushi",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "すしは おいしいです。\n(ဆူရှီက အရသာရှိတယ်။)"
   ],
   "ဂျပန် အကြော်": [
     "てんぷら",
     "天ぷら",
     "tempura",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "てんぷらを たべました。\n(Tempura စားခဲ့တယ်။)"
   ],
   "ဝက်သား": [
     "ぶたにく",
     "豚肉",
     "butaniku",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ぶたにくを かいました。\n(ဝက်သား ဝယ်ခဲ့တယ်။)"
   ],
   "ကြက်သား": [
     "とりにく",
     "鶏肉",
     "toriniku",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "とりにくの りょうり\n(ကြက်သား ဟင်း)"
   ],
   "အမဲသား": [
     "ぎゅうにく",
     "牛肉",
     "gyūniku",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ぎゅうにくが すきです。\n(အမဲသား ကြိုက်တယ်။)"
   ],
   "သံပုရိုသီး": [
     "レモン",
     "レモン",
     "remon",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "レモンジュース\n(သံပုရာရည်)"
   ],
   "ဂျပန်ပန်းအလှထိုးခြင်း": [
     "いけばな",
     "生け花",
     "ikebana",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "いけばなを ならいます。\n(ပန်းအလှထိုးတာ သင်ယူတယ်။)"
   ],
   "သစ်ရွက်များအရောင်ပြောင်းခြင်း": [
     "もみじ",
     "紅葉",
     "momiji",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "もみじが きれいです。\n(သစ်ရွက်အရောင်ပြောင်းတာ လှတယ်။)"
   ],
   "ဘယ်ဟာ": [
     "どちら",
     "どちら",
     "dochira",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "どちらが すきですか。\n(ဘယ်ဟာကို ကြိုက်သလဲ။)"
   ],
   "နှစ်ခုစလုံး(ဘယ်ဟာမဆို)": [
     "どちらも",
     "どちらも",
     "dochira mo",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "どちらも すきです。\n(ဘယ်ဟာမဆို ကြိုက်တယ်။ / နှစ်ခုလုံး ကြိုက်တယ်။)"
   ],
   "~ဆုံး (အကောင်းဆုံး၊ အများဆုံး)": [
     "いちばん",
     "一番",
     "ichiban",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "これが いちばん いいです。\n(ဒါက အကောင်းဆုံးပဲ။)"
   ],
   "တောက်လျှောက်၊ အမြဲတမ်း၊ အရမ်း": [
     "ずっと",
     "ずっと",
     "zutto",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "にほんのほうが ずっと すずしいです。\n(ဂျပန်က အများကြီး ပိုအေးမြတယ်။)"
   ],
   "ပထမဆုံး": [
     "はじめて",
     "初めて",
     "hajimete",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "はじめて にほんへ きました。\n(ပထမဆုံးအကြိမ် ဂျပန်ကို လာခဲ့တယ်။)"
   ],
   "ပြန်ရောက်ပါပြီ(နှုတ်ဆက်)": [
     "ただいま",
     "ただいま",
     "tadaima",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ただいま。\n(ပြန်ရောက်ပါပြီ - အိမ်ပြန်ရောက်သူ ပြောစကား)"
   ],
   "ပြန်လာပါ(နှုတ်ဆက်)": [
     "おかえりなさい",
     "お帰りなさい",
     "okaerinasai",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おかえりなさい。\n(ပြန်လာပါ / ကြိုဆိုပါတယ် - အိမ်ရှိသူက ပြောစကား)"
   ],
   "လူတွေအများကြီးဘဲ": [
     "わあ、すごいひとですね",
     "わあ、すごい人ですね",
     "wā, sugoi hito desu ne",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "すごい ひとですね。\n(လူတွေ အများကြီးပဲနော်။)"
   ],
   "ပင်ပန်းခဲ့တယ်": [
     "つかれました",
     "疲れました",
     "tsukaremashita",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "きょうは つかれました。\n(ဒီနေ့ ပင်ပန်းခဲ့တယ်။)"
   ],
   "Gion ပွဲတော်": [
     "ぎおんまつり",
     "祇園祭",
     "Gion Matsuri",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "ぎおんまつりは ７月です。\n(Gion ပွဲတော်က ၇ လပိုင်းမှာပါ။)"
   ],
   "ဟောင်ကောင်": [
     "ホンコン",
     "ホンコン",
     "Honkon",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png",
+    "ホンコンへ いきます。\n(ဟောင်ကောင်ကို သွားမယ်။)"
   ],
   "စင်ကာပူ": [
     "シンガポール",
     "シンガポール",
     "Shingapōru",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png",
+    "シンガポールは きれいです。\n(စင်ကာပူက လှတယ်။)"
   ],
   "ABC စတိုးဆိုင်": [
     "ABC ストア",
     "ABC ストア",
     "Ē Bī Shī Sutoa",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
+    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png",
+    "ABC ストアで かいました。\n(ABC စတိုးမှာ ဝယ်ခဲ့တယ်။)"
   ],
   "Japan စူပါမားကတ်": [
     "ジャパン",
     "ジャパン",
     "Japan",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
+    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png",
+    "ジャパンは やすいです。\n(Japan စူပါမားကတ်က ဈေးသက်သာတယ်။)"
   ]
 };
 
@@ -3808,181 +4389,211 @@ final minnaLesson13 = {
     "あそびます",
     "遊びます",
     "asobimasu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "こうえんで あそびます。\n(ပန်းခြံမှာ ကစားတယ်။)"
   ],
   "ရေကူးသည်။": [
     "およぎます",
     "泳ぎます",
     "oyogimasu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "プールで およぎます。\n(ရေကူးကန်မှာ ရေကူးတယ်။)"
   ],
   "ကြိုသည်။ ကြိုဆိုသည်": [
     "むかえます",
     "迎えます",
     "mukaemasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ともだちを むかえます。\n(သူငယ်ချင်းကို သွားကြိုတယ်။)"
   ],
   "ပင်ပန်းသည်။ မောပန်းသည်": [
     "つかれます",
     "疲れます",
     "tsukaremasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "しごとで つかれました。\n(အလုပ်ကြောင့် ပင်ပန်းခဲ့တယ်။)"
   ],
   "အိမ်ထောင်ပြုသည်။": [
     "けっこんします",
     "結婚します",
     "kekkon shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "らいねん けっこんします。\n(နောက်နှစ် အိမ်ထောင်ပြုမယ်။)"
   ],
   "ဈေးဝယ်သည်။": [
     "かいものします",
     "買い物します",
     "kaimono shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
+    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png",
+    "デパートで かいものします。\n(ကုန်တိုက်မှာ ဈေးဝယ်တယ်။)"
   ],
   "ထမင်းစားသည်": [
     "しょくじします",
     "食事します",
     "shokuji shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "レストランで しょくじします。\n(စားသောက်ဆိုင်မှာ ထမင်းစားတယ်။)"
   ],
   "လမ်းလျှောက်သည် (ပန်းခြံမှာ)": [
     "さんぽします [こうえんを]",
     "散歩します [公園を]",
     "sanpo shimasu [kōen o]",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "あさ こうえんを さんぽします。\n(မနက် ပန်းခြံထဲ လမ်းလျှောက်တယ်။)"
   ],
   "ပင်ပန်းသော၊ ခက်ခဲသော": [
     "たいへん [な]",
     "大変 [な]",
     "taihen [na]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "しごとは たいへんです。\n(အလုပ်က ပင်ပန်းတယ်။)"
   ],
   "လိုချင်သော": [
     "ほしい",
     "欲しい",
     "hoshii",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "くるまが ほしいです。\n(ကား လိုချင်တယ်။)"
   ],
   "ကျယ်သော": [
     "ひろい",
     "広い",
     "hiroi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ひろい へや\n(ကျယ်တဲ့ အခန်း)"
   ],
   "ကျဉ်းသော": [
     "せまい",
     "狭い",
     "semai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "せまい へや\n(ကျဉ်းတဲ့ အခန်း)"
   ],
   "ရေကူးကန်": [
     "プール",
     "プール",
     "pūru",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "プールへ いきたいです。\n(ရေကူးကန်ကို သွားချင်တယ်။)"
   ],
   "မြစ်ချောင်း": [
     "かわ",
     "川",
     "kawa",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "かわで つりを します。\n(မြစ်မှာ ငါးမျှားတယ်။)"
   ],
   "အနုပညာ": [
     "びじゅつ",
     "美術",
     "bijutsu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134812.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134812.png",
+    "びじゅつを べんきょうします。\n(အနုပညာကို လေ့လာတယ်။)"
   ],
   "ငါးမျှားခြင်း": [
     "つり",
     "釣り",
     "tsuri",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "つりに いきます。\n(ငါးမျှားထွက်မယ်။)"
   ],
   "နှင်းလျှောစီးခြင်း": [
     "スキー",
     "スキー",
     "sukī",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "スキーを します。\n(နှင်းလျှောစီးတယ်။)"
   ],
   "စနေနှင့်တနင်္ဂနွေ(week end)": [
     "しゅうまつ",
     "週末",
     "shūmatsu",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "しゅうまつ なにを しますか。\n(ပိတ်ရက် ဘာလုပ်မလဲ။)"
   ],
   "---လောက်": [
     "～ごろ",
     "～ごろ",
     "～ goro",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "１２じごろ たべます。\n(၁၂ နာရီလောက် စားမယ်။)"
   ],
   "တစ်ခုခု": [
     "なにか",
     "何か",
     "nanika",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "なにか たべたいです。\n(တစ်ခုခု စားချင်တယ်။)"
   ],
   "တစ်နေရာရာ": [
     "どこか",
     "どこか",
     "dokoka",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "どこかへ いきましたか。\n(တစ်နေရာရာ သွားခဲ့လား။)"
   ],
   "အာခေါင်ခြောက်တယ်": [
     "のどがかわきます",
     "のどがかわきます",
     "nodo ga kawakimasu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "のどが かわきました。\n(ရေငတ်တယ်။ / အာခေါင်ခြောက်တယ်။)"
   ],
   "ဗိုက်ဆာတယ်": [
     "おなかがすきます",
     "おなかがすきます",
     "onaka ga sukimasu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "おなかが すきました。\n(ဗိုက်ဆာပြီ။)"
   ],
   "အဲဒီလိုလုပ်ရအောင်": [
     "そうしましょう",
     "そうしましょう",
     "sō shimashō",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "A: たべませんか。B: そうしましょう。\n(A: မစားကြဘူးလား။ B: အဲဒီလိုလုပ်ကြတာပေါ့။)"
   ],
   "ဘာစားမှာလဲ(စားသောက်ဆိုင်တွင်)": [
     "ごちゅうもんは",
     "ご注文は？",
     "gochūmon wa?",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ごちゅうもんは？\n(ဘာမှာမလဲ။)"
   ],
   "သတ်မှတ်ထားသောအစား (Set menu)": [
     "ていしょく",
     "定食",
     "teishoku",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ていしょくを たべます。\n(Set Menu စားတယ်။)"
   ],
   "အမဲသားဟင်းနှင့်ထမင်း": [
     "ぎゅうどん",
     "牛どん",
     "gyūdon",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ぎゅうどんを ください。\n(Gyudon ပေးပါ။)"
   ],
   "ခဏလေးစောင့်ပါ": [
     "[しょうしょう]おまちください",
     "[少々]お待ちください",
     "[shōshō] omachi kudasai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "しょうしょう おまちください。\n(ခဏလောက် စောင့်ပေးပါ။)"
   ],
   "သီးခြားစီ (ငွေရှင်းသည့်အချိန်တွင်အသုံးများ)": [
     "べつべつに",
     "別々に",
     "betsubetsu ni",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "べつべつに おねがいします。\n(သီးခြားစီ ရှင်းပေးပါ။)"
   ],
   "Ohayo TV အစီအစဉ်": [
     "おはようテレビ",
     "おはようテレビ",
     "Ohayō Terebi",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "おはようテレビを みます。\n(Ohayo TV ကြည့်တယ်။)"
   ]
 };
 
@@ -3991,265 +4602,309 @@ final minnaLesson14 = {
     "つけます",
     "つけます",
     "tsukemasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "エアコンを つけてください。\n(အဲယားကွန်း ဖွင့်ပေးပါ။)"
   ],
   "မီးပိတ်၊ အဲယားကွန်း၊ TV ပိတ်သည်။": [
     "けします",
     "消します",
     "keshīmasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "テレビを けしてください。\n(တီဗီ ပိတ်ပေးပါ။)"
   ],
   "တံခါးဖွင့်သည်။": [
     "あけます",
     "開けます",
     "akemasu",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "ドアを あけてください。\n(တံခါး ဖွင့်ပေးပါ။)"
   ],
   "တံခါးပိတ်သည်": [
     "しめます",
     "閉めます",
     "shimemasu",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "まどを しめてください。\n(ပြတင်းပေါက် ပိတ်ပေးပါ။)"
   ],
   "အလျင်လိုသည်။": [
     "いそぎます",
     "急ぎます",
     "isogimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いそいでください。\n(မြန်မြန်လုပ်ပေးပါ။)"
   ],
   "စောင့်သည်။": [
     "まちます",
     "待ちます",
     "machimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ちょっと まってください。\n(ခဏလောက် စောင့်ပေးပါ။)"
   ],
   "ကိုင်သည်။ ယူထားသည်": [
     "もちます",
     "持ちます",
     "mochimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "にもつを もちましょうか。\n(ပစ္စည်းကို သယ်ပေးရမလား။)"
   ],
   "ယူသည်။ လှမ်းယူသည်": [
     "とります",
     "取ります",
     "torimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "しおを とってください。\n(ဆား လှမ်းပေးပါ။)"
   ],
   "ကူညီသည်။": [
     "てつだいます",
     "手伝います",
     "tetsudaimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "てつだいましょうか。\n(ကူညီပေးရမလား။)"
   ],
   "ခေါ်သည်။ အော်ခေါ်သည်။": [
     "よびます",
     "呼びます",
     "yobimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "タクシーを よびましょうか。\n(တက္ကစီ ခေါ်ပေးရမလား။)"
   ],
   "ပြောသည်": [
     "はなします",
     "話します",
     "hanashimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "ゆっくり はなしてください。\n(ဖြည်းဖြည်း ပြောပေးပါ။)"
   ],
   "အသုံးပြုသည်။": [
     "つかいます",
     "使います",
     "tsukaimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "パソコンを つかってもいいですか。\n(ကွန်ပျူတာ သုံးလို့ရမလား။)"
   ],
   "ရပ်သည်": [
     "とめます",
     "止めます",
     "tomemasu",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "ここに くるまを とめてください。\n(ဒီမှာ ကားရပ်ပေးပါ။)"
   ],
   "ပြသည်": [
     "みせます",
     "見せます",
     "misemasu",
-    "https://cdn-icons-png.flaticon.com/512/2776/2776008.png"
+    "https://cdn-icons-png.flaticon.com/512/2776/2776008.png",
+    "パスポートを みせてください。\n(ပတ်စ်ပို့ ပြပေးပါ။)"
   ],
   "သင်ကြားသည် (လိပ်စာကို)": [
     "おしえます [じゅうしょを]",
     "教えます [住所を]",
     "oshiemasu [jūsho o]",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "じゅうしょを おしえてください。\n(လိပ်စာ ပြောပြပေးပါ။)"
   ],
   "ထိုင်သည်": [
     "すわります",
     "座ります",
     "suwarimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "どうぞ、すわってください。\n(ကျေးဇူးပြုပြီး ထိုင်ပါ။)"
   ],
   "မတ်တပ်ရပ်သည်": [
     "たちます",
     "立ちます",
     "tachimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "たってください。\n(မတ်တပ်ရပ်ပေးပါ။)"
   ],
   "ဝင်သည် (လက်ဖက်ရည်ဆိုင်သို့)": [
     "はいります [きっさてんに]",
     "入ります [喫茶店に]",
     "hairimasu [kissaten ni]",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "きっさてんに はいりましょう。\n(ကော်ဖီဆိုင် ဝင်ကြရအောင်။)"
   ],
   "ထွက်သည် (လက်ဖက်ရည်ဆိုင်မှ)": [
     "でます [きっさてんを]",
     "出ます [喫茶店を]",
     "demasu [kissaten o]",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "きっさてんを でます。\n(ကော်ဖီဆိုင်ကနေ ထွက်တယ်။)"
   ],
   "မိုးရွာသည်": [
     "ふります [あめが]",
     "降ります [雨が]",
     "furimasu [ame ga]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あめが ふっています。\n(မိုးရွာနေတယ်။)"
   ],
   "မိတ္တူကူးသည်": [
     "コピーします",
     "コピーします",
     "kopī shimasu",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "これを コピーしてください。\n(ဒါကို မိတ္တူကူးပေးပါ။)"
   ],
   "လျှပ်စစ်": [
     "でんき",
     "電気",
     "denki",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "でんきを つけてください。\n(မီး ဖွင့်ပေးပါ။)"
   ],
   "အဲယားကွန်း": [
     "エアコン",
     "エアコン",
     "eakon",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "エアコンを けしてください。\n(အဲယားကွန်း ပိတ်ပေးပါ။)"
   ],
   "ပတ်စ်ပို့": [
     "パスポート",
     "パスポート",
     "pasupōto",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "パスポートを みせます。\n(ပတ်စ်ပို့ ပြတယ်။)"
   ],
   "နာမည်": [
     "なまえ",
     "名前",
     "namae",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "なまえを かいてください。\n(နာမည် ရေးပေးပါ။)"
   ],
   "လိပ်စာ": [
     "じゅうしょ",
     "住所",
     "jūsho",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "じゅうしょを おしえてください。\n(လိပ်စာ ပြောပြပေးပါ။)"
   ],
   "မြေပုံ": [
     "ちず",
     "地図",
     "chizu",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "ちずを かきましょうか。\n(မြေပုံ ဆွဲပေးရမလား။)"
   ],
   "ဆား": [
     "しお",
     "塩",
     "shio",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "しおを とってください。\n(ဆား လှမ်းပေးပါ။)"
   ],
   "သကြား": [
     "さとう",
     "砂糖",
     "satō",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "さとうを いれます。\n(သကြား ထည့်တယ်။)"
   ],
   "မေးခွန်း": [
     "もんだい",
     "問題",
     "mondai",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "もんだいを よんでください。\n(မေးခွန်း ဖတ်ပေးပါ။)"
   ],
   "အဖြေ": [
     "こたえ",
     "答え",
     "kotae",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "こたえを いってください。\n(အဖြေ ပြောပေးပါ။)"
   ],
   "ဖတ်နည်း": [
     "よみかた",
     "読み方",
     "yomikata",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "かんじの よみかた\n(ခန်းဂျီး ဖတ်နည်း)"
   ],
   "---နည်း": [
     "～かた",
     "～方",
     "～ kata",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "つかいかた\n(အသုံးပြုနည်း)"
   ],
   "တည့်တည့်": [
     "まっすぐ",
     "まっすぐ",
     "massugu",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "まっすぐ いってください。\n(တည့်တည့် သွားပါ။)"
   ],
   "ဖြေးဖြေး": [
     "ゆっくり",
     "ゆっくり",
     "yukkuri",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ゆっくり いってください。\n(ဖြည်းဖြည်း ပြောပေးပါ။)"
   ],
   "ချက်ချင်း": [
     "すぐ",
     "すぐ",
     "sugu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "すぐ いきます。\n(ချက်ချင်း သွားမယ်။)"
   ],
   "နောက်မှ": [
     "また",
     "また",
     "mata",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "また きます。\n(နောက်တစ်ခါ လာခဲ့မယ်။)"
   ],
   "ပြီးမှ": [
     "あとで",
     "後で",
     "atode",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あとで でんわします。\n(ပြီးမှ ဖုန်းဆက်လိုက်မယ်။)"
   ],
   "အနည်းငယ်ထပ်ပြီး": [
     "もうすこし",
     "もう少し",
     "mō sukoshi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "もうすこし ゆっくり はなしてください。\n(နည်းနည်းလောက် ထပ်ပြီး ဖြည်းဖြည်းပြောပေးပါ။)"
   ],
   "---ထပ်ပြီး": [
     "もう～",
     "もう～",
     "mō ~",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "もういちど\n(နောက်တစ်ကြိမ် ထပ်ပြီး)"
   ],
   "မီးပွိုင့်ကို ညာဘက်ကွေ့ပါ": [
     "しんごうをみぎへまがってください",
     "信号を右へ曲がってください",
     "shingō o migi e magatte kudasai",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "しんごうを みぎへ まがってください。\n(မီးပွိုင့်ကို ညာဘက်ကွေ့ပါ။)"
   ],
   "ဒါနဲယူပါ။ (ပိုက်ဆံပေးသာအခါ)": [
     "こちらでよろしいでしょうか",
     "こちらでよろしいでしょうか",
     "kochira de yoroshī deshō ka",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "はい、けっこうです。\n(ဟုတ်ကဲ့၊ ရပါပြီ။)"
   ],
   "ပိုက်ဆံအကြွေ၊ ပြန်အမ်းငွေ": [
     "おつり",
     "お釣り",
     "otsuri",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "おつりです。\n(ပြန်အမ်းငွေ ဖြစ်ပါတယ်။)"
   ],
   "Midori": [
     "みどりちょう",
     "みどり町",
     "Midori-chō",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "みどりちょうまで おねがいします。\n(Midori မြို့နယ်အထိ ပို့ပေးပါ။)"
   ]
 };
 
@@ -4258,139 +4913,162 @@ final minnaLesson15 = {
     "おきます",
     "置きます",
     "okimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ここに おいてもいいですか。\n(ဒီမှာ ထားလို့ရမလား။)"
   ],
   "ပြုလုပ်သည်။ ထုတ်လုပ်သည်": [
     "つくります",
     "作ります",
     "tsukurimasu",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "りょうりを つくっています。\n(ဟင်း ချက်နေတယ်။)"
   ],
   "ရောင်းသည်။": [
     "うります",
     "売ります",
     "urimasu",
-    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png"
+    "https://cdn-icons-png.flaticon.com/512/3257/3257917.png",
+    "くるまを うっています。\n(ကား ရောင်းနေတယ်။)"
   ],
   "သိသည်။": [
     "しります",
     "知ります",
     "shirimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "このニュースを しっていますか。\n(ဒီသတင်းကို သိလား။)"
   ],
   "နေသည်။ နေထိုင်သည်": [
     "すみます",
     "住みます",
     "sumimasu",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "おおさかに すんでいます。\n(အိုဆာကာမှာ နေနေတယ်။)"
   ],
   "သုသေတနပြုသည်": [
     "けんきゅうします",
     "研究します",
     "kenkyū shimasu",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "だいがくで けんきゅうしています。\n(တက္ကသိုလ်မှာ သုတေသန လုပ်နေတယ်။)"
   ],
   "စာရွက်စာတမ်း": [
     "しりょう",
     "資料",
     "shiryō",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "しりょうを みてください。\n(စာရွက်စာတမ်းကို ကြည့်ပါ။)"
   ],
   "ကတ်တလောက်": [
     "カタログ",
     "カタログ",
     "katarogu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "カタログを もらってもいいですか。\n(ကတ်တလောက် ယူလို့ရမလား။)"
   ],
   "အချိန်ဇယား": [
     "じこくひょう",
     "時刻表",
     "jikokuhyō",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "じこくひょうを しらべます。\n(အချိန်ဇယားကို ကြည့်တယ်။)"
   ],
   "အင်္ကျီ": [
     "ふく",
     "服",
     "fuku",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "ふくを かいます。\n(အင်္ကျီ ဝယ်တယ်။)"
   ],
   "ပစ္စည်း": [
     "せいひん",
     "製品",
     "seihin",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "でんきせいひん\n(လျှပ်စစ်ပစ္စည်း)"
   ],
   "softwear": [
     "ソフト",
     "ソフト",
     "sofuto",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "パソコンの ソフト\n(ကွန်ပျူတာ ဆော့ဖ်ဝဲ)"
   ],
   "လျှပ်စစ်အဘိဓာန်": [
     "でんしじしょ",
     "電子辞書",
     "denshi jisho",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "でんしじしょを もっています。\n(အီလက်ထရောနစ် အဘိဓာန် ရှိတယ်။)"
   ],
   "စီးပွားရေး": [
     "けいざい",
     "経済",
     "keizai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "けいざいを けんきゅうしています。\n(စီးပွားရေးကို သုတေသနပြုနေတယ်။)"
   ],
   "မြို့တော်ခန်းမ/စည်ပင်သာယာရုံး": [
     "しやくしょ",
     "市役所",
     "shiyakusho",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "しやくしょへ いきます。\n(မြို့တော်ခန်းမကို သွားတယ်။)"
   ],
   "အထက်တန်းကျောင်း": [
     "こうこう",
     "高校",
     "kōkō",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "こうこうで おしえています。\n(အထက်တန်းကျောင်းမှာ သင်ကြားနေတယ်။)"
   ],
   "သွားဆရာဝန်": [
     "はいしゃ",
     "歯医者",
     "haisha",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "はいしゃへ いきます。\n(သွားဆရာဝန်ဆီ သွားတယ်။)"
   ],
   "လူပျို၊ လူလွတ်၊ အပျို": [
     "どくしん",
     "独身",
     "dokushin",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "わたしは どくしんです。\n(ကျွန်တော်က လူလွတ်ပါ။)"
   ],
   "အားလုံး": [
     "みなさん",
     "皆さん",
     "minasan",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "みなさん、こんにちは。\n(အားလုံးပဲ မင်္ဂလာပါ။)"
   ],
   "သတိရသည်/အမှတ်ရသည်": [
     "おもいだします",
     "思い出します",
     "omoidashimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "かぞくを おもいだしました。\n(မိသားစုကို သတိရတယ်။)"
   ],
   "ရှိသည်(ယဉ်ကျေးသောအသုံး)": [
     "いらっしゃいます",
     "いらっしゃいます",
     "irasshaimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "かぞくは アメリカに いらっしゃいます。\n(မိသားစုက အမေရိကမှာ ရှိပါတယ်။)"
   ],
   "ဂျပန်တံတား (အိုဆာကာ လူစည်ကားသောနေရာ)": [
     "にほんばし",
     "日本橋",
     "Nihonbashi",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "にほんばしで かいものします。\n(နိဟွန်ဘာရှိမှာ ဈေးဝယ်တယ်။)"
   ],
   "Minna no Interview": [
     "みんなのインタビュー",
     "みんなのインタビュー",
     "Minna no Intabyū",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "みんなのインタビュー\n(အားလုံးရဲ့ အင်တာဗျူး)"
   ]
 };
 
@@ -4399,343 +5077,400 @@ final minnaLesson16 = {
     "のります [でんしゃに]",
     "乗ります [電車に]",
     "norimasu [densha ni]",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "でんしゃに のります。\n(ရထား စီးတယ်။)"
   ],
   "ရထားမှ ဆင်းသည်။": [
     "おります [でんしゃを]",
     "降ります [電車を]",
     "orimasu [densha o]",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "でんしゃを おります。\n(ရထားပေါ်က ဆင်းတယ်။)"
   ],
   "ပြောင်းစီးသည်။ (ကား၊ ရထား ယာဉ်)": [
     "のりかえます",
     "乗り換えます",
     "norikaemasu",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "うめだで 地下鉄（ちかてつ）に のりかえます。\n(အူမဲဒါမှာ မြေအောက်ရထား ပြောင်းစီးတယ်။)"
   ],
   "ရေချိုးသည်။": [
     "あびます [シャワーを]",
     "浴びます [シャワーを]",
     "abimasu [shawā o]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "シャワーを あびます。\n(ရေပန်းနဲ့ ရေချိုးတယ်။)"
   ],
   "ထည့်သည်။ သွင်းသည်": [
     "いれます",
     "入れます",
     "iremasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ここにおかねを いれてください。\n(ဒီမှာ ပိုက်ဆံ ထည့်ပါ။)"
   ],
   "ထုတ်သည်။ တင်သည်(စာ၊ report)": [
     "だします",
     "出します",
     "dashimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "おかねを だします。\n(ပိုက်ဆံ ထုတ်တယ်။)"
   ],
   "ပိုက်ဆံထုတ်သည်။": [
     "おろします [おかねを]",
     "下ろします [お金を]",
     "oroshimasu [okane o]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "ぎんこうで おかねを おろします。\n(ဘဏ်မှာ ပိုက်ဆံ ထုတ်တယ်။)"
   ],
   "တက္ကသိုလ်ဝင်သည်။": [
     "はいります [だいがくに]",
     "入ります [大学に]",
     "hairimasu [daigaku ni]",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "だいがくに はいります。\n(တက္ကသိုလ် ဝင်ခွင့်ရတယ်။ / ဝင်တယ်။)"
   ],
   "တက္ကသိုလ်မှ ထွက်သည်။": [
     "でます [だいがくを]",
     "出ます [大学を]",
     "demasu [daigaku o]",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "だいがくを でます。\n(တက္ကသိုလ်ကနေ ဘွဲ့ရတယ်။ / ထွက်တယ်။)"
   ],
   "တွန်းသည်၊ ဖိသည်": [
     "おします",
     "押します",
     "oshimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "このボタンを おしてください。\n(ဒီခလုတ်ကို နှိပ်ပါ။)"
   ],
   "သောက်သည်။": [
     "のみます",
     "飲みます",
     "nomimasu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ビールを のみます。\n(ဘီယာ သောက်တယ်။)"
   ],
   "စတင်သည်။": [
     "はじめます",
     "始めます",
     "hajimemasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "かいぎを はじめます。\n(အစည်းအဝေး စမယ်။)"
   ],
   "လေ့လာသည်။": [
     "けんがくします",
     "見学します",
     "kengaku shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "こうじょうを けんがくします。\n(စက်ရုံကို လေ့လာတယ်။)"
   ],
   "ဖုန်းဆက်သည်": [
     "でんわします",
     "電話します",
     "denwa shimasu",
-    "https://cdn-icons-png.flaticon.com/512/126/126509.png"
+    "https://cdn-icons-png.flaticon.com/512/126/126509.png",
+    "ともだちに でんわします。\n(သူငယ်ချင်းဆီ ဖုန်းဆက်တယ်။)"
   ],
   "ငယ်သော": [
     "わかい",
     "若い",
     "wakai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "わかい ひと\n(လူငယ်)"
   ],
   "ရှည်သော": [
     "ながい",
     "長い",
     "nagai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ながい かみ\n(ဆံပင်ရှည်)"
   ],
   "တိုသော": [
     "みじかい",
     "短い",
     "mijikai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "みじかい かみ\n(ဆံပင်တို)"
   ],
   "လင်းသော": [
     "あかるい",
     "明るい",
     "akarui",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あかるい へや\n(လင်းတဲ့ အခန်း)"
   ],
   "မှောင်သော": [
     "くらい",
     "暗い",
     "kurai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "くらい へや\n(မှောင်တဲ့ အခန်း)"
   ],
   "ခန္ဓာကိုယ်": [
     "からだ",
     "体",
     "karada",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "からだの 調子（ちょうし）\n(ခန္ဓာကိုယ် အခြေအနေ)"
   ],
   "ခေါင်း၊ ဦးခေါင်း": [
     "あたま",
     "頭",
     "atama",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "あたまが いいです。\n(ခေါင်းကောင်းတယ်။ / ဉာဏ်ကောင်းတယ်။)"
   ],
   "ဆံပင်": [
     "かみ",
     "髪",
     "kami",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "かみが くろいです。\n(ဆံပင်က မဲနက်နေတယ်။)"
   ],
   "မျက်နှာ": [
     "かお",
     "顔",
     "kao",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "かおを あらいます。\n(မျက်နှာ သစ်တယ်။)"
   ],
   "မျက်လုံး": [
     "め",
     "目",
     "me",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "めが おおきいです。\n(မျက်လုံး ကြီးတယ်။)"
   ],
   "နားရွက်": [
     "みみ",
     "耳",
     "mimi",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "みみが いいです。\n(နားပါးတယ်။)"
   ],
   "နှာခေါင်း": [
     "はな",
     "鼻",
     "hana",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "はなが たかいです。\n(နှာခေါင်းပေါ်တယ်။)"
   ],
   "ပါးစပ်": [
     "くち",
     "口",
     "kuchi",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "くちを あけます。\n(ပါးစပ် ဟတယ်။)"
   ],
   "သွား": [
     "は",
     "歯",
     "ha",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "はが いたいです。\n(သွား ကိုက်တယ်။)"
   ],
   "ဗိုက်": [
     "おなか",
     "お腹",
     "onaka",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おなかが すきました。\n(ဗိုက်ဆာပြီ။)"
   ],
   "ခြေထောက်": [
     "あし",
     "足",
     "ashi",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "あしが ながいです。\n(ခြေတံ ရှည်တယ်။)"
   ],
   "အရပ် (ခန္ဓာကိုယ်)": [
     "せ",
     "背",
     "se",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "せが たかいです。\n(အရပ် ရှည်တယ်။)"
   ],
   "ဝန်ဆောင်မှု": [
     "サービス",
     "サービス",
     "sābisu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "サービスが いいです。\n(ဝန်ဆောင်မှု ကောင်းတယ်။)"
   ],
   "အပြေးလေ့ကျင့်ခန်း": [
     "ジョギング",
     "ジョギング",
     "jogingu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "ジョギングを します。\n(အပြေးလေ့ကျင့်ခန်း လုပ်တယ်။)"
   ],
   "ရေချိုးသောရေပန်း": [
     "シャワー",
     "シャワー",
     "shawā",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "シャワーを あびます。\n(ရေပန်းနဲ့ ရေချိုးတယ်။)"
   ],
   "အစိမ်းရောင်": [
     "みどり",
     "緑",
     "midori",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "みどりが おおいです。\n(သစ်ပင်တွေ/အစိမ်းရောင်တွေ များတယ်။)"
   ],
   "ဂျပန်ဘုရားကျောင်း": [
     "おてら",
     "お寺",
     "otera",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "おてらを けんがくします。\n(ဘုရားကျောင်းကို လေ့လာတယ်။)"
   ],
   "ဂျပန်နတ်ဘုရားကျောင်း": [
     "じんじゃ",
     "神社",
     "jinja",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "ふるい じんじゃ\n(ရှေးဟောင်းနတ်ဘုရားကျောင်း)"
   ],
   "---နံပါတ်": [
     "～ばん",
     "～番",
     "～ ban",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "８ばん\n(နံပါတ် ၈)"
   ],
   "ဘယ်လိုလုပ်ပြီး": [
     "どうやって",
     "どうやって",
     "dō yatte",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "だいがくまで どうやって いきますか。\n(တက္ကသိုလ်ထိ ဘယ်လို သွားမလဲ။)"
   ],
   "ဘယ်ဟာ": [
     "どの～",
     "どの～",
     "dono ~",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "どのひとですか。\n(ဘယ်လူလဲ။)"
   ],
   "ဘယ်တစ်ခု": [
     "どれ",
     "どれ",
     "dore",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "どれですか。\n(ဘယ်တစ်ခုလဲ။)"
   ],
   "တော်လိုက်တာ": [
     "すごいですね",
     "すごいですね",
     "sugoi desu ne",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "わあ、すごいですね。\n(ဟာ၊ တော်လိုက်တာ။)"
   ],
   "အဲဒီလောက်မဟုတ်ပါဘူး": [
     "[いいえ、]まだまだです",
     "[いいえ、]まだまだです",
     "[iie,] madamada desu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いいえ、まだまだです。\n(ဟင့်အင်း၊ လိုပါသေးတယ်။)"
   ],
   "အရင်ဆုံး": [
     "まず",
     "まず",
     "mazu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "まず ここを おしてください。\n(အရင်ဆုံး ဒီနေရာကို နှိပ်ပါ။)"
   ],
   "နောက်ပြီး": [
     "つぎに",
     "次に",
     "tsugi ni",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "つぎに カードを いれてください。\n(နောက်ပြီး ကတ်ထည့်ပါ။)"
   ],
   "ATM ကဒ်": [
     "キャッシュカード",
     "キャッシュカード",
     "kyasshu kādo",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "キャッシュカードを いれます。\n(ATM ကတ် ထည့်တယ်။)"
   ],
   "လျှို့ဝှက်နံပါတ်": [
     "あんしょうばんごう",
     "暗証番号",
     "anshō bangō",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "あんしょうばんごうを おします。\n(လျှို့ဝှက်နံပါတ် နှိပ်တယ်။)"
   ],
   "ငွေပမာဏ": [
     "きんがく",
     "金額",
     "kingaku",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "きんがくを かくにんします。\n(ငွေပမာဏကို စစ်ဆေးတယ်။)"
   ],
   "အတည်ပြုခြင်း": [
     "かくにん",
     "確認",
     "kakunin",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "かくにんボタン\n(အတည်ပြုခလုတ်)"
   ],
   "ခလုတ် button": [
     "ボタン",
     "ボタン",
     "botan",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ボタンを おします。\n(ခလုတ် နှိပ်တယ်။)"
   ],
   "ဂျပန်ရထားလိုင်း Japan Railways": [
     "JR",
     "JR",
     "Jē Āru",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "JRに のりかえます。\n(JR ရထားလိုင်း ပြောင်းစီးတယ်။)"
   ],
   "နှင်းပွဲတော်": [
     "ゆきまつり",
     "雪まつり",
     "Yuki Matsuri",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "さっぽろ ゆきまつり\n(Sapporo နှင်းပွဲတော်)"
   ],
   "Bandung (in Indonesia)": [
     "バンドン",
     "バンドン",
     "Bandon",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png",
+    "バンドンから きました。\n(ဘန်ဒေါင်းကနေ လာပါတယ်။)"
   ],
   "Franken (in Germany)": [
     "フランケン",
     "フランケン",
     "Furanken",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png",
+    "フランケンは ドイツです。\n(ဖရန်ကန်က ဂျာမနီမှာ ရှိတယ်။)"
   ],
   "Veracruz (in Mexico)": [
     "ベラクルス",
     "ベラクルス",
     "Berakurusu",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png",
+    "ベラクルスへ いきます。\n(Veracruz ကို သွားမယ်။)"
   ],
   "Umeda": [
     "うめだ",
     "梅田",
     "Umeda",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png",
+    "うめだで 乗り換えます（のりかえます）。\n(အူမဲဒါမှာ ရထားပြောင်းစီးတယ်။)"
   ],
   "တက္ကသိုလ်ရှေ့(ကားမှတ်တိုင်)": [
     "だいがくまえ",
     "大学前",
     "Daigaku-mae",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "だいがくまえで おります。\n(တက္ကသိုလ်ရှေ့မှတ်တိုင်မှာ ဆင်းတယ်။)"
   ]
 };
 
@@ -4744,193 +5479,225 @@ final minnaLesson17 = {
     "おぼえます",
     "覚えます",
     "oboemasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "かんじを おぼえます。\n(ခန်းဂျီး မှတ်သားတယ်။)"
   ],
   "မေ့သည်။": [
     "わすれます",
     "忘れます",
     "wasuremasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "しゅくだいを わすれました。\n(အိမ်စာ မေ့ခဲ့တယ်။)"
   ],
   "ဖျောက်ပစ်သည်။": [
     "なくします",
     "なくします",
     "nakushimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "かぎを なくしました。\n(သော့ ပျောက်သွားတယ်။)"
   ],
   "ပေးချေသည်။": [
     "はらいます",
     "払います",
     "haraimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "おかねを はらいます。\n(ပိုက်ဆံ ပေးချေတယ်။)"
   ],
   "ပြန်ပေးသည်။": [
     "かえします",
     "返します",
     "kaeshimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ほんを かえします。\n(စာအုပ် ပြန်ပေးတယ်။)"
   ],
   "အပြင်ထွက်သည်။": [
     "でかけます",
     "出かけます",
     "dekakemasu",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "どこへ でかけますか。\n(ဘယ်သွားမလို့လဲ / ဘယ်ထွက်မလို့လဲ။)"
   ],
   "အင်္ကျီ ချွတ်သည်။": [
     "ぬぎます",
     "脱ぎます",
     "nugimasu",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "くつを ぬぎます。\n(ဖိနပ် ချွတ်တယ်။)"
   ],
   "ယူသွားသည်။": [
     "もっていきます",
     "持っていきます",
     "motte ikimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "かさを もっていきます。\n(ထီး ယူသွားတယ်။)"
   ],
   "ယူလာသည်။": [
     "もってきます",
     "持ってきます",
     "motte kimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "おべんとうを もってきます。\n(ထမင်းဘူး ယူလာတယ်။)"
   ],
   "စိတ်ပူသည်။": [
     "しんぱいします",
     "心配します",
     "shinpai shimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "しんぱいしないでください。\n(စိတ်မပူပါနဲ့။)"
   ],
   "အလုပ်ပိုလုပ်သည်။": [
     "ざんぎょうします",
     "残業します",
     "zangyō shimasu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "きょうは ざんぎょうします。\n(ဒီနေ့ အချိန်ပိုလုပ်မယ်။)"
   ],
   "အလုပ်ခရီးသွားသည်": [
     "しゅっちょうします",
     "出張します",
     "shucchō shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "アメリカへ しゅっちょうします。\n(အမေရိကကို အလုပ်ကိစ္စနဲ့ ခရီးသွားမယ်။)"
   ],
   "ဆေးသောက်သည်။": [
     "のみます [くすりを]",
     "飲みます [薬を]",
     "nomimasu [kusuri o]",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "くすりを のんでください。\n(ဆေး သောက်ပါ။)"
   ],
   "ရေစိမ်/ချိုးကန်ထဲ ဝင်သည်။": [
     "はいります [おふろに]",
     "入ります [おふろに]",
     "hairimasu [ofuro ni]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "おふろに はいります。\n(ရေချိုးကန်ထဲ ဝင်တယ်။)"
   ],
   "တန်ဖိုးထားသော": [
     "たいせつ [な]",
     "大切 [な]",
     "taisetsu [na]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "たいせつな しりょう\n(အရေးကြီးတဲ့ စာရွက်စာတမ်း)"
   ],
   "ကိစ္စမရှိသော": [
     "だいじょうぶ [な]",
     "大丈夫 [な]",
     "daijōbu [na]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "だいじょうぶです。\n(ကိစ္စမရှိပါဘူး / အဆင်ပြေပါတယ်။)"
   ],
   "အန္တာရာယ်များသော": [
     "あぶない",
     "危ない",
     "abunai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あぶないですから、はいらないでください。\n(အန္တရာယ်ရှိလို့ မဝင်ပါနဲ့။)"
   ],
   "ဆေးလိပ်မသောက်ရ": [
     "きんえん",
     "禁煙",
     "kin'en",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ここは きんえんです。\n(ဒီနေရာက ဆေးလိပ်မသောက်ရပါ။)"
   ],
   "ကျန်းမာရေးအာမခံကဒ်ပြား": [
     "ほけんしょう",
-    "[健康]保険書",
-    "[kenkō] hokenshō",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "保険書",
+    "hokenshō",
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ほけんしょうを わすれないでください。\n(ကျန်းမာရေးအာမခံကတ်ကို မမေ့ပါနဲ့။)"
   ],
   "ကိုယ်ပူခြင်း၊ အဖျားရှိခြင်း": [
     "ねつ",
     "熱",
     "netsu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ねつが あります。\n(အဖျား ရှိတယ်။)"
   ],
   "ရောဂါ": [
     "びょうき",
     "病気",
     "byōki",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "びょうきに なりました。\n(နေမကောင်း ဖြစ်ခဲ့တယ်။)"
   ],
   "ဆေး": [
     "くすり",
     "薬",
     "kusuri",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "くすりを のまなければなりません。\n(ဆေး မသောက်လို့ မရဘူး။)"
   ],
   "ရေစိမ်/ချိုးကန်": [
     "おふろ",
     "おふろ",
     "ofuro",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "おふろに はいります。\n(ရေချိုးကန်ထဲ ဝင်တယ်။)"
   ],
   "အနွေးထည်/အပေါ်ထပ်အင်္ကျီ": [
     "うわぎ",
     "上着",
     "uwagi",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "うわぎを ぬぎます。\n(အပေါ်ထပ်အင်္ကျီ ချွတ်တယ်။)"
   ],
   "အတွင်းခံ": [
     "したぎ",
     "下着",
     "shitagi",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "したぎを かいます。\n(အတွင်းခံ ဝယ်တယ်။)"
   ],
   "၂ ရက် ၃ ရက်": [
     "にさんにち",
     "２、３日",
     "nisannichi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "にさんにち やすんでください。\n(၂ ရက် ၃ ရက်လောက် နားလိုက်ပါ။)"
   ],
   "---အထိ": [
     "～までに",
     "～までに",
     "～ made ni",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "どようびまでに かえしてください。\n(စနေနေ့ နောက်ဆုံးထားပြီး ပြန်ပေးပါ။)"
   ],
   "ဖြစ်လို့": [
     "ですから",
     "ですから",
     "desukara",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あぶないですから、･･･\n(အန္တရာယ်ရှိလို့...)"
   ],
   "လည်ချောင်း": [
     "のど",
     "のど",
     "nodo",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "のどが いたいです。\n(လည်ချောင်း နာတယ်။)"
   ],
   "အအေးမိခြင်း": [
     "かぜ",
     "風邪",
     "kaze",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "かぜを ひきました。\n(အအေးမိသွားတယ်။)"
   ],
   "နောက်ပြီး": [
     "それから",
     "それから",
     "sorekara",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ごはんを たべました。それから･･･\n(ထမင်းစားခဲ့တယ်။ ပြီးတော့...)"
   ],
   "ဂရုစိုက်ပါ (ကျန်းမာရေးကို)။": [
     "おだいじに",
     "お大事に",
     "odaiji ni",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おだいじに。\n(ဂရုစိုက်ပါနော် - လူမမာကို ပြောစကား)"
   ]
 };
 
@@ -4939,175 +5706,204 @@ final minnaLesson18 = {
     "できます",
     "できます",
     "dekimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "うんてんが できます。\n(ကားမောင်းတတ်တယ်။)"
   ],
   "လက်ဆေးသည်။ အဝတ်လျှော်သည်။": [
     "あらいます",
     "洗います",
     "araimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "てを あらいます。\n(လက် ဆေးတယ်။)"
   ],
   "ပီယာနိုတီးသည်။": [
     "ひきます [ピアノを]",
     "弾きます [ピアノを]",
     "hikimasu [piano o]",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "ピアノを ひくことが できます。\n(ပီယာနို တီးတတ်တယ်။)"
   ],
   "သီချင်းဆိုသည်": [
     "うたいます",
     "歌います",
     "utaimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "うたを うたいます。\n(သီချင်း ဆိုတယ်။)"
   ],
   "စုဆောင်းသည်။": [
     "あつめます",
     "集めます",
     "atsumemasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "きってを あつめています。\n(တံဆိပ်ခေါင်း စုဆောင်းနေတယ်။)"
   ],
   "စွန့်ပစ်သည်။": [
     "すてます",
     "捨てます",
     "sutemasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ゴミを すてます。\n(အမှိုက် ပစ်တယ်။)"
   ],
   "လဲလှယ်သည်": [
     "かえます",
     "換えます",
     "kaemasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "えんを ドルに かえます。\n(ယန်းငွေကို ဒေါ်လာ လဲတယ်။)"
   ],
   "ကားမောင်းသည်": [
     "うんてんします",
     "運転します",
     "unten shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "くるまを うんてんします。\n(ကား မောင်းတယ်။)"
   ],
   "booking လုပ်သည်": [
     "よやくします",
     "予約します",
     "yoyaku shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ホテルを よやくします。\n(ဟိုတယ် ဘိုကင်တင်တယ်။)"
   ],
   "ပီယာနို": [
     "ピアノ",
     "ピアノ",
     "piano",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "ピアノを ひきます。\n(ပီယာနို တီးတယ်။)"
   ],
   "မီတာ(အကွာအဝေးကိုတိုင်းတာသောမီတာ)": [
     "メートル",
     "メートル",
     "mētoru",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "５０メートル およげます。\n(မီတာ ၅၀ ရေကူးနိုင်တယ်။)"
   ],
   "ငွေသား၊ လက်ငင်းငွေပေးချေခြင်း": [
     "げんきん",
     "現金",
     "genkin",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "げんきんで はらいます。\n(ငွေသားနဲ့ ပေးချေတယ်။)"
   ],
   "ဝါသနာ": [
     "しゅみ",
     "趣味",
     "shumi",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "しゅみは なんですか。\n(ဝါသနာက ဘာလဲ။)"
   ],
   "နေစဉ်မှတ်တမ်း": [
     "にっき",
     "日記",
     "nikki",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "にっきを かきます。\n(နေ့စဉ်မှတ်တမ်း ရေးတယ်။)"
   ],
   "ဆုတောင်းခြင်း": [
     "おいのり",
     "お祈り",
     "oinori",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "おいのりを します。\n(ဆုတောင်းတယ်။)"
   ],
   "ဌာနခွဲမှူး": [
     "かちょう",
     "課長",
     "kachō",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "かちょうに ほうこくします。\n(ဌာနခွဲမှူးကို တင်ပြတယ်။)"
   ],
   "မန်နေဂျာ": [
     "ぶちょう",
     "部長",
     "buchō",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ぶちょうは いらっしゃいますか。\n(မန်နေဂျာ ရှိပါသလား။)"
   ],
   "သူဌေး": [
     "しゃちょう",
     "社長",
     "shachō",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "しゃちょうに あいます。\n(သူဌေးနဲ့ တွေ့တယ်။)"
   ],
   "တိရိစ္ဆန်": [
     "どうぶつ",
     "動物",
     "dōbutsu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "どうぶつが すきです。\n(တိရစ္ဆာန် ချစ်တယ်။)"
   ],
   "မြင်း": [
     "うま",
     "馬",
     "uma",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "うまに のります。\n(မြင်း စီးတယ်။)"
   ],
   "အင်တာနက်": [
     "インターネット",
     "インターネット",
     "intānetto",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "インターネットで しらべます。\n(အင်တာနက်မှာ ရှာဖွေတယ်။)"
   ],
   "အထူးသဖြင့်": [
     "とくに",
     "特に",
     "toku ni",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "とくに ピアノが すきです。\n(အထူးသဖြင့် ပီယာနိုကို ကြိုက်တယ်။)"
   ],
   "ဟယ်": [
     "へえ、",
     "へえ、",
     "hē,",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "へえ、そうですか。\n(ဟယ်၊ ဟုတ်လား။)"
   ],
   "တော်တော်နဲ့---": [
     "なかなか",
     "なかなか",
     "nakanaka",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "なかなか バスが きません。\n(ဘတ်စ်ကားက တော်တော်နဲ့ မလာဘူး။)"
   ],
   "တကယ်လားဟင်": [
     "ほんとうですか",
     "本当ですか",
     "hontō desu ka",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "ほんとうですか。\n(တကယ်လား။)"
   ],
   "ဆက်ဆက်။ ကျိန်းသေ": [
     "ぜひ",
     "ぜひ",
     "zehi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ぜひ あそびに きてください。\n(အလည် မဖြစ်မနေ လာခဲ့ပါ။)"
   ],
   "မွေးရပ်မြေ": [
     "ふるさと",
     "故郷",
     "furusato",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "ふるさとは どこですか。\n(မွေးရပ်မြေက ဘယ်မှာလဲ။)"
   ],
   "The Beatles": [
     "ビートルズ",
     "ビートルズ",
     "Bītoruzu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "ビートルズの うた\n(Beatles သီချင်း)"
   ],
   "Akihabara (တိုကျိုမှလူစည်ကားသောနေရာတစ်ခု)": [
     "あきはばら",
     "秋葉原",
     "Akihabara",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png",
+    "あきはばらへ いきます。\n(Akihabara ကို သွားတယ်။)"
   ]
 };
 
@@ -5116,157 +5912,183 @@ final minnaLesson19 = {
     "のぼります [やまに]",
     "登ります [山に]",
     "noborimasu [yama ni]",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "やまに のぼります。\n(တောင်တက်တယ်။)"
   ],
   "ညအိပ်တည်းခိုသည် (ဟိုတယ်တွင်)": [
     "とまります [ホテルに]",
     "泊まります [ホテルに]",
     "tomarimasu [hoteru ni]",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "ホテルに とまります。\n(ဟိုတယ်မှာ တည်းခိုတယ်။)"
   ],
   "သန်ရှင်းရေးလုပ်သည်": [
     "そうじします",
     "掃除します",
     "sōji shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "へやを そうじします。\n(အခန်း သန့်ရှင်းရေးလုပ်တယ်။)"
   ],
   "အဝတ်လျှော်သည်": [
     "せんたくします",
     "洗濯します",
     "sentaku shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ふくを せんたくします。\n(အဝတ် လျှော်တယ်။)"
   ],
   "ဖြစ်လာသည်": [
     "なります",
     "なります",
     "narimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いしゃに なります。\n(ဆရာဝန် ဖြစ်လာတယ်။)"
   ],
   "အိပ်ချင်သော": [
     "ねむい",
     "眠い",
     "nemui",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ねむいです。\n(အိပ်ချင်တယ်။)"
   ],
   "အားသန်သော": [
     "つよい",
     "強い",
     "tsuyoi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "からだが つよいです。\n(ခန္ဓာကိုယ် သန်မာတယ်။)"
   ],
   "အားလျှော့သော/အားနည်းသော": [
     "よわい",
     "弱い",
     "yowai",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "からだが よわいです。\n(ခန္ဓာကိုယ် အားနည်းတယ်။)"
   ],
   "လေ့ကျင့်ခြင်း": [
     "れんしゅう",
     "練習",
     "renshū",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "ゴルフの れんしゅう\n(ဂေါက်သီးရိုက် လေ့ကျင့်ခြင်း)"
   ],
   "Golf": [
     "ゴルフ",
     "ゴルフ",
     "gorufu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "ゴルフを します。\n(ဂေါက်သီးရိုက် ကစားတယ်။)"
   ],
   "ဂျပန်နပန်းအားကစား": [
     "すもう",
     "相撲",
     "sumō",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "すもうを みます。\n(ဆူမို နပန်းပွဲ ကြည့်တယ်။)"
   ],
   "ဂျပန်ရေနွေးကြမ်း green tea": [
     "おちゃ",
     "お茶",
     "ocha",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "おちゃを のみます。\n(ရေနွေးကြမ်း သောက်တယ်။)"
   ],
   "နေ့ရက်": [
     "ひ",
     "日",
     "hi",
-    "https://cdn-icons-png.flaticon.com/512/483/483988.png"
+    "https://cdn-icons-png.flaticon.com/512/483/483988.png",
+    "いい ひ\n(နေ့ကောင်းရက်သာ)"
   ],
   "အခြေအနေ": [
     "ちょうし",
     "調子",
     "chōshi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "からだの ちょうしが いいです。\n(နေကောင်းတယ်။ / ကျန်းမာရေးကောင်းတယ်။)"
   ],
   "တစ်ကြိမ်၊ တစ်ခေါက်": [
     "いちど",
     "一度",
     "ichido",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "いちど にほんへ いきたいです。\n(တစ်ခေါက်လောက် ဂျပန်ကို သွားချင်တယ်။)"
   ],
   "တစ်ကြိမ်မျှ၊ တစ်ခေါက်မျှ": [
     "いちども",
     "一度も",
     "ichido mo",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "いちども たべたことが ありません。\n(တစ်ခါမှ မစားဖူးဘူး။)"
   ],
   "တဖြေးဖြေးနဲ့": [
     "だんだん",
     "だんだん",
     "dandan",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "だんだん さむく なりました。\n(တဖြည်းဖြည်း အေးလာတယ်။)"
   ],
   "အခုချက်ခြင်း": [
     "もうすぐ",
     "もうすぐ",
     "mō sugu",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "もうすぐ ３じです。\n(အခုပဲ ၃ နာရီထိုးတော့မယ်။)"
   ],
   "ကျေးဇူးတော်ကြောင့်/ပိုသတဲ့မေတ္တာကြောင့်": [
     "おかげさまで",
     "おかげさまで",
     "okagesama de",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528577.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528577.png",
+    "おかげさまで げんきです。\n(ကျေးဇူးကြောင့် နေကောင်းပါတယ်။)"
   ],
   "ဒါပေမဲ့": [
     "でも",
     "でも",
     "demo",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "でも、ちょっと たかいです。\n(ဒါပေမဲ့ နည်းနည်း ဈေးကြီးတယ်။)"
   ],
   "Cheers": [
     "かんぱい",
     "乾杯",
     "kanpai",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "かんぱい！\n(ချီးယားစ် / ခွက်ချင်းတိုက်။)"
   ],
   "ဝိတ်ချခြင်း": [
     "ダイエット",
     "ダイエット",
     "daietto",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ダイエットを しています。\n(ဝိတ်ချနေတယ်။)"
   ],
   "မဖြစ်နိုင်သော(အလွန်အကျွံဖြစ်သော)": [
     "むり [な]",
     "無理 [な]",
     "muri [na]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "むりな ダイエット\n(မဖြစ်နိုင်သော ဝိတ်ချခြင်း)"
   ],
   "ခန္ဓာကိုယ်အတွက်ကောင်းသော": [
     "からだにいい",
     "体にいい",
     "karada ni ii",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "からだにいい たべもの\n(ကျန်းမာရေးနဲ့ ညီညွတ်သော အစားအစာ)"
   ],
   "Tokyo Sky Tree": [
     "とうきょうスカイツリー",
     "東京スカイツリー",
     "Tōkyō Sukaitsurī",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png",
+    "とうきょうスカイツリーに のぼりました。\n(တိုကျို Sky Tree ပေါ် တက်ခဲ့တယ်။)"
   ],
   "Katsushika Hokusai (Edoခေတ်တွင် ကျော်ကြားခဲ့သော ပန်းချီးဆရာ)": [
     "かつしかほくさい",
     "葛飾北斎",
     "Katsushika Hokusai",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134812.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134812.png",
+    "かつしかほくさいは ゆうめいです。\n(Katsushika Hokusai က နာမည်ကြီးတယ်။)"
   ]
 };
 
@@ -5275,133 +6097,155 @@ final minnaLesson20 = {
     "いります [ビザが]",
     "要ります [ビザが]",
     "irimasu [biza ga]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ビザが いります。\n(ဗီဇာ လိုတယ်။)"
   ],
   "စုံစမ်းသည်။": [
     "しらべます",
     "調べます",
     "shirabemasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "でんわばんごうを しらべます。\n(ဖုန်းနံပါတ် ရှာတယ်။)"
   ],
   "ပြုပြင်သည်။": [
     "しゅうりします",
     "修理します",
     "shūri shimasu",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "くるまを しゅうりします。\n(ကား ပြင်တယ်။)"
   ],
   "ကျွန်တော်": [
     "ぼく",
     "僕",
     "boku",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ぼくは がくせいです。\n(ကျွန်တော်က ကျောင်းသားပါ။)"
   ],
   "မင်း": [
     "きみ",
     "君",
     "kimi",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "きみは いくつ？\n(မင်း အသက်ဘယ်လောက်လဲ။)"
   ],
   "ကို/မောင်---": [
     "～くん",
     "～くん",
     "～ kun",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "たろうくん\n(မောင်တာရို)"
   ],
   "အင်း": [
     "うん",
     "うん",
     "un",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "A: たべる？ B: うん、たべる。\n(A: စားမလား။ B: အင်း စားမယ်။)"
   ],
   "ဟင့်အင်း": [
     "ううん",
     "ううん",
     "ūun",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ううん、たべない。\n(ဟင့်အင်း၊ မစားဘူး။)"
   ],
   "စကား၊ ဝေါဟာရ": [
     "ことば",
     "言葉",
     "kotoba",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069248.png",
+    "にほんごの ことば\n(ဂျပန်စကား)"
   ],
   "ဂျပန်ကီမိုနို": [
     "きもの",
     "着物",
     "kimono",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "きものを きます。\n(ကီမိုနို ဝတ်တယ်။)"
   ],
   "Visa": [
     "ビザ",
     "ビザ",
     "biza",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ビザが 要（い）ります。\n(ဗီဇာ လိုတယ်။)"
   ],
   "ပထမတော့၊ အစပိုင်း": [
     "はじめ",
     "初め",
     "hajime",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "はじめは むずかしかったです。\n(အစပိုင်းတုန်းက ခက်ခဲခဲ့တယ်။)"
   ],
   "အဆုံးတော့": [
     "おわり",
     "終わり",
     "owari",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "おわりに\n(အဆုံးမှာ)"
   ],
   "ဒီဘက်": [
     "こっち",
     "こっち",
     "kocchi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "こっちへ こない？\n(ဒီဘက် လာမလား။)"
   ],
   "ဟိုဘက်": [
     "そっち",
     "そっち",
     "socchi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "そっちは どう？\n(ဟိုဘက်က ဘယ်လိုလဲ။)"
   ],
   "ဟိုးဘက်": [
     "あっち",
     "あっち",
     "acchi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あっちに ある。\n(ဟိုဘက်မှာ ရှိတယ်။)"
   ],
   "ဘယ်ဘက်": [
     "どっち",
     "どっち",
     "docchi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "どっちが いい？\n(ဘယ်ဟာ ကောင်းလဲ။)"
   ],
   "အားလုံးနဲ့၊ အားလုံးအတူတူ": [
     "みんなで",
     "みんなで",
     "minna de",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "みんなで いきましょう。\n(အားလုံးအတူတူ သွားကြရအောင်။)"
   ],
   "ဒါပေမဲ့": [
     "～けど",
     "～けど",
     "～ kedo",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "おいしいけど、たかい。\n(အရသာရှိပေမဲ့ ဈေးကြီးတယ်။)"
   ],
   "ဗိုက်ပြည့်နေပြီ": [
     "おなかがいっぱいです",
     "おなかがいっぱいです",
     "onaka ga ippai desu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "おなかが いっぱいです。\n(ဗိုက်ပြည့်နေပြီ။)"
   ],
   "ကြိုက်မယ်ဆိုရင်၊ အဆင်ပြေမယ်ဆိုရင်": [
     "よかったら",
     "よかったら",
     "yokattara",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "よかったら、どうぞ。\n(အဆင်ပြေရင် ယူပါ။)"
   ],
   "အမျိုးမျိုး": [
     "いろいろ",
     "いろいろ",
     "iroiro",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いろいろ ありがとうございます。\n(အမျိုးမျိုး ကျေးဇူးတင်ပါတယ်။)"
   ]
 };
 
@@ -5410,283 +6254,330 @@ final minnaLesson21 = {
     "おもいます",
     "思います",
     "omoimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "あした あめが ふると おもいます。\n(မနက်ဖြန် မိုးရွာမယ်လို့ ထင်တယ်။)"
   ],
   "ပြောသည်။": [
     "いいます",
     "言います",
     "iimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "かれは いきました。\n(သူ ပြောခဲ့တယ်။)"
   ],
   "နိုင်သည်။": [
     "かちます",
     "勝ちます",
     "kachimasu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "しあいに かちました。\n(ပွဲမှာ နိုင်ခဲ့တယ်။)"
   ],
   "ရှံးသည်": [
     "まけます",
     "負けます",
     "makemasu",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "しあいに まけました。\n(ပွဲမှာ ရှုံးခဲ့တယ်။)"
   ],
   "ရှိသည်။ (ပွဲတော်ရှိသည်)": [
     "あります [おまつりが]",
     "あります [お祭りが]",
     "arimasu [omatsuri ga]",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "きょうとで おまつりが あります。\n(ကျိုတိုမှာ ပွဲတော် ရှိတယ်။)"
   ],
   "အသုံးဝင်သည်": [
     "やくにたちます",
     "役に立ちます",
     "yaku ni tachimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "これは やくにたちます。\n(ဒါက အသုံးဝင်တယ်။)"
   ],
   "လှုပ်ရှားသည်": [
     "うごきます",
     "動きます",
     "ugokimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "きかいが うごきます。\n(စက် လည်ပတ်တယ်။)"
   ],
   "ကုမ္ပဏီမှ ထွက်သည်။": [
     "やめます [かいしゃを]",
     "やめます [会社を]",
     "yamemasu [kaisha o]",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "かいしゃを やめます。\n(ကုမ္ပဏီက ထွက်တယ်။)"
   ],
   "သတိထားသည်။ ဂရုစိုက်သည်။": [
     "きをつけます",
     "気をつけます",
     "ki o tsukemasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "くるまに きをつけます。\n(ကားကို သတိထားတယ်။)"
   ],
   "အလဟဿဖြစ်သော": [
     "むだ [な]",
     "無駄 [な]",
     "muda [na]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "むだな じかん\n(အလဟဿဖြစ်သော အချိန်)"
   ],
   "အဆင်မပြေသော": [
     "ふべん [な]",
     "不便 [な]",
     "fuben [na]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ここは ふべんです。\n(ဒီနေရာက အဆင်မပြေဘူး။)"
   ],
   "အံဩစရာကောင်းသော": [
     "すごい",
     "すごい",
     "sugoi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "すごい ひとですね。\n(အံ့ဩစရာကောင်းတဲ့လူပဲနော်။)"
   ],
   "တကယ်": [
     "ほんとう",
     "本当",
     "hontō",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ほんとうですか。\n(တကယ်လား။)"
   ],
   "အလိမ်၊ အညာ": [
     "うそ",
     "うそ",
     "uso",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "うそでしょう。\n(ညာတာမလား / နောက်တာမလား။)"
   ],
   "မော်တော်ကား": [
     "じどうしゃ",
     "自動車",
     "jidōsha",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "じどうしゃがいしゃ\n(ကားကုမ္ပဏီ)"
   ],
   "ယာဉ်သွားလာမှု": [
     "こうつう",
     "交通",
     "kōtsū",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "こうつうが べんりです。\n(သွားလာရေး အဆင်ပြေတယ်။)"
   ],
   "ကုန်ဈေးနှုန်း": [
     "ぶっか",
     "物価",
     "bukka",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "にほんは ぶっかが たかいです。\n(ဂျပန်က ကုန်ဈေးနှုန်း ကြီးတယ်။)"
   ],
   "သတင်းလွှင့်ခြင်း": [
     "ほうそう",
     "放送",
     "hōsō",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "ニュースほうそう\n(သတင်းထုတ်လွှင့်ခြင်း)"
   ],
   "သတင်း": [
     "ニュース",
     "ニュース",
     "nyūsu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "ニュースを みます。\n(သတင်း ကြည့်တယ်။)"
   ],
   "ဂျပန်ကာတွန်းကား": [
     "アニメ",
     "アニメ",
     "anime",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "日本のアニメ\n(ဂျပန် အန်နီမေးရှင်း)"
   ],
   "ကာတွန်း(ရုပ်ပြ)စာအုပ်": [
     "マンガ",
     "マンガ",
     "manga",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069255.png",
+    "マンガを よみます。\n(ကာတွန်း ဖတ်တယ်။)"
   ],
   "ဒီဇိုင်း": [
     "デザイン",
     "デザイン",
     "dezain",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いい デザインですね。\n(ဒီဇိုင်းကောင်းတယ်နော်။)"
   ],
   "အိမ်မက်": [
     "ゆめ",
     "夢",
     "yume",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "ゆめを みました。\n(အိပ်မက် မက်ခဲ့တယ်။)"
   ],
   "ပါရမီရှင်": [
     "てんさい",
     "天才",
     "tensai",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "かれは てんさいです。\n(သူက ပါရမီရှင်ပါ။)"
   ],
   "ပြိုင်ပွဲ": [
     "しあい",
     "試合",
     "shiai",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "しあいが あります。\n(ပြိုင်ပွဲ ရှိတယ်။)"
   ],
   "ထင်မြင်ချက်": [
     "いけん",
     "意見",
     "iken",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "いけんを いいます。\n(ထင်မြင်ချက် ပေးတယ်။)"
   ],
   "စကား၊ ပုံပြင်": [
     "はなし",
     "話",
     "hanashi",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "はなしを します。\n(စကားပြောတယ်။)"
   ],
   "ကမ္ဘာမြေ": [
     "ちきゅう",
     "地球",
     "chikyū",
-    "https://cdn-icons-png.flaticon.com/512/1261/1261689.png"
+    "https://cdn-icons-png.flaticon.com/512/1261/1261689.png",
+    "ちきゅうは まるいです。\n(ကမ္ဘာကြီးက လုံးဝန်းတယ်။)"
   ],
   "အခုတလော": [
     "さいきん",
     "最近",
     "saikin",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157070.png",
+    "さいきん いそがしいです。\n(အခုတလော အလုပ်များတယ်။)"
   ],
   "may be": [
     "たぶん",
     "たぶん",
     "tabun",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "たぶん だいじょうぶです。\n(ဖြစ်နိုင်တာကတော့ အဆင်ပြေမှာပါ။)"
   ],
   "ကျိန်းသေ": [
     "きっと",
     "きっと",
     "kitto",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あしたは きっと いい てんきでしょう。\n(မနက်ဖြန် ကျိန်းသေ ရာသီဥတု သာယာမှာပါ။)"
   ],
   "တကယ်": [
     "ほんとうに",
     "本当に",
     "hontō ni",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ほんとうに ありがとうございます。\n(တကယ်ကို ကျေးဇူးတင်ပါတယ်။)"
   ],
   "အဲဒီလောက်(နောက်တွင် အငြင်းလိုက်လေ့ရှိသည်)": [
     "そんなに",
     "そんなに",
     "sonna ni",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "そんなに たかくないです。\n(အဲဒီလောက် မကြီးပါဘူး။)"
   ],
   "---နဲပက်သက်ပြီး": [
     "～について",
     "～について",
     "～ ni tsuite",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "にほんについて\n(ဂျပန်နဲ့ ပတ်သက်ပြီး)"
   ],
   "ကြာလှပြီနော်": [
     "ひさしぶりですね",
     "久しぶりですね",
     "hisashiburi desu ne",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おひさしぶりですね。\n(မတွေ့ရတာ ကြာပြီနော်။)"
   ],
   "ဒါပေါ့၊ ဒါဘဲပေါ့။": [
     "もちろん",
     "もちろん",
     "mochiron",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "もちろん いいですよ。\n(ဒါပေါ့၊ ရတာပေါ့။)"
   ],
   "Albert Einstein": [
     "アインシュタイン",
     "アインシュタイン",
     "Ainshutain",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "アインシュタインは ゆうめいです。\n(အိုင်းစတိုင်းက နာမည်ကြီးတယ်။)"
   ],
   "Yuri Alekseyevich Gagarin": [
     "ガガーリン",
     "ガガーリン",
     "Gagārin",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ガガーリンを知っていますか。\n(ဂါဂါရင်ကို သိလား။)"
   ],
   "Galileo Galilei": [
     "ガリレオ",
     "ガリレオ",
     "Garireo",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ガリレオは 昔（むかし）の人です。\n(ဂယ်လီလီယိုက ရှေးခေတ်လူပါ။)"
   ],
   "Martin Luther King, Jr.": [
     "キングぼくし",
     "キング牧師",
     "Kingu Bokushi",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "キングぼくしの スピーチ\n(ကင်းဆရာတော်ရဲ့ မိန့်ခွန်း)"
   ],
   "Benjamin Franklin": [
     "フランクリン",
     "フランクリン",
     "Furankurin",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "フランクリンは アメリカ人です。\n(ဖရန်ကလင်က အမေရိကန်လူမျိုးပါ။)"
   ],
   "Kaguya မင်းသမီး": [
     "かぐやひめ",
     "かぐや姫",
     "Kaguya-hime",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "かぐやひめの はなし\n(Kaguya မင်းသမီးပုံပြင်)"
   ],
   "Tenjin ပွဲတော်": [
     "てんじんまつり",
     "天神祭り",
     "Tenjin Matsuri",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "てんじんまつりは おおさかです。\n(Tenjin ပွဲတော်က အိုဆာကာမှာပါ။)"
   ],
   "Yoshino တောင်": [
     "よしのやま",
     "吉野山",
     "Yoshino-yama",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "よしのやまは きれいです。\n(ယိုရှီနိုတောင်က လှတယ်။)"
   ],
   "သားပိုက်ကောင်": [
     "カンガルー",
     "カンガルー",
     "kangarū",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "カンガルーを みました。\n(သားပိုက်ကောင်ကို မြင်ခဲ့တယ်။)"
   ],
   "Captain James Cook": [
     "キャプテン・クック",
     "キャプテン・クック",
     "Kyaputen Kukku",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "キャプテン・クックは ゆうめいです。\n(ကပ္ပတိန်ကွတ်က နာမည်ကြီးတယ်။)"
   ],
   "yone ကုမ္ပဏီ": [
     "ようねん",
     "ヨーネン",
     "Yōnen",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "ヨーネンで はたらいています。\n(Yonen မှာ အလုပ်လုပ်နေတယ်။)"
   ]
 };
 
@@ -5695,175 +6586,204 @@ final minnaLesson22 = {
     "きます",
     "着ます",
     "kimasu",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "シャツを きます。\n(ရှပ်အင်္ကျီ ဝတ်တယ်။)"
   ],
   "ဖိနပ်စီးသည်။ (အောက်ပိုင်း)": [
     "はきます",
     "履きます",
     "hakimasu",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "くつを はきます。\n(ဖိနပ် စီးတယ်။)"
   ],
   "ဦးထုပ်ဆောင်းသည်/ခြုံသည်။": [
     "かぶります",
     "かぶります",
     "kaburimasu",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "ぼうしを かぶります。\n(ဦးထုပ် ဆောင်းတယ်။)"
   ],
   "မျက်မှန်တပ်သည်။": [
     "かけます [めがねを]",
     "かけます [めがねを]",
     "kakemasu [megane o]",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "めがねを かけます。\n(မျက်မှန် တပ်တယ်။)"
   ],
   "neck tie ပတ်သည်။": [
     "します [ネクタイを]",
     "します [ネクタイを]",
     "shimasu [nekutai o]",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "ネクタイを します。\n(လည်စည်း စည်းတယ်။)"
   ],
   "မွေးဖွားသည်။": [
     "うまれます",
     "生まれます",
     "umaremasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "にほんで うまれました。\n(ဂျပန်မှာ မွေးခဲ့တယ်။)"
   ],
   "အိမ်ငှါးခ": [
     "やちん",
     "家賃",
     "yachin",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "やちんは たかいです。\n(အိမ်လခ ဈေးကြီးတယ်။)"
   ],
   "ကျွန်တော်တို့/ကျွန်မတို့": [
     "わたしたち",
     "私たち",
     "watashitachi",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "わたしたちは がくせいです。\n(ကျွန်တော်တို့က ကျောင်းသားတွေပါ။)"
   ],
   "ထမင်းစားခန်းပါသော မီးဖိုဆောင်": [
     "ダイニングキッチン",
     "ダイニングキッチン",
     "dainingu kicchin",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "ひろい ダイニングキッチン\n(ကျယ်ဝန်းတဲ့ မီးဖိုချောင်)"
   ],
   "အပေါ်ဝတ်အင်္ကျီ": [
     "コート",
     "コート",
     "kōto",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "コートを きます。\n(ကုတ်အင်္ကျီ ဝတ်တယ်။)"
   ],
   "ဂျပန်ရိုးရာအခန်း": [
     "わしつ",
     "和室",
     "washitsu",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "わしつが あります。\n(ဂျပန်ရိုးရာအခန်း ရှိတယ်။)"
   ],
   "သိုးမွှေးအနွေးထည်": [
     "セーター",
     "セーター",
     "sētā",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "セーターを きます。\n(ဆွယ်တာအင်္ကျီ ဝတ်တယ်။)"
   ],
   "ဂျပန်စတိုင်ဗီဒို(မွေ့ရာ၊ ခေါင်းအုံးများသိမ်းဆည်းသည့်အခန်း)": [
     "おしいれ",
     "押入れ",
     "oshiire",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "おしいれに いれます。\n(Oshiire ထဲ ထည့်တယ်။)"
   ],
   "အနောက်တိုင်းကုတ်အင်္ကျီ": [
     "スーツ",
     "スーツ",
     "sūtsu",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "スーツを きます。\n(Suit ဝတ်တယ်။)"
   ],
   "ဦးထုပ်": [
     "ぼうし",
     "帽子",
     "bōshi",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "ぼうしを かぶります。\n(ဦးထုပ် ဆောင်းတယ်။)"
   ],
   "မွေ့ယာ": [
     "ふとん",
     "布団",
     "futon",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "ふとんで ねます。\n(မွေ့ရာပေါ် အိပ်တယ်။)"
   ],
   "မျက်မှန်": [
     "めがね",
     "めがね",
     "megane",
-    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png"
+    "https://cdn-icons-png.flaticon.com/512/2851/2851508.png",
+    "めがねを かけます。\n(မျက်မှန် တပ်တယ်။)"
   ],
   "ကိတ်မုန့်": [
     "ケーキ",
     "ケーキ",
     "kēki",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "ケーキを たべます。\n(ကိတ်မုန့် စားတယ်။)"
   ],
   "ထမင်းဗူး": [
     "おべんとう",
     "お弁当",
     "obentō",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "おべんとうを たべます。\n(ထမင်းဘူး စားတယ်။)"
   ],
   "စက်ရုပ်": [
     "ロボット",
     "ロボット",
     "robotto",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "ロボットを つくります。\n(စက်ရုပ် လုပ်တယ်။)"
   ],
   "ဟာသ": [
     "ユーモア",
     "ユーモア",
     "yūmoa",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "ユーモアが あります。\n(ဟာသဉာဏ် ရှိတယ်။)"
   ],
   "အခြေအနေ": [
     "つごう",
     "都合",
     "tsugō",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "つごうが いいです。\n(အဆင်ပြေတယ်။)"
   ],
   "ခဏခဏ/မကြာမကြာ/ကောင်းကောင်း": [
     "よく",
     "よく",
     "yoku",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "よく たべます。\n(ကောင်းကောင်း စားတယ်။ / ခဏခဏ စားတယ်။)"
   ],
   "အဲဒါဆိုရင်": [
     "えーと",
     "えーと",
     "ēto",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "えーと、そうですね。\n(အင်း.. ဟုတ်တယ်။)"
   ],
   "ဂုဏ်ပြုလွှာ": [
     "おめでとう [ございます]",
     "おめでとう [ございます]",
     "omedetō [gozaimasu]",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "おたんじょうび おめでとうございます。\n(မွေးနေ့မှာ ပျော်ရွှင်ပါစေ။)"
   ],
   "တစ်ခုခုရှာနေပါသလား": [
     "おさがしですか",
     "お探しですか",
     "osagashi desu ka",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "なにか おさがしですか。\n(တစ်ခုခု ရှာနေပါသလား။)"
   ],
   "ဒါဆိုရင်-": [
     "では",
     "では",
     "dewa",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "では、こちらへ。\n(ဒါဆိုရင် ဒီဘက်ကို ကြွပါ။)"
   ],
   "ဒီဘက်၊ ဒီဟာ": [
     "こちら",
     "こちら",
     "kochira",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "こちらは いかがですか。\n(ဒါလေးကကော ဘယ်လိုလဲ။)"
   ],
   "The Great Wall of China": [
     "ばんりのちょうじょう",
     "万里の長城",
     "Banri no Chōjō",
-    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png"
+    "https://cdn-icons-png.flaticon.com/512/2157/2157077.png",
+    "ばんりのちょうじょうは ちゅうごくに あります。\n(မဟာတံတိုင်းကြီးက တရုတ်မှာ ရှိပါတယ်။)"
   ]
 };
 
@@ -5872,169 +6792,197 @@ final minnaLesson23 = {
     "ききます [せんせいに]",
     "聞きます [先生に]",
     "kikimasu [sensei ni]",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "せんせいに ききます。\n(ဆရာ့ကို မေးတယ်။)"
   ],
   "လှည့်သည်။": [
     "まわします",
     "回します",
     "mawāshimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "これを みぎへ まわします。\n(ဒါကို ညာဘက် လှည့်တယ်။)"
   ],
   "ဆွဲသည်။": [
     "ひきます",
     "引きます",
     "hikimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ひもを ひきます。\n(ကြိုးကို ဆွဲတယ်။)"
   ],
   "လဲလှယ်သည်။": [
     "かえます",
     "変えます",
     "kaemasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "いろを かえます。\n(အရောင် ပြောင်းတယ်။)"
   ],
   "ကိုင်သည်၊ ထိသည်၊ တိုသည်။": [
     "さわります [ドアに]",
     "触ります [ドアに]",
     "sawarimasu [doa ni]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ドアに さわります。\n(တံခါးကို ကိုင်တယ်။)"
   ],
   "လမ်းလျှောက်သည်။": [
     "あるきます [みちを]",
     "歩きます [道を]",
     "arukimasu [michi o]",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "みちを あるきます。\n(လမ်းလျှောက်တယ်။)"
   ],
   "ဖြတ်သည်။ (တံတားကို)": [
     "わたります [はしを]",
     "渡ります [橋を]",
     "watarimasu [hashi o]",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "はしを わたります。\n(တံတားကို ဖြတ်ကူးတယ်။)"
   ],
   "ထွက်သည်။ (ပိုက်ဆံအကြွေထွက်သည်)": [
     "でます [おつりが]",
     "出ます [お釣りが]",
     "demasu [otsuri ga]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421096.png",
+    "おつりが でます。\n(ပြန်အမ်းငွေ ထွက်လာတယ်။)"
   ],
   "ကွေ့သည်။ (ညာဘက်သို့)": [
     "まがります [みぎへ]",
     "曲がります [右へ]",
     "magarimasu [migi e]",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "かどを みぎへ まがります。\n(ထောင့်ချိုးကို ညာဘက် ကွေ့တယ်။)"
   ],
   "အထီးကျန်သော": [
     "さびしい",
     "寂しい",
     "sabishii",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "さびしいです。\n(အထီးကျန်တယ်။)"
   ],
   "ရေနွေး": [
     "おゆ",
     "お湯",
     "oyu",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "おゆが でます。\n(ရေနွေး ထွက်တယ်။)"
   ],
   "အသံ": [
     "おと",
     "音",
     "oto",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "おとが きこえます。\n(အသံ ကြားရတယ်။)"
   ],
   "အရွယ်အစား": [
     "サイズ",
     "サイズ",
     "saizu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "サイズは どうですか。\n(ဆိုဒ် ဘယ်လိုလဲ။)"
   ],
   "ပျက်စီးနေခြင်း": [
     "こしょう",
     "故障",
     "koshō",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "こしょうします。\n(ပျက်စီးတယ်။ / ပျက်တယ်။)"
   ],
   "လမ်း": [
     "みち",
     "道",
     "michi",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "みちを おしえてください。\n(လမ်း ပြောပြပေးပါ။)"
   ],
   "လမ်းဆုံ": [
     "こうさてん",
     "交差点",
     "kōsaten",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "こうさてんを わたります。\n(လမ်းဆုံကို ဖြတ်ကူးတယ်။)"
   ],
   "မီးပွိုင့်": [
     "しんごう",
     "信号",
     "shingō",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "しんごうが あかです。\n(မီးပွိုင့်က အနီရောင်ပါ။)"
   ],
   "လမ်းထောင့်": [
     "かど",
     "角",
     "kado",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "かどに みせが あります。\n(လမ်းထောင့်မှာ ဆိုင် ရှိတယ်။)"
   ],
   "တံတား": [
     "はし",
     "橋",
     "hashi",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "はしを わたります。\n(တံတားကို ဖြတ်ကူးတယ်။)"
   ],
   "ကားရပ်ရန်နေရာ၊ parking": [
     "ちゅうしゃじょう",
     "駐車場",
     "chūshajō",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "ちゅうしゃじょうは どこですか。\n(ကားပါကင် ဘယ်မှာလဲ။)"
   ],
   "အဆောက်အဦး": [
     "たてもの",
     "建物",
     "tatemono",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "たてものが たくさん あります。\n(အဆောက်အဦးတွေ အများကြီး ရှိတယ်။)"
   ],
   "အကြိမ်များစွာ": [
     "なんかいも",
     "何回も",
     "nankai mo",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "なんかいも いきました。\n(အကြိမ်ကြိမ် သွားခဲ့တယ်။)"
   ],
   "---မြောက်": [
     "～め",
     "～目",
     "～ me",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "２かいめ\n(၂ ကြိမ်မြောက်)"
   ],
   "Shotoku မင်းသား": [
     "しょうとくたいし",
     "聖徳太子",
     "Shōtoku Taishi",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "しょうとくたいしは ゆうめいです。\n(Shōtoku Taishi က နာမည်ကြီးတယ်။)"
   ],
   "Houryuji ဘုရားကျောင်း": [
     "ほうりゅうじ",
     "法隆寺",
     "Hōryūji",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "ほうりゅうじは ならけんに あります。\n(Horyuji ကျောင်းတော်က နာရာမှာ ရှိပါတယ်။)"
   ],
   "ကျန်းမာရေးလက်ဖက်ခြောက်": [
     "げんきちゃ",
     "元気茶",
     "Genkicha",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "げんきちゃを のみます。\n(ကျန်းမာရေးလက်ဖက်ရည် သောက်တယ်။)"
   ],
   "Honda ဘူတာ": [
     "ほんだえき",
     "本田駅",
     "Honda Eki",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "ほんだえきで おります。\n(Honda ဘူတာမှာ ဆင်းတယ်။)"
   ],
   "စာကြည့်တိုက်ရှေ့ ဘတ်စ်ကားမှတ်တိုင်": [
     "としょかんまえ",
     "図書館前",
     "Toshokan mae",
-    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png"
+    "https://cdn-icons-png.flaticon.com/512/2855/2855799.png",
+    "バスていは としょかんまえです。\n(ဘတ်စ်ကားမှတ်တိုင်က စာကြည့်တိုက်ရှေ့မှာပါ။)"
   ]
 };
 
@@ -6043,109 +6991,127 @@ final minnaLesson24 = {
     "くれます",
     "くれます",
     "kuremasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "さとうさんが くれました。\n(ဆာတိုးဆန်က ပေးခဲ့တယ်။)"
   ],
   "ပြုပြင်သည်/အမှားပြင်ဆင်သည်": [
     "なおします",
     "直します",
     "naoshimasu",
-    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png"
+    "https://cdn-icons-png.flaticon.com/512/4762/4762637.png",
+    "じてんしゃを なおします。\n(စက်ဘီး ပြင်တယ်။)"
   ],
   "ခေါ်သွားသည်။": [
     "つれていきます",
     "連れて行きます",
     "tsurete ikimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "こどもを つれていきます。\n(ကလေးကို ခေါ်သွားတယ်။)"
   ],
   "ခေါ်လာသည်။": [
     "つれてきます",
     "連れてきます",
     "tsurete kimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ともだちを つれてきます。\n(သူငယ်ချင်းကို ခေါ်လာတယ်။)"
   ],
   "ပို့ဆောင်သည်။": [
     "おくります [ひとを]",
     "送ります [人を]",
     "okurimasu [hito o]",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "えきまで おくります。\n(ဘူတာအထိ လိုက်ပို့တယ်။)"
   ],
   "မိတ်ဆက်သည်။": [
     "しょうかいします",
     "紹介します",
     "shōkai shimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "ともだちを しょうかいします。\n(သူငယ်ချင်းကို မိတ်ဆက်ပေးတယ်။)"
   ],
   "လမ်းပြသည်။": [
     "あんないします",
     "案内します",
     "annai shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "きょうとを あんないします。\n(ကျိုတိုကို လမ်းပြတယ်။)"
   ],
   "ရှင်းပြသည်။": [
     "せつめいします",
     "説明します",
     "setsumei shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "いみを せつめいします。\n(အဓိပ္ပာယ်ကို ရှင်းပြတယ်။)"
   ],
   "အဖိုး": [
     "おじいさん/おじいちゃん",
     "おじいさん/おじいちゃん",
     "ojiisan/ojiichan",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おじいさんは おげんきですか。\n(အဖိုး နေကောင်းလား။)"
   ],
   "အဖွား": [
     "おばあさん/おばあちゃん",
     "おばあさん/おばあちゃん",
     "obaasan/obaachan",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "おばあさんは やさしいです。\n(အဖွားက သဘောကောင်းတယ်။)"
   ],
   "ကြိုတင်ပြင်ဆင်ခြင်း": [
     "じゅんび",
     "準備",
     "junbi",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "じゅんびを します。\n(ပြင်ဆင်တယ်။)"
   ],
   "အိမ်ပြောင်းခြင်း": [
     "ひっこし",
     "引っ越し",
     "hikkoshi",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "ひっこしを てつだいます。\n(အိမ်ပြောင်းတာ ကူညီတယ်။)"
   ],
   "မုန့်": [
     "おかし",
     "お菓子",
     "okashi",
-    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png"
+    "https://cdn-icons-png.flaticon.com/512/3134/3134857.png",
+    "おかしを たべます。\n(မုန့် စားတယ်။)"
   ],
   "Home stay": [
     "ホームステイ",
     "ホームステイ",
     "hōmusutei",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528407.png",
+    "ホームステイを します。\n(အိမ်မှာ တည်းခိုမယ် - Homestay)"
   ],
   "အားလုံး": [
     "ぜんぶ",
     "全部",
     "zenbu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ぜんぶ たべました。\n(အားလုံး စားခဲ့တယ်။)"
   ],
   "ကိုယ်တိုင်": [
     "じぶんで",
     "自分で",
     "jibun de",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "じぶんで やります。\n(ကိုယ်တိုင် လုပ်တယ်။)"
   ],
   "အခြား": [
     "ほかに",
     "他に",
     "hoka ni",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "ほかに なにか ありますか。\n(တခြား ဘာရှိသေးလဲ။)"
   ],
   "အမေနေ့": [
     "ははのひ",
     "母の日",
     "Haha no Hi",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069240.png",
+    "きょうは ははのひです。\n(ဒီနေ့က အမေများနေ့ပါ။)"
   ]
 };
 
@@ -6154,109 +7120,127 @@ final minnaLesson25 = {
     "かんがえます",
     "考えます",
     "kangaemasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "よく かんがえてください。\n(သေချာ စဉ်းစားပါ။)"
   ],
   "ဆိုက်ရောက်သည်။": [
     "つきます [えきに]",
     "着きます [駅に]",
     "tsukimasu [eki ni]",
-    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png"
+    "https://cdn-icons-png.flaticon.com/512/3389/3389140.png",
+    "えきに つきました。\n(ဘူတာ ရောက်ပြီ။)"
   ],
   "နိုင်ငံခြားပညာသင်သွားသည်": [
     "りゅうがくします",
     "留学します",
     "ryūgaku shimasu",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "アメリカへ りゅうがくします。\n(အမေရိကကို ပညာတော်သင်သွားမယ်။)"
   ],
   "အသက်ကြီးလာသည်။": [
     "とります [としを]",
     "取ります [年を]",
     "torimasu [toshi o]",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "としを とります。\n(အသက်ကြီးလာတယ်။)"
   ],
   "လုံလောက်သည်": [
     "たります",
     "足ります",
     "tarimasu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "おかねが たります。\n(ပိုက်ဆံ လောက်တယ်။)"
   ],
   "တောရွာ": [
     "いなか",
     "田舎",
     "inaka",
-    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png"
+    "https://cdn-icons-png.flaticon.com/512/3447/3447038.png",
+    "いなかへ かえります。\n(နယ် ပြန်မယ်။)"
   ],
   "အခွင့်အရေး": [
     "チャンス",
     "チャンス",
     "chansu",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "チャンスが あります。\n(အခွင့်အရေး ရှိတယ်။)"
   ],
   "သန်း၁၀၀": [
     "おく",
     "億",
     "oku",
-    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png"
+    "https://cdn-icons-png.flaticon.com/512/2311/2311210.png",
+    "いちおく\n(သန်း ၁၀၀)"
   ],
   "တကယ်လို့---ခဲ့ရင်": [
     "もし [～たら]",
     "もし [～たら]",
     "moshi [~tara]",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "もし １おくえん あったら、･･･\n(တကယ်လို့ ယန်း သန်း ၁၀၀ ရှိခဲ့ရင်...)"
   ],
   "အဓိပ္ပါယ်": [
     "いみ",
     "意味",
     "imi",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "いみが わかりません。\n(အဓိပ္ပာယ် နားမလည်ဘူး။)"
   ],
   "hello (ဖုန်းဆက်သည့်အခါ)": [
     "もしもし",
     "もしもし",
     "moshimoshi",
-    "https://cdn-icons-png.flaticon.com/512/126/126509.png"
+    "https://cdn-icons-png.flaticon.com/512/126/126509.png",
+    "もしもし、ミラーです。\n(ဟလို၊ မစ္စတာမီလာပါ။)"
   ],
   "အလုပ်ပြောင်းခြင်း": [
     "てんきん",
     "転勤",
     "tenkin",
-    "https://cdn-icons-png.flaticon.com/512/289/289295.png"
+    "https://cdn-icons-png.flaticon.com/512/289/289295.png",
+    "てんきんします。\n(အလုပ်ပြောင်းရွှေ့တယ်။)"
   ],
   "အကြောင်း": [
     "こと",
     "こと",
     "koto",
-    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png"
+    "https://cdn-icons-png.flaticon.com/512/3069/3069213.png",
+    "いろいろな こと\n(အမျိုးမျိုးသော အကြောင်းအရာ)"
   ],
   "အားလပ်သော": [
     "ひま",
     "暇",
     "hima",
-    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png"
+    "https://cdn-icons-png.flaticon.com/512/3421/3421102.png",
+    "あした ひまなら、･･･\n(မနက်ဖြန် အားမယ်ဆိုရင်...)"
   ],
   "ကျေးဇူးအများကြီးရှိခဲ့ပါတယ်": [
     "[いろいろ]おせわになりました",
     "[いろいろ]お世話になりました",
     "[iroiro] osewa ni narimashita",
-    "https://cdn-icons-png.flaticon.com/512/2528/2528577.png"
+    "https://cdn-icons-png.flaticon.com/512/2528/2528577.png",
+    "いろいろ おせわに なりました。\n(အများကြီး ကူညီပေးခဲ့တာ ကျေးဇူးတင်ပါတယ်။)"
   ],
   "ကြိုးစားပါမယ်": [
     "がんばります",
     "頑張ります",
     "ganbarimasu",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "はい、がんばります。\n(ဟုတ်ကဲ့၊ ကြိုးစားပါ့မယ်။)"
   ],
   "ကျန်းမာစွာနေပါစေ (နှုတ်ဆက်)": [
     "どうぞ、おげんきで",
     "どうぞ、お元気で",
     "dōzo, ogenki de",
-    "https://cdn-icons-png.flaticon.com/512/758/758807.png"
+    "https://cdn-icons-png.flaticon.com/512/758/758807.png",
+    "どうぞ、おげんきで。\n(ကျန်းမာပါစေနော် - နှုတ်ဆက်စကား)"
   ],
   "ဗီယက်နမ်": [
     "ベトナム",
     "ベトナム",
     "Betonamu",
-    "https://cdn-icons-png.flaticon.com/512/197/197473.png"
+    "https://cdn-icons-png.flaticon.com/512/197/197473.png",
+    "ベトナムへ いきます。\n(ဗီယက်နမ်ကို သွားမယ်။)"
   ]
 };
 

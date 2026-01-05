@@ -129,15 +129,20 @@ class VocabFlashCardPage extends StatelessWidget {
                           await tts.speak(e.value[0]);
                           controller.watchedList.add(e.key);
                         },
+                        example: e.value[4].split('\n')[0],
+                        exampleMeaning: e.value[4].split('\n')[1].replaceAll("(", "").replaceAll(")", ""),
                         romaji: e.value[2],
                         image: e.value[3],
                         hiragana: e.value[0],
                         kenji: e.value[1],
-                        meaning: e.key,
+                        meaning: e.key.split('\n')[0],
+                        onAudioTap: () async =>
+                            await tts.speak(e.value[4].split('\n')[0]),
                       );
                     },
                   ).toList(),
                   options: CarouselOptions(
+                    viewportFraction: 0.95,
                     autoPlay: controller.isAutoSlide.value,
                     autoPlayInterval: Duration(seconds: 2),
                     onPageChanged: (index, reason) async {
@@ -151,7 +156,7 @@ class VocabFlashCardPage extends StatelessWidget {
                   ),
                 ),
               ),
-              Spacer()
+              Spacer(),
             ],
           ),
         ),
