@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           title: 'Hiragana',
           debugShowCheckedModeBanner: false,
-          theme: theme.light(),
+          theme: theme.dark(),
           darkTheme: theme.dark(),
           themeMode: ThemeService.instance.themeMode,
           translations: Translation(),

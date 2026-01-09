@@ -5,13 +5,12 @@ import 'package:hiragana/app/ui/global_widgets/custom_chip.dart';
 import 'package:hiragana/app/ui/layouts/main/main_layout.dart';
 
 class MatchingPage extends StatelessWidget {
-  MatchingPage({Key? key, this.isVocabMatching = false}): super(key: key);
+  MatchingPage({Key? key, this.isVocabMatching = false}) : super(key: key);
   final CharacterMatchController cmc = Get.put(CharacterMatchController());
   final bool isVocabMatching;
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text("Character Matching"),
@@ -36,15 +35,16 @@ class MatchingPage extends StatelessWidget {
                               .map((character) => CustomChip(
                                     isDone:
                                         cmc.doneCharacters.contains(character),
-                                    isSelected:
-                                        cmc.selectedCharacter.value == character,
+                                    isSelected: cmc.selectedCharacter.value ==
+                                        character,
                                     character: character,
-                                    onTap: cmc.doneCharacters.contains(character)
-                                        ? null
-                                        : () {
-                                            cmc.selectCharacter(
-                                                character, context);
-                                          },
+                                    onTap:
+                                        cmc.doneCharacters.contains(character)
+                                            ? null
+                                            : () {
+                                                cmc.selectCharacter(
+                                                    character, context);
+                                              },
                                   ))
                               .toList(),
                         ),

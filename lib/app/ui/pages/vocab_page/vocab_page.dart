@@ -10,6 +10,7 @@ class VocabPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Vocabulary"),
       ),
       body: Padding(
@@ -19,7 +20,7 @@ class VocabPage extends StatelessWidget {
             itemBuilder: (context, index) {
               return ListTile(
                 leading: Icon(Icons.book),
-                title: Text("Vocabulary Lesson ${index + 1}"),
+                title: Text("Lesson ${index + 1}"),
                 trailing: Icon(Icons.arrow_forward),
                 onTap: () {
                   Get.toNamed(

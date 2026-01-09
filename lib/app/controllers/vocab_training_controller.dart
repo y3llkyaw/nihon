@@ -7,6 +7,10 @@ class VocabTrainingController extends GetxController {
   final Map<String, List<String>> lesson = {};
   final doneList = [].obs;
 
+  final hintLeft = 3.obs;
+  final heartLeft = 3.obs;
+  final point = 0.obs;
+
   var selectedBuremese = "".obs;
   var selectedJapanese = "".obs;
 
@@ -21,10 +25,16 @@ class VocabTrainingController extends GetxController {
       doneList.add(burmese);
       doneList.add(japanese);
       resetSelection();
+      point.value += 60;
       return true;
+    }
+    if (heartLeft.value > 0) {
+      // Get.back();
+      heartLeft.value -= 1;
     }
     wrongSnack(context, burmese, correctAnswer);
     resetSelection();
+
     return false;
   }
 

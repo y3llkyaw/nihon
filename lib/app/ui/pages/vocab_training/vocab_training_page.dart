@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
 import 'package:hiragana/app/controllers/vocab_training_controller.dart';
 import 'package:hiragana/app/ui/global_widgets/custom_chip.dart';
+import 'package:hiragana/app/ui/pages/vocab_training/widgets/heart_widget.dart';
 
 class VocabTrainingPage extends StatelessWidget {
   VocabTrainingPage({
@@ -33,21 +34,48 @@ class VocabTrainingPage extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Obx(
+                  () => HeartWidget(
+                    count: vtc.heartLeft.value,
+                    heartIcon: Icons.favorite,
+                  ),
+                ),
+                Obx(
+                  () => HeartWidget(
+                    count: vtc.point.value,
+                    heartIcon: Icons.star,
+                    iconColor: Colors.amber,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
             Obx(
               () {
                 double finished = vtc.doneList.length / 2;
                 return Column(
+                  spacing: 20,
                   children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        const Text(
+                          "PROGRESS",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        Text(" ${finished.toInt()}/ ${lesson.length}"),
+                      ],
+                    ),
                     LinearProgressIndicator(
+                      minHeight: 10,
+                      borderRadius: BorderRadius.circular(20),
                       color: Get.theme.colorScheme.tertiary,
                       value: finished / lesson.length,
-                    ),
-                    const SizedBox(height: 20),
-                    Row(
-                      children: [
-                        const Text("Progress: "),
-                        Text(" $finished/ ${lesson.length}"),
-                      ],
                     ),
                   ],
                 );
