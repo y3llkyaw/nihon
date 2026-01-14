@@ -1,9 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:hiragana/app/ui/pages/home_page/widgets/progress_card.dart';
 import 'package:hiragana/app/ui/pages/home_page/widgets/stats_card.dart';
 import 'package:hiragana/app/ui/pages/home_page/widgets/study_mode.dart';
 import 'package:hiragana/app/ui/pages/home_page/widgets/word_ot_day.dart';
+import 'package:hiragana/app/ui/pages/login_page/landing_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -67,6 +69,9 @@ class HomePage extends StatelessWidget {
             ProgressCard(),
             WordOtDay(),
             StudyMode(),
+            ElevatedButton(onPressed: (){
+              Get.to(()=>LandingPage());
+            }, child: Text("Login_page"))
           ],
         ),
       ),
