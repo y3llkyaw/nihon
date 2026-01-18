@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "745869725996",
+    "project_id": "nihongo-first",
+    "storage_bucket": "nihongo-first.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:745869725996:android:158a8d291ff508f6011c89",
+        "android_client_info": {
+          "package_name": "com.krypt0n.nihongo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "745869725996-4jpl2m5v1j7m4s6b90sl97hbvr5docv0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq_suF6UoQ8tHUVWmmpqYrS0v8XK-KTKM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "745869725996-4jpl2m5v1j7m4s6b90sl97hbvr5docv0.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "745869725996-0t1s50thng1kvfbcn4u4g6825k2mnqjk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.hiragana"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

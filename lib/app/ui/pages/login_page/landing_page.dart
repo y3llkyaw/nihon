@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/state_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hiragana/app/controllers/auth_controller.dart';
 import 'package:hiragana/app/ui/pages/login_page/create_page.dart';
 import 'package:hiragana/app/ui/pages/login_page/login_page.dart';
 import 'package:icons_plus/icons_plus.dart';
 
 class LandingPage extends StatelessWidget {
-  const LandingPage({Key? key}) : super(key: key);
-
+  LandingPage({Key? key}) : super(key: key);
+  final AuthController authController = AuthController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -57,10 +57,10 @@ class LandingPage extends StatelessWidget {
           width: 128,
           height: 128,
           decoration: BoxDecoration(
-            color: const Color(0xFF2BADEE).withOpacity(0.2),
+            color: const Color(0xFF2BADEE).withValues(alpha: 0.2),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: const Color(0xFF2BADEE).withOpacity(0.3),
+              color: const Color(0xFF2BADEE).withValues(alpha: 0.3),
               width: 2,
             ),
           ),
@@ -120,7 +120,7 @@ class LandingPage extends StatelessWidget {
               'Master Hiragana, Katakana, and Kanji with ease.',
               textAlign: TextAlign.center,
               style: GoogleFonts.lexend(
-                color: Colors.white.withOpacity(0.6),
+                color: Colors.white.withValues(alpha: 0.6),
                 fontSize: 16,
                 fontWeight: FontWeight.normal,
               ),
@@ -140,7 +140,9 @@ class LandingPage extends StatelessWidget {
             width: double.infinity,
             height: 56,
             child: ElevatedButton.icon(
-              onPressed: () {},
+              onPressed: () async {
+                await authController.signInWithGoogle();
+              },
               icon: Brand(Brands.google), // Placeholder for Google Icon
               label: Text(
                 'Continue with Google',
@@ -176,7 +178,7 @@ class LandingPage extends StatelessWidget {
                 ),
               ),
               style: OutlinedButton.styleFrom(
-                side: BorderSide(color: Colors.white.withOpacity(0.2)),
+                side: BorderSide(color: Colors.white.withValues(alpha: 0.2)),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(28),
                 ),
@@ -195,26 +197,28 @@ class LandingPage extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 40.0, vertical: 24.0),
           child: Row(
             children: [
-              Expanded(child: Divider(color: Colors.white.withOpacity(0.1))),
+              Expanded(
+                  child: Divider(color: Colors.white.withValues(alpha: 0.1))),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Text(
                   'or',
                   style: GoogleFonts.lexend(
-                    color: Colors.white.withOpacity(0.3),
+                    color: Colors.white.withValues(alpha: 0.3),
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
               ),
-              Expanded(child: Divider(color: Colors.white.withOpacity(0.1))),
+              Expanded(
+                  child: Divider(color: Colors.white.withValues(alpha: 0.1))),
             ],
           ),
         ),
         Text(
           'New to Nihongo Guide?',
           style: GoogleFonts.lexend(
-            color: Colors.white.withOpacity(0.6),
+            color: Colors.white.withValues(alpha: 0.6),
             fontSize: 14,
           ),
         ),
@@ -243,7 +247,7 @@ class LandingPage extends StatelessWidget {
         'By continuing, you agree to our Terms of Service and Privacy Policy. Nihongo Guide uses cookies to provide a better learning experience.',
         textAlign: TextAlign.center,
         style: GoogleFonts.lexend(
-          color: Colors.white.withOpacity(0.3),
+          color: Colors.white.withValues(alpha: 0.3),
           fontSize: 10,
         ),
       ),
