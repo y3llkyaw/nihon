@@ -1,17 +1,40 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
-import 'package:hiragana/app/data/services/google_signin_service.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthController extends GetxController {
-  Future<void> signInWithGoogle() async {
+  Future<UserCredential?> signInWithGoogle() async {
+    // Set the language for the auth flow to prevent the X-Firebase-Locale warning.
+    await FirebaseAuth.instance
+        .setLanguageCode(Get.locale?.languageCode ?? 'en');
+
     try {
-      final userCredential = await GoogleSignInService.signInWithGoogle();
-      if (userCredential != null) {
-        // Handle successful sign-in
-        print('User signed in: ${userCredential.user?.displayName}');
-      }
+      // Trigger the authentication flow
+      final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+      log("Google User: ${googleUser?.email}");
+      // Obtain the auth details from the request
+      final GoogleSignInAuthentication? googleAuth =
+          await googleUser?.authentication;
+
+      // Create a new credential
+      final credential = GoogleAuthProvider.credential(
+        accessToken: googleAuth?.accessToken,
+        idToken: googleAuth?.idToken,
+      );
+      log("Google Credential created");
+      final userCredential =
+          await FirebaseAuth.instance.signInWithCredential(credential);
+      log("Firebase User: ${userCredential.user?.email}");
+      // Sign in to Firebase with the credential
+      return userCredential;
+    } on FirebaseAuthException catch (e) {
+      log("Firebase Auth Error: ${e.message}");
+      return null;
     } catch (e) {
-      // Handle sign-in error
-      print('Error during Google sign-in: $e');
+      log("Google Sign-In Error: $e");
+      return null;
     }
   }
 }

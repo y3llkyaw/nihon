@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.hiragana"
+    namespace = "com.krypt0n.nihongo"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 

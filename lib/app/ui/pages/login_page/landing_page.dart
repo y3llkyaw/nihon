@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -142,6 +144,7 @@ class LandingPage extends StatelessWidget {
             child: ElevatedButton.icon(
               onPressed: () async {
                 await authController.signInWithGoogle();
+                print(FirebaseAuth.instance.currentUser?.email);
               },
               icon: Brand(Brands.google), // Placeholder for Google Icon
               label: Text(
