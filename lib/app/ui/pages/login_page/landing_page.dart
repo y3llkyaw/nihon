@@ -143,8 +143,11 @@ class LandingPage extends StatelessWidget {
             height: 56,
             child: ElevatedButton.icon(
               onPressed: () async {
-                await authController.signInWithGoogle();
-                print(FirebaseAuth.instance.currentUser?.email);
+                await authController.signInWithGoogle().then((v) {
+                  if (v != null) {
+                    Get.offAllNamed('/home');
+                  }
+                });
               },
               icon: Brand(Brands.google), // Placeholder for Google Icon
               label: Text(

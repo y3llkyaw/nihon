@@ -1,16 +1,15 @@
+// ignore_for_file: constant_identifier_names
 
- // ignore_for_file: constant_identifier_names
+class AppRoutes {
+  static const HOME = '/';
 
- class AppRoutes {
+  static const UNKNOWN = '/404';
 
-   static const HOME = '/';
+  static const VOCABULARY = "/vocabulary";
 
-   static const UNKNOWN = '/404';
+  static const VOCAB_LESSON = "/lesson/:lesson";
 
-   static const VOCABULARY = "/vocabulary";
+  static const LANDING = "/landing";
 
-   static const VOCAB_LESSON = "/lesson/:lesson";
-
-   static const VOCAB_FLASHCARD = "/flashcard";
-
- }
+  static const VOCAB_FLASHCARD = "/flashcard";
+}

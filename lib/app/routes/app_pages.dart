@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
+import 'package:hiragana/app/routes/auth_middleware.dart';
 import 'package:hiragana/app/routes/middlewares.dart';
+import 'package:hiragana/app/ui/pages/login_page/landing_page.dart';
 
 import '../bindings/home_binding.dart';
 import '../ui/pages/container_page/container_page.dart';
@@ -24,6 +26,12 @@ class AppPages {
       name: AppRoutes.HOME,
       page: () => const ContainerPage(),
       binding: HomeBinding(),
+      transition: _defaultTransition,
+      middlewares: [AuthMiddleware()],
+    ),
+    GetPage(
+      name: AppRoutes.LANDING,
+      page: () => LandingPage(),
       transition: _defaultTransition,
     ),
     GetPage(

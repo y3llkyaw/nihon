@@ -6,6 +6,7 @@ import 'package:hiragana/app/routes/app_routes.dart';
 class VocabLessonMiddleware extends GetMiddleware {
   @override
   RouteSettings? redirect(String? route) {
+    
     final lessonId = Get.parameters['lesson'];
     if (lessonId == null) {
       return const RouteSettings(name: AppRoutes.UNKNOWN);

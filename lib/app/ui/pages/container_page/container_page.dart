@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hiragana/app/controllers/character_table_controller.dart';
@@ -37,26 +38,30 @@ class MobileViewLayout extends StatelessWidget {
       ),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
-            showUnselectedLabels: false,
-            showSelectedLabels: false,
-            currentIndex: homeController.currentIndex.value,
-            onTap: (value) {
-              homeController.currentIndex.value = value;
-            },
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Icons.home),
-                label: "Home",
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.abc),
-                label: "Home",
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.book),
-                label: "Learn",
-              ),
-            ]),
+          backgroundColor: const Color(0xFF101C22),
+          unselectedItemColor: Colors.grey,
+          selectedItemColor: const Color(0xFF2BADEE),
+          showUnselectedLabels: true,
+          showSelectedLabels: true,
+          currentIndex: homeController.currentIndex.value,
+          onTap: (value) {
+            homeController.currentIndex.value = value;
+          },
+          items: [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(CupertinoIcons.book_fill),
+              label: "Learn",
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.book),
+              label: "Review",
+            ),
+          ],
+        ),
       ),
     );
   }
