@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/data/enums/hiragana.dart';
-import 'package:hiragana/app/routes/app_routes.dart';
+import 'package:hiragana/app/ui/pages/lesson_flow_pages/lesson_flow_page.dart';
 
 class VocabPage extends StatelessWidget {
   const VocabPage({Key? key}) : super(key: key);
@@ -83,10 +83,11 @@ class VocabPage extends StatelessWidget {
                   progress: progress,
                   onTap: status != 'locked'
                       ? () {
-                          Get.toNamed(
-                            "${AppRoutes.VOCABULARY}${AppRoutes.VOCAB_LESSON}"
-                                .replaceFirst(':lesson', '${index + 1}'),
-                          );
+                          Get.to(LessonFlowPage(lessonIndex: index));
+                          // Get.toNamed(
+                          //   "${AppRoutes.VOCABULARY}${AppRoutes.VOCAB_LESSON}"
+                          //       .replaceFirst(':lesson', '${index + 1}'),
+                          // );
                         }
                       : null,
                 ),

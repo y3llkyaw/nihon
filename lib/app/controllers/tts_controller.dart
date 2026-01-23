@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 import 'package:flutter_tts/flutter_tts.dart';
 import 'package:get/get.dart';
 
@@ -36,7 +37,7 @@ class TtsController extends GetxController {
 
   Future<void> speak(String text) async {
     speakingWord.value = text;
-
+    log(" TTS Speak: $text");
     // native path: use completer + flutter_tts handlers
     _speechCompleter = Completer<void>();
     try {
