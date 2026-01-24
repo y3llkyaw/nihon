@@ -24,8 +24,8 @@ class LessonReviewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final words = lesson.entries.take(5).toList();
-
+    final words = lesson.entries.take(4).toList();
+    
     return Scaffold(
       backgroundColor: backgroundDark,
       body: Stack(

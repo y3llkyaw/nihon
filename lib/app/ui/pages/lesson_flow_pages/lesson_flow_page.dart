@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart'; // Assuming GetX is used for navigation or other purposes
 import 'package:google_fonts/google_fonts.dart';
@@ -27,8 +28,14 @@ class LessonFlowPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Map<String, List<String>> lesson =
-        vocabLessons[lessonIndex].cast<String, List<String>>();
+    final lesson = vocabLessons[lessonIndex];
+    final List<List<MapEntry<String, List<String>>>> chunkedEntries = [];
+    final entries = lesson.entries.toList();
+    for (var i = 0; i < entries.length; i += 4) {
+      chunkedEntries.add(
+          entries.sublist(i, i + 4 > entries.length ? entries.length : i + 4));
+    }
+
     return Scaffold(
       backgroundColor: backgroundDark,
       body: Column(
@@ -121,7 +128,7 @@ class LessonFlowPage extends StatelessWidget {
 
                   // Action Buttons Section
                   Container(
-                    margin: const EdgeInsets.only(bottom: 40), // mb-10
+                    margin: const EdgeInsets.only(bottom: 20), // mb-10
                     child: GridView.count(
                       shrinkWrap: true, // Important for GridView inside Column
                       physics:
@@ -142,7 +149,7 @@ class LessonFlowPage extends StatelessWidget {
 
                   // Progress Bar Section
                   Container(
-                    margin: const EdgeInsets.only(bottom: 48), // mb-12
+                    margin: const EdgeInsets.only(bottom: 24), // mb-12
                     padding: const EdgeInsets.all(24), // p-6
                     decoration: BoxDecoration(
                       color: cardDark.withValues(alpha: .4), // bg-card-dark/40
@@ -233,6 +240,47 @@ class LessonFlowPage extends StatelessWidget {
                         ),
                       ],
                     ),
+                  ),
+
+                  CarouselSlider(
+                    items: chunkedEntries.map((chunk) {
+                      return InkWell(
+                        radius: 40,
+                        borderRadius: BorderRadius.circular(30),
+                        onTap: () {
+                          Get.to(LessonReviewPage(
+                            lesson: Map.fromEntries(chunk),
+                            lessonNumber: lessonIndex + 1,
+                          ));
+                        },
+                        child: CircleAvatar(
+                          radius: 20,
+                          backgroundColor: primary,
+                          child: Stack(
+                            alignment: Alignment.center,
+                            children: [
+                              Text(
+                                '${chunkedEntries.indexOf(chunk) + 1}',
+                                style: GoogleFonts.lexend(
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                  // color: backgroundDark,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      );
+                    }).toList(),
+                    options: CarouselOptions(
+                      aspectRatio: 16 / 2,
+                      viewportFraction: 0.2,
+                      enlargeCenterPage: true,
+                      enableInfiniteScroll: false,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 30,
                   ),
 
                   // Start Lesson Button

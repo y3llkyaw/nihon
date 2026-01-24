@@ -1,11 +1,11 @@
-import 'dart:developer';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/lesson_trainning_page_controller.dart';
-import 'package:hiragana/app/controllers/tts_controller.dart';
+import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/burmese_to_japanese_widget.dart';
+import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/fill_in_the_blank_widget.dart';
+import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/typing_quiz_item.dart';
 
 class LessonTrainingPage extends StatefulWidget {
   const LessonTrainingPage({Key? key, required this.lesson}) : super(key: key);
@@ -28,10 +28,22 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
 
   @override
   void initState() {
-    controller.widgetList.value = widget.lesson.map<Widget>((entry) {
-      final japanese = entry.value[0];
-      return _buildTypingQuizItem(japanese, csc);
-    }).toList();
+    final m2jpossibleAnswer = widget.lesson.map((e) => e.value[0]).toList();
+    m2jpossibleAnswer.shuffle();
+    final j2mpossibleAnswer = widget.lesson.map((e) => e.key).toList();
+    j2mpossibleAnswer.shuffle();
+
+    widget.lesson.forEach((entry) {
+
+      controller.widgetList.add(fillInBlankWidgets(entry, csc));
+      // controller.widgetList
+      //     .add(buildBurmeseToJapaneseQuizItem(entry, csc, m2jpossibleAnswer));
+      // controller.widgetList.add(
+      //   buildBurmeseToJapaneseQuizItem(entry, csc, j2mpossibleAnswer,
+      //       isJapaneseToBurmese: true),
+      // );
+      // controller.widgetList.add(buildTypingQuizItem(entry.value[0], csc));
+    });
     super.initState();
   }
 
@@ -119,154 +131,6 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
                   ),
                 ),
               ],
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildTypingQuizItem(
-    String japanese,
-    CarouselSliderController csc,
-  ) {
-    final TextEditingController answerController = TextEditingController();
-    final TtsController ttsController = TtsController();
-
-    final LessonTrainningPageController controller = Get.find();
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
-      child: Column(
-        spacing: 40,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Column(
-            children: [
-              Text(
-                "QUIZ MODE",
-                style: GoogleFonts.lexend(
-                  color: LessonTrainingPage.textWhite.withValues(alpha: 0.6),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 2.0,
-                ),
-              ),
-              Text(
-                "Type what you hear",
-                style: GoogleFonts.lexend(
-                  color: LessonTrainingPage.textWhite,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ],
-          ),
-          InkWell(
-            onTap: () async {
-              await ttsController.speak(japanese);
-            },
-            borderRadius: BorderRadius.circular(40),
-            child: Container(
-              width: 128,
-              height: 128,
-              decoration: BoxDecoration(
-                color: LessonTrainingPage.primary,
-                shape: BoxShape.circle,
-              ),
-              child: const Icon(
-                Icons.volume_up,
-                color: LessonTrainingPage.textWhite,
-                size: 48,
-              ),
-            ),
-          ),
-          Column(
-            children: [
-              TextField(
-                textAlign: TextAlign.center,
-                style: GoogleFonts.lexend(
-                  color: LessonTrainingPage.textWhite,
-                  fontSize: 32,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 4.0,
-                ),
-                decoration: InputDecoration(
-                  hintText: "ひらがな",
-                  hintStyle: TextStyle(
-                      color:
-                          LessonTrainingPage.textWhite.withValues(alpha: 0.2)),
-                  filled: true,
-                  fillColor:
-                      LessonTrainingPage.textWhite.withValues(alpha: 0.05),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 20),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide(
-                        color:
-                            LessonTrainingPage.textWhite.withValues(alpha: 0.1),
-                        width: 2),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide(
-                        color:
-                            LessonTrainingPage.textWhite.withValues(alpha: 0.1),
-                        width: 2),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: const BorderSide(
-                        color: LessonTrainingPage.primary, width: 2),
-                  ),
-                ),
-                controller: answerController,
-              ),
-              const SizedBox(height: 16),
-              Text(
-                "Japanese Keyboard Active",
-                style: GoogleFonts.lexend(
-                  color: LessonTrainingPage.textWhite.withValues(alpha: 0.4),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ],
-          ),
-          SizedBox(
-            width: double.infinity,
-            height: 64,
-            child: ElevatedButton(
-              onPressed: () {
-                final cleanJapanese = japanese.replaceAll("～", "");
-                if (answerController.text.trim() == cleanJapanese) {
-                  csc.nextPage();
-                  controller.finished.value += 1;
-                  log("Correct Answer: ${answerController.text}");
-                } else {
-                  log("Incorrect!\n Correct Answer: $cleanJapanese");
-                }
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: LessonTrainingPage.textWhite,
-                foregroundColor: LessonTrainingPage.backgroundDark,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(16),
-                ),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    "Check",
-                    style: GoogleFonts.lexend(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  const SizedBox(width: 8),
-                  const Icon(Icons.arrow_forward, size: 20),
-                ],
-              ),
             ),
           ),
         ],
