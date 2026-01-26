@@ -132,6 +132,8 @@ Widget fillInBlankWidgets(
                     await userController.addFinishedChunk(
                         controller.lesson.value, controller.chunk.value);
                     await AudioPlayer().play(AssetSource('audios/ss.mp3'));
+                    Get.back(result: true);
+                    Get.back(result: true);
                   }
                 } else {}
                 // check answer

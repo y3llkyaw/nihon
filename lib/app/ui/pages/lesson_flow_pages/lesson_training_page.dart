@@ -32,19 +32,19 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
     final j2mpossibleAnswer = widget.lesson.map((e) => e.key).toList();
     j2mpossibleAnswer.shuffle();
 
-    // widget.lesson.forEach((entry) {
-    //   controller.widgetList
-    //       .add(buildBurmeseToJapaneseQuizItem(entry, csc, m2jpossibleAnswer));
-    // });
-    // widget.lesson.forEach((entry) {
-    //   controller.widgetList.add(
-    //     buildBurmeseToJapaneseQuizItem(entry, csc, j2mpossibleAnswer,
-    //         isJapaneseToBurmese: true),
-    //   );
-    // });
-    // widget.lesson.forEach((entry) {
-    //   controller.widgetList.add(buildTypingQuizItem(entry.value[0], csc));
-    // });
+    widget.lesson.forEach((entry) {
+      controller.widgetList
+          .add(buildBurmeseToJapaneseQuizItem(entry, csc, m2jpossibleAnswer));
+    });
+    widget.lesson.forEach((entry) {
+      controller.widgetList.add(
+        buildBurmeseToJapaneseQuizItem(entry, csc, j2mpossibleAnswer,
+            isJapaneseToBurmese: true),
+      );
+    });
+    widget.lesson.forEach((entry) {
+      controller.widgetList.add(buildTypingQuizItem(entry.value[0], csc));
+    });
     widget.lesson.forEach((entry) {
       controller.widgetList.add(fillInBlankWidgets(entry, csc));
     });
@@ -58,8 +58,8 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
         backgroundColor: LessonTrainingPage.backgroundDark,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          side:
-              BorderSide(color: LessonTrainingPage.textWhite.withOpacity(0.1)),
+          side: BorderSide(
+              color: LessonTrainingPage.textWhite.withValues(alpha: 0.1)),
         ),
         title: Text(
           'Exit Lesson?',
@@ -71,7 +71,7 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
         content: Text(
           'Your progress will be lost. Are you sure you want to exit?',
           style: GoogleFonts.lexend(
-            color: LessonTrainingPage.textWhite.withOpacity(0.7),
+            color: LessonTrainingPage.textWhite.withValues(alpha: 0.7),
           ),
         ),
         actions: [
@@ -169,7 +169,7 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
                   builder: (context, value, _) => LinearProgressIndicator(
                     value: value,
                     backgroundColor:
-                        LessonTrainingPage.textWhite.withOpacity(0.1),
+                        LessonTrainingPage.textWhite.withValues(alpha: 0.1),
                     color: LessonTrainingPage.primary,
                     minHeight: 10, // h-2.5
                   ),
