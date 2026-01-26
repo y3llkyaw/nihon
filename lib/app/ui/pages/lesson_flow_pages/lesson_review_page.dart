@@ -25,7 +25,7 @@ class LessonReviewPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final words = lesson.entries.take(4).toList();
-    
+
     return Scaffold(
       backgroundColor: backgroundDark,
       body: Stack(
@@ -44,8 +44,8 @@ class LessonReviewPage extends StatelessWidget {
                       color: cardBackground,
                       shape: BoxShape.circle,
                       border: Border.all(
-                          color: textSlate700.withValues(
-                              alpha: 0.5)), // border-slate-700/50
+                        color: textSlate700.withValues(alpha: 0.5),
+                      ), // border-slate-700/50
                     ),
                     child: IconButton(
                       icon: const Icon(Icons.arrow_back_ios_new_rounded,
@@ -107,7 +107,10 @@ class LessonReviewPage extends StatelessWidget {
                           child: ElevatedButton(
                             onPressed: () {
                               // print(words[0].value[0]);
-                              Get.to(() => LessonTrainingPage(lesson: words));
+                              Get.to(
+                                () => LessonTrainingPage(lesson: words),
+                                transition: Transition.rightToLeft,
+                              );
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: textWhite, // bg-white

@@ -2,11 +2,13 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart'; // Assuming GetX is used for navigation or other purposes
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hiragana/app/controllers/lesson_trainning_page_controller.dart';
+import 'package:hiragana/app/controllers/user_controller.dart';
 import 'package:hiragana/app/data/enums/hiragana.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/lesson_review_page.dart';
 
 class LessonFlowPage extends StatelessWidget {
-  const LessonFlowPage({Key? key, required this.lessonIndex}) : super(key: key);
+  LessonFlowPage({Key? key, required this.lessonIndex}) : super(key: key);
 
   final int lessonIndex;
 
@@ -25,9 +27,17 @@ class LessonFlowPage extends StatelessWidget {
       Color(0xFF1E293B); // Approximating slate-800
   static const Color textBackgroundDark =
       Color(0xFF0B1622); // From the button text color
+  final LessonTrainningPageController lessonTrainningPageController =
+      Get.put(LessonTrainningPageController());
+
+  final UserController userController = Get.put(UserController());
 
   @override
   Widget build(BuildContext context) {
+    lessonTrainningPageController.lesson.value = lessonIndex;
+    lessonTrainningPageController.finished.value = 0;
+    lessonTrainningPageController.widgetList.clear();
+
     final lesson = vocabLessons[lessonIndex];
     final List<List<MapEntry<String, List<String>>>> chunkedEntries = [];
     final entries = lesson.entries.toList();
@@ -248,26 +258,36 @@ class LessonFlowPage extends StatelessWidget {
                         radius: 40,
                         borderRadius: BorderRadius.circular(30),
                         onTap: () {
+                          lessonTrainningPageController.chunk.value =
+                              chunkedEntries.indexOf(chunk);
                           Get.to(LessonReviewPage(
                             lesson: Map.fromEntries(chunk),
                             lessonNumber: lessonIndex + 1,
                           ));
                         },
-                        child: CircleAvatar(
-                          radius: 20,
-                          backgroundColor: primary,
-                          child: Stack(
-                            alignment: Alignment.center,
-                            children: [
-                              Text(
-                                '${chunkedEntries.indexOf(chunk) + 1}',
-                                style: GoogleFonts.lexend(
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                  // color: backgroundDark,
+                        child: Obx(
+                          () => CircleAvatar(
+                            radius: 20,
+                            backgroundColor: userController.finishedChunks[
+                                            lessonIndex.toString()] !=
+                                        null &&
+                                    userController.finishedChunks[lessonIndex.toString()]!
+                                        .contains(chunkedEntries.indexOf(chunk))
+                                ? primary
+                                : cardDark,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Text(
+                                  '${chunkedEntries.indexOf(chunk) + 1}',
+                                  style: GoogleFonts.lexend(
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                    // color: backgroundDark,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
                         ),
                       );

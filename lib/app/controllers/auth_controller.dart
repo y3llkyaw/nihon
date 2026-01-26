@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:hiragana/app/controllers/user_controller.dart';
 
 class AuthController extends GetxController {
   Future<UserCredential?> signInWithGoogle() async {
@@ -27,6 +28,11 @@ class AuthController extends GetxController {
       final userCredential =
           await FirebaseAuth.instance.signInWithCredential(credential);
       log("Firebase User: ${userCredential.user?.email}");
+      if (userCredential.user != null) {
+        // Ensure UserController is ready and create/update the user document.
+        final userController = Get.put(UserController());
+        await userController.createUserDocument(userCredential.user!);
+      }
       // Sign in to Firebase with the credential
       return userCredential;
     } on FirebaseAuthException catch (e) {

@@ -1,11 +1,13 @@
 import 'dart:developer';
 
+import 'package:audioplayers/audioplayers.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/lesson_trainning_page_controller.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
+import 'package:hiragana/app/controllers/user_controller.dart';
 
 import '../lesson_training_page.dart';
 
@@ -16,7 +18,10 @@ Widget fillInBlankWidgets(
   final TextEditingController answerController = TextEditingController();
 
   final TtsController ttsController = TtsController();
+  final UserController userController = Get.put(UserController());
   final LessonTrainningPageController controller = Get.find();
+  final sentence = entry.value.last.split('\n')[0];
+  final textSpans = sentence.split(entry.value.first);
 
   return SizedBox(
     height: Get.height * 0.5,
@@ -36,6 +41,9 @@ Widget fillInBlankWidgets(
                   letterSpacing: 2.0,
                 ),
               ),
+              SizedBox(
+                height: 10,
+              ),
               Text(
                 entry.value.last
                     .split('\n')[1]
@@ -52,52 +60,47 @@ Widget fillInBlankWidgets(
           ),
           Column(
             children: [
-              // Text(
-              //   entry.value.last.split('\n')[0],
-              //   style: GoogleFonts.lexend(
-              //     color: LessonTrainingPage.textWhite,
-              //     fontSize: 24,
-              //     fontWeight: FontWeight.w600,
-              //   ),
-              // ),
-              TextField(
-                textAlign: TextAlign.center,
-                style: GoogleFonts.lexend(
-                  color: LessonTrainingPage.textWhite,
-                  fontSize: 32,
-                  fontWeight: FontWeight.w500,
-                  letterSpacing: 4.0,
+              RichText(
+                text: TextSpan(
+                  style: const TextStyle(fontSize: 18, color: Colors.black),
+                  children: [
+                    TextSpan(
+                      text: textSpans[0],
+                      style: GoogleFonts.notoSansJavanese(
+                        color: LessonTrainingPage.textWhite,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    WidgetSpan(
+                      alignment: PlaceholderAlignment.middle,
+                      child: SizedBox(
+                        width: 80,
+                        child: TextField(
+                          controller: answerController,
+                          style: GoogleFonts.notoSansMyanmar(
+                            color: LessonTrainingPage.primary,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          decoration: const InputDecoration(
+                            isDense: true,
+                            contentPadding: EdgeInsets.symmetric(vertical: 4),
+                            border: UnderlineInputBorder(),
+                          ),
+                        ),
+                      ),
+                    ),
+                    TextSpan(
+                      text: textSpans.length > 1 ? textSpans[1].trim() : "",
+                      style: GoogleFonts.notoSansMyanmar(
+                        color: LessonTrainingPage.textWhite,
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ],
                 ),
-                decoration: InputDecoration(
-                  hintText: "ひらがな",
-                  hintStyle: TextStyle(
-                      color: LessonTrainingPage.textWhite
-                          .withValues(alpha: 0.2)),
-                  filled: true,
-                  fillColor:
-                      LessonTrainingPage.textWhite.withValues(alpha: 0.05),
-                  contentPadding: const EdgeInsets.symmetric(vertical: 20),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide(
-                        color: LessonTrainingPage.textWhite
-                            .withValues(alpha: 0.1),
-                        width: 2),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: BorderSide(
-                        color: LessonTrainingPage.textWhite
-                            .withValues(alpha: 0.1),
-                        width: 2),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(16),
-                    borderSide: const BorderSide(
-                        color: LessonTrainingPage.primary, width: 2),
-                  ),
-                ),
-                controller: answerController,
               ),
               const SizedBox(height: 16),
               Text(
@@ -114,7 +117,23 @@ Widget fillInBlankWidgets(
             width: double.infinity,
             height: Get.height * 0.07,
             child: ElevatedButton(
-              onPressed: () {
+              onPressed: () async {
+                if (answerController.text.trim() == entry.value.first.trim()) {
+                  controller.finished.value++;
+                  csc.nextPage();
+
+                  log(controller.finished.value.toString());
+                  log(controller.widgetList.length.toString());
+                  log(controller.chunk.toString());
+                  log(controller.lesson.toString());
+
+                  if (controller.finished.value >=
+                      controller.widgetList.length) {
+                    await userController.addFinishedChunk(
+                        controller.lesson.value, controller.chunk.value);
+                    await AudioPlayer().play(AssetSource('audios/ss.mp3'));
+                  }
+                } else {}
                 // check answer
               },
               style: ElevatedButton.styleFrom(

@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
@@ -83,8 +84,10 @@ class HomePage extends StatelessWidget {
             ),
             child: IconButton(
               icon: const Icon(Icons.search, color: Colors.white),
-              onPressed: () {
-                // TODO: Implement search functionality
+              onPressed: () async {
+                await FirebaseAuth.instance.signOut().then((v){
+                  Get.offAllNamed('/landing');
+                });
               },
             ),
           ),

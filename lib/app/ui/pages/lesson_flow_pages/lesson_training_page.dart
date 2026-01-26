@@ -23,8 +23,7 @@ class LessonTrainingPage extends StatefulWidget {
 class _LessonTrainingPageState extends State<LessonTrainingPage> {
   final CarouselSliderController csc = CarouselSliderController();
 
-  final LessonTrainningPageController controller =
-      Get.put(LessonTrainningPageController());
+  final LessonTrainningPageController controller = Get.find();
 
   @override
   void initState() {
@@ -33,45 +32,107 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
     final j2mpossibleAnswer = widget.lesson.map((e) => e.key).toList();
     j2mpossibleAnswer.shuffle();
 
+    // widget.lesson.forEach((entry) {
+    //   controller.widgetList
+    //       .add(buildBurmeseToJapaneseQuizItem(entry, csc, m2jpossibleAnswer));
+    // });
+    // widget.lesson.forEach((entry) {
+    //   controller.widgetList.add(
+    //     buildBurmeseToJapaneseQuizItem(entry, csc, j2mpossibleAnswer,
+    //         isJapaneseToBurmese: true),
+    //   );
+    // });
+    // widget.lesson.forEach((entry) {
+    //   controller.widgetList.add(buildTypingQuizItem(entry.value[0], csc));
+    // });
     widget.lesson.forEach((entry) {
-
       controller.widgetList.add(fillInBlankWidgets(entry, csc));
-      // controller.widgetList
-      //     .add(buildBurmeseToJapaneseQuizItem(entry, csc, m2jpossibleAnswer));
-      // controller.widgetList.add(
-      //   buildBurmeseToJapaneseQuizItem(entry, csc, j2mpossibleAnswer,
-      //       isJapaneseToBurmese: true),
-      // );
-      // controller.widgetList.add(buildTypingQuizItem(entry.value[0], csc));
     });
+
     super.initState();
+  }
+
+  Future<bool> _showExitConfirmDialog() async {
+    final result = await Get.dialog<bool>(
+      AlertDialog(
+        backgroundColor: LessonTrainingPage.backgroundDark,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+          side:
+              BorderSide(color: LessonTrainingPage.textWhite.withOpacity(0.1)),
+        ),
+        title: Text(
+          'Exit Lesson?',
+          style: GoogleFonts.lexend(
+            color: LessonTrainingPage.textWhite,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        content: Text(
+          'Your progress will be lost. Are you sure you want to exit?',
+          style: GoogleFonts.lexend(
+            color: LessonTrainingPage.textWhite.withOpacity(0.7),
+          ),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () => Get.back(result: false),
+            child: Text(
+              'Cancel',
+              style: GoogleFonts.lexend(
+                color: LessonTrainingPage.textWhite,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: () => Get.back(result: true),
+            child: Text(
+              'Exit',
+              style: GoogleFonts.lexend(
+                color: Colors.redAccent,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+    return result ?? false;
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: LessonTrainingPage.backgroundDark,
-      body: SafeArea(
-        child: Column(
-          children: [
-            Obx(() => _buildHeader(
-                progress:
-                    controller.finished.value / controller.widgetList.length)),
-            Expanded(
-              child: Obx(
-                () => CarouselSlider(
-                  carouselController: csc,
-                  items: controller.widgetList,
-                  options: CarouselOptions(
-                    viewportFraction: 1.0,
-                    height: double.infinity,
-                    enableInfiniteScroll: false,
-                    scrollPhysics: const NeverScrollableScrollPhysics(),
+    return WillPopScope(
+      onWillPop: _showExitConfirmDialog,
+      child: Scaffold(
+        backgroundColor: LessonTrainingPage.backgroundDark,
+        body: SafeArea(
+          child: Column(
+            children: [
+              Obx(() {
+                // Avoid division by zero if widgetList is empty
+                final progress = controller.widgetList.isNotEmpty
+                    ? controller.finished.value / controller.widgetList.length
+                    : 0.0;
+                return _buildHeader(progress: progress);
+              }),
+              Expanded(
+                child: Obx(
+                  () => CarouselSlider(
+                    carouselController: csc,
+                    items: controller.widgetList,
+                    options: CarouselOptions(
+                      viewportFraction: 1.0,
+                      height: double.infinity,
+                      enableInfiniteScroll: false,
+                      scrollPhysics: const NeverScrollableScrollPhysics(),
+                    ),
                   ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -87,7 +148,11 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
             height: 40,
             child: InkWell(
               borderRadius: BorderRadius.circular(20),
-              onTap: () => Get.back(),
+              onTap: () async {
+                if (await _showExitConfirmDialog()) {
+                  Get.back();
+                }
+              },
               child: const Icon(Icons.close,
                   color: LessonTrainingPage.textWhite, size: 28),
             ),
