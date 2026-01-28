@@ -35,7 +35,6 @@ class _MatchingWidgetState extends State<MatchingWidget> {
     super.initState();
     final controllerLesson =
         widget.lesson.map((key, value) => MapEntry(key, [value]));
-
     vtc.lesson.clear();
     vtc.doneList.clear();
     vtc.selectedBuremese.value = '';

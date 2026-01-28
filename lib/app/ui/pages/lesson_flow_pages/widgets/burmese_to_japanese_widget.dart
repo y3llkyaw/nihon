@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hiragana/app/controllers/lesson_trainning_page_controller.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
-import 'package:hiragana/app/ui/pages/lesson_flow_pages/lesson_training_page.dart';
 
 Widget buildBurmeseToJapaneseQuizItem(
   MapEntry<String, List<dynamic>> entry,

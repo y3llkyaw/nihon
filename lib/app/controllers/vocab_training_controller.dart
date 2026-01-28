@@ -17,8 +17,13 @@ class VocabTrainingController extends GetxController {
   bool isAnswerCorrect(BuildContext context) {
     final burmese = selectedBuremese.value;
     final japanese = selectedJapanese.value;
+    if (!lesson.containsKey(burmese)) {
+      // This can happen if the lesson data is not loaded correctly for the current view.
+      // Resetting selection to allow the user to try again without crashing.
+      resetSelection();
+      return false;
+    }
     final correctAnswer = lesson[burmese]![0];
-
     if (correctAnswer == japanese) {
       final player = AudioPlayer();
       player.play(AssetSource('audios/ss.mp3'));

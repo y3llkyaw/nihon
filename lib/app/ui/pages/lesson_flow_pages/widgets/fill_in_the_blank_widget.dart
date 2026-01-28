@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:audioplayers/audioplayers.dart';
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
@@ -16,13 +14,11 @@ Widget fillInBlankWidgets(
   CarouselSliderController csc,
 ) {
   final TextEditingController answerController = TextEditingController();
-
   final TtsController ttsController = TtsController();
   final UserController userController = Get.put(UserController());
   final LessonTrainningPageController controller = Get.find();
   final sentence = entry.value.last.split('\n')[0];
   final textSpans = sentence.split(entry.value.first);
-
   bool? wasCorrect;
 
   return StatefulBuilder(builder: (context, setState) {
@@ -128,21 +124,23 @@ Widget fillInBlankWidgets(
                 onPressed: wasCorrect != null
                     ? null
                     : () async {
-                        final isCorrect =
-                            answerController.text.trim() == entry.value.first.trim();
+                        final isCorrect = answerController.text.trim() ==
+                            entry.value.first.trim();
                         setState(() {
                           wasCorrect = isCorrect;
                         });
 
                         if (isCorrect) {
                           controller.finished.value++;
-                          await Future.delayed(const Duration(milliseconds: 800));
+                          await Future.delayed(
+                              const Duration(milliseconds: 800));
                           csc.nextPage();
 
                           if (controller.finished.value >=
                               controller.widgetList.length) {
                             await userController.addFinishedChunk(
-                                controller.lesson.value, controller.chunk.value);
+                                controller.lesson.value,
+                                controller.chunk.value);
                             await AudioPlayer()
                                 .play(AssetSource('audios/ss.mp3'));
                             Get.back(result: true);

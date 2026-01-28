@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/lesson_trainning_page_controller.dart';
+import 'package:hiragana/app/controllers/vocab_training_controller.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/burmese_to_japanese_widget.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/fill_in_the_blank_widget.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/matching_widget.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/typing_quiz_item.dart';
+import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/vocab_match_widget.dart';
 
 class LessonTrainingPage extends StatefulWidget {
   const LessonTrainingPage({Key? key, required this.lesson}) : super(key: key);
@@ -15,7 +17,7 @@ class LessonTrainingPage extends StatefulWidget {
   static const Color primary = Color(0xFF0D8FF2);
   static const Color backgroundDark = Color(0xFF0A0C10);
   static const Color textWhite = Colors.white;
-  final List<MapEntry<String, List<dynamic>>> lesson;
+  final List<MapEntry<String, List<String>>> lesson;
 
   @override
   State<LessonTrainingPage> createState() => _LessonTrainingPageState();
@@ -25,6 +27,8 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
   final CarouselSliderController csc = CarouselSliderController();
 
   final LessonTrainningPageController controller = Get.find();
+  final VocabTrainingController vocabTrainingController =
+      Get.put(VocabTrainingController());
 
   @override
   void initState() {
@@ -33,30 +37,35 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
     final j2mpossibleAnswer = widget.lesson.map((e) => e.key).toList();
     j2mpossibleAnswer.shuffle();
 
+    final List<Map<String, List<String>>> result =
+        widget.lesson.map((e) => {e.key: e.value}).toList();
+
+    controller.widgetList.add(VocabMatchWidget(chunk: result));
+
     controller.widgetList.add(MatchingWidget(
-      lesson: {for (var e in widget.lesson) e.key: e.value[0] as String},
+      lesson: {for (var e in widget.lesson) e.key: e.value[0]},
       onAllMatched: () {
         controller.finished.value += 1;
         csc.nextPage();
       },
     ));
 
-    widget.lesson.forEach((entry) {
+    for (var entry in widget.lesson) {
       controller.widgetList
           .add(buildBurmeseToJapaneseQuizItem(entry, csc, m2jpossibleAnswer));
-    });
-    widget.lesson.forEach((entry) {
+    }
+    for (var entry in widget.lesson) {
       controller.widgetList.add(
         buildBurmeseToJapaneseQuizItem(entry, csc, j2mpossibleAnswer,
             isJapaneseToBurmese: true),
       );
-    });
-    widget.lesson.forEach((entry) {
+    }
+    for (var entry in widget.lesson) {
       controller.widgetList.add(buildTypingQuizItem(entry.value[0], csc));
-    });
-    widget.lesson.forEach((entry) {
+    }
+    for (var entry in widget.lesson) {
       controller.widgetList.add(fillInBlankWidgets(entry, csc));
-    });
+    }
 
     super.initState();
   }
