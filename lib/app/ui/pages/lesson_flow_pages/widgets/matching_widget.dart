@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
 import 'package:hiragana/app/controllers/vocab_training_controller.dart';
+import 'package:hiragana/app/data/models/vocabulary_model.dart';
 
 // Using colors consistent with lesson_flow_page.dart
 const Color primary = Color(0xFF3BA8FC);
@@ -11,12 +13,12 @@ const Color textWhite = Colors.white;
 
 class MatchingWidget extends StatefulWidget {
   final Map<String, String> lesson;
-  final VoidCallback onAllMatched;
+  final CarouselSliderController carouselController;
 
   const MatchingWidget({
     Key? key,
     required this.lesson,
-    required this.onAllMatched,
+    required this.carouselController,
   }) : super(key: key);
 
   @override
@@ -25,7 +27,7 @@ class MatchingWidget extends StatefulWidget {
 
 class _MatchingWidgetState extends State<MatchingWidget> {
   final vtc = Get.put(VocabTrainingController());
-  final tts = Get.put(TtsController());
+  final tts = Get.find<TtsController>();
 
   late final List<String> audioItems;
   late final List<String> characterItems;
@@ -33,8 +35,15 @@ class _MatchingWidgetState extends State<MatchingWidget> {
   @override
   void initState() {
     super.initState();
-    final controllerLesson =
-        widget.lesson.map((key, value) => MapEntry(key, [value]));
+    final controllerLesson = widget.lesson.map((key, value) => MapEntry(
+        key,
+        VocabularyModel(
+          burmese: key,
+          japanese: value,
+          romaji: '', // Not available here
+          exampleSentence: '', // Not available here
+          exampleSentenceTranslation: '', // Not available here
+        )));
     vtc.lesson.clear();
     vtc.doneList.clear();
     vtc.selectedBuremese.value = '';
@@ -46,11 +55,7 @@ class _MatchingWidgetState extends State<MatchingWidget> {
     audioItems = widget.lesson.keys.toList()..shuffle();
     characterItems = widget.lesson.values.toList()..shuffle();
 
-    ever(vtc.doneList, (List<dynamic> done) {
-      if (done.length >= widget.lesson.length * 2) {
-        widget.onAllMatched();
-      }
-    });
+    // Note: finished increment and nextPage navigation are now handled in VocabTrainingController.isAnswerCorrect()
   }
 
   @override
@@ -67,7 +72,7 @@ class _MatchingWidgetState extends State<MatchingWidget> {
                 isSelected: vtc.selectedBuremese.value == audioKey,
                 isMatched: vtc.doneList.contains(audioKey),
                 onTap: () {
-                  final characterToSpeak = vtc.lesson[audioKey]![0];
+                  final characterToSpeak = vtc.lesson[audioKey]!.japanese;
                   tts.speak(characterToSpeak);
                   vtc.selectBurmese(audioKey, context);
                 },

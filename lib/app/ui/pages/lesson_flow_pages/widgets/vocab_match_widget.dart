@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:get/get.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
 import 'package:hiragana/app/controllers/vocab_training_controller.dart';
+import 'package:hiragana/app/data/models/vocabulary_model.dart';
 import 'package:hiragana/app/ui/global_widgets/custom_chip.dart';
 
 class VocabMatchWidget extends StatefulWidget {
-  final List<Map<String, List<String>>> chunk;
+  final List<VocabularyModel> chunk;
+  final CarouselSliderController carouselController;
 
   const VocabMatchWidget({
     Key? key,
     required this.chunk,
+    required this.carouselController,
   }) : super(key: key);
 
   @override
@@ -27,15 +31,17 @@ class _VocabMatchWidgetState extends State<VocabMatchWidget> {
   void initState() {
     super.initState();
 
-    vtc.lesson.addAll(widget.chunk
-        .map((map) => MapEntry(map.keys.first, map.values.first))
-        .toList()
-        .asMap()
-        .map((key, value) => MapEntry(value.key, value.value))
-        .cast<String, List<String>>());
+    vtc.lesson.clear();
+    vtc.doneList.clear();
+    vtc.selectedBuremese.value = '';
+    vtc.selectedJapanese.value = '';
+    vtc.carouselController.value = widget.carouselController;
 
-    burmese = widget.chunk.expand((map) => map.keys).toList()..shuffle();
-    japanese = widget.chunk.map((e) => e.values.first[0]).toList()..shuffle();
+    vtc.lesson.addAll({for (var vocab in widget.chunk) vocab.burmese: vocab});
+    burmese = widget.chunk.map((e) => e.burmese).toList()..shuffle();
+    japanese = widget.chunk.map((e) => e.japanese).toList()..shuffle();
+
+    // Note: finished increment and nextPage navigation are handled in VocabTrainingController.isAnswerCorrect()
   }
 
   @override

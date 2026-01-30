@@ -66,4 +66,5 @@ class DefaultFirebaseOptions {
     projectId: 'nihongo-first',
     storageBucket: 'nihongo-first.firebasestorage.app',
   );
+
 }

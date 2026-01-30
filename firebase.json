@@ -1,1 +1,22 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"nihongo-first","appId":"1:745869725996:android:158a8d291ff508f6011c89","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"nihongo-first","configurations":{"android":"1:745869725996:android:158a8d291ff508f6011c89","web":"1:745869725996:web:ba580ba0c68823b8011c89"}}}}}}
+{
+    "flutter": {
+        "platforms": {
+            "android": {
+                "default": {
+                    "projectId": "nihongo-first",
+                    "appId": "1:745869725996:android:158a8d291ff508f6011c89",
+                    "fileOutput": "android/app/google-services.json"
+                }
+            },
+            "dart": {
+                "lib/firebase_options.dart": {
+                    "projectId": "nihongo-first",
+                    "configurations": {
+                        "android": "1:745869725996:android:158a8d291ff508f6011c89",
+                        "web": "1:745869725996:web:ba580ba0c68823b8011c89"
+                    }
+                }
+            }
+        }
+    }
+}

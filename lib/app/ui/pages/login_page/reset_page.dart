@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hiragana/app/controllers/auth_controller.dart';
 
 class ResetPage extends StatelessWidget {
-  const ResetPage({Key? key}) : super(key: key);
+  ResetPage({Key? key}) : super(key: key);
+  final AuthController _authController = Get.put(AuthController());
+  final TextEditingController _emailController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +69,6 @@ class ResetPage extends StatelessWidget {
     );
   }
 
-
   Widget _buildHeaderIcon() {
     return Container(
       width: 64,
@@ -122,6 +125,7 @@ class ResetPage extends StatelessWidget {
         ),
         const SizedBox(height: 8),
         TextField(
+          controller: _emailController,
           style: GoogleFonts.lexend(fontSize: 16, color: Colors.white),
           decoration: InputDecoration(
             hintText: 'example@email.com',
@@ -156,7 +160,15 @@ class ResetPage extends StatelessWidget {
           width: double.infinity,
           height: 56,
           child: ElevatedButton.icon(
-            onPressed: () {},
+            onPressed: () async {
+              final email = _emailController.text.trim();
+              if (email.isNotEmpty) {
+                await _authController.sendEmailResetLink(email);
+              } else {
+                Get.snackbar("Error", "Please enter your email address.",
+                    backgroundColor: Colors.red, colorText: Colors.white);
+              }
+            },
             icon: const Icon(Icons.send, size: 20, color: Color(0xFF0A0A0A)),
             label: Text(
               'Send Reset Link',

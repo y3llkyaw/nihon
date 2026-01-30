@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/lesson_trainning_page_controller.dart';
 import 'package:hiragana/app/controllers/user_controller.dart';
 import 'package:hiragana/app/data/enums/hiragana.dart';
+import 'package:hiragana/app/data/models/vocabulary_model.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/lesson_review_page.dart';
 
 class LessonFlowPage extends StatelessWidget {
@@ -38,12 +39,14 @@ class LessonFlowPage extends StatelessWidget {
     lessonTrainningPageController.finished.value = 0;
     lessonTrainningPageController.widgetList.clear();
 
-    final lesson = vocabLessons[lessonIndex];
-    final List<List<MapEntry<String, List<String>>>> chunkedEntries = [];
-    final entries = lesson.entries.toList();
-    for (var i = 0; i < entries.length; i += 4) {
-      chunkedEntries.add(
-          entries.sublist(i, i + 4 > entries.length ? entries.length : i + 4));
+    final lessonData = vocabLessons[lessonIndex];
+    final lessonModels =
+        lessonData.entries.map((e) => VocabularyModel.fromMapEntry(e)).toList();
+
+    final List<List<VocabularyModel>> chunkedEntries = [];
+    for (var i = 0; i < lessonModels.length; i += 4) {
+      chunkedEntries.add(lessonModels.sublist(
+          i, i + 4 > lessonModels.length ? lessonModels.length : i + 4));
     }
 
     return Scaffold(
@@ -125,7 +128,7 @@ class LessonFlowPage extends StatelessWidget {
                         ),
                         const SizedBox(height: 8), // mb-2
                         Text(
-                          "You'll learn ${lesson.length} words",
+                          "You'll learn ${lessonData.length} words",
                           style: GoogleFonts.lexend(
                             fontSize: 18, // text-lg
                             fontWeight: FontWeight.w300, // font-light
@@ -207,7 +210,7 @@ class LessonFlowPage extends StatelessWidget {
                                 ),
                                 children: [
                                   TextSpan(
-                                    text: '/ ${lesson.length}',
+                                    text: '/ ${lessonData.length}',
                                     style: GoogleFonts.lexend(
                                       fontSize: 18, // text-lg
                                       fontWeight:
@@ -258,10 +261,8 @@ class LessonFlowPage extends StatelessWidget {
                         radius: 40,
                         borderRadius: BorderRadius.circular(30),
                         onTap: () {
-                          lessonTrainningPageController.chunk.value =
-                              chunkedEntries.indexOf(chunk);
                           Get.to(LessonReviewPage(
-                            lesson: Map.fromEntries(chunk),
+                            chunk: chunk,
                             lessonNumber: lessonIndex + 1,
                           ));
                         },
@@ -271,7 +272,8 @@ class LessonFlowPage extends StatelessWidget {
                             backgroundColor: userController.finishedChunks[
                                             lessonIndex.toString()] !=
                                         null &&
-                                    userController.finishedChunks[lessonIndex.toString()]!
+                                    userController
+                                        .finishedChunks[lessonIndex.toString()]!
                                         .contains(chunkedEntries.indexOf(chunk))
                                 ? primary
                                 : cardDark,
@@ -312,7 +314,7 @@ class LessonFlowPage extends StatelessWidget {
                         onPressed: () {
                           // Handle start lesson
                           Get.to(LessonReviewPage(
-                            lesson: lesson,
+                            chunk: lessonModels,
                             lessonNumber: 1 + lessonIndex,
                           ));
                         },

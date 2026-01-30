@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/character_match_controller.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
 import 'package:hiragana/app/data/enums/hiragana.dart';
+import 'package:hiragana/app/data/models/vocabulary_model.dart';
 import 'package:hiragana/app/routes/app_routes.dart';
 import 'package:hiragana/app/ui/pages/vocab_training/vocab_training_page.dart';
 
@@ -14,8 +15,10 @@ class VocabLessonPage extends StatelessWidget {
   final CharacterMatchController cmc = Get.put(CharacterMatchController());
   final String lessonId = Get.parameters['lesson']!;
   late final int lessonIndex = int.parse(lessonId) - 1;
-  late final Map<String, List<String>> lesson =
-      vocabLessons[lessonIndex].cast<String, List<String>>();
+  late final List<VocabularyModel> lesson = vocabLessons[lessonIndex]
+      .entries
+      .map((e) => VocabularyModel.fromMapEntry(e))
+      .toList();
   late final String title = "Vocabulary Lesson $lessonId";
 
   @override
@@ -35,40 +38,39 @@ class VocabLessonPage extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               itemBuilder: (context, index) {
-                lesson.entries.elementAt(index);
-                final entry = lesson.entries.elementAt(index);
-                final prompt = entry.key;
-                final answers = entry.value;
+                final vocab = lesson.elementAt(index);
+                final prompt = vocab.burmese;
+                final japanese = vocab.japanese;
                 return Obx(
                   () => AnimatedContainer(
                     margin: EdgeInsets.symmetric(vertical: 5.0),
-                    color: ttsController.speakingWord.value == answers[0]
+                    color: ttsController.speakingWord.value == japanese
                         ? Get.theme.colorScheme.secondaryContainer
                         : null,
                     duration: Duration(milliseconds: 500),
                     child: ListTile(
-                      selected: cmc.selectedCharacterList.contains(answers[0]),
+                      selected: cmc.selectedCharacterList.contains(japanese),
                       onTap: cmc.selectedCharacterList.isNotEmpty
                           ? () {
                               if (cmc.selectedCharacterList
-                                  .contains(answers[0])) {
-                                cmc.selectedCharacterList.remove(answers[0]);
+                                  .contains(japanese)) {
+                                cmc.selectedCharacterList.remove(japanese);
                               } else {
-                                cmc.selectedCharacterList.add(answers[0]);
+                                cmc.selectedCharacterList.add(japanese);
                               }
                             }
                           : () {},
                       onLongPress: () {
-                        if (cmc.selectedCharacterList.contains(answers[0])) {
-                          cmc.selectedCharacterList.remove(answers[0]);
+                        if (cmc.selectedCharacterList.contains(japanese)) {
+                          cmc.selectedCharacterList.remove(japanese);
                         } else {
-                          cmc.selectedCharacterList.add(answers[0]);
+                          cmc.selectedCharacterList.add(japanese);
                         }
                       },
                       selectedTileColor: Get.theme.colorScheme.primaryContainer,
                       subtitle: Text(prompt),
                       title: Text(
-                        answers[0],
+                        japanese,
                         style: GoogleFonts.notoSansJavanese(
                             fontWeight: FontWeight.bold,
                             fontSize: 20,
@@ -82,7 +84,7 @@ class VocabLessonPage extends StatelessWidget {
                           IconButton(
                             onPressed: () async {
                               await ttsController.stop();
-                              await ttsController.speak(answers[0]);
+                              await ttsController.speak(japanese);
                             },
                             icon: Icon(Icons.voice_chat),
                           ),
@@ -114,13 +116,12 @@ class VocabLessonPage extends StatelessWidget {
                     }
                   : () async {
                       ttsController.isSpeaking.value = true;
-                      for (var entry in lesson.entries) {
-                        final answers = entry.value;
+                      for (var vocab in lesson) {
                         // if(e)
                         if (!ttsController.isSpeaking.value) {
                           break;
                         }
-                        await ttsController.speak(answers[0]);
+                        await ttsController.speak(vocab.japanese);
                       }
                       ttsController.isSpeaking.value = false;
                     },

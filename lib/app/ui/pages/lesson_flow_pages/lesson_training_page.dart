@@ -4,9 +4,9 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/lesson_trainning_page_controller.dart';
 import 'package:hiragana/app/controllers/vocab_training_controller.dart';
+import 'package:hiragana/app/data/models/vocabulary_model.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/burmese_to_japanese_widget.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/fill_in_the_blank_widget.dart';
-import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/matching_widget.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/typing_quiz_item.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/vocab_match_widget.dart';
 
@@ -17,55 +17,53 @@ class LessonTrainingPage extends StatefulWidget {
   static const Color primary = Color(0xFF0D8FF2);
   static const Color backgroundDark = Color(0xFF0A0C10);
   static const Color textWhite = Colors.white;
-  final List<MapEntry<String, List<String>>> lesson;
+  final List<VocabularyModel> lesson;
 
   @override
   State<LessonTrainingPage> createState() => _LessonTrainingPageState();
 }
 
 class _LessonTrainingPageState extends State<LessonTrainingPage> {
-  final CarouselSliderController csc = CarouselSliderController();
-
-  final LessonTrainningPageController controller = Get.find();
+  final LessonTrainningPageController controller =
+      Get.put(LessonTrainningPageController());
   final VocabTrainingController vocabTrainingController =
       Get.put(VocabTrainingController());
 
   @override
   void initState() {
-    final m2jpossibleAnswer = widget.lesson.map((e) => e.value[0]).toList();
+    final vocabModels = widget.lesson;
+    final m2jpossibleAnswer = vocabModels.map((e) => e.japanese).toList();
     m2jpossibleAnswer.shuffle();
-    final j2mpossibleAnswer = widget.lesson.map((e) => e.key).toList();
+    final j2mpossibleAnswer = vocabModels.map((e) => e.burmese).toList();
     j2mpossibleAnswer.shuffle();
 
-    final List<Map<String, List<String>>> result =
-        widget.lesson.map((e) => {e.key: e.value}).toList();
-
-    controller.widgetList.add(VocabMatchWidget(chunk: result));
-
-    controller.widgetList.add(MatchingWidget(
-      lesson: {for (var e in widget.lesson) e.key: e.value[0]},
-      onAllMatched: () {
-        controller.finished.value += 1;
-        csc.nextPage();
-      },
+    controller.widgetList.add(VocabMatchWidget(
+      chunk: vocabModels,
+      carouselController: controller.carouselController.value,
     ));
 
-    for (var entry in widget.lesson) {
+    // controller.widgetList.add(MatchingWidget(
+    //   lesson: {for (var e in vocabModels) e.burmese: e.japanese},
+    //   carouselController: controller.carouselController.value,
+    // ));
+
+    for (var entry in vocabModels) {
       controller.widgetList
-          .add(buildBurmeseToJapaneseQuizItem(entry, csc, m2jpossibleAnswer));
+          .add(buildBurmeseToJapaneseQuizItem(entry, m2jpossibleAnswer));
     }
-    for (var entry in widget.lesson) {
+    for (var entry in vocabModels) {
       controller.widgetList.add(
-        buildBurmeseToJapaneseQuizItem(entry, csc, j2mpossibleAnswer,
+        buildBurmeseToJapaneseQuizItem(entry, j2mpossibleAnswer,
             isJapaneseToBurmese: true),
       );
     }
-    for (var entry in widget.lesson) {
-      controller.widgetList.add(buildTypingQuizItem(entry.value[0], csc));
+    for (var entry in vocabModels) {
+      controller.widgetList.add(buildTypingQuizItem(entry.japanese));
     }
-    for (var entry in widget.lesson) {
-      controller.widgetList.add(fillInBlankWidgets(entry, csc));
+    for (var entry in vocabModels) {
+      controller.widgetList.add(fillInBlankWidgets(entry));
     }
+    controller.lesson.value = controller.widgetList.length;
 
     super.initState();
   }
@@ -134,14 +132,14 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
               Obx(() {
                 // Avoid division by zero if widgetList is empty
                 final progress = controller.widgetList.isNotEmpty
-                    ? controller.finished.value / controller.widgetList.length
+                    ? controller.finished.value / controller.lesson.value
                     : 0.0;
                 return _buildHeader(progress: progress);
               }),
               Expanded(
                 child: Obx(
                   () => CarouselSlider(
-                    carouselController: csc,
+                    carouselController: controller.carouselController.value,
                     items: controller.widgetList,
                     options: CarouselOptions(
                       viewportFraction: 1.0,

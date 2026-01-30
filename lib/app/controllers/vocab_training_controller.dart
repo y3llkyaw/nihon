@@ -1,20 +1,24 @@
 import 'package:audioplayers/audioplayers.dart';
+import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hiragana/app/controllers/lesson_trainning_page_controller.dart';
+import 'package:hiragana/app/data/models/vocabulary_model.dart';
 
 class VocabTrainingController extends GetxController {
-  final Map<String, List<String>> lesson = {};
+  final Map<String, VocabularyModel> lesson = {};
   final doneList = [].obs;
 
   final hintLeft = 3.obs;
   final heartLeft = 3.obs;
   final point = 0.obs;
 
+  var carouselController = CarouselSliderController().obs;
   var selectedBuremese = "".obs;
   var selectedJapanese = "".obs;
 
-  bool isAnswerCorrect(BuildContext context) {
+  Future<bool> isAnswerCorrect(BuildContext context) async {
     final burmese = selectedBuremese.value;
     final japanese = selectedJapanese.value;
     if (!lesson.containsKey(burmese)) {
@@ -23,13 +27,24 @@ class VocabTrainingController extends GetxController {
       resetSelection();
       return false;
     }
-    final correctAnswer = lesson[burmese]![0];
+    final correctAnswer = lesson[burmese]!.japanese;
     if (correctAnswer == japanese) {
       final player = AudioPlayer();
       player.play(AssetSource('audios/ss.mp3'));
       doneList.add(burmese);
       doneList.add(japanese);
       resetSelection();
+      if (doneList.length >= lesson.length * 2) {
+        // Handle lesson completion when all matches are done
+        final lessonController = Get.find<LessonTrainningPageController>();
+        final isComplete = await lessonController.onCorrectAnswer();
+
+        // Only advance to next page if lesson is not complete
+        if (!isComplete) {
+          await lessonController.advanceToNextPage(
+              delay: const Duration(milliseconds: 300));
+        }
+      }
       point.value += 60;
       return true;
     }

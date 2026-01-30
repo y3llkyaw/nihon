@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hiragana/app/controllers/auth_controller.dart';
+import 'package:hiragana/app/routes/app_routes.dart';
 import 'package:hiragana/app/ui/pages/login_page/reset_page.dart';
 
 class LoginPage extends StatefulWidget {
@@ -11,6 +13,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final AuthController _authController = Get.put(AuthController());
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   bool _obscureText = true;
 
   @override
@@ -150,6 +155,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
         const SizedBox(height: 8),
         TextField(
+          controller: _emailController,
           style: GoogleFonts.lexend(fontSize: 16, color: Colors.white),
           decoration: InputDecoration(
             hintText: 'e.g., sensei@example.jp',
@@ -180,6 +186,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
         const SizedBox(height: 8),
         TextField(
+          controller: _passwordController,
           obscureText: _obscureText,
           style: GoogleFonts.lexend(fontSize: 16, color: Colors.white),
           decoration: InputDecoration(
@@ -223,7 +230,7 @@ class _LoginPageState extends State<LoginPage> {
       alignment: Alignment.centerRight,
       child: TextButton(
         onPressed: () {
-          Get.to(() => const ResetPage());
+          Get.to(() => ResetPage());
         },
         child: Text(
           'Forgot Password?',
@@ -242,7 +249,24 @@ class _LoginPageState extends State<LoginPage> {
       width: double.infinity,
       height: 56,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () async {
+          final email = _emailController.text.trim();
+          final password = _passwordController.text.trim();
+          if (email.isNotEmpty && password.isNotEmpty) {
+            final user = await _authController.signInWithEmailAndPassword(
+                email, password);
+            if (user != null) {
+              Get.offAllNamed(AppRoutes.HOME);
+            } else {
+              Get.snackbar(
+                  "Error", "Login failed. Please check your credentials.",
+                  backgroundColor: Colors.red, colorText: Colors.white);
+            }
+          } else {
+            Get.snackbar("Error", "Please enter both email and password.",
+                backgroundColor: Colors.orange, colorText: Colors.white);
+          }
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFF2BADEE),
           shape: RoundedRectangleBorder(

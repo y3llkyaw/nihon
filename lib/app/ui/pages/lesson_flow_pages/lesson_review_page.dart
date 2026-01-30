@@ -3,15 +3,16 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'dart:ui';
 import 'package:hiragana/app/controllers/tts_controller.dart';
+import 'package:hiragana/app/data/models/vocabulary_model.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/lesson_training_page.dart';
 
 class LessonReviewPage extends StatelessWidget {
-  final Map<String, List<String>> lesson;
   final int lessonNumber;
+  final List<VocabularyModel> chunk;
 
   const LessonReviewPage({
     Key? key,
-    required this.lesson,
+    required this.chunk,
     required this.lessonNumber,
   }) : super(key: key);
 
@@ -24,8 +25,7 @@ class LessonReviewPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final words = lesson.entries.take(4).toList();
-
+    final words = chunk;
     return Scaffold(
       backgroundColor: backgroundDark,
       body: Stack(
@@ -146,12 +146,11 @@ class LessonReviewPage extends StatelessWidget {
     );
   }
 
-  Widget _buildWordCard(MapEntry<String, List<String>> word) {
-    final japanese = word.value[0];
-    // final kenji = word.value[1];
-    final meaning = word.key.toLowerCase();
+  Widget _buildWordCard(VocabularyModel word) {
+    final japanese = word.japanese;
+    final meaning = word.burmese.toLowerCase();
 
-    final TtsController ttsController = TtsController();
+    final TtsController ttsController = Get.find();
 
     return Padding(
       padding: const EdgeInsets.only(bottom: 16.0),

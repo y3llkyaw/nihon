@@ -1,7 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hiragana/app/controllers/auth_controller.dart';
+import 'package:hiragana/app/routes/app_routes.dart';
 
 class CreatePage extends StatefulWidget {
   const CreatePage({Key? key}) : super(key: key);
@@ -11,6 +14,9 @@ class CreatePage extends StatefulWidget {
 }
 
 class _CreatePageState extends State<CreatePage> {
+  final AuthController _authController = Get.put(AuthController());
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   bool _obscureText = true;
 
   @override
@@ -182,6 +188,7 @@ class _CreatePageState extends State<CreatePage> {
 
   Widget _buildEmailField() {
     return TextField(
+      controller: _emailController,
       style: GoogleFonts.lexend(fontSize: 16, color: Colors.white),
       decoration: InputDecoration(
         hintText: 'name@example.com',
@@ -200,6 +207,7 @@ class _CreatePageState extends State<CreatePage> {
 
   Widget _buildPasswordField() {
     return TextField(
+      controller: _passwordController,
       obscureText: _obscureText,
       style: GoogleFonts.lexend(fontSize: 16, color: Colors.white),
       decoration: InputDecoration(
@@ -233,7 +241,23 @@ class _CreatePageState extends State<CreatePage> {
       height: 56,
       width: double.infinity,
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () async {
+          final email = _emailController.text.trim();
+          final password = _passwordController.text.trim();
+          if (email.isNotEmpty && password.isNotEmpty) {
+            final user = await _authController.signUpWithEmailAndPassword(
+                email, password);
+            if (user != null) {
+              Get.offAllNamed(AppRoutes.HOME);
+            } else {
+              Get.snackbar("Error", "Registration failed. Please try again.",
+                  backgroundColor: Colors.red, colorText: Colors.white);
+            }
+          } else {
+            Get.snackbar("Error", "Please enter both email and password.",
+                backgroundColor: Colors.orange, colorText: Colors.white);
+          }
+        },
         style: ElevatedButton.styleFrom(
           backgroundColor: const Color(0xFF2BADEE),
           shape: RoundedRectangleBorder(
