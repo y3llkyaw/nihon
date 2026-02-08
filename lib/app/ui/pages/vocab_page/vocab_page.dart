@@ -3,21 +3,17 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/data/enums/hiragana.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/lesson_flow_page.dart';
+import 'package:hiragana/app/ui/theme/theme.dart';
 
 class VocabPage extends StatelessWidget {
   const VocabPage({Key? key}) : super(key: key);
 
-  // Define colors from the design
-  static const Color backgroundDark = Color(0xFF101C22);
-  static const Color cardDark = Color(0xFF1A272E);
-  static const Color primary = Color(0xFF2BADEE);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF101C22), // background-dark
+      backgroundColor: AppColors.backgroundDark, // background-dark
       appBar: AppBar(
-        backgroundColor: const Color(0xFF101C22).withValues(alpha: 0.8),
+        backgroundColor: AppColors.backgroundDark.withValues(alpha: 0.8),
         elevation: 0,
         title: Text(
           "Vocabulary",
@@ -49,9 +45,9 @@ class VocabPage extends StatelessWidget {
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,
                   colors: [
-                    primary.withValues(alpha: 0.1),
-                    primary.withValues(alpha: 0.5),
-                    primary.withValues(alpha: 0.1),
+                    AppColors.primary.withValues(alpha: 0.1),
+                    AppColors.primary.withValues(alpha: 0.5),
+                    AppColors.primary.withValues(alpha: 0.1),
                   ],
                 ),
               ),
@@ -115,18 +111,13 @@ class LessonCard extends StatelessWidget {
     this.onTap,
   }) : super(key: key);
 
-  static const Color cardDark = Color(0xFF1A272E);
-  static const Color primary = Color(0xFF2BADEE);
-  static final Color textSlate400 = Colors.grey[400]!;
-  static final Color textSlate600 = Colors.grey[600]!;
-
   @override
   Widget build(BuildContext context) {
     bool isLocked = status == 'locked';
     bool isInProgress = status == 'in-progress';
 
     Widget cardContent = Material(
-      color: cardDark,
+      color: AppColors.cardDark,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(16),
       ),
@@ -145,10 +136,10 @@ class LessonCard extends StatelessWidget {
                 Icon(
                   Icons.chevron_right,
                   color: isLocked
-                      ? textSlate600
+                      ? Colors.grey[600]!
                       : isInProgress
-                          ? primary
-                          : textSlate600,
+                          ? AppColors.primary
+                          : Colors.grey[600]!,
                 ),
               ],
             ),
@@ -177,18 +168,18 @@ class LessonCard extends StatelessWidget {
     switch (status) {
       case 'completed':
         iconData = Icons.menu_book_rounded;
-        iconColor = primary;
-        bgColor = primary.withValues(alpha: 0.1);
+        iconColor = AppColors.primary;
+        bgColor = AppColors.primary.withValues(alpha: 0.1);
         break;
       case 'in-progress':
         iconData = Icons.play_arrow_rounded;
         iconColor = Colors.white;
-        bgColor = primary;
+        bgColor = AppColors.primary;
         break;
       case 'locked':
       default:
         iconData = Icons.lock_rounded;
-        iconColor = textSlate600;
+        iconColor = Colors.grey[600]!;
         bgColor = Colors.grey.shade800;
         break;
     }
@@ -202,7 +193,7 @@ class LessonCard extends StatelessWidget {
         boxShadow: status == 'in-progress'
             ? [
                 BoxShadow(
-                  color: primary.withValues(alpha: 0.3),
+                  color: AppColors.primary.withValues(alpha: 0.3),
                   blurRadius: 8,
                   offset: const Offset(0, 4),
                 )
@@ -220,16 +211,16 @@ class LessonCard extends StatelessWidget {
     switch (status) {
       case 'completed':
         subtitleText = 'Completed';
-        subtitleColor = primary;
+        subtitleColor = AppColors.primary;
         break;
       case 'in-progress':
         subtitleText = 'In Progress • ${(progress * 100).toInt()}%';
-        subtitleColor = textSlate400;
+        subtitleColor = AppColors.textSlate400;
         break;
       case 'locked':
       default:
         subtitleText = 'Locked';
-        subtitleColor = textSlate400;
+        subtitleColor = AppColors.textSlate400;
         break;
     }
 

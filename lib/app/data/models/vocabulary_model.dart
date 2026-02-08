@@ -27,20 +27,26 @@ class VocabularyModel {
   /// The map entry is expected to have a String key for the Burmese translation,
   /// and a List of dynamic values containing other details.
   factory VocabularyModel.fromMapEntry(MapEntry<String, List<dynamic>> entry) {
-    // The example sentence and its translation are often in one string, separated by a newline.
-    final List<String> sentenceParts = (entry.value.length > 2 &&
-            entry.value[2] is String &&
-            entry.value[2].contains('\n'))
-        ? (entry.value[2] as String).split('\n')
-        : [entry.value.length > 2 ? entry.value[2] as String : '', ''];
+    String clean(String input) => input
+        .replaceAll("～", "")
+        .replaceAll("~", "")
+        .replaceAll("〜", "")
+        .replaceAll("「", "")
+        .replaceAll("」", "")
+        .replaceAll("(", "")
+        .replaceAll(")", "")
+        .replaceAll("、", "")
+        .replaceAll("・", "")
+        .replaceAll(" ", "")
+        .trim();
 
     return VocabularyModel(
-      burmese: entry.key,
-      japanese: entry.value.isNotEmpty ? entry.value[0] as String : '',
+      burmese: clean(entry.key),
+      japanese: entry.value.isNotEmpty ? clean(entry.value[0] as String) : '',
       romaji: entry.value.length > 1 ? entry.value[1] as String : '',
-      exampleSentence: sentenceParts[0],
+      exampleSentence: clean(entry.value.last.toString().split('\n').first),
       exampleSentenceTranslation:
-          sentenceParts.length > 1 ? sentenceParts[1] : '',
+          clean(entry.value.last.toString().split('\n').last),
       imageUrl: entry.value.length > 3 ? entry.value[3] as String? : null,
     );
   }

@@ -6,6 +6,7 @@ import 'package:hiragana/app/controllers/home_controller.dart';
 import 'package:hiragana/app/ui/pages/character_page/character_page.dart';
 import 'package:hiragana/app/ui/pages/home_page/home_page.dart';
 import 'package:hiragana/app/ui/pages/vocab_page/vocab_page.dart';
+import 'package:hiragana/app/ui/theme/theme.dart';
 
 class ContainerPage extends GetView<HomeController> {
   const ContainerPage({Key? key}) : super(key: key);
@@ -38,9 +39,9 @@ class MobileViewLayout extends StatelessWidget {
       ),
       bottomNavigationBar: Obx(
         () => BottomNavigationBar(
-          backgroundColor: const Color(0xFF101C22),
+          backgroundColor: AppColors.backgroundDark,
           unselectedItemColor: Colors.grey,
-          selectedItemColor: const Color(0xFF2BADEE),
+          selectedItemColor: AppColors.primary,
           showUnselectedLabels: true,
           showSelectedLabels: true,
           currentIndex: homeController.currentIndex.value,

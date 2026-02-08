@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hiragana/app/ui/theme/theme.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/auth_controller.dart';
@@ -16,7 +17,7 @@ class LandingPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      backgroundColor: const Color(0xFF101C22),
+      backgroundColor: AppColors.backgroundDark,
       body: SafeArea(
         child: Stack(
           children: [
@@ -57,10 +58,10 @@ class LandingPage extends StatelessWidget {
           width: 128,
           height: 128,
           decoration: BoxDecoration(
-            color: const Color(0xFF2BADEE).withValues(alpha: 0.2),
+            color: AppColors.primary.withValues(alpha: 0.2),
             borderRadius: BorderRadius.circular(16),
             border: Border.all(
-              color: const Color(0xFF2BADEE).withValues(alpha: 0.3),
+              color: AppColors.primary.withValues(alpha: 0.3),
               width: 2,
             ),
           ),
@@ -88,7 +89,7 @@ class LandingPage extends StatelessWidget {
                 child: Icon(
                   Icons.translate,
                   size: 64,
-                  color: Color(0xFF2BADEE),
+                  color: AppColors.primary,
                 ),
               ),
             ],
@@ -233,7 +234,7 @@ class LandingPage extends StatelessWidget {
           child: Text(
             'Create a New Account',
             style: GoogleFonts.lexend(
-              color: const Color(0xFF2BADEE),
+              color: AppColors.primary,
               fontSize: 16,
               fontWeight: FontWeight.bold,
             ),

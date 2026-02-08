@@ -9,15 +9,19 @@ import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/burmese_to_japan
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/fill_in_the_blank_widget.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/typing_quiz_item.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/widgets/vocab_match_widget.dart';
+import 'package:hiragana/app/ui/theme/theme.dart';
 
 class LessonTrainingPage extends StatefulWidget {
-  const LessonTrainingPage({Key? key, required this.lesson}) : super(key: key);
+  const LessonTrainingPage({
+    Key? key,
+    required this.lesson,
+    required this.lessonIndex,
+    required this.chunkIndex,
+  }) : super(key: key);
 
-  // Define colors from the new design
-  static const Color primary = Color(0xFF0D8FF2);
-  static const Color backgroundDark = Color(0xFF0A0C10);
-  static const Color textWhite = Colors.white;
   final List<VocabularyModel> lesson;
+  final int lessonIndex;
+  final int chunkIndex;
 
   @override
   State<LessonTrainingPage> createState() => _LessonTrainingPageState();
@@ -31,6 +35,9 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
 
   @override
   void initState() {
+    // Reset the finished counter for the new lesson/chunk
+    controller.finished.value = 0;
+
     final vocabModels = widget.lesson;
     final m2jpossibleAnswer = vocabModels.map((e) => e.japanese).toList();
     m2jpossibleAnswer.shuffle();
@@ -60,34 +67,42 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
     for (var entry in vocabModels) {
       controller.widgetList.add(buildTypingQuizItem(entry.japanese));
     }
+
     for (var entry in vocabModels) {
       controller.widgetList.add(fillInBlankWidgets(entry));
     }
-    controller.lesson.value = controller.widgetList.length;
+    controller.totalQuestions.value = controller.widgetList.length;
+    controller.lesson.value = widget.lessonIndex;
+    controller.chunk.value = widget.chunkIndex;
 
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    controller.widgetList.clear();
+    super.dispose();
   }
 
   Future<bool> _showExitConfirmDialog() async {
     final result = await Get.dialog<bool>(
       AlertDialog(
-        backgroundColor: LessonTrainingPage.backgroundDark,
+        backgroundColor: AppColors.backgroundDark,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(16),
-          side: BorderSide(
-              color: LessonTrainingPage.textWhite.withValues(alpha: 0.1)),
+          side: BorderSide(color: AppColors.textWhite.withValues(alpha: 0.1)),
         ),
         title: Text(
           'Exit Lesson?',
           style: GoogleFonts.lexend(
-            color: LessonTrainingPage.textWhite,
+            color: AppColors.textWhite,
             fontWeight: FontWeight.bold,
           ),
         ),
         content: Text(
           'Your progress will be lost. Are you sure you want to exit?',
           style: GoogleFonts.lexend(
-            color: LessonTrainingPage.textWhite.withValues(alpha: 0.7),
+            color: AppColors.textWhite.withValues(alpha: 0.7),
           ),
         ),
         actions: [
@@ -96,7 +111,7 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
             child: Text(
               'Cancel',
               style: GoogleFonts.lexend(
-                color: LessonTrainingPage.textWhite,
+                color: AppColors.textWhite,
                 fontWeight: FontWeight.w500,
               ),
             ),
@@ -125,14 +140,15 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
     return WillPopScope(
       onWillPop: _showExitConfirmDialog,
       child: Scaffold(
-        backgroundColor: LessonTrainingPage.backgroundDark,
+        backgroundColor: AppColors.backgroundDark,
         body: SafeArea(
           child: Column(
             children: [
               Obx(() {
                 // Avoid division by zero if widgetList is empty
                 final progress = controller.widgetList.isNotEmpty
-                    ? controller.finished.value / controller.lesson.value
+                    ? controller.finished.value /
+                        controller.totalQuestions.value
                     : 0.0;
                 return _buildHeader(progress: progress);
               }),
@@ -172,8 +188,8 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
                   Get.back();
                 }
               },
-              child: const Icon(Icons.close,
-                  color: LessonTrainingPage.textWhite, size: 28),
+              child:
+                  const Icon(Icons.close, color: AppColors.textWhite, size: 28),
             ),
           ),
           Expanded(
@@ -187,9 +203,8 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
                   curve: Curves.easeInOut,
                   builder: (context, value, _) => LinearProgressIndicator(
                     value: value,
-                    backgroundColor:
-                        LessonTrainingPage.textWhite.withValues(alpha: 0.1),
-                    color: LessonTrainingPage.primary,
+                    backgroundColor: AppColors.textWhite.withValues(alpha: 0.1),
+                    color: AppColors.primary,
                     minHeight: 10, // h-2.5
                   ),
                 ),
@@ -199,7 +214,7 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
             decoration: BoxDecoration(
-              color: LessonTrainingPage.textWhite.withValues(alpha: 0.05),
+              color: AppColors.textWhite.withValues(alpha: 0.05),
               borderRadius: BorderRadius.circular(20),
             ),
             child: Row(
@@ -209,7 +224,7 @@ class _LessonTrainingPageState extends State<LessonTrainingPage> {
                 Text(
                   "12", // Mock value
                   style: GoogleFonts.lexend(
-                    color: LessonTrainingPage.textWhite,
+                    color: AppColors.textWhite,
                     fontWeight: FontWeight.bold,
                     fontSize: 14,
                   ),

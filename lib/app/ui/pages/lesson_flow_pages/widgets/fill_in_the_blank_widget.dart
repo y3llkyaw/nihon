@@ -1,15 +1,20 @@
+import 'package:hiragana/app/ui/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/fill_in_the_blank_controller.dart';
+import 'package:hiragana/app/controllers/lesson_trainning_page_controller.dart';
 import 'package:hiragana/app/data/models/vocabulary_model.dart';
-
-import '../lesson_training_page.dart';
 
 Widget fillInBlankWidgets(VocabularyModel vocab) {
   final String tag =
       "${vocab.japanese}_${vocab.burmese}_fill_${DateTime.now().millisecondsSinceEpoch}";
   final controller = Get.put(FillInTheBlankController(), tag: tag);
+
+  // Register the controller to be deleted when the lesson page is closed
+  Get.find<LessonTrainningPageController>().addDisposeCallback(() {
+    Get.delete<FillInTheBlankController>(tag: tag);
+  });
 
   // Set the widget builder for retry functionality
   controller.widgetBuilder = () => fillInBlankWidgets(vocab);
@@ -29,7 +34,7 @@ Widget fillInBlankWidgets(VocabularyModel vocab) {
               Text(
                 "QUIZ MODE",
                 style: GoogleFonts.lexend(
-                  color: LessonTrainingPage.textWhite.withValues(alpha: 0.6),
+                  color: AppColors.textWhite.withValues(alpha: 0.6),
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                   letterSpacing: 2.0,
@@ -39,71 +44,83 @@ Widget fillInBlankWidgets(VocabularyModel vocab) {
               Text(
                 vocab.exampleSentenceTranslation,
                 style: GoogleFonts.notoSansMyanmar(
-                  color: LessonTrainingPage.textWhite,
+                  color: AppColors.textWhite,
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-            ],
-          ),
-          Column(
-            children: [
-              Obx(() => RichText(
-                    text: TextSpan(
-                      style: const TextStyle(fontSize: 18, color: Colors.black),
-                      children: [
-                        TextSpan(
-                          text: textSpans[0],
-                          style: GoogleFonts.notoSansJavanese(
-                            color: LessonTrainingPage.textWhite,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+              Column(
+                children: [
+                  Obx(
+                    () => RichText(
+                      textAlign: TextAlign.center,
+                      text: TextSpan(
+                        style:
+                            const TextStyle(fontSize: 24, color: Colors.black),
+                        children: [
+                          TextSpan(
+                            text: textSpans[0],
+                            style: GoogleFonts.notoSansJp(
+                              color: AppColors.textWhite,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                        WidgetSpan(
-                          alignment: PlaceholderAlignment.middle,
-                          child: SizedBox(
-                            width: 80,
-                            child: TextField(
-                              controller: controller.answerController,
-                              readOnly: controller.wasCorrect.value != null,
-                              style: GoogleFonts.notoSansMyanmar(
-                                color: controller.wasCorrect.value == null
-                                    ? LessonTrainingPage.primary
-                                    : controller.wasCorrect.value!
-                                        ? Colors.green
-                                        : Colors.red,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              decoration: const InputDecoration(
-                                isDense: true,
-                                contentPadding:
-                                    EdgeInsets.symmetric(vertical: 4),
-                                border: UnderlineInputBorder(),
+                          WidgetSpan(
+                            alignment: PlaceholderAlignment.middle,
+                            child: SizedBox(
+                              width: 100,
+                              child: TextField(
+                                controller: controller.answerController,
+                                readOnly: controller.wasCorrect.value != null,
+                                textAlign: TextAlign.center,
+                                keyboardType: TextInputType.text,
+                                textCapitalization: TextCapitalization.none,
+                                style: GoogleFonts.notoSansJp(
+                                  color: controller.wasCorrect.value == null
+                                      ? AppColors.primary
+                                      : controller.wasCorrect.value!
+                                          ? Colors.green
+                                          : Colors.red,
+                                  fontSize: 24,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                decoration: const InputDecoration(
+                                  isDense: true,
+                                  contentPadding:
+                                      EdgeInsets.symmetric(vertical: 4),
+                                  border: UnderlineInputBorder(),
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide:
+                                        BorderSide(color: AppColors.textWhite),
+                                  ),
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                        TextSpan(
-                          text: textSpans.length > 1 ? textSpans[1].trim() : "",
-                          style: GoogleFonts.notoSansMyanmar(
-                            color: LessonTrainingPage.textWhite,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
+                          TextSpan(
+                            text:
+                                textSpans.length > 1 ? textSpans[1].trim() : "",
+                            style: GoogleFonts.notoSansJp(
+                              color: AppColors.textWhite,
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
-                  )),
-              const SizedBox(height: 16),
-              Text(
-                "Japanese Keyboard Active",
-                style: GoogleFonts.lexend(
-                  color: LessonTrainingPage.textWhite.withValues(alpha: 0.4),
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+                  ),
+                  const SizedBox(height: 16),
+                  Text(
+                    "Japanese Keyboard Active",
+                    style: GoogleFonts.lexend(
+                      color: AppColors.textWhite.withValues(alpha: 0.4),
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -115,8 +132,8 @@ Widget fillInBlankWidgets(VocabularyModel vocab) {
                       ? null
                       : () => controller.checkAnswer(vocab.japanese),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: LessonTrainingPage.textWhite,
-                    foregroundColor: LessonTrainingPage.backgroundDark,
+                    backgroundColor: AppColors.textWhite,
+                    foregroundColor: AppColors.backgroundDark,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),

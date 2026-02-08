@@ -5,11 +5,7 @@ import 'package:get/get.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
 import 'package:hiragana/app/controllers/vocab_training_controller.dart';
 import 'package:hiragana/app/data/models/vocabulary_model.dart';
-
-// Using colors consistent with lesson_flow_page.dart
-const Color primary = Color(0xFF3BA8FC);
-const Color cardDark = Color(0xFF172835);
-const Color textWhite = Colors.white;
+import 'package:hiragana/app/ui/theme/theme.dart';
 
 class MatchingWidget extends StatefulWidget {
   final Map<String, String> lesson;
@@ -123,20 +119,21 @@ class _AudioButton extends StatelessWidget {
             height: 80,
             decoration: BoxDecoration(
               color: isSelected
-                  ? primary
+                  ? AppColors.primary
                   : isMatched
                       ? Colors.green.withValues(alpha: 0.5)
-                      : cardDark,
+                      : AppColors.cardDark,
               shape: BoxShape.circle,
               border: isMatched
                   ? null
-                  : Border.all(color: textWhite.withValues(alpha: 0.1)),
+                  : Border.all(
+                      color: AppColors.textWhite.withValues(alpha: 0.1)),
             ),
             child: Icon(
               Icons.volume_up,
               color: isSelected || isMatched
-                  ? textWhite
-                  : textWhite.withValues(alpha: 0.8),
+                  ? AppColors.textWhite
+                  : AppColors.textWhite.withValues(alpha: 0.8),
               size: 36,
             ),
           ),
@@ -144,7 +141,9 @@ class _AudioButton extends StatelessWidget {
           Text(
             label,
             style: GoogleFonts.lexend(
-              color: isSelected ? primary : textWhite.withValues(alpha: 0.2),
+              color: isSelected
+                  ? AppColors.primary
+                  : AppColors.textWhite.withValues(alpha: 0.2),
               fontSize: 10,
               fontWeight: FontWeight.w900, // font-black
               letterSpacing: 1.2, // tracking-wider
@@ -177,17 +176,17 @@ class _CharacterCard extends StatelessWidget {
         duration: const Duration(milliseconds: 200),
         decoration: BoxDecoration(
           color: isSelected
-              ? primary.withValues(alpha: 0.1)
+              ? AppColors.primary.withValues(alpha: 0.1)
               : isMatched
                   ? Colors.green.withValues(alpha: 0.5)
-                  : cardDark,
+                  : AppColors.cardDark,
           borderRadius: BorderRadius.circular(12),
         ),
         child: Center(
           child: Text(
             character,
             style: GoogleFonts.notoSansJp(
-              color: textWhite,
+              color: AppColors.textWhite,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),

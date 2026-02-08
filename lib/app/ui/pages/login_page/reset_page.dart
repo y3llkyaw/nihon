@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hiragana/app/ui/theme/theme.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/auth_controller.dart';
@@ -15,7 +16,7 @@ class ResetPage extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
-      backgroundColor: const Color(0xFF101C22),
+      backgroundColor: AppColors.backgroundDark,
       body: Stack(
         children: [
           _buildBackgroundGlow(context),
@@ -61,7 +62,7 @@ class ResetPage extends StatelessWidget {
             height: 120.0,
             decoration: BoxDecoration(
               shape: BoxShape.circle,
-              color: const Color(0xFF2BADEE).withValues(alpha: 0.05),
+              color: AppColors.primary.withValues(alpha: 0.05),
             ),
           ),
         ),
@@ -74,15 +75,14 @@ class ResetPage extends StatelessWidget {
       width: 64,
       height: 64,
       decoration: BoxDecoration(
-        color: const Color(0xFF2BADEE).withValues(alpha: 0.1),
+        color: AppColors.primary.withValues(alpha: 0.1),
         borderRadius: BorderRadius.circular(24),
-        border:
-            Border.all(color: const Color(0xFF2BADEE).withValues(alpha: 0.2)),
+        border: Border.all(color: AppColors.primary.withValues(alpha: 0.2)),
       ),
       child: const Center(
         child: Icon(
           Icons.lock_reset,
-          color: Color(0xFF2BADEE),
+          color: AppColors.primary,
           size: 40,
         ),
       ),
@@ -150,8 +150,7 @@ class ResetPage extends StatelessWidget {
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(16),
               borderSide: BorderSide(
-                  color: const Color(0xFF2BADEE).withValues(alpha: 0.5),
-                  width: 2),
+                  color: AppColors.primary.withValues(alpha: 0.5), width: 2),
             ),
           ),
         ),
@@ -169,22 +168,22 @@ class ResetPage extends StatelessWidget {
                     backgroundColor: Colors.red, colorText: Colors.white);
               }
             },
-            icon: const Icon(Icons.send, size: 20, color: Color(0xFF0A0A0A)),
+            icon: const Icon(Icons.send, size: 20, color: Colors.black),
             label: Text(
               'Send Reset Link',
               style: GoogleFonts.lexend(
-                color: const Color(0xFF0A0A0A),
+                color: Colors.black,
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
               ),
             ),
             style: ElevatedButton.styleFrom(
-              backgroundColor: const Color(0xFF2BADEE),
+              backgroundColor: AppColors.primary,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(28),
               ),
               elevation: 4,
-              shadowColor: const Color(0xFF2BADEE).withValues(alpha: 0.3),
+              shadowColor: AppColors.primary.withValues(alpha: 0.3),
             ),
           ),
         ),

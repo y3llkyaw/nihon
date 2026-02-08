@@ -1,22 +1,26 @@
+import 'package:hiragana/app/ui/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/typing_quiz_controller.dart';
-
-import '../lesson_training_page.dart';
+import 'package:hiragana/app/controllers/lesson_trainning_page_controller.dart';
 
 Widget buildTypingQuizItem(String japanese) {
   final String tag =
       "${japanese}_typing_${DateTime.now().millisecondsSinceEpoch}";
   final controller = Get.put(TypingQuizController(), tag: tag);
 
+  // Register the controller to be deleted when the lesson page is closed
+  Get.find<LessonTrainningPageController>().addDisposeCallback(() {
+    Get.delete<TypingQuizController>(tag: tag);
+  });
+
   // Set the widget builder for retry functionality
   controller.widgetBuilder = () => buildTypingQuizItem(japanese);
 
-  return SizedBox(
-    height: Get.height * 0.5,
+  return SingleChildScrollView(
     child: Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 24.0),
+      padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 20.0),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -25,22 +29,24 @@ Widget buildTypingQuizItem(String japanese) {
               Text(
                 "QUIZ MODE",
                 style: GoogleFonts.lexend(
-                  color: LessonTrainingPage.textWhite.withValues(alpha: 0.6),
+                  color: AppColors.textWhite.withValues(alpha: 0.6),
                   fontSize: 14,
                   fontWeight: FontWeight.w500,
                   letterSpacing: 2.0,
                 ),
               ),
+              const SizedBox(height: 10),
               Text(
                 "Type what you hear",
                 style: GoogleFonts.lexend(
-                  color: LessonTrainingPage.textWhite,
+                  color: AppColors.textWhite,
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ],
           ),
+          const SizedBox(height: 30),
           InkWell(
             onTap: () {
               controller.ttsController.speak(japanese);
@@ -50,23 +56,24 @@ Widget buildTypingQuizItem(String japanese) {
               width: Get.width * 0.25,
               height: Get.width * 0.25,
               decoration: const BoxDecoration(
-                color: LessonTrainingPage.primary,
+                color: AppColors.primary,
                 shape: BoxShape.circle,
               ),
               child: const Icon(
                 Icons.volume_up,
-                color: LessonTrainingPage.textWhite,
+                color: AppColors.textWhite,
                 size: 48,
               ),
             ),
           ),
+          const SizedBox(height: 30),
           Column(
             children: [
               Obx(() => TextField(
                     textAlign: TextAlign.center,
                     readOnly: controller.wasCorrect.value != null,
                     style: GoogleFonts.lexend(
-                      color: LessonTrainingPage.textWhite,
+                      color: AppColors.textWhite,
                       fontSize: 32,
                       fontWeight: FontWeight.w500,
                       letterSpacing: 4.0,
@@ -74,25 +81,21 @@ Widget buildTypingQuizItem(String japanese) {
                     decoration: InputDecoration(
                       hintText: "ひらがな",
                       hintStyle: TextStyle(
-                          color: LessonTrainingPage.textWhite
-                              .withValues(alpha: 0.2)),
+                          color: AppColors.textWhite.withValues(alpha: 0.2)),
                       filled: true,
-                      fillColor:
-                          LessonTrainingPage.textWhite.withValues(alpha: 0.05),
+                      fillColor: AppColors.textWhite.withValues(alpha: 0.05),
                       contentPadding: const EdgeInsets.symmetric(vertical: 20),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16),
                         borderSide: BorderSide(
-                            color: LessonTrainingPage.textWhite
-                                .withValues(alpha: 0.1),
+                            color: AppColors.textWhite.withValues(alpha: 0.1),
                             width: 2),
                       ),
                       enabledBorder: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(16),
                         borderSide: BorderSide(
                             color: controller.wasCorrect.value == null
-                                ? LessonTrainingPage.textWhite
-                                    .withValues(alpha: 0.1)
+                                ? AppColors.textWhite.withValues(alpha: 0.1)
                                 : controller.wasCorrect.value!
                                     ? Colors.green
                                     : Colors.red,
@@ -102,7 +105,7 @@ Widget buildTypingQuizItem(String japanese) {
                         borderRadius: BorderRadius.circular(16),
                         borderSide: BorderSide(
                             color: controller.wasCorrect.value == null
-                                ? LessonTrainingPage.primary
+                                ? AppColors.primary
                                 : controller.wasCorrect.value!
                                     ? Colors.green
                                     : Colors.red,
@@ -115,23 +118,24 @@ Widget buildTypingQuizItem(String japanese) {
               Text(
                 "Japanese Keyboard Active",
                 style: GoogleFonts.lexend(
-                  color: LessonTrainingPage.textWhite.withValues(alpha: 0.4),
+                  color: AppColors.textWhite.withValues(alpha: 0.4),
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
               ),
             ],
           ),
+          const SizedBox(height: 30),
           Obx(() => SizedBox(
                 width: double.infinity,
-                height: Get.height * 0.07,
+                height: 60,
                 child: ElevatedButton(
                   onPressed: controller.wasCorrect.value != null
                       ? null
                       : () => controller.checkAnswer(japanese),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: LessonTrainingPage.textWhite,
-                    foregroundColor: LessonTrainingPage.backgroundDark,
+                    backgroundColor: AppColors.textWhite,
+                    foregroundColor: AppColors.backgroundDark,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(16),
                     ),
@@ -152,6 +156,10 @@ Widget buildTypingQuizItem(String japanese) {
                   ),
                 ),
               )),
+          // Add padding for keyboard
+          SizedBox(
+              height:
+                  MediaQuery.of(Get.context!).viewInsets.bottom > 0 ? 20 : 0),
         ],
       ),
     ),

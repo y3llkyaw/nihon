@@ -7,27 +7,13 @@ import 'package:hiragana/app/controllers/user_controller.dart';
 import 'package:hiragana/app/data/enums/hiragana.dart';
 import 'package:hiragana/app/data/models/vocabulary_model.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/lesson_review_page.dart';
+import 'package:hiragana/app/ui/theme/theme.dart';
 
 class LessonFlowPage extends StatelessWidget {
   LessonFlowPage({Key? key, required this.lessonIndex}) : super(key: key);
 
   final int lessonIndex;
 
-  // Define colors from the design
-  static const Color primary = Color(0xFF3BA8FC);
-  static const Color backgroundDark = Color(0xFF0B1622);
-  static const Color cardDark = Color(0xFF172835);
-  static const Color textWhite = Colors.white;
-  static const Color textSlate400 =
-      Color(0xFF94A3B8); // Approximating slate-400
-  static const Color textSlate500 =
-      Color(0xFF64748B); // Approximating slate-500
-  static const Color textSlate700 =
-      Color(0xFF334155); // Approximating slate-700
-  static const Color textSlate800 =
-      Color(0xFF1E293B); // Approximating slate-800
-  static const Color textBackgroundDark =
-      Color(0xFF0B1622); // From the button text color
   final LessonTrainningPageController lessonTrainningPageController =
       Get.put(LessonTrainningPageController());
 
@@ -50,7 +36,7 @@ class LessonFlowPage extends StatelessWidget {
     }
 
     return Scaffold(
-      backgroundColor: backgroundDark,
+      backgroundColor: AppColors.backgroundDark,
       body: Column(
         children: [
           // Custom Header
@@ -64,15 +50,15 @@ class LessonFlowPage extends StatelessWidget {
                   width: 40,
                   height: 40,
                   decoration: BoxDecoration(
-                    color: cardDark,
+                    color: AppColors.cardDark,
                     borderRadius: BorderRadius.circular(9999), // rounded-full
                     border: Border.all(
-                        color: textSlate700.withValues(
-                            alpha: .5)), // border-slate-700/50
+                        color: AppColors.textSlate700
+                            .withValues(alpha: .5)), // border-slate-700/50
                   ),
                   child: IconButton(
                     icon: const Icon(Icons.arrow_back_ios_new_rounded,
-                        color: textWhite, size: 20),
+                        color: AppColors.textWhite, size: 20),
                     onPressed: () {
                       Get.back(); // Assuming GetX for navigation
                     },
@@ -80,7 +66,8 @@ class LessonFlowPage extends StatelessWidget {
                 ),
                 Row(
                   children: const [
-                    Icon(Icons.workspace_premium_rounded, color: primary),
+                    Icon(Icons.workspace_premium_rounded,
+                        color: AppColors.primary),
                   ],
                 ),
               ],
@@ -108,21 +95,21 @@ class LessonFlowPage extends StatelessWidget {
                           decoration: BoxDecoration(
                             borderRadius:
                                 BorderRadius.circular(24), // rounded-3xl
-                            color:
-                                primary.withValues(alpha: .1), // bg-primary/10
+                            color: AppColors.primary
+                                .withValues(alpha: .1), // bg-primary/10
                             border: Border.all(
-                                color: primary.withValues(alpha: .2),
+                                color: AppColors.primary.withValues(alpha: .2),
                                 width: 2), // border-2 border-primary/20
                           ),
                           child: const Icon(Icons.inventory_2_rounded,
-                              color: primary, size: 48), // text-5xl
+                              color: AppColors.primary, size: 48), // text-5xl
                         ),
                         Text(
                           'Lesson ${lessonIndex + 1}',
                           style: GoogleFonts.lexend(
                             fontSize: 28, // text-3xl
                             fontWeight: FontWeight.bold,
-                            color: textWhite,
+                            color: AppColors.textWhite,
                           ),
                           textAlign: TextAlign.center,
                         ),
@@ -132,7 +119,7 @@ class LessonFlowPage extends StatelessWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 18, // text-lg
                             fontWeight: FontWeight.w300, // font-light
-                            color: textSlate400,
+                            color: AppColors.textSlate400,
                           ),
                         ),
                       ],
@@ -165,10 +152,11 @@ class LessonFlowPage extends StatelessWidget {
                     margin: const EdgeInsets.only(bottom: 24), // mb-12
                     padding: const EdgeInsets.all(24), // p-6
                     decoration: BoxDecoration(
-                      color: cardDark.withValues(alpha: .4), // bg-card-dark/40
+                      color: AppColors.cardDark
+                          .withValues(alpha: .4), // bg-card-dark/40
                       borderRadius: BorderRadius.circular(24), // rounded-3xl
                       border: Border.all(
-                          color: textSlate700.withValues(
+                          color: AppColors.textSlate700.withValues(
                               alpha: .2)), // border border-slate-700/20
                     ),
                     child: Column(
@@ -185,7 +173,7 @@ class LessonFlowPage extends StatelessWidget {
                                   style: GoogleFonts.roboto(
                                     fontSize: 10, // text-xs
                                     fontWeight: FontWeight.bold,
-                                    color: primary,
+                                    color: AppColors.primary,
                                     letterSpacing: 1.5, // tracking-widest
                                   ),
                                 ),
@@ -195,7 +183,7 @@ class LessonFlowPage extends StatelessWidget {
                                   style: GoogleFonts.lexend(
                                     fontSize: 18, // text-xl
                                     fontWeight: FontWeight.bold,
-                                    color: textWhite,
+                                    color: AppColors.textWhite,
                                   ),
                                 ),
                               ],
@@ -206,7 +194,7 @@ class LessonFlowPage extends StatelessWidget {
                                 style: GoogleFonts.lexend(
                                   fontSize: 24, // text-2xl
                                   fontWeight: FontWeight.bold,
-                                  color: textWhite,
+                                  color: AppColors.textWhite,
                                 ),
                                 children: [
                                   TextSpan(
@@ -215,7 +203,7 @@ class LessonFlowPage extends StatelessWidget {
                                       fontSize: 18, // text-lg
                                       fontWeight:
                                           FontWeight.normal, // font-normal
-                                      color: textSlate500,
+                                      color: AppColors.textSlate500,
                                     ),
                                   ),
                                 ],
@@ -229,7 +217,7 @@ class LessonFlowPage extends StatelessWidget {
                           height: 16, // h-4
                           width: double.infinity, // w-full
                           decoration: BoxDecoration(
-                            color: textSlate800, // bg-slate-800
+                            color: AppColors.textSlate800, // bg-slate-800
                             borderRadius:
                                 BorderRadius.circular(9999), // rounded-full
                           ),
@@ -238,12 +226,13 @@ class LessonFlowPage extends StatelessWidget {
                             widthFactor: 0.05, // style="width: 5%;"
                             child: Container(
                               decoration: BoxDecoration(
-                                color: primary, // bg-primary
+                                color: AppColors.primary, // bg-primary
                                 borderRadius:
                                     BorderRadius.circular(9999), // rounded-full
                                 boxShadow: [
                                   BoxShadow(
-                                    color: primary.withValues(alpha: 0.4),
+                                    color: AppColors.primary
+                                        .withValues(alpha: 0.4),
                                     blurRadius: 12,
                                   ),
                                 ],
@@ -264,6 +253,7 @@ class LessonFlowPage extends StatelessWidget {
                           Get.to(LessonReviewPage(
                             chunk: chunk,
                             lessonNumber: lessonIndex + 1,
+                            chunkIndex: chunkedEntries.indexOf(chunk),
                           ));
                         },
                         child: Obx(
@@ -275,8 +265,8 @@ class LessonFlowPage extends StatelessWidget {
                                     userController
                                         .finishedChunks[lessonIndex.toString()]!
                                         .contains(chunkedEntries.indexOf(chunk))
-                                ? primary
-                                : cardDark,
+                                ? AppColors.primary
+                                : AppColors.cardDark,
                             child: Stack(
                               alignment: Alignment.center,
                               children: [
@@ -285,7 +275,7 @@ class LessonFlowPage extends StatelessWidget {
                                   style: GoogleFonts.lexend(
                                     fontSize: 24,
                                     fontWeight: FontWeight.bold,
-                                    // color: backgroundDark,
+                                    // color: AppColors.backgroundDark,
                                   ),
                                 ),
                               ],
@@ -313,13 +303,24 @@ class LessonFlowPage extends StatelessWidget {
                       child: ElevatedButton(
                         onPressed: () {
                           // Handle start lesson
+                          final completedChunks = userController
+                                  .finishedChunks[lessonIndex.toString()] ??
+                              [];
+                          int nextChunkIndex = 0;
+                          for (int i = 0; i < chunkedEntries.length; i++) {
+                            if (!completedChunks.contains(i)) {
+                              nextChunkIndex = i;
+                              break;
+                            }
+                          }
                           Get.to(LessonReviewPage(
-                            chunk: lessonModels,
+                            chunk: chunkedEntries[nextChunkIndex],
                             lessonNumber: 1 + lessonIndex,
+                            chunkIndex: nextChunkIndex,
                           ));
                         },
                         style: ElevatedButton.styleFrom(
-                          backgroundColor: textWhite, // bg-white
+                          backgroundColor: AppColors.textWhite, // bg-white
                           padding:
                               const EdgeInsets.symmetric(vertical: 20), // py-5
                           shape: RoundedRectangleBorder(
@@ -335,7 +336,8 @@ class LessonFlowPage extends StatelessWidget {
                           style: GoogleFonts.lexend(
                             fontSize: 18, // text-xl
                             fontWeight: FontWeight.bold,
-                            color: textBackgroundDark, // text-background-dark
+                            color: AppColors
+                                .backgroundDark, // text-background-dark
                           ),
                         ),
                       ),
@@ -361,11 +363,11 @@ class LessonFlowPage extends StatelessWidget {
         padding: const EdgeInsets.symmetric(
             vertical: 16, horizontal: 12), // p-3 py-4
         decoration: BoxDecoration(
-          color: cardDark, // bg-card-dark
+          color: AppColors.cardDark, // bg-card-dark
           borderRadius: BorderRadius.circular(16), // rounded-2xl
           border: Border.all(
-              color: textSlate700.withValues(
-                  alpha: .3)), // border border-slate-700/30
+              color: AppColors.textSlate700
+                  .withValues(alpha: .3)), // border border-slate-700/30
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -375,9 +377,9 @@ class LessonFlowPage extends StatelessWidget {
               height: 40, // h-10
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(9999), // rounded-full
-                color: primary.withValues(alpha: .2), // bg-primary/20
+                color: AppColors.primary.withValues(alpha: .2), // bg-primary/20
               ),
-              child: Icon(icon, color: primary, size: 24), // text-xl
+              child: Icon(icon, color: AppColors.primary, size: 24), // text-xl
             ),
             const SizedBox(height: 12), // gap-3
             Text(
@@ -385,7 +387,7 @@ class LessonFlowPage extends StatelessWidget {
               style: GoogleFonts.lexend(
                 fontSize: 10, // text-[10px]
                 fontWeight: FontWeight.bold,
-                color: textWhite,
+                color: AppColors.textWhite,
                 letterSpacing: 1.2, // tracking-wider
               ),
             ),

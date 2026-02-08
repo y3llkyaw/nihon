@@ -1,3 +1,4 @@
+import 'package:hiragana/app/ui/theme/theme.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -41,9 +42,9 @@ class FlashCardWidget extends StatelessWidget {
 
   // Define colors locally to match the image if theme colors aren't exact.
   // Replace these with your theme colors if you have a dark theme set up.
-  final Color _cardBackgroundColor = const Color(0xFF1E1E1E);
-  final Color _exampleBoxColor = const Color(0xFF2C2C2C);
-  final Color _romajiColor = const Color(0xFF4A90E2);
+  final Color _cardBackgroundColor = AppColors.backgroundDark;
+  final Color _exampleBoxColor = AppColors.cardDark;
+  final Color _romajiColor = AppColors.primary;
   final Color _textColorWhite = Colors.white;
   final Color _textColorGrey = Colors.grey;
 

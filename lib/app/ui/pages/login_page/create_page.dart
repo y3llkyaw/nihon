@@ -1,4 +1,5 @@
 import 'dart:ui';
+import 'package:hiragana/app/ui/theme/theme.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -22,7 +23,7 @@ class _CreatePageState extends State<CreatePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF101C22),
+      backgroundColor: AppColors.backgroundDark,
       body: CustomPaint(
         painter: _JapanesePatternPainter(),
         child: CustomScrollView(
@@ -38,7 +39,7 @@ class _CreatePageState extends State<CreatePage> {
                     fontSize: 20, fontWeight: FontWeight.bold),
               ),
               centerTitle: true,
-              backgroundColor: const Color(0xFF101C22).withOpacity(0.8),
+              backgroundColor: AppColors.backgroundDark.withOpacity(0.8),
               pinned: true,
               elevation: 0,
               flexibleSpace: ClipRect(
@@ -102,7 +103,7 @@ class _CreatePageState extends State<CreatePage> {
         Text(
           'Master Hiragana, Katakana, and Kanji',
           style:
-              GoogleFonts.lexend(fontSize: 14, color: const Color(0xFF92B7C9)),
+              GoogleFonts.lexend(fontSize: 14, color: AppColors.textMuted),
         ),
       ],
     );
@@ -143,7 +144,7 @@ class _CreatePageState extends State<CreatePage> {
           child: Text(
             'OR',
             style: GoogleFonts.lexend(
-              color: const Color(0xFF92B7C9),
+              color: AppColors.textMuted,
               fontSize: 12,
               fontWeight: FontWeight.bold,
             ),
@@ -177,7 +178,7 @@ class _CreatePageState extends State<CreatePage> {
       child: Text(
         label.toUpperCase(),
         style: GoogleFonts.lexend(
-          color: const Color(0xFF92B7C9),
+          color: AppColors.textMuted,
           fontSize: 12,
           fontWeight: FontWeight.bold,
           letterSpacing: 1.1,
@@ -195,7 +196,7 @@ class _CreatePageState extends State<CreatePage> {
         hintStyle: GoogleFonts.lexend(color: Colors.grey.shade600),
         prefixIcon: Icon(Icons.mail, color: Colors.grey.shade500),
         filled: true,
-        fillColor: const Color(0xFF1A2A32),
+        fillColor: AppColors.cardDark,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(28),
           borderSide: BorderSide.none,
@@ -226,7 +227,7 @@ class _CreatePageState extends State<CreatePage> {
           },
         ),
         filled: true,
-        fillColor: const Color(0xFF1A2A32),
+        fillColor: AppColors.cardDark,
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(28),
           borderSide: BorderSide.none,
@@ -259,12 +260,12 @@ class _CreatePageState extends State<CreatePage> {
           }
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF2BADEE),
+          backgroundColor: AppColors.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(28),
           ),
           elevation: 5,
-          shadowColor: const Color(0xFF2BADEE).withOpacity(0.5),
+          shadowColor: AppColors.primary.withOpacity(0.5),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -296,13 +297,13 @@ class _CreatePageState extends State<CreatePage> {
             const TextSpan(text: 'By creating an account, you agree to our '),
             TextSpan(
               text: 'Terms of Service',
-              style: const TextStyle(color: Color(0xFF2BADEE)),
+              style: const TextStyle(color: AppColors.primary),
               recognizer: TapGestureRecognizer()..onTap = () {},
             ),
             const TextSpan(text: ' and '),
             TextSpan(
               text: 'Privacy Policy',
-              style: const TextStyle(color: Color(0xFF2BADEE)),
+              style: const TextStyle(color: AppColors.primary),
               recognizer: TapGestureRecognizer()..onTap = () {},
             ),
             const TextSpan(text: '.'),
@@ -315,13 +316,13 @@ class _CreatePageState extends State<CreatePage> {
   Widget _buildBottomNavigation() {
     return RichText(
       text: TextSpan(
-        style: GoogleFonts.lexend(fontSize: 14, color: const Color(0xFF92B7C9)),
+        style: GoogleFonts.lexend(fontSize: 14, color: AppColors.textMuted),
         children: [
           const TextSpan(text: 'Already have an account? '),
           TextSpan(
             text: 'Log in',
             style: const TextStyle(
-                color: Color(0xFF2BADEE), fontWeight: FontWeight.bold),
+                color: AppColors.primary, fontWeight: FontWeight.bold),
             recognizer: TapGestureRecognizer()..onTap = () {},
           ),
         ],
@@ -334,7 +335,7 @@ class _JapanesePatternPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final paint = Paint()
-      ..color = const Color(0xFF2BADEE).withOpacity(0.07)
+      ..color = AppColors.primary.withOpacity(0.07)
       ..style = PaintingStyle.fill;
 
     const double radius = 1;

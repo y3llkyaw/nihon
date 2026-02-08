@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hiragana/app/ui/theme/theme.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/auth_controller.dart';
@@ -21,7 +22,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF101C22),
+      backgroundColor: AppColors.backgroundDark,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -73,7 +74,7 @@ class _LoginPageState extends State<LoginPage> {
               style: GoogleFonts.lexend(
                   fontSize: 120,
                   fontWeight: FontWeight.bold,
-                  color: const Color(0xFF2BADEE).withValues(alpha: 0.1))),
+                  color: AppColors.primary.withValues(alpha: 0.1))),
         ),
         Positioned(
           bottom: 40,
@@ -82,7 +83,7 @@ class _LoginPageState extends State<LoginPage> {
               style: GoogleFonts.lexend(
                   fontSize: 140,
                   fontWeight: FontWeight.bold,
-                  color: const Color(0xFF2BADEE).withValues(alpha: 0.1))),
+                  color: AppColors.primary.withValues(alpha: 0.1))),
         ),
         Positioned.fill(
           child: Center(
@@ -90,7 +91,7 @@ class _LoginPageState extends State<LoginPage> {
                 style: GoogleFonts.lexend(
                     fontSize: 200,
                     fontWeight: FontWeight.bold,
-                    color: const Color(0xFF2BADEE).withValues(alpha: 0.05))),
+                    color: AppColors.primary.withValues(alpha: 0.05))),
           ),
         ),
       ],
@@ -105,9 +106,9 @@ class _LoginPageState extends State<LoginPage> {
         height: 96,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
-          color: const Color(0xFF2BADEE).withValues(alpha: 0.2),
+          color: AppColors.primary.withValues(alpha: 0.2),
           border: Border.all(
-              color: const Color(0xFF2BADEE).withValues(alpha: 0.4), width: 2),
+              color: AppColors.primary.withValues(alpha: 0.4), width: 2),
         ),
         child: Center(
           child: Text(
@@ -115,7 +116,7 @@ class _LoginPageState extends State<LoginPage> {
             style: GoogleFonts.lexend(
                 fontSize: 48,
                 fontWeight: FontWeight.bold,
-                color: const Color(0xFF2BADEE)),
+                color: AppColors.primary),
           ),
         ),
       ),
@@ -161,18 +162,18 @@ class _LoginPageState extends State<LoginPage> {
             hintText: 'e.g., sensei@example.jp',
             hintStyle: GoogleFonts.lexend(color: Colors.grey.shade600),
             filled: true,
-            fillColor: const Color(0xFF121212),
+            fillColor: AppColors.cardDark,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(28),
-              borderSide: BorderSide(color: const Color(0xFF325567)),
+              borderSide: BorderSide(color: AppColors.borderDark),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(28),
-              borderSide: BorderSide(color: const Color(0xFF325567)),
+              borderSide: BorderSide(color: AppColors.borderDark),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(28),
-              borderSide: const BorderSide(color: Color(0xFF2BADEE), width: 2),
+              borderSide: const BorderSide(color: AppColors.primary, width: 2),
             ),
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
@@ -193,18 +194,18 @@ class _LoginPageState extends State<LoginPage> {
             hintText: 'Enter your password',
             hintStyle: GoogleFonts.lexend(color: Colors.grey.shade600),
             filled: true,
-            fillColor: const Color(0xFF121212),
+            fillColor: AppColors.cardDark,
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(28),
-              borderSide: BorderSide(color: const Color(0xFF325567)),
+              borderSide: BorderSide(color: AppColors.borderDark),
             ),
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(28),
-              borderSide: BorderSide(color: const Color(0xFF325567)),
+              borderSide: BorderSide(color: AppColors.borderDark),
             ),
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(28),
-              borderSide: const BorderSide(color: Color(0xFF2BADEE), width: 2),
+              borderSide: const BorderSide(color: AppColors.primary, width: 2),
             ),
             contentPadding:
                 const EdgeInsets.symmetric(horizontal: 24, vertical: 18),
@@ -235,7 +236,7 @@ class _LoginPageState extends State<LoginPage> {
         child: Text(
           'Forgot Password?',
           style: GoogleFonts.lexend(
-            color: const Color(0xFF2BADEE),
+            color: AppColors.primary,
             fontSize: 14,
             fontWeight: FontWeight.w500,
           ),
@@ -268,12 +269,12 @@ class _LoginPageState extends State<LoginPage> {
           }
         },
         style: ElevatedButton.styleFrom(
-          backgroundColor: const Color(0xFF2BADEE),
+          backgroundColor: AppColors.primary,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(28),
           ),
           elevation: 5,
-          shadowColor: const Color(0xFF2BADEE).withValues(alpha: 0.4),
+          shadowColor: AppColors.primary.withValues(alpha: 0.4),
         ),
         child: Text(
           'Login',
@@ -296,7 +297,7 @@ class _LoginPageState extends State<LoginPage> {
           onPressed: () {},
           style: OutlinedButton.styleFrom(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-            side: BorderSide(color: const Color(0xFF325567)),
+            side: BorderSide(color: AppColors.borderDark),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(28),
             ),

@@ -86,22 +86,27 @@ class VocabTrainingController extends GetxController {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              correctJapanese,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.notoSansJavanese(
-                fontSize: 20,
-                color: Get.theme.colorScheme.tertiary,
-                fontWeight: FontWeight.bold,
+            Flexible(
+              child: Text(
+                correctJapanese,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.notoSansJavanese(
+                  fontSize: 20,
+                  color: Get.theme.colorScheme.tertiary,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
-            Text(
-              burmese,
-              textAlign: TextAlign.center,
-              style: GoogleFonts.notoSansMyanmar(
-                fontSize: Get.theme.textTheme.bodyMedium!.fontSize,
-                color: Colors.white,
-                fontWeight: FontWeight.bold,
+            const SizedBox(width: 8),
+            Flexible(
+              child: Text(
+                burmese,
+                textAlign: TextAlign.center,
+                style: GoogleFonts.notoSansMyanmar(
+                  fontSize: Get.theme.textTheme.bodyMedium!.fontSize,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ],

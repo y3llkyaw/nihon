@@ -384,3 +384,35 @@ class ColorFamily {
   final Color colorContainer;
   final Color onColorContainer;
 }
+
+/// Centralized app colors for consistent theming across the application
+class AppColors {
+  // Primary colors
+  static const Color primary = Color(0xFF3BA8FC);
+  static const Color primaryAlt = Color(0xFF0D8FF2);
+  static const Color accent = Color(0xFF2BADEE);
+
+  // Background colors
+  static const Color backgroundDark = Color(0xFF0B1622);
+  static const Color backgroundDarkAlt = Color(0xFF0A0C10);
+  static const Color backgroundDarkest = Color(0xFF101C22);
+  static const Color cardDark = Color(0xFF172835);
+  static const Color cardDarkAlt = Color(0xFF1A272E);
+  static const Color inputFill = Color(0xFF1A2A32);
+  static const Color inputFillDark = Color(0xFF121212);
+
+  // Border colors
+  static const Color borderDark = Color(0xFF325567);
+
+  // Text colors
+  static const Color textWhite = Colors.white;
+  static const Color textMuted = Color(0xFF92B7C9);
+  static const Color textSlate400 = Color(0xFF94A3B8);
+  static const Color textSlate500 = Color(0xFF64748B);
+  static const Color textSlate700 = Color(0xFF334155);
+  static const Color textSlate800 = Color(0xFF1E293B);
+
+  // Semantic colors
+  static const Color success = Colors.green;
+  static const Color error = Colors.red;
+}

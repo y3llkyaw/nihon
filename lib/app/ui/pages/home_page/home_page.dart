@@ -1,3 +1,4 @@
+import 'package:hiragana/app/ui/theme/theme.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,7 +15,7 @@ class HomePage extends StatelessWidget {
       builder: (context, snapshot) {
         final user = snapshot.data;
         return Scaffold(
-          backgroundColor: const Color(0xFF101C22), // background-dark
+          backgroundColor: AppColors.backgroundDark, // background-dark
           appBar: _buildAppBar(user),
           body: ListView(
             padding: const EdgeInsets.all(0),
@@ -33,7 +34,7 @@ class HomePage extends StatelessWidget {
 
   PreferredSizeWidget _buildAppBar(User? user) {
     return AppBar(
-      backgroundColor: const Color(0xFF101C22).withOpacity(0.8),
+      backgroundColor: AppColors.backgroundDark.withOpacity(0.8),
       elevation: 0,
       toolbarHeight: 80,
       title: Row(
@@ -42,7 +43,7 @@ class HomePage extends StatelessWidget {
             radius: 20,
             backgroundImage:
                 user?.photoURL != null ? NetworkImage(user!.photoURL!) : null,
-            backgroundColor: const Color(0xFF2BADEE).withOpacity(0.2),
+            backgroundColor: AppColors.primary.withOpacity(0.2),
             child: user?.photoURL == null
                 ? const Icon(Icons.person, color: Colors.white)
                 : null,
@@ -107,16 +108,16 @@ class HomePage extends StatelessWidget {
             label: 'STREAK',
             value: '15',
             subValue: 'Days',
-            subValueColor: const Color(0xFF2BADEE),
+            subValueColor: AppColors.primary,
           ),
           const SizedBox(width: 16),
           _buildStatCard(
             icon: Icons.stars,
-            iconColor: const Color(0xFF2BADEE),
+            iconColor: AppColors.primary,
             label: 'TOTAL XP',
             value: '1,250',
             subValue: '+15%',
-            subValueColor: const Color(0xFF2BADEE),
+            subValueColor: AppColors.primary,
           ),
         ],
       ),
@@ -135,7 +136,7 @@ class HomePage extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.all(20),
         decoration: BoxDecoration(
-          color: const Color(0xFF1A272E),
+          color: AppColors.cardDark,
           borderRadius: BorderRadius.circular(60),
           // border: Border.all(color: Colors.grey.shade800, width: 1),
         ),
@@ -260,7 +261,7 @@ class HomePage extends StatelessWidget {
     Widget? trailing,
   }) {
     return Material(
-      color: const Color(0xFF1A272E),
+      color: AppColors.cardDark,
       borderRadius: BorderRadius.circular(55),
       child: InkWell(
         borderRadius: BorderRadius.circular(55),
@@ -276,10 +277,10 @@ class HomePage extends StatelessWidget {
                 width: 48,
                 height: 48,
                 decoration: BoxDecoration(
-                  color: const Color(0xFF2BADEE).withOpacity(0.1),
+                  color: AppColors.primary.withOpacity(0.1),
                   borderRadius: BorderRadius.circular(12),
                 ),
-                child: Icon(icon, color: const Color(0xFF2BADEE), size: 24),
+                child: Icon(icon, color: AppColors.primary, size: 24),
               ),
               const SizedBox(width: 16),
               Expanded(
@@ -319,7 +320,7 @@ class HomePage extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
       decoration: BoxDecoration(
-        color: const Color(0xFF2BADEE),
+        color: AppColors.primary,
         borderRadius: BorderRadius.circular(12),
       ),
       child: Text(

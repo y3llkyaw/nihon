@@ -14,7 +14,20 @@ class FillInTheBlankController extends GetxController {
   Widget Function()? widgetBuilder;
 
   Future<void> checkAnswer(String correctAnswer) async {
-    final isCorrect = answerController.text.trim() == correctAnswer.trim();
+    final isCorrect = answerController.text.trim() ==
+        correctAnswer
+            .replaceAll("〜", "")
+            .replaceAll("[", "")
+            .replaceAll("]", "")
+            .replaceAll("「", "")
+            .replaceAll("」", "")
+            .replaceAll("(", "")
+            .replaceAll(")", "")
+            .replaceAll("、", "")
+            .replaceAll("。", "")
+            .replaceAll("・", "")
+            .replaceAll("〜", "");
+
     wasCorrect.value = isCorrect;
 
     if (isCorrect) {
