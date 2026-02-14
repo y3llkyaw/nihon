@@ -179,7 +179,7 @@ class LessonFlowPage extends StatelessWidget {
                                 ),
                                 const SizedBox(height: 4), // gap-1
                                 Text(
-                                  'Words learned',
+                                  'Units learned',
                                   style: GoogleFonts.lexend(
                                     fontSize: 18, // text-xl
                                     fontWeight: FontWeight.bold,
@@ -188,58 +188,74 @@ class LessonFlowPage extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            Text.rich(
-                              TextSpan(
-                                text: '0 ',
-                                style: GoogleFonts.lexend(
-                                  fontSize: 24, // text-2xl
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.textWhite,
-                                ),
-                                children: [
-                                  TextSpan(
-                                    text: '/ ${lessonData.length}',
-                                    style: GoogleFonts.lexend(
-                                      fontSize: 18, // text-lg
-                                      fontWeight:
-                                          FontWeight.normal, // font-normal
-                                      color: AppColors.textSlate500,
-                                    ),
+                            Obx(() {
+                              final completedCount = userController
+                                      .finishedChunks[lessonIndex.toString()]
+                                      ?.length ??
+                                  0;
+                              return Text.rich(
+                                TextSpan(
+                                  text: '$completedCount ',
+                                  style: GoogleFonts.lexend(
+                                    fontSize: 24, // text-2xl
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.textWhite,
                                   ),
-                                ],
-                              ),
-                            ),
+                                  children: [
+                                    TextSpan(
+                                      text: '/ ${chunkedEntries.length}',
+                                      style: GoogleFonts.lexend(
+                                        fontSize: 18, // text-lg
+                                        fontWeight:
+                                            FontWeight.normal, // font-normal
+                                        color: AppColors.textSlate500,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              );
+                            }),
                           ],
                         ),
                         const SizedBox(height: 16), // mb-4
-                        AnimatedContainer(
-                          duration: Duration(milliseconds: 300),
-                          height: 16, // h-4
-                          width: double.infinity, // w-full
-                          decoration: BoxDecoration(
-                            color: AppColors.textSlate800, // bg-slate-800
-                            borderRadius:
-                                BorderRadius.circular(9999), // rounded-full
-                          ),
-                          child: FractionallySizedBox(
-                            alignment: Alignment.centerLeft,
-                            widthFactor: 0.05, // style="width: 5%;"
-                            child: Container(
-                              decoration: BoxDecoration(
-                                color: AppColors.primary, // bg-primary
-                                borderRadius:
-                                    BorderRadius.circular(9999), // rounded-full
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: AppColors.primary
-                                        .withValues(alpha: 0.4),
-                                    blurRadius: 12,
-                                  ),
-                                ],
+                        Obx(() {
+                          final completedCount = userController
+                                  .finishedChunks[lessonIndex.toString()]
+                                  ?.length ??
+                              0;
+                          final progress = chunkedEntries.isEmpty
+                              ? 0.0
+                              : completedCount / chunkedEntries.length;
+
+                          return AnimatedContainer(
+                            duration: Duration(milliseconds: 300),
+                            height: 16, // h-4
+                            width: double.infinity, // w-full
+                            decoration: BoxDecoration(
+                              color: AppColors.textSlate800, // bg-slate-800
+                              borderRadius:
+                                  BorderRadius.circular(9999), // rounded-full
+                            ),
+                            child: FractionallySizedBox(
+                              alignment: Alignment.centerLeft,
+                              widthFactor: progress,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: AppColors.primary, // bg-primary
+                                  borderRadius: BorderRadius.circular(
+                                      9999), // rounded-full
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: AppColors.primary
+                                          .withValues(alpha: 0.4),
+                                      blurRadius: 12,
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
-                        ),
+                          );
+                        }),
                       ],
                     ),
                   ),

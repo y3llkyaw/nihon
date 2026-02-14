@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hiragana/app/controllers/user_controller.dart';
 import 'package:hiragana/app/data/enums/hiragana.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/lesson_flow_page.dart';
 import 'package:hiragana/app/ui/theme/theme.dart';
@@ -10,6 +11,8 @@ class VocabPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final userController = Get.find<UserController>();
+
     return Scaffold(
       backgroundColor: AppColors.backgroundDark, // background-dark
       appBar: AppBar(
@@ -58,18 +61,27 @@ class VocabPage extends StatelessWidget {
                 const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
             itemCount: vocabLessons.length,
             itemBuilder: (context, index) {
-              // Mocking lesson states based on index
+              // Calculate total chunks for this lesson
+              final lessonData = vocabLessons[index];
+              final totalWords = lessonData.length;
+              const chunkSize = 5;
+              final totalChunks = (totalWords / chunkSize).ceil();
+
+              // Get completed chunks for this lesson
+              final completedChunks =
+                  userController.finishedChunks[index.toString()]?.length ?? 0;
+
+              // Calculate progress
+              final progress =
+                  totalChunks > 0 ? completedChunks / totalChunks : 0.0;
+
+              // Determine status
               String status;
-              double progress = 0.0;
-              if (index == 0) {
+              if (progress >= 1.0) {
                 status = 'completed';
-              } else if (index == 1) {
-                status = 'in-progress';
-                progress = 0.4;
               } else {
-                status = 'locked';
+                status = 'in-progress';
               }
-              status = 'in-progress';
 
               return Padding(
                 padding: const EdgeInsets.only(bottom: 16.0),
@@ -77,19 +89,13 @@ class VocabPage extends StatelessWidget {
                   lessonNumber: index + 1,
                   status: status,
                   progress: progress,
-                  onTap: status != 'locked'
-                      ? () {
-                          Get.to(LessonFlowPage(lessonIndex: index));
-                          // Get.toNamed(
-                          //   "${AppRoutes.VOCABULARY}${AppRoutes.VOCAB_LESSON}"
-                          //       .replaceFirst(':lesson', '${index + 1}'),
-                          // );
-                        }
-                      : null,
+                  onTap: () {
+                    Get.to(LessonFlowPage(lessonIndex: index));
+                  },
                 ),
               );
             },
-          ),
+          )
         ],
       ),
     );
