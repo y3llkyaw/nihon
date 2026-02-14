@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/user_controller.dart';
-import 'package:hiragana/app/data/enums/hiragana.dart';
+import 'package:hiragana/app/data/repositories/japanese_data_repository.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/lesson_flow_page.dart';
 import 'package:hiragana/app/ui/theme/theme.dart';
 
@@ -12,6 +12,7 @@ class VocabPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final userController = Get.find<UserController>();
+    final dataRepo = Get.find<JapaneseDataRepository>();
 
     return Scaffold(
       backgroundColor: AppColors.backgroundDark, // background-dark
@@ -34,70 +35,143 @@ class VocabPage extends StatelessWidget {
           const SizedBox(width: 8),
         ],
       ),
-      body: Stack(
-        children: [
-          // Background decorative path - simplified
-          Positioned(
-            top: 0,
-            bottom: 0,
-            left: 40,
-            child: Container(
-              width: 2,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                  colors: [
-                    AppColors.primary.withValues(alpha: 0.1),
-                    AppColors.primary.withValues(alpha: 0.5),
-                    AppColors.primary.withValues(alpha: 0.1),
-                  ],
+      body: Obx(() {
+        // Show loading state
+        if (dataRepo.isLoading.value) {
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                CircularProgressIndicator(color: AppColors.primary),
+                const SizedBox(height: 16),
+                Text(
+                  'Loading vocabulary lessons...',
+                  style: GoogleFonts.inter(color: Colors.grey),
                 ),
-              ),
+              ],
             ),
-          ),
-          ListView.builder(
-            padding:
-                const EdgeInsets.symmetric(vertical: 20.0, horizontal: 16.0),
-            itemCount: vocabLessons.length,
-            itemBuilder: (context, index) {
-              // Calculate total chunks for this lesson
-              final lessonData = vocabLessons[index];
-              final totalWords = lessonData.length;
-              const chunkSize = 5;
-              final totalChunks = (totalWords / chunkSize).ceil();
+          );
+        }
 
-              // Get completed chunks for this lesson
-              final completedChunks =
-                  userController.finishedChunks[index.toString()]?.length ?? 0;
-
-              // Calculate progress
-              final progress =
-                  totalChunks > 0 ? completedChunks / totalChunks : 0.0;
-
-              // Determine status
-              String status;
-              if (progress >= 1.0) {
-                status = 'completed';
-              } else {
-                status = 'in-progress';
-              }
-
-              return Padding(
-                padding: const EdgeInsets.only(bottom: 16.0),
-                child: LessonCard(
-                  lessonNumber: index + 1,
-                  status: status,
-                  progress: progress,
-                  onTap: () {
-                    Get.to(LessonFlowPage(lessonIndex: index));
-                  },
+        // Show error state
+        if (dataRepo.errorMessage.value.isNotEmpty) {
+          return Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.error_outline, size: 48, color: Colors.red),
+                const SizedBox(height: 16),
+                Text(
+                  'Error loading lessons',
+                  style: GoogleFonts.inter(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
+                const SizedBox(height: 8),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 32),
+                  child: Text(
+                    dataRepo.errorMessage.value,
+                    style: GoogleFonts.inter(color: Colors.grey),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                ElevatedButton.icon(
+                  onPressed: () => dataRepo.refreshAll(),
+                  icon: const Icon(Icons.refresh),
+                  label: const Text('Retry'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppColors.primary,
+                  ),
+                ),
+              ],
+            ),
+          );
+        }
+
+        // Build lesson list with FutureBuilder
+        return FutureBuilder<List<Map<String, dynamic>>>(
+          future: dataRepo.getVocabularyLessons(),
+          builder: (context, snapshot) {
+            if (!snapshot.hasData) {
+              return Center(
+                child: CircularProgressIndicator(color: AppColors.primary),
               );
-            },
-          )
-        ],
-      ),
+            }
+
+            final vocabLessons = snapshot.data!;
+
+            return Stack(
+              children: [
+                // Background decorative path - simplified
+                Positioned(
+                  top: 0,
+                  bottom: 0,
+                  left: 40,
+                  child: Container(
+                    width: 2,
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: [
+                          AppColors.primary.withValues(alpha: 0.1),
+                          AppColors.primary.withValues(alpha: 0.5),
+                          AppColors.primary.withValues(alpha: 0.1),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+                ListView.builder(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 20.0, horizontal: 16.0),
+                  itemCount: vocabLessons.length,
+                  itemBuilder: (context, index) {
+                    // Calculate total chunks for this lesson
+                    final lessonData = vocabLessons[index];
+                    final totalWords = lessonData.length;
+                    const chunkSize = 5;
+                    final totalChunks = (totalWords / chunkSize).ceil();
+
+                    // Get completed chunks for this lesson
+                    final completedChunks = userController
+                            .finishedChunks[index.toString()]?.length ??
+                        0;
+
+                    // Calculate progress
+                    final progress =
+                        totalChunks > 0 ? completedChunks / totalChunks : 0.0;
+
+                    // Determine status
+                    String status;
+                    if (progress >= 1.0) {
+                      status = 'completed';
+                    } else {
+                      status = 'in-progress';
+                    }
+
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 16.0),
+                      child: LessonCard(
+                        lessonNumber: index + 1,
+                        status: status,
+                        progress: progress,
+                        onTap: () {
+                          Get.to(LessonFlowPage(lessonIndex: index));
+                        },
+                      ),
+                    );
+                  },
+                )
+              ],
+            );
+          },
+        );
+      }),
     );
   }
 }
