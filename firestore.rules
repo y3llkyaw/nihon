@@ -1,0 +1,97 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // ==========================================
+    // VOCABULARY LESSONS - Public Read Access
+    // ==========================================
+    match /vocabulary_lessons/{lesson} {
+      // EVERYONE can read vocabulary lessons (needed for the app to work)
+      allow read: if true;
+      
+      // ONLY admins can write/update/delete lessons
+      allow write: if request.auth != null 
+                   && request.auth.token.email in [
+                     'mgyehtetkyaw@gmail.com'  // Your admin email
+                   ];
+    }
+    
+    // ==========================================
+    // HIRAGANA TABLE - Public Read Access
+    // ==========================================
+    match /hiragana_table/{character} {
+      // EVERYONE can read hiragana characters
+      allow read: if true;
+      
+      // ONLY admins can write
+      allow write: if request.auth != null 
+                   && request.auth.token.email in [
+                     'mgyehtetkyaw@gmail.com'
+                   ];
+    }
+    
+    // ==========================================
+    // KATAKANA TABLE - Public Read Access
+    // ==========================================
+    match /katakana_table/{character} {
+      // EVERYONE can read katakana characters
+      allow read: if true;
+      
+      // ONLY admins can write
+      allow write: if request.auth != null 
+                   && request.auth.token.email in [
+                     'mgyehtetkyaw@gmail.com'
+                   ];
+    }
+    
+    // ==========================================
+    // HIRAGANA MAP - Public Read Access
+    // ==========================================
+    match /hiragana_map/{doc} {
+      // EVERYONE can read hiragana map
+      allow read: if true;
+      
+      // ONLY admins can write
+      allow write: if request.auth != null 
+                   && request.auth.token.email in [
+                     'mgyehtetkyaw@gmail.com'
+                   ];
+    }
+    
+    // ==========================================
+    // KATAKANA MAP - Public Read Access
+    // ==========================================
+    match /katakana_map/{doc} {
+      // EVERYONE can read katakana map
+      allow read: if true;
+      
+      // ONLY admins can write
+      allow write: if request.auth != null 
+                   && request.auth.token.email in [
+                     'mgyehtetkyaw@gmail.com'
+                   ];
+    }
+    
+    // ==========================================
+    // USER PROFILES - User-Specific Access
+    // ==========================================
+    match /users/{userId} {
+      // Users can read/write their OWN profile
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      
+      // Admins can read/write ANY user profile
+      allow read, write: if request.auth != null 
+                         && request.auth.token.email in [
+                           'mgyehtetkyaw@gmail.com'
+                         ];
+    }
+    
+    // ==========================================
+    // DEFAULT - Deny All Other Access
+    // ==========================================
+    // Any other collections not specified above are denied
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

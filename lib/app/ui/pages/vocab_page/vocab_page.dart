@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/user_controller.dart';
 import 'package:hiragana/app/data/repositories/japanese_data_repository.dart';
+import 'package:hiragana/app/ui/pages/admin_panel/admin_panel_page.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/lesson_flow_page.dart';
 import 'package:hiragana/app/ui/theme/theme.dart';
 
@@ -31,6 +32,12 @@ class VocabPage extends StatelessWidget {
             onPressed: () {},
             icon: const Icon(Icons.search_rounded),
             splashRadius: 20,
+          ),
+          IconButton(
+            onPressed: () => Get.to(() => AdminPanelPage()),
+            icon: const Icon(Icons.admin_panel_settings_outlined),
+            splashRadius: 20,
+            tooltip: 'Admin Panel',
           ),
           const SizedBox(width: 8),
         ],

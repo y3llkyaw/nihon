@@ -77,6 +77,8 @@ class LessonFlowPage extends StatelessWidget {
         final lessonModels = lessonData.entries
             .map((e) => VocabularyModel.fromMapEntry(
                 MapEntry(e.key, List<dynamic>.from(e.value as List))))
+            .toList()
+            .reversed
             .toList();
 
         final List<List<VocabularyModel>> chunkedEntries = [];
