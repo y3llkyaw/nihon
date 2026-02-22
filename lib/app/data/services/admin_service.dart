@@ -32,10 +32,22 @@ class AdminService {
           .get();
 
       return snapshot.docs.map((doc) {
+        final rawVocab = doc.data()['vocabulary'];
+        final orderedMap = <String, dynamic>{};
+        if (rawVocab is List) {
+          for (var item in rawVocab) {
+            if (item is Map) {
+              orderedMap[item['key'] as String] = item['value'];
+            }
+          }
+        } else if (rawVocab is Map) {
+          orderedMap.addAll(Map<String, dynamic>.from(rawVocab));
+        }
+
         return {
           'id': doc.id,
           'lesson_number': doc.data()['lesson_number'],
-          'vocabulary': doc.data()['vocabulary'],
+          'vocabulary': orderedMap,
         };
       }).toList();
     } catch (e) {
@@ -54,10 +66,22 @@ class AdminService {
         throw Exception('Lesson not found');
       }
 
+      final rawVocab = doc.data()!['vocabulary'];
+      final orderedMap = <String, dynamic>{};
+      if (rawVocab is List) {
+        for (var item in rawVocab) {
+          if (item is Map) {
+            orderedMap[item['key'] as String] = item['value'];
+          }
+        }
+      } else if (rawVocab is Map) {
+        orderedMap.addAll(Map<String, dynamic>.from(rawVocab));
+      }
+
       return {
         'id': doc.id,
         'lesson_number': doc.data()!['lesson_number'],
-        'vocabulary': doc.data()!['vocabulary'],
+        'vocabulary': orderedMap,
       };
     } catch (e) {
       print('❌ Error fetching lesson: $e');
@@ -69,8 +93,16 @@ class AdminService {
   Future<void> updateLesson(
       String lessonId, Map<String, dynamic> vocabulary) async {
     try {
+      // Convert map to ordered list
+      final orderedList = vocabulary.entries
+          .map((e) => {
+                'key': e.key,
+                'value': e.value,
+              })
+          .toList();
+
       await _firestore.collection('vocabulary_lessons').doc(lessonId).update({
-        'vocabulary': vocabulary,
+        'vocabulary': orderedList,
       });
       print('✅ Lesson updated successfully');
     } catch (e) {
@@ -93,11 +125,29 @@ class AdminService {
         throw Exception('Lesson not found');
       }
 
-      final vocabulary = Map<String, dynamic>.from(doc.data()!['vocabulary']);
+      final rawVocab = doc.data()!['vocabulary'];
+      final vocabulary = <String, dynamic>{};
+      if (rawVocab is List) {
+        for (var item in rawVocab) {
+          if (item is Map) {
+            vocabulary[item['key'] as String] = item['value'];
+          }
+        }
+      } else if (rawVocab is Map) {
+        vocabulary.addAll(Map<String, dynamic>.from(rawVocab));
+      }
+
       vocabulary[burmese] = details;
 
+      final orderedList = vocabulary.entries
+          .map((e) => {
+                'key': e.key,
+                'value': e.value,
+              })
+          .toList();
+
       await _firestore.collection('vocabulary_lessons').doc(lessonId).update({
-        'vocabulary': vocabulary,
+        'vocabulary': orderedList,
       });
 
       print('✅ Vocabulary item added successfully');
@@ -117,11 +167,29 @@ class AdminService {
         throw Exception('Lesson not found');
       }
 
-      final vocabulary = Map<String, dynamic>.from(doc.data()!['vocabulary']);
+      final rawVocab = doc.data()!['vocabulary'];
+      final vocabulary = <String, dynamic>{};
+      if (rawVocab is List) {
+        for (var item in rawVocab) {
+          if (item is Map) {
+            vocabulary[item['key'] as String] = item['value'];
+          }
+        }
+      } else if (rawVocab is Map) {
+        vocabulary.addAll(Map<String, dynamic>.from(rawVocab));
+      }
+
       vocabulary.remove(burmese);
 
+      final orderedList = vocabulary.entries
+          .map((e) => {
+                'key': e.key,
+                'value': e.value,
+              })
+          .toList();
+
       await _firestore.collection('vocabulary_lessons').doc(lessonId).update({
-        'vocabulary': vocabulary,
+        'vocabulary': orderedList,
       });
 
       print('✅ Vocabulary item deleted successfully');
@@ -146,7 +214,17 @@ class AdminService {
         throw Exception('Lesson not found');
       }
 
-      final vocabulary = Map<String, dynamic>.from(doc.data()!['vocabulary']);
+      final rawVocab = doc.data()!['vocabulary'];
+      final vocabulary = <String, dynamic>{};
+      if (rawVocab is List) {
+        for (var item in rawVocab) {
+          if (item is Map) {
+            vocabulary[item['key'] as String] = item['value'];
+          }
+        }
+      } else if (rawVocab is Map) {
+        vocabulary.addAll(Map<String, dynamic>.from(rawVocab));
+      }
 
       // Remove old key if burmese changed
       if (oldBurmese != newBurmese) {
@@ -156,8 +234,15 @@ class AdminService {
       // Add/update with new data
       vocabulary[newBurmese] = details;
 
+      final orderedList = vocabulary.entries
+          .map((e) => {
+                'key': e.key,
+                'value': e.value,
+              })
+          .toList();
+
       await _firestore.collection('vocabulary_lessons').doc(lessonId).update({
-        'vocabulary': vocabulary,
+        'vocabulary': orderedList,
       });
 
       print('✅ Vocabulary item updated successfully');
@@ -171,12 +256,19 @@ class AdminService {
   Future<void> createLesson(
       int lessonNumber, Map<String, dynamic> vocabulary) async {
     try {
+      final orderedList = vocabulary.entries
+          .map((e) => {
+                'key': e.key,
+                'value': e.value,
+              })
+          .toList();
+
       await _firestore
           .collection('vocabulary_lessons')
           .doc('lesson_$lessonNumber')
           .set({
         'lesson_number': lessonNumber,
-        'vocabulary': vocabulary,
+        'vocabulary': orderedList,
       });
       print('✅ Lesson created successfully');
     } catch (e) {

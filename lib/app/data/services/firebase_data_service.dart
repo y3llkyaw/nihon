@@ -108,9 +108,18 @@ class FirebaseDataService {
         final docRef = _firestore
             .collection(vocabLessonsCollection)
             .doc('lesson_${i + 1}');
+        // Convert Map to ordered List of key-value pairs
+        final orderedList = lessons[i]
+            .entries
+            .map((e) => {
+                  'key': e.key,
+                  'value': e.value,
+                })
+            .toList();
+
         batch.set(docRef, {
           'lesson_number': i + 1,
-          'vocabulary': lessons[i],
+          'vocabulary': orderedList,
         });
       }
 
@@ -311,7 +320,22 @@ class FirebaseDataService {
           .get();
 
       final lessons = snapshot.docs.map((doc) {
-        return doc.data()['vocabulary'] as Map<String, dynamic>;
+        final data = doc.data();
+        final rawVocab = data['vocabulary'];
+
+        if (rawVocab is List) {
+          // New format: Array of ordered key-value pairs
+          final orderedMap = <String, dynamic>{};
+          for (var item in rawVocab) {
+            if (item is Map) {
+              orderedMap[item['key'] as String] = item['value'];
+            }
+          }
+          return orderedMap;
+        } else {
+          // Old format: Unordered Map
+          return rawVocab as Map<String, dynamic>;
+        }
       }).toList();
 
       await _storage.write(_vocabLessonsKey, jsonEncode(lessons));

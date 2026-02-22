@@ -12,6 +12,7 @@ import 'package:flutter_web_plugins/url_strategy.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await DependecyInjection.init();
+
   usePathUrlStrategy();
   runApp(const MyApp());
 }
