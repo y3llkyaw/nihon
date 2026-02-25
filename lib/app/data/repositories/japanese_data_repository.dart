@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:get/get.dart';
 import 'package:hiragana/app/data/services/firebase_data_service.dart';
 
@@ -26,7 +28,7 @@ class JapaneseDataRepository {
 
       // Check if cache exists
       if (_firebaseService.hasCachedData()) {
-        print('📦 Loading data from cache...');
+        log('📦 Loading data from cache...');
         // Load all data from cache (will be fast)
         await Future.wait([
           getHiraganaTable(),
@@ -34,7 +36,7 @@ class JapaneseDataRepository {
           getVocabularyLessons(),
         ]);
       } else {
-        print('🌐 No cache found, fetching from Firebase...');
+        log('🌐 No cache found, fetching from Firebase...');
         // First time - fetch from Firebase
         await Future.wait([
           getHiraganaTable(forceRefresh: true),
@@ -43,10 +45,10 @@ class JapaneseDataRepository {
         ]);
       }
 
-      print('✅ Data repository initialized successfully');
+      log('✅ Data repository initialized successfully');
     } catch (e) {
       errorMessage.value = 'Failed to initialize data: $e';
-      print('❌ Error initializing data repository: $e');
+      log('❌ Error initializing data repository: $e');
       // Don't rethrow - let app continue with what's in cache
     } finally {
       isLoading.value = false;
@@ -152,7 +154,7 @@ class JapaneseDataRepository {
     _hiraganaMap = null;
     _katakanaMap = null;
     _vocabularyLessons = null;
-    print('🗑️ Repository cache cleared');
+    log('🗑️ Repository cache cleared');
   }
 
   /// Refresh all data from Firebase
@@ -167,10 +169,10 @@ class JapaneseDataRepository {
         getVocabularyLessons(forceRefresh: true),
       ]);
 
-      print('✅ All data refreshed from Firebase');
+      log('✅ All data refreshed from Firebase');
     } catch (e) {
       errorMessage.value = 'Failed to refresh data: $e';
-      print('❌ Error refreshing data: $e');
+      log('❌ Error refreshing data: $e');
       rethrow;
     } finally {
       isLoading.value = false;

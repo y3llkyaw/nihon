@@ -1,4 +1,7 @@
+import 'dart:developer';
+
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart'; // Assuming GetX is used for navigation or other purposes
 import 'package:google_fonts/google_fonts.dart';
@@ -187,18 +190,19 @@ class LessonFlowPage extends StatelessWidget {
                               true, // Important for GridView inside Column
                           physics:
                               const NeverScrollableScrollPhysics(), // Disable GridView's own scrolling
-                          crossAxisCount: 4,
+                          crossAxisCount: 3,
                           mainAxisSpacing: 8, // gap-2
                           crossAxisSpacing: 8, // gap-2
                           childAspectRatio:
                               0.75, // Adjust as needed to match aspect ratio of HTML cards
                           children: [
-                            _buildActionButton(Icons.hearing_rounded, 'Listen'),
-                            _buildActionButton(Icons.edit_rounded, 'Write'),
                             _buildActionButton(
-                                Icons.visibility_rounded, 'Read'),
-                            _buildActionButton(
-                                Icons.emoji_events_rounded, 'Quiz'),
+                                CupertinoIcons.creditcard, 'Flash\nCards', () {
+                              Get.toNamed(
+                                  '/vocabulary/lesson/${lessonIndex + 1}/flashcard');
+                            }),
+                            _buildActionButton(Icons.reviews, 'Review', () {}),
+                            _buildActionButton(Icons.tag, 'Quiz', () {}),
                           ],
                         ),
                       ),
@@ -430,11 +434,9 @@ class LessonFlowPage extends StatelessWidget {
     );
   }
 
-  Widget _buildActionButton(IconData icon, String label) {
+  Widget _buildActionButton(IconData icon, String label, VoidCallback onTap) {
     return InkWell(
-      onTap: () {
-        // Handle action button tap
-      },
+      onTap: onTap,
       borderRadius: BorderRadius.circular(16), // rounded-2xl
       child: Container(
         padding: const EdgeInsets.symmetric(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hiragana/app/data/repositories/japanese_data_repository.dart';
 import 'package:hiragana/app/data/services/admin_service.dart';
 
 /// Controller for admin panel operations
@@ -14,6 +15,18 @@ class AdminController extends GetxController {
 
   /// Check if current user is admin
   bool isAdmin() => _adminService.isAdmin();
+
+  /// Refresh the repository cache so lessons show updated data immediately
+  Future<void> _refreshCache() async {
+    try {
+      if (Get.isRegistered<JapaneseDataRepository>()) {
+        final repo = Get.find<JapaneseDataRepository>();
+        await repo.getVocabularyLessons(forceRefresh: true);
+      }
+    } catch (e) {
+      print('❌ Failed to refresh repository cache: $e');
+    }
+  }
 
   /// Load all lessons
   Future<void> loadLessons() async {
@@ -60,6 +73,7 @@ class AdminController extends GetxController {
 
       // Reload lessons to reflect changes
       await loadLessons();
+      await _refreshCache();
 
       Get.snackbar(
         'Success',
@@ -95,6 +109,7 @@ class AdminController extends GetxController {
 
       // Reload the lesson to get updated data
       await loadLesson(lessonId);
+      await _refreshCache();
 
       Get.snackbar(
         'Success',
@@ -135,6 +150,7 @@ class AdminController extends GetxController {
 
       // Reload the lesson to get updated data
       await loadLesson(lessonId);
+      await _refreshCache();
 
       Get.snackbar(
         'Success',
@@ -185,6 +201,7 @@ class AdminController extends GetxController {
 
       // Reload selected lesson to reflect changes
       await loadLesson(lessonId);
+      await _refreshCache();
 
       Get.snackbar(
         'Success',
@@ -214,6 +231,61 @@ class AdminController extends GetxController {
     }
   }
 
+  /// Reorder vocabulary item in lesson
+  Future<bool> reorderVocabularyItem(
+    String lessonId,
+    int oldIndex,
+    int newIndex,
+  ) async {
+    try {
+      errorMessage.value = '';
+
+      // Optimistic UI update
+      if (selectedLesson.value != null) {
+        final currentLesson = Map<String, dynamic>.from(selectedLesson.value!);
+        final vocabulary = currentLesson['vocabulary'] as Map<String, dynamic>;
+        final entries = vocabulary.entries.toList();
+
+        if (oldIndex < newIndex) {
+          newIndex -= 1;
+        }
+        final item = entries.removeAt(oldIndex);
+        entries.insert(newIndex, item);
+
+        // Rebuild the map keeping the new order
+        final newVocabMap = <String, dynamic>{};
+        for (var entry in entries) {
+          newVocabMap[entry.key] = entry.value;
+        }
+        currentLesson['vocabulary'] = newVocabMap;
+        selectedLesson.value = currentLesson;
+      }
+
+      await _adminService.reorderVocabularyItem(lessonId, oldIndex, newIndex);
+
+      // Refresh cache for user side
+      await _refreshCache();
+
+      return true;
+    } catch (e) {
+      errorMessage.value = 'Failed to reorder vocabulary: $e';
+      print('❌ Error reordering vocabulary: $e');
+
+      // Revert optimistic update by reloading from server
+      await loadLesson(lessonId);
+
+      Get.snackbar(
+        'Error',
+        'Failed to reorder vocabulary item',
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.red,
+        colorText: Colors.white,
+        duration: const Duration(seconds: 3),
+      );
+      return false;
+    }
+  }
+
   /// Create new lesson
   Future<bool> createLesson(
       int lessonNumber, Map<String, dynamic> vocabulary) async {
@@ -225,6 +297,7 @@ class AdminController extends GetxController {
 
       // Reload lessons to reflect changes
       await loadLessons();
+      await _refreshCache();
 
       Get.snackbar(
         'Success',
@@ -256,6 +329,7 @@ class AdminController extends GetxController {
 
       // Reload lessons to reflect changes
       await loadLessons();
+      await _refreshCache();
 
       Get.snackbar(
         'Success',

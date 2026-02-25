@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
 import 'package:hiragana/app/controllers/vocab_flash_card_page_controller.dart';
-import 'package:hiragana/app/data/enums/hiragana.dart';
+import 'package:hiragana/app/data/repositories/japanese_data_repository.dart';
 import 'package:hiragana/app/ui/pages/vocab_flash_card_page/flash_card_widget.dart';
 
 class VocabFlashCardPage extends StatelessWidget {
@@ -13,180 +13,195 @@ class VocabFlashCardPage extends StatelessWidget {
 
   final String lessonId = Get.parameters['lesson']!;
   late final int lessonIndex = int.parse(lessonId) - 1;
-  late final Map<String, List<String>> lesson =
-      vocabLessons[lessonIndex].cast<String, List<String>>();
+  final JapaneseDataRepository dataRepo = Get.find<JapaneseDataRepository>();
 
   final controller = Get.put(VocabFlashCardPageController());
   final TtsController tts = Get.put(TtsController());
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text("Learn Flash Cards"),
-        ),
-        body: Padding(
-          padding: EdgeInsetsGeometry.symmetric(
-            horizontal: 0,
-            vertical: 10,
-          ),
-          child: Column(
-            children: [
-              Obx(
-                () => Padding(
-                  padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
-                  child: Column(
-                    spacing: 10,
-                    children: [
-                      Row(
-                        spacing: 10,
-                        children: [
-                          Switch(
-                            value: controller.isMeaningShown.value,
-                            onChanged: (value) {
-                              controller.isMeaningShown.value = value;
-                            },
-                          ),
-                          Text(
-                            "Show Meaning",
-                            style: GoogleFonts.notoSansJavanese(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        spacing: 10,
-                        children: [
-                          AnimatedSwitcher(
-                            switchInCurve: Curves.easeInExpo,
-                            switchOutCurve: Curves.easeInExpo,
-                            duration: Duration(milliseconds: 300),
-                            child: Switch(
-                                value: controller.isRomajiShown.value,
-                                onChanged: (value) {
-                                  controller.isRomajiShown.value = value;
-                                }),
-                          ),
-                          Text(
-                            "Show Romaji",
-                            style: GoogleFonts.notoSansJavanese(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        spacing: 10,
-                        children: [
-                          Switch(
-                            value: controller.isAutoSlide.value,
-                            onChanged: (value) {
-                              controller.isAutoSlide.value = value;
-                            },
-                          ),
-                          Text(
-                            "Auto Slide",
-                            style: GoogleFonts.notoSansJavanese(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                      // Row(
-                      //   spacing: 10,
-                      //   children: [
-                      //     Switch(
-                      //       value: controller.isImageShow.value,
-                      //       onChanged: (value) {
-                      //         controller.isImageShow.value = value;
-                      //       },
-                      //     ),
-                      //     Text(
-                      //       "Image Shown",
-                      //       style: GoogleFonts.notoSansJavanese(
-                      //         fontWeight: FontWeight.bold,
-                      //       ),
-                      //     ),
-                      //   ],
-                      // ),
-                    ],
-                  ),
-                ),
+    return FutureBuilder<Map<String, dynamic>>(
+      future: dataRepo.getVocabularyLesson(lessonIndex),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Scaffold(
+            appBar: AppBar(title: const Text("Learn Flash Cards")),
+            body: const Center(child: CircularProgressIndicator()),
+          );
+        }
+
+        if (snapshot.hasError) {
+          return Scaffold(
+            appBar: AppBar(title: const Text("Learn Flash Cards")),
+            body: Center(
+                child: Text("Error loading flashcards: ${snapshot.error}")),
+          );
+        }
+
+        final lesson = snapshot.data!;
+
+        return Scaffold(
+            appBar: AppBar(
+              title: Text("Learn Flash Cards"),
+            ),
+            body: Padding(
+              padding: EdgeInsetsGeometry.symmetric(
+                horizontal: 0,
+                vertical: 10,
               ),
-              Spacer(),
-              Obx(
-                () => CarouselSlider(
-                  items: List.generate(
-                    lesson.length,
-                    (index) {
-                      final e = lesson.entries.elementAt(index);
-                      return FlashCardWidget(
-                        isImageShow: controller.isImageShow.value,
-                        number: index + 1,
-                        onClick: () async {
+              child: Column(
+                children: [
+                  Obx(
+                    () => Padding(
+                      padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
+                      child: Column(
+                        spacing: 10,
+                        children: [
+                          Row(
+                            spacing: 10,
+                            children: [
+                              Switch(
+                                value: controller.isMeaningShown.value,
+                                onChanged: (value) {
+                                  controller.isMeaningShown.value = value;
+                                },
+                              ),
+                              Text(
+                                "Show Meaning",
+                                style: GoogleFonts.notoSansJavanese(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            spacing: 10,
+                            children: [
+                              AnimatedSwitcher(
+                                switchInCurve: Curves.easeInExpo,
+                                switchOutCurve: Curves.easeInExpo,
+                                duration: Duration(milliseconds: 300),
+                                child: Switch(
+                                    value: controller.isRomajiShown.value,
+                                    onChanged: (value) {
+                                      controller.isRomajiShown.value = value;
+                                    }),
+                              ),
+                              Text(
+                                "Show Romaji",
+                                style: GoogleFonts.notoSansJavanese(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            spacing: 10,
+                            children: [
+                              Switch(
+                                value: controller.isAutoSlide.value,
+                                onChanged: (value) {
+                                  controller.isAutoSlide.value = value;
+                                },
+                              ),
+                              Text(
+                                "Auto Slide",
+                                style: GoogleFonts.notoSansJavanese(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Spacer(),
+                  Obx(
+                    () => CarouselSlider(
+                      items: List.generate(
+                        lesson.length,
+                        (index) {
+                          final e = lesson.entries.elementAt(index);
+                          final valueList = List<dynamic>.from(e.value as List);
+                          final exampleParts = valueList.length > 4
+                              ? valueList[4].toString().split('\n')
+                              : [''];
+
+                          return FlashCardWidget(
+                            isImageShow: controller.isImageShow.value,
+                            number: index + 1,
+                            onClick: () async {
+                              controller.watchedList.add(e.key);
+                              await tts.speak(
+                                  valueList.isNotEmpty ? valueList[0] : '');
+                              controller.watchedList.add(e.key);
+                            },
+                            example:
+                                exampleParts.isNotEmpty ? exampleParts[0] : '',
+                            exampleMeaning: exampleParts.length > 1
+                                ? exampleParts[1]
+                                    .replaceAll("(", "")
+                                    .replaceAll(")", "")
+                                : '',
+                            romaji: valueList.length > 2 ? valueList[2] : '',
+                            image: valueList.length > 3 ? valueList[3] : '',
+                            hiragana: valueList.isNotEmpty ? valueList[0] : '',
+                            kenji: valueList.length > 1 ? valueList[1] : '',
+                            meaning: e.key.split('\n')[0],
+                            onAudioTap: () async {
+                              if (exampleParts.isNotEmpty) {
+                                await tts.speak(exampleParts[0]);
+                              }
+                            },
+                          );
+                        },
+                      ).toList(),
+                      options: CarouselOptions(
+                        viewportFraction: 0.95,
+                        autoPlay: controller.isAutoSlide.value,
+                        autoPlayInterval: Duration(seconds: 2),
+                        onPageChanged: (index, reason) async {
+                          final e = lesson.entries.elementAt(index);
+                          final valueList = List<dynamic>.from(e.value as List);
                           controller.watchedList.add(e.key);
-                          await tts.speak(e.value[0]);
+                          await tts
+                              .speak(valueList.isNotEmpty ? valueList[0] : '');
                           controller.watchedList.add(e.key);
                         },
-                        example: e.value[4].split('\n')[0],
-                        exampleMeaning: e.value[4].split('\n')[1].replaceAll("(", "").replaceAll(")", ""),
-                        romaji: e.value[2],
-                        image: e.value[3],
-                        hiragana: e.value[0],
-                        kenji: e.value[1],
-                        meaning: e.key.split('\n')[0],
-                        onAudioTap: () async =>
-                            await tts.speak(e.value[4].split('\n')[0]),
-                      );
-                    },
-                  ).toList(),
-                  options: CarouselOptions(
-                    viewportFraction: 0.95,
-                    autoPlay: controller.isAutoSlide.value,
-                    autoPlayInterval: Duration(seconds: 2),
-                    onPageChanged: (index, reason) async {
-                      final e = lesson.entries.elementAt(index);
-                      controller.watchedList.add(e.key);
-                      await tts.speak(e.value[0]);
-                      controller.watchedList.add(e.key);
-                    },
-                    height: Get.height * 0.5,
-                    enlargeCenterPage: true,
+                        height: Get.height * 0.5,
+                        enlargeCenterPage: true,
+                      ),
+                    ),
                   ),
-                ),
+                  Spacer(),
+                ],
               ),
-              Spacer(),
-            ],
-          ),
-        ),
-        floatingActionButton: Column(
-          spacing: 20,
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            SpeedDial(
-              animatedIcon: AnimatedIcons.menu_close,
+            ),
+            floatingActionButton: Column(
+              spacing: 20,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
-                SpeedDialChild(
-                  label: "play all",
-                  child: Icon(Icons.play_arrow),
-                  onTap: () {},
-                ),
-                SpeedDialChild(
-                  label: "restart",
-                  child: Icon(Icons.restart_alt),
-                  onTap: () {
-                    controller.watchedList.clear();
-                  },
+                SpeedDial(
+                  animatedIcon: AnimatedIcons.menu_close,
+                  children: [
+                    SpeedDialChild(
+                      label: "play all",
+                      child: Icon(Icons.play_arrow),
+                      onTap: () {},
+                    ),
+                    SpeedDialChild(
+                      label: "restart",
+                      child: Icon(Icons.restart_alt),
+                      onTap: () {
+                        controller.watchedList.clear();
+                      },
+                    ),
+                  ],
                 ),
               ],
-            ),
-            // FloatingActionButton(
-            //   shape: CircleBorder(),
-            //   onPressed: () {},
-            //   child: Icon(Icons.speaker),
-            // ),
-          ],
-        ));
+            ));
+      },
+    );
   }
 }

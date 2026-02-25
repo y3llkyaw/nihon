@@ -126,25 +126,37 @@ class AdminService {
       }
 
       final rawVocab = doc.data()!['vocabulary'];
-      final vocabulary = <String, dynamic>{};
+      List<Map<String, dynamic>> orderedList = [];
+
       if (rawVocab is List) {
         for (var item in rawVocab) {
           if (item is Map) {
-            vocabulary[item['key'] as String] = item['value'];
+            if (item['key'] != burmese) {
+              orderedList.add({
+                'key': item['key'],
+                'value': item['value'],
+              });
+            }
           }
         }
+        orderedList.add({
+          'key': burmese,
+          'value': details,
+        });
       } else if (rawVocab is Map) {
-        vocabulary.addAll(Map<String, dynamic>.from(rawVocab));
+        for (var entry in rawVocab.entries) {
+          if (entry.key != burmese) {
+            orderedList.add({
+              'key': entry.key,
+              'value': entry.value,
+            });
+          }
+        }
+        orderedList.add({
+          'key': burmese,
+          'value': details,
+        });
       }
-
-      vocabulary[burmese] = details;
-
-      final orderedList = vocabulary.entries
-          .map((e) => {
-                'key': e.key,
-                'value': e.value,
-              })
-          .toList();
 
       await _firestore.collection('vocabulary_lessons').doc(lessonId).update({
         'vocabulary': orderedList,
@@ -168,25 +180,29 @@ class AdminService {
       }
 
       final rawVocab = doc.data()!['vocabulary'];
-      final vocabulary = <String, dynamic>{};
+      List<Map<String, dynamic>> orderedList = [];
+
       if (rawVocab is List) {
         for (var item in rawVocab) {
           if (item is Map) {
-            vocabulary[item['key'] as String] = item['value'];
+            if (item['key'] != burmese) {
+              orderedList.add({
+                'key': item['key'],
+                'value': item['value'],
+              });
+            }
           }
         }
       } else if (rawVocab is Map) {
-        vocabulary.addAll(Map<String, dynamic>.from(rawVocab));
+        for (var entry in rawVocab.entries) {
+          if (entry.key != burmese) {
+            orderedList.add({
+              'key': entry.key,
+              'value': entry.value,
+            });
+          }
+        }
       }
-
-      vocabulary.remove(burmese);
-
-      final orderedList = vocabulary.entries
-          .map((e) => {
-                'key': e.key,
-                'value': e.value,
-              })
-          .toList();
 
       await _firestore.collection('vocabulary_lessons').doc(lessonId).update({
         'vocabulary': orderedList,
@@ -215,31 +231,55 @@ class AdminService {
       }
 
       final rawVocab = doc.data()!['vocabulary'];
-      final vocabulary = <String, dynamic>{};
+      List<Map<String, dynamic>> orderedList = [];
+
       if (rawVocab is List) {
+        bool updated = false;
         for (var item in rawVocab) {
           if (item is Map) {
-            vocabulary[item['key'] as String] = item['value'];
+            if (item['key'] == oldBurmese) {
+              orderedList.add({
+                'key': newBurmese,
+                'value': details,
+              });
+              updated = true;
+            } else {
+              orderedList.add({
+                'key': item['key'],
+                'value': item['value'],
+              });
+            }
           }
         }
+        if (!updated) {
+          orderedList.add({
+            'key': newBurmese,
+            'value': details,
+          });
+        }
       } else if (rawVocab is Map) {
-        vocabulary.addAll(Map<String, dynamic>.from(rawVocab));
+        bool updated = false;
+        for (var entry in rawVocab.entries) {
+          if (entry.key == oldBurmese) {
+            orderedList.add({
+              'key': newBurmese,
+              'value': details,
+            });
+            updated = true;
+          } else {
+            orderedList.add({
+              'key': entry.key,
+              'value': entry.value,
+            });
+          }
+        }
+        if (!updated) {
+          orderedList.add({
+            'key': newBurmese,
+            'value': details,
+          });
+        }
       }
-
-      // Remove old key if burmese changed
-      if (oldBurmese != newBurmese) {
-        vocabulary.remove(oldBurmese);
-      }
-
-      // Add/update with new data
-      vocabulary[newBurmese] = details;
-
-      final orderedList = vocabulary.entries
-          .map((e) => {
-                'key': e.key,
-                'value': e.value,
-              })
-          .toList();
 
       await _firestore.collection('vocabulary_lessons').doc(lessonId).update({
         'vocabulary': orderedList,
@@ -248,6 +288,58 @@ class AdminService {
       print('✅ Vocabulary item updated successfully');
     } catch (e) {
       print('❌ Error updating vocabulary item: $e');
+      rethrow;
+    }
+  }
+
+  /// Reorder vocabulary item in lesson
+  Future<void> reorderVocabularyItem(
+    String lessonId,
+    int oldIndex,
+    int newIndex,
+  ) async {
+    try {
+      final doc =
+          await _firestore.collection('vocabulary_lessons').doc(lessonId).get();
+
+      if (!doc.exists) {
+        throw Exception('Lesson not found');
+      }
+
+      final rawVocab = doc.data()!['vocabulary'];
+      List<Map<String, dynamic>> orderedList = [];
+
+      if (rawVocab is List) {
+        for (var item in rawVocab) {
+          if (item is Map) {
+            orderedList.add({
+              'key': item['key'],
+              'value': item['value'],
+            });
+          }
+        }
+      } else if (rawVocab is Map) {
+        for (var entry in rawVocab.entries) {
+          orderedList.add({
+            'key': entry.key,
+            'value': entry.value,
+          });
+        }
+      }
+
+      if (oldIndex < newIndex) {
+        newIndex -= 1;
+      }
+      final item = orderedList.removeAt(oldIndex);
+      orderedList.insert(newIndex, item);
+
+      await _firestore.collection('vocabulary_lessons').doc(lessonId).update({
+        'vocabulary': orderedList,
+      });
+
+      print('✅ Vocabulary item reordered successfully');
+    } catch (e) {
+      print('❌ Error reordering vocabulary item: $e');
       rethrow;
     }
   }

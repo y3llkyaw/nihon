@@ -167,7 +167,14 @@ class _LessonEditorPageState extends State<LessonEditorPage> {
 
               // Vocabulary list
               Expanded(
-                child: ListView.builder(
+                child: ReorderableListView.builder(
+                  onReorder: (oldIndex, newIndex) {
+                    controller.reorderVocabularyItem(
+                      widget.lessonId,
+                      oldIndex,
+                      newIndex,
+                    );
+                  },
                   itemCount: vocabularyList.length,
                   itemBuilder: (context, index) {
                     final entry = vocabularyList[index];
@@ -182,17 +189,20 @@ class _LessonEditorPageState extends State<LessonEditorPage> {
                     final example = details.length > 4 ? details[4] : '';
 
                     return Card(
+                      key: ValueKey(burmese),
                       margin: const EdgeInsets.only(bottom: 12),
                       color: AppColors.cardDark,
                       child: ListTile(
-                        contentPadding: const EdgeInsets.symmetric(
-                          horizontal: 16,
-                          vertical: 8,
+                        contentPadding: const EdgeInsets.only(
+                          left: 16,
+                          right: 8,
+                          top: 8,
+                          bottom: 8,
                         ),
                         title: Text(
-                          burmese,
-                          style: GoogleFonts.inter(
-                            fontSize: 16,
+                          '${index + 1}. ${japanese.isNotEmpty ? japanese : burmese}',
+                          style: GoogleFonts.notoSansJp(
+                            fontSize: 18,
                             fontWeight: FontWeight.bold,
                             color: Colors.white,
                           ),
@@ -200,22 +210,28 @@ class _LessonEditorPageState extends State<LessonEditorPage> {
                         subtitle: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const SizedBox(height: 4),
+                            const SizedBox(height: 6),
                             Text(
-                              '$japanese ($kanji)',
+                              burmese,
                               style: GoogleFonts.inter(
                                 fontSize: 14,
-                                color: AppColors.primary,
+                                color:
+                                    AppColors.textWhite.withValues(alpha: 0.8),
                               ),
                             ),
-                            const SizedBox(height: 2),
-                            Text(
-                              romaji,
-                              style: GoogleFonts.inter(
-                                fontSize: 12,
-                                color: Colors.grey,
+                            if (kanji.isNotEmpty || romaji.isNotEmpty) ...[
+                              const SizedBox(height: 4),
+                              Text(
+                                [
+                                  if (kanji.isNotEmpty) kanji,
+                                  if (romaji.isNotEmpty) romaji
+                                ].join(' • '),
+                                style: GoogleFonts.inter(
+                                  fontSize: 12,
+                                  color: AppColors.primary,
+                                ),
                               ),
-                            ),
+                            ],
                             if (example.isNotEmpty) ...[
                               const SizedBox(height: 4),
                               Text(
@@ -249,6 +265,14 @@ class _LessonEditorPageState extends State<LessonEditorPage> {
                                   color: Colors.red),
                               onPressed: () => _confirmDelete(context, burmese),
                               tooltip: 'Delete',
+                            ),
+                            ReorderableDragStartListener(
+                              index: index,
+                              child: const Padding(
+                                padding: EdgeInsets.all(8.0),
+                                child:
+                                    Icon(Icons.drag_handle, color: Colors.grey),
+                              ),
                             ),
                           ],
                         ),
