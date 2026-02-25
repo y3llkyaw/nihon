@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hiragana/app/data/repositories/japanese_data_repository.dart';
@@ -39,7 +41,7 @@ class AdminController extends GetxController {
       print('✅ Loaded ${lessons.length} lessons');
     } catch (e) {
       errorMessage.value = 'Failed to load lessons: $e';
-      print('❌ Error loading lessons: $e');
+      print('❌ rror loading lessons: $e');
     } finally {
       isLoading.value = false;
     }
@@ -111,28 +113,10 @@ class AdminController extends GetxController {
       await loadLesson(lessonId);
       await _refreshCache();
 
-      Get.snackbar(
-        'Success',
-        'Vocabulary item added successfully',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.green,
-        colorText: Colors.white,
-        duration: const Duration(seconds: 2),
-      );
-
       return true;
     } catch (e) {
       errorMessage.value = 'Failed to add vocabulary: $e';
-      print('❌ Error adding vocabulary: $e');
-
-      Get.snackbar(
-        'Error',
-        'Failed to add vocabulary item',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.red,
-        colorText: Colors.white,
-        duration: const Duration(seconds: 3),
-      );
+      log('❌ Error adding vocabulary: $e');
 
       return false;
     } finally {

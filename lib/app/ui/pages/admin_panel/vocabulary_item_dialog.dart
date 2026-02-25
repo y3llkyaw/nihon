@@ -225,7 +225,20 @@ class _VocabularyItemDialogState extends State<VocabularyItemDialog> {
           child: const Text('Cancel'),
         ),
         ElevatedButton(
-          onPressed: _saveVocabulary,
+          onPressed: () async {
+            Get.back();
+
+            final result = await _saveVocabulary();
+            if (result == false) {
+              ScaffoldMessenger.of(Get.context!).showSnackBar(const SnackBar(
+                content: Text("Failed to save vocabulary"),
+              ));
+            } else {
+              ScaffoldMessenger.of(Get.context!).showSnackBar(const SnackBar(
+                content: Text("Vocabulary saved successfully"),
+              ));
+            }
+          },
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primary,
           ),
@@ -235,9 +248,9 @@ class _VocabularyItemDialogState extends State<VocabularyItemDialog> {
     );
   }
 
-  void _saveVocabulary() async {
+  Future<bool> _saveVocabulary() async {
     if (!_formKey.currentState!.validate()) {
-      return;
+      return false;
     }
 
     // Build details array
@@ -249,24 +262,23 @@ class _VocabularyItemDialogState extends State<VocabularyItemDialog> {
       exampleController.text.trim(),
     ];
 
-    bool success;
-    if (widget.isEdit) {
-      success = await controller.updateVocabularyItem(
-        widget.lessonId,
-        widget.initialBurmese!,
-        burmeseController.text.trim(),
-        details,
-      );
-    } else {
-      success = await controller.addVocabularyItem(
-        widget.lessonId,
-        burmeseController.text.trim(),
-        details,
-      );
-    }
-
-    if (success) {
-      Get.back();
+    try {
+      if (widget.isEdit) {
+        return await controller.updateVocabularyItem(
+          widget.lessonId,
+          widget.initialBurmese!,
+          burmeseController.text.trim(),
+          details,
+        );
+      } else {
+        return await controller.addVocabularyItem(
+          widget.lessonId,
+          burmeseController.text.trim(),
+          details,
+        );
+      }
+    } catch (e) {
+      return false;
     }
   }
 }
