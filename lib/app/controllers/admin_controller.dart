@@ -26,7 +26,7 @@ class AdminController extends GetxController {
         await repo.getVocabularyLessons(forceRefresh: true);
       }
     } catch (e) {
-      print('❌ Failed to refresh repository cache: $e');
+      log('❌ Failed to refresh repository cache: $e');
     }
   }
 
@@ -38,10 +38,10 @@ class AdminController extends GetxController {
 
       lessons.value = await _adminService.getAllLessons();
 
-      print('✅ Loaded ${lessons.length} lessons');
+      log('✅ Loaded ${lessons.length} lessons');
     } catch (e) {
       errorMessage.value = 'Failed to load lessons: $e';
-      print('❌ rror loading lessons: $e');
+      log('❌ rror loading lessons: $e');
     } finally {
       isLoading.value = false;
     }
@@ -55,10 +55,10 @@ class AdminController extends GetxController {
 
       selectedLesson.value = await _adminService.getLesson(lessonId);
 
-      print('✅ Loaded lesson: $lessonId');
+      log('✅ Loaded lesson: $lessonId');
     } catch (e) {
       errorMessage.value = 'Failed to load lesson: $e';
-      print('❌ Error loading lesson: $e');
+      log('❌ Error loading lesson: $e');
     } finally {
       isLoading.value = false;
     }
@@ -148,7 +148,7 @@ class AdminController extends GetxController {
       return true;
     } catch (e) {
       errorMessage.value = 'Failed to delete vocabulary: $e';
-      print('❌ Error deleting vocabulary: $e');
+      log('❌ Error deleting vocabulary: $e');
 
       Get.snackbar(
         'Error',
@@ -199,7 +199,7 @@ class AdminController extends GetxController {
       return true;
     } catch (e) {
       errorMessage.value = 'Failed to update vocabulary: $e';
-      print('❌ Error updating vocabulary: $e');
+      log('❌ Error updating vocabulary: $e');
 
       Get.snackbar(
         'Error',
@@ -253,7 +253,7 @@ class AdminController extends GetxController {
       return true;
     } catch (e) {
       errorMessage.value = 'Failed to reorder vocabulary: $e';
-      print('❌ Error reordering vocabulary: $e');
+      log('❌ Error reordering vocabulary: $e');
 
       // Revert optimistic update by reloading from server
       await loadLesson(lessonId);

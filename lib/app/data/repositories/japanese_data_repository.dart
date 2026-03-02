@@ -35,6 +35,10 @@ class JapaneseDataRepository {
           getKatakanaTable(),
           getVocabularyLessons(),
         ]);
+
+        // Silently trigger a refresh in the background so normal users get
+        // Admin updates like reordered vocabulary without clearing their cache
+        _backgroundRefresh();
       } else {
         log('🌐 No cache found, fetching from Firebase...');
         // First time - fetch from Firebase
@@ -176,6 +180,20 @@ class JapaneseDataRepository {
       rethrow;
     } finally {
       isLoading.value = false;
+    }
+  }
+
+  /// Silently refresh the cache without showing loading spinners
+  Future<void> _backgroundRefresh() async {
+    try {
+      await Future.wait([
+        getHiraganaTable(forceRefresh: true),
+        getKatakanaTable(forceRefresh: true),
+        getVocabularyLessons(forceRefresh: true),
+      ]);
+      log('🔄 Background refresh completed successfully');
+    } catch (e) {
+      log('❌ Background refresh failed: $e');
     }
   }
 
