@@ -12,6 +12,11 @@ class UserController extends GetxController {
   final RxList<int> finishedLessons = <int>[].obs;
   final RxMap<String, List<int>> finishedChunks = <String, List<int>>{}.obs;
 
+  // Streak related state
+  final RxInt currentStreak = 0.obs;
+  final RxString lastStudiedDate = ''.obs;
+  final RxList<String> studiedDates = <String>[].obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -23,6 +28,9 @@ class UserController extends GetxController {
       } else {
         finishedLessons.clear();
         finishedChunks.clear();
+        currentStreak.value = 0;
+        lastStudiedDate.value = '';
+        studiedDates.clear();
       }
     });
   }
@@ -43,6 +51,18 @@ class UserController extends GetxController {
           finishedChunks.value = chunksData.map(
             (key, value) => MapEntry(key, List<int>.from(value)),
           );
+        }
+
+        if (data['currentStreak'] is int) {
+          currentStreak.value = data['currentStreak'];
+        }
+
+        if (data['lastStudiedDate'] is String) {
+          lastStudiedDate.value = data['lastStudiedDate'];
+        }
+
+        if (data['studiedDates'] is List) {
+          studiedDates.value = List<String>.from(data['studiedDates']);
         }
         log("User data fetched for $uid");
       }
@@ -68,6 +88,9 @@ class UserController extends GetxController {
         'lastLogin': FieldValue.serverTimestamp(),
         'finishedLessons': [],
         'finishedChunks': {},
+        'currentStreak': 0,
+        'lastStudiedDate': '',
+        'studiedDates': [],
       });
     } else {
       log("User document for ${user.uid} already exists. Updating last login.");
@@ -89,6 +112,8 @@ class UserController extends GetxController {
     if (!finishedLessons.contains(lessonIndex)) {
       finishedLessons.add(lessonIndex);
     }
+
+    await updateStreak();
   }
 
   /// Adds a chunk index to a specific lesson in the user's finished chunks map.
@@ -103,5 +128,70 @@ class UserController extends GetxController {
     await userDocRef.update({
       'finishedChunks.$lessonKey': FieldValue.arrayUnion([chunkIndex])
     });
+
+    await updateStreak();
+  }
+
+  /// Updates the user's running streak based on today's date
+  Future<void> updateStreak() async {
+    final user = _auth.currentUser;
+    if (user == null) return;
+
+    final now = DateTime.now();
+    // Use local time, format YYYY-MM-DD
+    final todayStr =
+        "${now.year}-${now.month.toString().padLeft(2, '0')}-${now.day.toString().padLeft(2, '0')}";
+
+    if (lastStudiedDate.value == todayStr) {
+      // Already studied today
+      return;
+    }
+
+    int newStreak = currentStreak.value;
+
+    if (lastStudiedDate.value.isNotEmpty) {
+      final lastDate = DateTime.tryParse(lastStudiedDate.value);
+      if (lastDate != null) {
+        final yesterday = DateTime(now.year, now.month, now.day)
+            .subtract(const Duration(days: 1));
+        final lastZeroTime =
+            DateTime(lastDate.year, lastDate.month, lastDate.day);
+
+        if (lastZeroTime.isAtSameMomentAs(yesterday)) {
+          // Studied yesterday, increment streak
+          newStreak += 1;
+        } else if (lastZeroTime.isBefore(yesterday)) {
+          // Streak broken
+          newStreak = 1;
+        } else {
+          // Defensive: last studied date is in the future somehow
+          newStreak = 1;
+        }
+      } else {
+        newStreak = 1;
+      }
+    } else {
+      // First time studying
+      newStreak = 1;
+    }
+
+    final updatedDates = List<String>.from(studiedDates);
+    if (!updatedDates.contains(todayStr)) {
+      updatedDates.add(todayStr);
+    }
+
+    final userDocRef = _firestore.collection('users').doc(user.uid);
+    await userDocRef.update({
+      'currentStreak': newStreak,
+      'lastStudiedDate': todayStr,
+      'studiedDates': FieldValue.arrayUnion([todayStr]),
+    });
+
+    // Update local state
+    currentStreak.value = newStreak;
+    lastStudiedDate.value = todayStr;
+    if (!studiedDates.contains(todayStr)) {
+      studiedDates.add(todayStr);
+    }
   }
 }

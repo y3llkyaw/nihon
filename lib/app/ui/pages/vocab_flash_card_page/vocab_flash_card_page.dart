@@ -99,6 +99,24 @@ class VocabFlashCardPage extends StatelessWidget {
                             spacing: 10,
                             children: [
                               Switch(
+                                value: controller.isExampleSentenceSpoken.value,
+                                onChanged: (value) {
+                                  controller.isExampleSentenceSpoken.value =
+                                      value;
+                                },
+                              ),
+                              Text(
+                                "Speak Example",
+                                style: GoogleFonts.notoSansJavanese(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ],
+                          ),
+                          Row(
+                            spacing: 10,
+                            children: [
+                              Switch(
                                 value: controller.isAutoSlide.value,
                                 onChanged: (value) {
                                   controller.isAutoSlide.value = value;
@@ -133,8 +151,16 @@ class VocabFlashCardPage extends StatelessWidget {
                             number: index + 1,
                             onClick: () async {
                               controller.watchedList.add(e.key);
-                              await tts.speak(
-                                  valueList.isNotEmpty ? valueList[0] : '');
+                              String textToSpeak =
+                                  valueList.isNotEmpty ? valueList[0] : '';
+                              if (controller.isExampleSentenceSpoken.value &&
+                                  exampleParts.isNotEmpty &&
+                                  exampleParts[0].trim().isNotEmpty) {
+                                textToSpeak += "。 ${exampleParts[0].trim()}";
+                              }
+                              if (textToSpeak.trim().isNotEmpty) {
+                                await tts.speak(textToSpeak);
+                              }
                               controller.watchedList.add(e.key);
                             },
                             example:
@@ -160,13 +186,27 @@ class VocabFlashCardPage extends StatelessWidget {
                       options: CarouselOptions(
                         viewportFraction: 0.95,
                         autoPlay: controller.isAutoSlide.value,
-                        autoPlayInterval: Duration(seconds: 2),
+                        autoPlayInterval: Duration(
+                            seconds: controller.isExampleSentenceSpoken.value
+                                ? 4
+                                : 2),
                         onPageChanged: (index, reason) async {
                           final e = lesson.entries.elementAt(index);
                           final valueList = List<dynamic>.from(e.value as List);
+                          final exampleParts = valueList.length > 4
+                              ? valueList[4].toString().split('\n')
+                              : [''];
                           controller.watchedList.add(e.key);
-                          await tts
-                              .speak(valueList.isNotEmpty ? valueList[0] : '');
+                          String textToSpeak =
+                              valueList.isNotEmpty ? valueList[0] : '';
+                          if (controller.isExampleSentenceSpoken.value &&
+                              exampleParts.isNotEmpty &&
+                              exampleParts[0].trim().isNotEmpty) {
+                            textToSpeak += "。 ${exampleParts[0].trim()}";
+                          }
+                          if (textToSpeak.trim().isNotEmpty) {
+                            await tts.speak(textToSpeak);
+                          }
                           controller.watchedList.add(e.key);
                         },
                         height: Get.height * 0.5,

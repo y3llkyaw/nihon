@@ -1,15 +1,14 @@
-import 'dart:developer';
-
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart'; // Assuming GetX is used for navigation or other purposes
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/lesson_trainning_page_controller.dart';
 import 'package:hiragana/app/controllers/user_controller.dart';
 import 'package:hiragana/app/data/repositories/japanese_data_repository.dart';
 import 'package:hiragana/app/data/models/vocabulary_model.dart';
 import 'package:hiragana/app/ui/pages/lesson_flow_pages/lesson_review_page.dart';
+
 import 'package:hiragana/app/ui/theme/theme.dart';
 
 class LessonFlowPage extends StatelessWidget {
@@ -201,7 +200,11 @@ class LessonFlowPage extends StatelessWidget {
                               Get.toNamed(
                                   '/vocabulary/lesson/${lessonIndex + 1}/flashcard');
                             }),
-                            _buildActionButton(Icons.reviews, 'Review', () {}),
+                            _buildActionButton(Icons.reviews, 'Review', () {
+                              Get.toNamed(
+                                  '/vocabulary/lesson/${lessonIndex + 1}',
+                                  arguments: lessonModels);
+                            }),
                             _buildActionButton(Icons.tag, 'Quiz', () {}),
                           ],
                         ),

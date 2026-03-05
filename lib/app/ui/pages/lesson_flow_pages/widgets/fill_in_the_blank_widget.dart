@@ -51,66 +51,67 @@ Widget fillInBlankWidgets(VocabularyModel vocab) {
               ),
               Column(
                 children: [
-                  Obx(
-                    () => RichText(
-                      textAlign: TextAlign.center,
-                      text: TextSpan(
-                        style:
-                            const TextStyle(fontSize: 24, color: Colors.black),
-                        children: [
-                          TextSpan(
-                            text: textSpans[0],
-                            style: GoogleFonts.notoSansJp(
-                              color: AppColors.textWhite,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
+                  RichText(
+                    textAlign: TextAlign.center,
+                    text: TextSpan(
+                      style: const TextStyle(fontSize: 24, color: Colors.black),
+                      children: [
+                        TextSpan(
+                          text: textSpans[0],
+                          style: GoogleFonts.notoSansJp(
+                            color: AppColors.textWhite,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
                           ),
-                          WidgetSpan(
-                            alignment: PlaceholderAlignment.middle,
-                            child: SizedBox(
-                              width: 100,
-                              child: TextField(
-                                controller: controller.answerController,
-                                readOnly: controller.wasCorrect.value != null,
-                                textAlign: TextAlign.center,
-                                keyboardType: TextInputType.text,
-                                textCapitalization: TextCapitalization.none,
-                                style: GoogleFonts.notoSansJp(
-                                  color: controller.wasCorrect.value == null
-                                      ? AppColors.primary
-                                      : controller.wasCorrect.value!
-                                          ? Colors.green
-                                          : Colors.red,
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                                decoration: const InputDecoration(
-                                  isDense: true,
-                                  contentPadding:
-                                      EdgeInsets.symmetric(vertical: 4),
-                                  border: UnderlineInputBorder(),
-                                  enabledBorder: UnderlineInputBorder(
-                                    borderSide:
-                                        BorderSide(color: AppColors.textWhite),
-                                  ),
-                                ),
-                              ),
-                            ),
+                        ),
+                        TextSpan(
+                          text: ' ____ ',
+                          style: GoogleFonts.notoSansJp(
+                            color: AppColors.error,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
                           ),
-                          TextSpan(
-                            text:
-                                textSpans.length > 1 ? textSpans[1].trim() : "",
-                            style: GoogleFonts.notoSansJp(
-                              color: AppColors.textWhite,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        ),
+                        TextSpan(
+                          text: textSpans.length > 1 ? textSpans[1].trim() : "",
+                          style: GoogleFonts.notoSansJp(
+                            color: AppColors.textWhite,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
+                  const SizedBox(height: 16),
+                  Obx(() => SizedBox(
+                        width: Get.width * 0.5,
+                        child: TextField(
+                          controller: controller.answerController,
+                          readOnly: controller.wasCorrect.value != null,
+                          textAlign: TextAlign.center,
+                          keyboardType: TextInputType.text,
+                          textCapitalization: TextCapitalization.none,
+                          style: GoogleFonts.notoSansJp(
+                            color: controller.wasCorrect.value == null
+                                ? AppColors.primary
+                                : controller.wasCorrect.value!
+                                    ? Colors.green
+                                    : Colors.red,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          decoration: const InputDecoration(
+                            isDense: true,
+                            contentPadding: EdgeInsets.symmetric(vertical: 4),
+                            border: UnderlineInputBorder(),
+                            enabledBorder: UnderlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: AppColors.textWhite),
+                            ),
+                          ),
+                        ),
+                      )),
                   const SizedBox(height: 16),
                   Text(
                     "Japanese Keyboard Active",

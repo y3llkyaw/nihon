@@ -3,6 +3,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hiragana/app/controllers/user_controller.dart';
+import 'package:hiragana/app/ui/pages/home_page/widgets/daily_streak_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -14,13 +16,15 @@ class HomePage extends StatelessWidget {
       stream: FirebaseAuth.instance.authStateChanges(),
       builder: (context, snapshot) {
         final user = snapshot.data;
+        final userController = Get.put(UserController());
         return Scaffold(
           backgroundColor: AppColors.backgroundDark, // background-dark
           appBar: _buildAppBar(user),
           body: ListView(
             padding: const EdgeInsets.all(0),
             children: [
-              _buildStatsSummary(),
+              _buildStatsSummary(userController),
+              const DailyStreakWidget(),
               _buildSectionHeader("Daily Actions"),
               _buildDailyActionsList(),
               _buildSectionHeader("Reference"),
@@ -86,7 +90,7 @@ class HomePage extends StatelessWidget {
             child: IconButton(
               icon: const Icon(Icons.search, color: Colors.white),
               onPressed: () async {
-                await FirebaseAuth.instance.signOut().then((v){
+                await FirebaseAuth.instance.signOut().then((v) {
                   Get.offAllNamed('/landing');
                 });
               },
@@ -97,19 +101,19 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _buildStatsSummary() {
+  Widget _buildStatsSummary(UserController userController) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
       child: Row(
         children: [
-          _buildStatCard(
-            icon: Icons.local_fire_department,
-            iconColor: Colors.orange.shade500,
-            label: 'STREAK',
-            value: '15',
-            subValue: 'Days',
-            subValueColor: AppColors.primary,
-          ),
+          Obx(() => _buildStatCard(
+                icon: Icons.local_fire_department,
+                iconColor: Colors.orange.shade500,
+                label: 'STREAK',
+                value: userController.currentStreak.value.toString(),
+                subValue: 'Days',
+                subValueColor: AppColors.primary,
+              )),
           const SizedBox(width: 16),
           _buildStatCard(
             icon: Icons.stars,

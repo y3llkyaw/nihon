@@ -15,10 +15,12 @@ class VocabLessonPage extends StatelessWidget {
   final CharacterMatchController cmc = Get.put(CharacterMatchController());
   final String lessonId = Get.parameters['lesson']!;
   late final int lessonIndex = int.parse(lessonId) - 1;
-  late final List<VocabularyModel> lesson = vocabLessons[lessonIndex]
-      .entries
-      .map((e) => VocabularyModel.fromMapEntry(e))
-      .toList();
+  late final List<VocabularyModel> lesson = Get.arguments != null
+      ? Get.arguments as List<VocabularyModel>
+      : vocabLessons[lessonIndex]
+          .entries
+          .map((e) => VocabularyModel.fromMapEntry(e))
+          .toList();
   late final String title = "Vocabulary Lesson $lessonId";
 
   @override
