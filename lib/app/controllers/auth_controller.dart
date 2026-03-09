@@ -6,6 +6,12 @@ import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hiragana/app/controllers/user_controller.dart';
 
 class AuthController extends GetxController {
+  /// Common post-authentication logic.
+  Future<void> _onAuthSuccess(User user) async {
+    final userController = Get.find<UserController>();
+    await userController.createUserDocument(user);
+  }
+
   Future<UserCredential?> signInWithGoogle() async {
     // Set the language for the auth flow to prevent the X-Firebase-Locale warning.
     await FirebaseAuth.instance
@@ -34,9 +40,7 @@ class AuthController extends GetxController {
           await FirebaseAuth.instance.signInWithCredential(credential);
       log("Firebase User: ${userCredential.user?.email}");
       if (userCredential.user != null) {
-        // Ensure UserController is ready and create/update the user document.
-        final userController = Get.put(UserController());
-        await userController.createUserDocument(userCredential.user!);
+        await _onAuthSuccess(userCredential.user!);
       }
       // Sign in to Firebase with the credential
       return userCredential;
@@ -56,8 +60,7 @@ class AuthController extends GetxController {
           .signInWithEmailAndPassword(email: email, password: password);
       log("Firebase User (Email): ${userCredential.user?.email}");
       if (userCredential.user != null) {
-        final userController = Get.put(UserController());
-        await userController.createUserDocument(userCredential.user!);
+        await _onAuthSuccess(userCredential.user!);
       }
       return userCredential;
     } on FirebaseAuthException catch (e) {
@@ -84,8 +87,7 @@ class AuthController extends GetxController {
           .createUserWithEmailAndPassword(email: email, password: password);
       log("Firebase User (Email): ${userCredential.user?.email}");
       if (userCredential.user != null) {
-        final userController = Get.put(UserController());
-        await userController.createUserDocument(userCredential.user!);
+        await _onAuthSuccess(userCredential.user!);
       }
       return userCredential;
     } on FirebaseAuthException catch (e) {

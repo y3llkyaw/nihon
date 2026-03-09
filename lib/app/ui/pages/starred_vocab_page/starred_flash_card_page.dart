@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
 import 'package:hiragana/app/controllers/user_controller.dart';
 import 'package:hiragana/app/controllers/vocab_flash_card_page_controller.dart';
+import 'package:hiragana/app/data/helpers/vocab_data_helper.dart';
 import 'package:hiragana/app/data/repositories/japanese_data_repository.dart';
 import 'package:hiragana/app/ui/pages/vocab_flash_card_page/flash_card_widget.dart';
 import 'package:hiragana/app/ui/theme/theme.dart';
@@ -126,10 +127,7 @@ class StarredFlashCardPage extends StatelessWidget {
                   items: starredEntries.asMap().entries.map((entry) {
                     final idx = entry.key;
                     final e = entry.value;
-                    final valueList = List<dynamic>.from(e.value as List);
-                    final exampleParts = valueList.length > 4
-                        ? valueList[4].toString().split('\n')
-                        : [''];
+                    final vocab = VocabDisplayData.fromEntry(e);
 
                     return Obx(() => FlashCardWidget(
                           isImageShow: controller.isImageShow.value,
@@ -140,32 +138,25 @@ class StarredFlashCardPage extends StatelessWidget {
                             userController.toggleStarVocab(lessonIndex, e.key);
                           },
                           onClick: () async {
-                            String textToSpeak =
-                                valueList.isNotEmpty ? valueList[0] : '';
+                            String textToSpeak = vocab.hiragana;
                             if (controller.isExampleSentenceSpoken.value &&
-                                exampleParts.isNotEmpty &&
-                                exampleParts[0].trim().isNotEmpty) {
-                              textToSpeak += "\u3002 ${exampleParts[0].trim()}";
+                                vocab.example.trim().isNotEmpty) {
+                              textToSpeak += "\u3002 ${vocab.example.trim()}";
                             }
                             if (textToSpeak.trim().isNotEmpty) {
                               await tts.speak(textToSpeak);
                             }
                           },
-                          example:
-                              exampleParts.isNotEmpty ? exampleParts[0] : '',
-                          exampleMeaning: exampleParts.length > 1
-                              ? exampleParts[1]
-                                  .replaceAll("(", "")
-                                  .replaceAll(")", "")
-                              : '',
-                          romaji: valueList.length > 2 ? valueList[2] : '',
-                          image: valueList.length > 3 ? valueList[3] : '',
-                          hiragana: valueList.isNotEmpty ? valueList[0] : '',
-                          kenji: valueList.length > 1 ? valueList[1] : '',
-                          meaning: e.key.split('\n')[0],
+                          example: vocab.example,
+                          exampleMeaning: vocab.exampleMeaning,
+                          romaji: vocab.romaji,
+                          image: vocab.imageUrl,
+                          hiragana: vocab.hiragana,
+                          kenji: vocab.kanji,
+                          meaning: vocab.meaning,
                           onAudioTap: () async {
-                            if (exampleParts.isNotEmpty) {
-                              await tts.speak(exampleParts[0]);
+                            if (vocab.example.isNotEmpty) {
+                              await tts.speak(vocab.example);
                             }
                           },
                         ));

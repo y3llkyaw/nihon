@@ -132,227 +132,147 @@ class FirebaseDataService {
     }
   }
 
-  // ========== FETCH METHODS (With Caching) ==========
+  // ========== GENERIC FETCH WITH CACHE ==========
 
-  /// Get hiragana table with caching
-  Future<List<Map<String, dynamic>>> getHiraganaTable(
-      {bool forceRefresh = false}) async {
+  /// Generic helper that encapsulates the check-cache → fetch → cache → fallback pattern.
+  Future<T> _fetchWithCache<T>({
+    required String cacheKey,
+    required String label,
+    required Future<T> Function() fetcher,
+    required T Function(dynamic cached) decoder,
+    bool forceRefresh = false,
+  }) async {
     try {
       // Check cache first
-      if (!forceRefresh && _storage.hasData(_hiraganaTableKey)) {
-        final cached = _storage.read(_hiraganaTableKey);
+      if (!forceRefresh && _storage.hasData(cacheKey)) {
+        final cached = _storage.read(cacheKey);
         if (cached != null) {
-          print('📦 Loaded hiragana table from cache');
-          return List<Map<String, dynamic>>.from(jsonDecode(cached));
+          print('📦 Loaded $label from cache');
+          return decoder(jsonDecode(cached));
         }
       }
 
-      // Fetch from Firestore
-      print('🌐 Fetching hiragana table from Firestore...');
-      final snapshot = await _firestore
-          .collection(hiraganaTableCollection)
-          .orderBy('index')
-          .get();
+      // Fetch from source
+      print('🌐 Fetching $label from Firestore...');
+      final data = await fetcher();
 
-      final table = snapshot.docs.map((doc) {
-        final data = doc.data();
-        data.remove('index'); // Remove the index field we added
-        return data;
-      }).toList();
-
-      // Cache the data
-      await _storage.write(_hiraganaTableKey, jsonEncode(table));
+      // Cache the result
+      await _storage.write(cacheKey, jsonEncode(data));
       await _updateLastUpdateTime();
 
-      print('✅ Hiragana table fetched and cached');
-      return table;
+      print('✅ $label fetched and cached');
+      return data;
     } catch (e) {
-      print('❌ Error fetching hiragana table: $e');
-      // Try to return cached data as fallback
-      if (_storage.hasData(_hiraganaTableKey)) {
-        print('⚠️ Returning cached data as fallback');
-        final cached = _storage.read(_hiraganaTableKey);
-        return List<Map<String, dynamic>>.from(jsonDecode(cached));
+      print('❌ Error fetching $label: $e');
+      // Fallback to cached data
+      if (_storage.hasData(cacheKey)) {
+        print('⚠️ Returning cached $label as fallback');
+        final cached = _storage.read(cacheKey);
+        return decoder(jsonDecode(cached));
       }
       rethrow;
     }
+  }
+
+  // ========== FETCH METHODS ==========
+
+  /// Fetches an ordered table collection from Firestore (hiragana/katakana tables).
+  Future<List<Map<String, dynamic>>> _fetchOrderedTable(
+      String collection) async {
+    final snapshot =
+        await _firestore.collection(collection).orderBy('index').get();
+    return snapshot.docs.map((doc) {
+      final data = doc.data();
+      data.remove('index');
+      return data;
+    }).toList();
+  }
+
+  /// Fetches a character map document from Firestore.
+  Future<Map<String, String>> _fetchCharacterMapDoc(String collection) async {
+    final doc = await _firestore.collection(collection).doc('characters').get();
+    if (!doc.exists || doc.data() == null) {
+      throw Exception('$collection map not found in Firestore');
+    }
+    return Map<String, String>.from(doc.data()!['map']);
+  }
+
+  /// Get hiragana table with caching
+  Future<List<Map<String, dynamic>>> getHiraganaTable(
+      {bool forceRefresh = false}) {
+    return _fetchWithCache(
+      cacheKey: _hiraganaTableKey,
+      label: 'hiragana table',
+      forceRefresh: forceRefresh,
+      fetcher: () => _fetchOrderedTable(hiraganaTableCollection),
+      decoder: (cached) => List<Map<String, dynamic>>.from(cached),
+    );
   }
 
   /// Get katakana table with caching
   Future<List<Map<String, dynamic>>> getKatakanaTable(
-      {bool forceRefresh = false}) async {
-    try {
-      // Check cache first
-      if (!forceRefresh && _storage.hasData(_katakanaTableKey)) {
-        final cached = _storage.read(_katakanaTableKey);
-        if (cached != null) {
-          print('📦 Loaded katakana table from cache');
-          return List<Map<String, dynamic>>.from(jsonDecode(cached));
-        }
-      }
-
-      // Fetch from Firestore
-      print('🌐 Fetching katakana table from Firestore...');
-      final snapshot = await _firestore
-          .collection(katakanaTableCollection)
-          .orderBy('index')
-          .get();
-
-      final table = snapshot.docs.map((doc) {
-        final data = doc.data();
-        data.remove('index');
-        return data;
-      }).toList();
-
-      // Cache the data
-      await _storage.write(_katakanaTableKey, jsonEncode(table));
-      await _updateLastUpdateTime();
-
-      print('✅ Katakana table fetched and cached');
-      return table;
-    } catch (e) {
-      print('❌ Error fetching katakana table: $e');
-      if (_storage.hasData(_katakanaTableKey)) {
-        print('⚠️ Returning cached data as fallback');
-        final cached = _storage.read(_katakanaTableKey);
-        return List<Map<String, dynamic>>.from(jsonDecode(cached));
-      }
-      rethrow;
-    }
+      {bool forceRefresh = false}) {
+    return _fetchWithCache(
+      cacheKey: _katakanaTableKey,
+      label: 'katakana table',
+      forceRefresh: forceRefresh,
+      fetcher: () => _fetchOrderedTable(katakanaTableCollection),
+      decoder: (cached) => List<Map<String, dynamic>>.from(cached),
+    );
   }
 
   /// Get hiragana character map with caching
-  Future<Map<String, String>> getHiraganaMap(
-      {bool forceRefresh = false}) async {
-    try {
-      if (!forceRefresh && _storage.hasData(_hiraganaMapKey)) {
-        final cached = _storage.read(_hiraganaMapKey);
-        if (cached != null) {
-          print('📦 Loaded hiragana map from cache');
-          return Map<String, String>.from(jsonDecode(cached));
-        }
-      }
-
-      print('🌐 Fetching hiragana map from Firestore...');
-      final doc = await _firestore
-          .collection(hiraganaMapCollection)
-          .doc('characters')
-          .get();
-
-      if (!doc.exists || doc.data() == null) {
-        throw Exception('Hiragana map not found in Firestore');
-      }
-
-      final map = Map<String, String>.from(doc.data()!['map']);
-
-      await _storage.write(_hiraganaMapKey, jsonEncode(map));
-      await _updateLastUpdateTime();
-
-      print('✅ Hiragana map fetched and cached');
-      return map;
-    } catch (e) {
-      print('❌ Error fetching hiragana map: $e');
-      if (_storage.hasData(_hiraganaMapKey)) {
-        print('⚠️ Returning cached data as fallback');
-        final cached = _storage.read(_hiraganaMapKey);
-        return Map<String, String>.from(jsonDecode(cached));
-      }
-      rethrow;
-    }
+  Future<Map<String, String>> getHiraganaMap({bool forceRefresh = false}) {
+    return _fetchWithCache(
+      cacheKey: _hiraganaMapKey,
+      label: 'hiragana map',
+      forceRefresh: forceRefresh,
+      fetcher: () => _fetchCharacterMapDoc(hiraganaMapCollection),
+      decoder: (cached) => Map<String, String>.from(cached),
+    );
   }
 
   /// Get katakana character map with caching
-  Future<Map<String, String>> getKatakanaMap(
-      {bool forceRefresh = false}) async {
-    try {
-      if (!forceRefresh && _storage.hasData(_katakanaMapKey)) {
-        final cached = _storage.read(_katakanaMapKey);
-        if (cached != null) {
-          print('📦 Loaded katakana map from cache');
-          return Map<String, String>.from(jsonDecode(cached));
-        }
-      }
-
-      print('🌐 Fetching katakana map from Firestore...');
-      final doc = await _firestore
-          .collection(katakanaMapCollection)
-          .doc('characters')
-          .get();
-
-      if (!doc.exists || doc.data() == null) {
-        throw Exception('Katakana map not found in Firestore');
-      }
-
-      final map = Map<String, String>.from(doc.data()!['map']);
-
-      await _storage.write(_katakanaMapKey, jsonEncode(map));
-      await _updateLastUpdateTime();
-
-      print('✅ Katakana map fetched and cached');
-      return map;
-    } catch (e) {
-      print('❌ Error fetching katakana map: $e');
-      if (_storage.hasData(_katakanaMapKey)) {
-        print('⚠️ Returning cached data as fallback');
-        final cached = _storage.read(_katakanaMapKey);
-        return Map<String, String>.from(jsonDecode(cached));
-      }
-      rethrow;
-    }
+  Future<Map<String, String>> getKatakanaMap({bool forceRefresh = false}) {
+    return _fetchWithCache(
+      cacheKey: _katakanaMapKey,
+      label: 'katakana map',
+      forceRefresh: forceRefresh,
+      fetcher: () => _fetchCharacterMapDoc(katakanaMapCollection),
+      decoder: (cached) => Map<String, String>.from(cached),
+    );
   }
 
   /// Get vocabulary lessons with caching
   Future<List<Map<String, dynamic>>> getVocabularyLessons(
-      {bool forceRefresh = false}) async {
-    try {
-      if (!forceRefresh && _storage.hasData(_vocabLessonsKey)) {
-        final cached = _storage.read(_vocabLessonsKey);
-        if (cached != null) {
-          print('📦 Loaded vocabulary lessons from cache');
-          return List<Map<String, dynamic>>.from(jsonDecode(cached));
-        }
-      }
-
-      print('🌐 Fetching vocabulary lessons from Firestore...');
-      final snapshot = await _firestore
-          .collection(vocabLessonsCollection)
-          .orderBy('lesson_number')
-          .get();
-
-      final lessons = snapshot.docs.map((doc) {
-        final data = doc.data();
-        final rawVocab = data['vocabulary'];
-
-        if (rawVocab is List) {
-          // New format: Array of ordered key-value pairs
-          final orderedMap = <String, dynamic>{};
-          for (var item in rawVocab) {
-            if (item is Map) {
-              orderedMap[item['key'] as String] = item['value'];
+      {bool forceRefresh = false}) {
+    return _fetchWithCache(
+      cacheKey: _vocabLessonsKey,
+      label: 'vocabulary lessons',
+      forceRefresh: forceRefresh,
+      fetcher: () async {
+        final snapshot = await _firestore
+            .collection(vocabLessonsCollection)
+            .orderBy('lesson_number')
+            .get();
+        return snapshot.docs.map((doc) {
+          final data = doc.data();
+          final rawVocab = data['vocabulary'];
+          if (rawVocab is List) {
+            final orderedMap = <String, dynamic>{};
+            for (var item in rawVocab) {
+              if (item is Map) {
+                orderedMap[item['key'] as String] = item['value'];
+              }
             }
+            return orderedMap;
+          } else {
+            return rawVocab as Map<String, dynamic>;
           }
-          return orderedMap;
-        } else {
-          // Old format: Unordered Map
-          return rawVocab as Map<String, dynamic>;
-        }
-      }).toList();
-
-      await _storage.write(_vocabLessonsKey, jsonEncode(lessons));
-      await _updateLastUpdateTime();
-
-      print(
-          '✅ Vocabulary lessons fetched and cached (${lessons.length} lessons)');
-      return lessons;
-    } catch (e) {
-      print('❌ Error fetching vocabulary lessons: $e');
-      if (_storage.hasData(_vocabLessonsKey)) {
-        print('⚠️ Returning cached data as fallback');
-        final cached = _storage.read(_vocabLessonsKey);
-        return List<Map<String, dynamic>>.from(jsonDecode(cached));
-      }
-      rethrow;
-    }
+        }).toList();
+      },
+      decoder: (cached) => List<Map<String, dynamic>>.from(cached),
+    );
   }
 
   /// Get combined character map (hiragana + katakana)
