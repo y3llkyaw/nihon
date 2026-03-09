@@ -12,4 +12,6 @@ class AppRoutes {
   static const LANDING = "/landing";
 
   static const VOCAB_FLASHCARD = "/flashcard";
+
+  static const STARRED_VOCAB = "/starred";
 }

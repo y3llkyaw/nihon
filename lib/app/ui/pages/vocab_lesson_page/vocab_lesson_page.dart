@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/character_match_controller.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
+import 'package:hiragana/app/controllers/user_controller.dart';
 import 'package:hiragana/app/data/enums/hiragana.dart';
 import 'package:hiragana/app/data/models/vocabulary_model.dart';
 import 'package:hiragana/app/routes/app_routes.dart';
@@ -13,6 +14,7 @@ class VocabLessonPage extends StatelessWidget {
   VocabLessonPage({Key? key}) : super(key: key);
   final ttsController = Get.put(TtsController());
   final CharacterMatchController cmc = Get.put(CharacterMatchController());
+  final UserController userController = Get.find<UserController>();
   final String lessonId = Get.parameters['lesson']!;
   late final int lessonIndex = int.parse(lessonId) - 1;
   late final List<VocabularyModel> lesson = Get.arguments != null
@@ -92,6 +94,21 @@ class VocabLessonPage extends StatelessWidget {
                           ),
                         ],
                       ),
+                      trailing: Obx(() => IconButton(
+                            onPressed: () {
+                              userController.toggleStarVocab(
+                                  lessonIndex, prompt);
+                            },
+                            icon: Icon(
+                              userController.isVocabStarred(lessonIndex, prompt)
+                                  ? Icons.star_rounded
+                                  : Icons.star_border_rounded,
+                              color: userController.isVocabStarred(
+                                      lessonIndex, prompt)
+                                  ? Colors.amber
+                                  : Colors.grey,
+                            ),
+                          )),
                     ),
                   ),
                 );

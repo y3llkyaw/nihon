@@ -9,6 +9,7 @@ import '../ui/pages/unknown_route_page/unknown_route_page.dart';
 import '../ui/pages/vocab_flash_card_page/vocab_flash_card_page.dart';
 import '../ui/pages/vocab_lesson_page/vocab_lesson_page.dart';
 import '../ui/pages/vocab_page/vocab_page.dart';
+import '../ui/pages/starred_vocab_page/starred_vocab_page.dart';
 import 'app_routes.dart';
 
 const _defaultTransition = Transition.rightToLeft;
@@ -51,6 +52,11 @@ class AppPages {
           ],
         ),
       ],
+    ),
+    GetPage(
+      name: AppRoutes.STARRED_VOCAB,
+      page: () => StarredVocabPage(),
+      transition: _defaultTransition,
     ),
   ];
 }

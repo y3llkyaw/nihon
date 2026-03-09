@@ -22,6 +22,8 @@ class FlashCardWidget extends StatelessWidget {
     required this.exampleMeaning, // Added parameter for English example translation
     this.isImageShow = true,
     this.onAudioTap, // Added callback for audio icon
+    this.isStarred = false,
+    this.onStarTap,
   }) : super(key: key);
 
   final String image;
@@ -35,6 +37,8 @@ class FlashCardWidget extends StatelessWidget {
   final VoidCallback? onAudioTap;
   final String example;
   final String exampleMeaning;
+  final bool isStarred;
+  final VoidCallback? onStarTap;
 
   // Keeping the controller injection if you need it for other logic,
   // but removed the Obx and animations to match the static design image purely.
@@ -75,9 +79,36 @@ class FlashCardWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              CircleAvatar(
-                backgroundColor: _exampleBoxColor,
-                child: Text(number.toString()),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    CircleAvatar(
+                      backgroundColor: _exampleBoxColor,
+                      child: Text(number.toString()),
+                    ),
+                    InkWell(
+                      onTap: onStarTap,
+                      borderRadius: BorderRadius.circular(30),
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          color: Colors.black.withValues(alpha: 0.3),
+                          shape: BoxShape.circle,
+                        ),
+                        child: Icon(
+                          isStarred
+                              ? Icons.star_rounded
+                              : Icons.star_border_rounded,
+                          color: isStarred ? Colors.amber : Colors.white70,
+                          size: 24,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
               Spacer(),
               // --- Image Section with Gradient and Audio Icon ---

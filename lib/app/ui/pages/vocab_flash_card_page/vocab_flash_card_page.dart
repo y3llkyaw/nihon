@@ -4,6 +4,7 @@ import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/tts_controller.dart';
+import 'package:hiragana/app/controllers/user_controller.dart';
 import 'package:hiragana/app/controllers/vocab_flash_card_page_controller.dart';
 import 'package:hiragana/app/data/repositories/japanese_data_repository.dart';
 import 'package:hiragana/app/ui/pages/vocab_flash_card_page/flash_card_widget.dart';
@@ -17,6 +18,7 @@ class VocabFlashCardPage extends StatelessWidget {
 
   final controller = Get.put(VocabFlashCardPageController());
   final TtsController tts = Get.put(TtsController());
+  final UserController userController = Get.find<UserController>();
 
   @override
   Widget build(BuildContext context) {
@@ -146,41 +148,52 @@ class VocabFlashCardPage extends StatelessWidget {
                               ? valueList[4].toString().split('\n')
                               : [''];
 
-                          return FlashCardWidget(
-                            isImageShow: controller.isImageShow.value,
-                            number: index + 1,
-                            onClick: () async {
-                              controller.watchedList.add(e.key);
-                              String textToSpeak =
-                                  valueList.isNotEmpty ? valueList[0] : '';
-                              if (controller.isExampleSentenceSpoken.value &&
-                                  exampleParts.isNotEmpty &&
-                                  exampleParts[0].trim().isNotEmpty) {
-                                textToSpeak += "。 ${exampleParts[0].trim()}";
-                              }
-                              if (textToSpeak.trim().isNotEmpty) {
-                                await tts.speak(textToSpeak);
-                              }
-                              controller.watchedList.add(e.key);
-                            },
-                            example:
-                                exampleParts.isNotEmpty ? exampleParts[0] : '',
-                            exampleMeaning: exampleParts.length > 1
-                                ? exampleParts[1]
-                                    .replaceAll("(", "")
-                                    .replaceAll(")", "")
-                                : '',
-                            romaji: valueList.length > 2 ? valueList[2] : '',
-                            image: valueList.length > 3 ? valueList[3] : '',
-                            hiragana: valueList.isNotEmpty ? valueList[0] : '',
-                            kenji: valueList.length > 1 ? valueList[1] : '',
-                            meaning: e.key.split('\n')[0],
-                            onAudioTap: () async {
-                              if (exampleParts.isNotEmpty) {
-                                await tts.speak(exampleParts[0]);
-                              }
-                            },
-                          );
+                          return Obx(() => FlashCardWidget(
+                                isImageShow: controller.isImageShow.value,
+                                number: index + 1,
+                                isStarred: userController.isVocabStarred(
+                                    lessonIndex, e.key),
+                                onStarTap: () {
+                                  userController.toggleStarVocab(
+                                      lessonIndex, e.key);
+                                },
+                                onClick: () async {
+                                  controller.watchedList.add(e.key);
+                                  String textToSpeak =
+                                      valueList.isNotEmpty ? valueList[0] : '';
+                                  if (controller
+                                          .isExampleSentenceSpoken.value &&
+                                      exampleParts.isNotEmpty &&
+                                      exampleParts[0].trim().isNotEmpty) {
+                                    textToSpeak +=
+                                        "。 ${exampleParts[0].trim()}";
+                                  }
+                                  if (textToSpeak.trim().isNotEmpty) {
+                                    await tts.speak(textToSpeak);
+                                  }
+                                  controller.watchedList.add(e.key);
+                                },
+                                example: exampleParts.isNotEmpty
+                                    ? exampleParts[0]
+                                    : '',
+                                exampleMeaning: exampleParts.length > 1
+                                    ? exampleParts[1]
+                                        .replaceAll("(", "")
+                                        .replaceAll(")", "")
+                                    : '',
+                                romaji:
+                                    valueList.length > 2 ? valueList[2] : '',
+                                image: valueList.length > 3 ? valueList[3] : '',
+                                hiragana:
+                                    valueList.isNotEmpty ? valueList[0] : '',
+                                kenji: valueList.length > 1 ? valueList[1] : '',
+                                meaning: e.key.split('\n')[0],
+                                onAudioTap: () async {
+                                  if (exampleParts.isNotEmpty) {
+                                    await tts.speak(exampleParts[0]);
+                                  }
+                                },
+                              ));
                         },
                       ).toList(),
                       options: CarouselOptions(

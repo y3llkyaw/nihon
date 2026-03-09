@@ -17,6 +17,10 @@ class UserController extends GetxController {
   final RxString lastStudiedDate = ''.obs;
   final RxList<String> studiedDates = <String>[].obs;
 
+  // Starred vocabulary state: lessonIndex (string) -> list of vocab keys
+  final RxMap<String, List<String>> starredVocabs =
+      <String, List<String>>{}.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -31,6 +35,7 @@ class UserController extends GetxController {
         currentStreak.value = 0;
         lastStudiedDate.value = '';
         studiedDates.clear();
+        starredVocabs.clear();
       }
     });
   }
@@ -64,6 +69,13 @@ class UserController extends GetxController {
         if (data['studiedDates'] is List) {
           studiedDates.value = List<String>.from(data['studiedDates']);
         }
+
+        if (data['starredVocabs'] is Map) {
+          final starred = Map<String, dynamic>.from(data['starredVocabs']);
+          starredVocabs.value = starred.map(
+            (key, value) => MapEntry(key, List<String>.from(value)),
+          );
+        }
         log("User data fetched for $uid");
       }
     } catch (e) {
@@ -91,6 +103,7 @@ class UserController extends GetxController {
         'currentStreak': 0,
         'lastStudiedDate': '',
         'studiedDates': [],
+        'starredVocabs': {},
       });
     } else {
       log("User document for ${user.uid} already exists. Updating last login.");
@@ -193,5 +206,45 @@ class UserController extends GetxController {
     if (!studiedDates.contains(todayStr)) {
       studiedDates.add(todayStr);
     }
+  }
+
+  /// Toggles the starred state of a vocab item for a given lesson.
+  Future<void> toggleStarVocab(int lessonIndex, String vocabKey) async {
+    final user = _auth.currentUser;
+    if (user == null) return;
+
+    final lessonKey = lessonIndex.toString();
+    final currentList = List<String>.from(starredVocabs[lessonKey] ?? []);
+
+    if (currentList.contains(vocabKey)) {
+      currentList.remove(vocabKey);
+    } else {
+      currentList.add(vocabKey);
+    }
+
+    // Update local state immediately for responsive UI
+    starredVocabs[lessonKey] = currentList;
+    starredVocabs.refresh();
+
+    // Persist to Firestore
+    final userDocRef = _firestore.collection('users').doc(user.uid);
+    await userDocRef.update({
+      'starredVocabs.$lessonKey': currentList,
+    });
+  }
+
+  /// Returns whether a vocab item is starred for a given lesson.
+  bool isVocabStarred(int lessonIndex, String vocabKey) {
+    final lessonKey = lessonIndex.toString();
+    return starredVocabs[lessonKey]?.contains(vocabKey) ?? false;
+  }
+
+  /// Returns the total count of starred vocab items across all lessons.
+  int get totalStarredCount {
+    int count = 0;
+    for (final list in starredVocabs.values) {
+      count += list.length;
+    }
+    return count;
   }
 }

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hiragana/app/controllers/user_controller.dart';
 import 'package:hiragana/app/ui/pages/home_page/widgets/daily_streak_widget.dart';
+import 'package:hiragana/app/routes/app_routes.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -210,6 +211,7 @@ class HomePage extends StatelessWidget {
   }
 
   Widget _buildDailyActionsList() {
+    final userController = Get.find<UserController>();
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: Column(
@@ -232,6 +234,16 @@ class HomePage extends StatelessWidget {
             title: 'Vocabulary Match',
             subtitle: 'Timed drill exercise',
           ),
+          const SizedBox(height: 4),
+          Obx(() => _buildActionItem(
+                icon: Icons.star_rounded,
+                title: 'Starred Words',
+                subtitle: 'Review your saved vocabulary',
+                trailing: userController.totalStarredCount > 0
+                    ? _buildCountBadge('${userController.totalStarredCount}')
+                    : null,
+                onTap: () => Get.toNamed(AppRoutes.STARRED_VOCAB),
+              )),
         ],
       ),
     );
@@ -263,13 +275,14 @@ class HomePage extends StatelessWidget {
     required String title,
     required String subtitle,
     Widget? trailing,
+    VoidCallback? onTap,
   }) {
     return Material(
       color: AppColors.cardDark,
       borderRadius: BorderRadius.circular(55),
       child: InkWell(
         borderRadius: BorderRadius.circular(55),
-        onTap: () {},
+        onTap: onTap ?? () {},
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
           decoration: BoxDecoration(
