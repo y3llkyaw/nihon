@@ -35,23 +35,32 @@ class TtsController extends GetxController {
     } catch (_) {}
   }
 
-  Future<void> speak(String text) async {
+  Future<void> speak(String text, {bool isJp = true}) async {
     speakingWord.value = text;
     log(" TTS Speak: $text");
     // native path: use completer + flutter_tts handlers
     _speechCompleter = Completer<void>();
     try {
-      await tts.setLanguage('ja-JP');
+      await tts.setLanguage(isJp ? 'ja-JP' : 'my-MM');
       await tts.setSpeechRate(0.5);
       await tts.setVolume(1.0);
-      await tts.speak(text);
-      // wait until completion handler completes the completer
-      await _speechCompleter!.future;
+      var result = await tts.speak(text);
+      if (result == 1) {
+        // wait until completion handler completes the completer
+        await _speechCompleter!.future;
+      } else {
+        log(" TTS failed to start. Result: $result");
+        _speechCompleter!.complete();
+      }
     } catch (e) {
+      log("TTS Error: $e");
       // ensure cleared on error
       speakingWord.value = "";
     } finally {
       if (speakingWord.value == text) speakingWord.value = "";
+      if (_speechCompleter != null && !_speechCompleter!.isCompleted) {
+        _speechCompleter!.complete();
+      }
       _speechCompleter = null;
     }
   }
@@ -65,9 +74,10 @@ class TtsController extends GetxController {
       bool isMySupported = await tts.isLanguageAvailable('my');
 
       if (!isMMSupported && !isMySupported) {
+        log(" Burmese TTS not supported on this device.");
         Get.snackbar(
-          "TTS Unavailable",
-          "Your device does not have a Burmese voice model installed. Please download it from your device settings.",
+          "TTS Feature Unavailable",
+          "Your device doesn't have a Burmese voice available. The app will skip Burmese audio.",
           snackPosition: SnackPosition.BOTTOM,
           duration: const Duration(seconds: 4),
         );
@@ -78,9 +88,17 @@ class TtsController extends GetxController {
       await tts.setLanguage(isMMSupported ? 'my-MM' : 'my');
       await tts.setSpeechRate(0.4);
       await tts.setVolume(1.0);
-      await tts.speak(text);
-      await _speechCompleter!.future;
+      var result = await tts.speak(text);
+
+      // flutter_tts speak() returns 1 if it successfully started playing
+      if (result == 1) {
+        await _speechCompleter!.future;
+      } else {
+        log(" TTS failed to start. Result: $result");
+        _speechCompleter!.complete();
+      }
     } catch (e) {
+      log("TTS Error: $e");
       speakingWord.value = "";
     } finally {
       if (speakingWord.value == text) speakingWord.value = "";

@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
@@ -24,7 +26,6 @@ class VocabFlashCardPage extends StatelessWidget {
   int _calculateAutoPlayInterval() {
     int seconds = 2;
     if (controller.isExampleSentenceSpoken.value) seconds += 3;
-    if (controller.isBurmeseSpoken.value) seconds += 4;
     return seconds;
   }
 
@@ -50,28 +51,35 @@ class VocabFlashCardPage extends StatelessWidget {
 
         final lesson = snapshot.data!;
 
-        return Scaffold(
-            appBar: AppBar(
-              title: Text("Learn Flash Cards"),
-            ),
-            body: Padding(
-              padding: EdgeInsetsGeometry.symmetric(
-                horizontal: 0,
-                vertical: 10,
+        // Prepare the list of vocab entries. Shuffle if enabled.
+        List<MapEntry<String, dynamic>> vocabEntries = lesson.entries.toList();
+
+        return Obx(() {
+          if (controller.isShuffled.value) {
+            vocabEntries.shuffle();
+          }
+
+          return Scaffold(
+              appBar: AppBar(
+                title: Text("Learn Flash Cards"),
               ),
-              child: Column(
-                children: [
-                  Spacer(),
-                  Obx(
-                    () => CarouselSlider(
+              body: Padding(
+                padding: EdgeInsetsGeometry.symmetric(
+                  horizontal: 0,
+                  vertical: 10,
+                ),
+                child: Column(
+                  children: [
+                    Spacer(),
+                    CarouselSlider(
                       items: List.generate(
-                        lesson.length,
+                        vocabEntries.length,
                         (index) {
-                          final e = lesson.entries.elementAt(index);
+                          final e = vocabEntries[index];
                           final vocab = VocabDisplayData.fromEntry(e);
 
                           return Obx(() => FlashCardWidget(
-                                isImageShow: controller.isImageShow.value,
+                                isImageShow: controller.isImageShow.value && !controller.isQuizMode.value,
                                 number: index + 1,
                                 isStarred: userController.isVocabStarred(
                                     lessonIndex, e.key),
@@ -89,10 +97,6 @@ class VocabFlashCardPage extends StatelessWidget {
                                   }
                                   if (textToSpeak.trim().isNotEmpty) {
                                     await tts.speak(textToSpeak);
-                                  }
-                                  if (controller.isBurmeseSpoken.value &&
-                                      vocab.meaning.trim().isNotEmpty) {
-                                    await tts.speakBurmese(vocab.meaning.trim());
                                   }
                                   controller.watchedList.add(e.key);
                                 },
@@ -114,10 +118,10 @@ class VocabFlashCardPage extends StatelessWidget {
                       options: CarouselOptions(
                         viewportFraction: 0.95,
                         autoPlay: controller.isAutoSlide.value,
-                        autoPlayInterval: Duration(
-                            seconds: _calculateAutoPlayInterval()),
+                        autoPlayInterval:
+                            Duration(seconds: _calculateAutoPlayInterval()),
                         onPageChanged: (index, reason) async {
-                          final e = lesson.entries.elementAt(index);
+                          final e = vocabEntries[index];
                           final vocab = VocabDisplayData.fromEntry(e);
                           controller.watchedList.add(e.key);
                           String textToSpeak = vocab.hiragana;
@@ -126,11 +130,7 @@ class VocabFlashCardPage extends StatelessWidget {
                             textToSpeak += "。 ${vocab.example.trim()}";
                           }
                           if (textToSpeak.trim().isNotEmpty) {
-                            await tts.speak(textToSpeak);
-                          }
-                          if (controller.isBurmeseSpoken.value &&
-                              vocab.meaning.trim().isNotEmpty) {
-                            await tts.speakBurmese(vocab.meaning.trim());
+                            tts.speak(textToSpeak);
                           }
                           controller.watchedList.add(e.key);
                         },
@@ -138,11 +138,10 @@ class VocabFlashCardPage extends StatelessWidget {
                         enlargeCenterPage: true,
                       ),
                     ),
-                  ),
-                  Spacer(),
-                ],
+                    Spacer(),
+                  ],
+                ),
               ),
-            ),
             floatingActionButton: SpeedDial(
               animatedIcon: AnimatedIcons.menu_close,
               children: [
@@ -210,20 +209,19 @@ class VocabFlashCardPage extends StatelessWidget {
                   labelWidget: Obx(() => Padding(
                         padding: const EdgeInsets.only(right: 8.0),
                         child: Text(
-                          controller.isBurmeseSpoken.value
-                              ? "Mute Burmese"
-                              : "Speak Burmese",
+                          controller.isQuizMode.value
+                              ? "Exit Quiz Mode"
+                              : "Enter Quiz Mode",
                           style: const TextStyle(fontWeight: FontWeight.w500),
                         ),
                       )),
                   child: Obx(() => Icon(
-                        controller.isBurmeseSpoken.value
-                            ? Icons.translate
-                            : Icons.translate_outlined,
+                        controller.isQuizMode.value
+                            ? Icons.school
+                            : Icons.school_outlined,
                       )),
                   onTap: () {
-                    controller.isBurmeseSpoken.value =
-                        !controller.isBurmeseSpoken.value;
+                    controller.toggleQuizMode();
                   },
                 ),
                 SpeedDialChild(
@@ -247,6 +245,25 @@ class VocabFlashCardPage extends StatelessWidget {
                   },
                 ),
                 SpeedDialChild(
+                  labelWidget: Obx(() => Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Text(
+                          controller.isShuffled.value
+                              ? "Ordered"
+                              : "Shuffle",
+                          style: const TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                      )),
+                  child: Obx(() => Icon(
+                        controller.isShuffled.value
+                            ? Icons.sort
+                            : Icons.shuffle,
+                      )),
+                  onTap: () {
+                    controller.toggleShuffle();
+                  },
+                ),
+                SpeedDialChild(
                   label: "Play All",
                   child: const Icon(Icons.play_arrow),
                   onTap: () {},
@@ -260,6 +277,7 @@ class VocabFlashCardPage extends StatelessWidget {
                 ),
               ],
             ));
+        });
       },
     );
   }
