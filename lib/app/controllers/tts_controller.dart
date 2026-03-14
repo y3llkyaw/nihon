@@ -56,6 +56,44 @@ class TtsController extends GetxController {
     }
   }
 
+  Future<void> speakBurmese(String text) async {
+    speakingWord.value = text;
+    log(" TTS Speak Burmese: $text");
+    _speechCompleter = Completer<void>();
+    try {
+      bool isMMSupported = await tts.isLanguageAvailable('my-MM');
+      bool isMySupported = await tts.isLanguageAvailable('my');
+
+      if (!isMMSupported && !isMySupported) {
+        Get.snackbar(
+          "TTS Unavailable",
+          "Your device does not have a Burmese voice model installed. Please download it from your device settings.",
+          snackPosition: SnackPosition.BOTTOM,
+          duration: const Duration(seconds: 4),
+        );
+        _speechCompleter!.complete();
+        return;
+      }
+
+      await tts.setLanguage(isMMSupported ? 'my-MM' : 'my');
+      await tts.setSpeechRate(0.4);
+      await tts.setVolume(1.0);
+      await tts.speak(text);
+      await _speechCompleter!.future;
+    } catch (e) {
+      speakingWord.value = "";
+    } finally {
+      if (speakingWord.value == text) speakingWord.value = "";
+      if (_speechCompleter != null && !_speechCompleter!.isCompleted) {
+        _speechCompleter!.complete();
+      }
+      _speechCompleter = null;
+      // Reset back to Japanese
+      await tts.setLanguage('ja-JP');
+      await tts.setSpeechRate(0.5);
+    }
+  }
+
   Future<void> stop() async {
     isSpeaking.value = false;
     // complete any pending completer so awaits end

@@ -2,7 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+
 import 'package:hiragana/app/controllers/tts_controller.dart';
 import 'package:hiragana/app/controllers/user_controller.dart';
 import 'package:hiragana/app/controllers/vocab_flash_card_page_controller.dart';
@@ -20,6 +20,13 @@ class VocabFlashCardPage extends StatelessWidget {
   final controller = Get.put(VocabFlashCardPageController());
   final TtsController tts = Get.put(TtsController());
   final UserController userController = Get.find<UserController>();
+
+  int _calculateAutoPlayInterval() {
+    int seconds = 2;
+    if (controller.isExampleSentenceSpoken.value) seconds += 3;
+    if (controller.isBurmeseSpoken.value) seconds += 4;
+    return seconds;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,89 +61,6 @@ class VocabFlashCardPage extends StatelessWidget {
               ),
               child: Column(
                 children: [
-                  Obx(
-                    () => Padding(
-                      padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
-                      child: Column(
-                        spacing: 10,
-                        children: [
-                          Row(
-                            spacing: 10,
-                            children: [
-                              Switch(
-                                value: controller.isMeaningShown.value,
-                                onChanged: (value) {
-                                  controller.isMeaningShown.value = value;
-                                },
-                              ),
-                              Text(
-                                "Show Meaning",
-                                style: GoogleFonts.notoSansJavanese(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            spacing: 10,
-                            children: [
-                              AnimatedSwitcher(
-                                switchInCurve: Curves.easeInExpo,
-                                switchOutCurve: Curves.easeInExpo,
-                                duration: Duration(milliseconds: 300),
-                                child: Switch(
-                                    value: controller.isRomajiShown.value,
-                                    onChanged: (value) {
-                                      controller.isRomajiShown.value = value;
-                                    }),
-                              ),
-                              Text(
-                                "Show Romaji",
-                                style: GoogleFonts.notoSansJavanese(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            spacing: 10,
-                            children: [
-                              Switch(
-                                value: controller.isExampleSentenceSpoken.value,
-                                onChanged: (value) {
-                                  controller.isExampleSentenceSpoken.value =
-                                      value;
-                                },
-                              ),
-                              Text(
-                                "Speak Example",
-                                style: GoogleFonts.notoSansJavanese(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            spacing: 10,
-                            children: [
-                              Switch(
-                                value: controller.isAutoSlide.value,
-                                onChanged: (value) {
-                                  controller.isAutoSlide.value = value;
-                                },
-                              ),
-                              Text(
-                                "Auto Slide",
-                                style: GoogleFonts.notoSansJavanese(
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
                   Spacer(),
                   Obx(
                     () => CarouselSlider(
@@ -166,6 +90,10 @@ class VocabFlashCardPage extends StatelessWidget {
                                   if (textToSpeak.trim().isNotEmpty) {
                                     await tts.speak(textToSpeak);
                                   }
+                                  if (controller.isBurmeseSpoken.value &&
+                                      vocab.meaning.trim().isNotEmpty) {
+                                    await tts.speakBurmese(vocab.meaning.trim());
+                                  }
                                   controller.watchedList.add(e.key);
                                 },
                                 example: vocab.example,
@@ -187,29 +115,26 @@ class VocabFlashCardPage extends StatelessWidget {
                         viewportFraction: 0.95,
                         autoPlay: controller.isAutoSlide.value,
                         autoPlayInterval: Duration(
-                            seconds: controller.isExampleSentenceSpoken.value
-                                ? 4
-                                : 2),
+                            seconds: _calculateAutoPlayInterval()),
                         onPageChanged: (index, reason) async {
                           final e = lesson.entries.elementAt(index);
-                          final valueList = List<dynamic>.from(e.value as List);
-                          final exampleParts = valueList.length > 4
-                              ? valueList[4].toString().split('\n')
-                              : [''];
+                          final vocab = VocabDisplayData.fromEntry(e);
                           controller.watchedList.add(e.key);
-                          String textToSpeak =
-                              valueList.isNotEmpty ? valueList[0] : '';
+                          String textToSpeak = vocab.hiragana;
                           if (controller.isExampleSentenceSpoken.value &&
-                              exampleParts.isNotEmpty &&
-                              exampleParts[0].trim().isNotEmpty) {
-                            textToSpeak += "。 ${exampleParts[0].trim()}";
+                              vocab.example.trim().isNotEmpty) {
+                            textToSpeak += "。 ${vocab.example.trim()}";
                           }
                           if (textToSpeak.trim().isNotEmpty) {
                             await tts.speak(textToSpeak);
                           }
+                          if (controller.isBurmeseSpoken.value &&
+                              vocab.meaning.trim().isNotEmpty) {
+                            await tts.speakBurmese(vocab.meaning.trim());
+                          }
                           controller.watchedList.add(e.key);
                         },
-                        height: Get.height * 0.5,
+                        height: Get.height * 0.65, // Increased height
                         enlargeCenterPage: true,
                       ),
                     ),
@@ -218,26 +143,120 @@ class VocabFlashCardPage extends StatelessWidget {
                 ],
               ),
             ),
-            floatingActionButton: Column(
-              spacing: 20,
-              mainAxisAlignment: MainAxisAlignment.end,
+            floatingActionButton: SpeedDial(
+              animatedIcon: AnimatedIcons.menu_close,
               children: [
-                SpeedDial(
-                  animatedIcon: AnimatedIcons.menu_close,
-                  children: [
-                    SpeedDialChild(
-                      label: "play all",
-                      child: Icon(Icons.play_arrow),
-                      onTap: () {},
-                    ),
-                    SpeedDialChild(
-                      label: "restart",
-                      child: Icon(Icons.restart_alt),
-                      onTap: () {
-                        controller.watchedList.clear();
-                      },
-                    ),
-                  ],
+                SpeedDialChild(
+                  labelWidget: Obx(() => Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Text(
+                          controller.isMeaningShown.value
+                              ? "Hide Meaning"
+                              : "Show Meaning",
+                          style: const TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                      )),
+                  child: Obx(() => Icon(
+                        controller.isMeaningShown.value
+                            ? Icons.visibility
+                            : Icons.visibility_off,
+                      )),
+                  onTap: () {
+                    controller.isMeaningShown.value =
+                        !controller.isMeaningShown.value;
+                  },
+                ),
+                SpeedDialChild(
+                  labelWidget: Obx(() => Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Text(
+                          controller.isRomajiShown.value
+                              ? "Hide Romaji"
+                              : "Show Romaji",
+                          style: const TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                      )),
+                  child: Obx(() => Icon(
+                        controller.isRomajiShown.value
+                            ? Icons.abc
+                            : Icons.abc_outlined,
+                      )),
+                  onTap: () {
+                    controller.isRomajiShown.value =
+                        !controller.isRomajiShown.value;
+                  },
+                ),
+                SpeedDialChild(
+                  labelWidget: Obx(() => Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Text(
+                          controller.isExampleSentenceSpoken.value
+                              ? "Mute Example"
+                              : "Speak Example",
+                          style: const TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                      )),
+                  child: Obx(() => Icon(
+                        controller.isExampleSentenceSpoken.value
+                            ? Icons.record_voice_over
+                            : Icons.voice_over_off,
+                      )),
+                  onTap: () {
+                    controller.isExampleSentenceSpoken.value =
+                        !controller.isExampleSentenceSpoken.value;
+                  },
+                ),
+                SpeedDialChild(
+                  labelWidget: Obx(() => Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Text(
+                          controller.isBurmeseSpoken.value
+                              ? "Mute Burmese"
+                              : "Speak Burmese",
+                          style: const TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                      )),
+                  child: Obx(() => Icon(
+                        controller.isBurmeseSpoken.value
+                            ? Icons.translate
+                            : Icons.translate_outlined,
+                      )),
+                  onTap: () {
+                    controller.isBurmeseSpoken.value =
+                        !controller.isBurmeseSpoken.value;
+                  },
+                ),
+                SpeedDialChild(
+                  labelWidget: Obx(() => Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: Text(
+                          controller.isAutoSlide.value
+                              ? "Stop Auto Slide"
+                              : "Auto Slide",
+                          style: const TextStyle(fontWeight: FontWeight.w500),
+                        ),
+                      )),
+                  child: Obx(() => Icon(
+                        controller.isAutoSlide.value
+                            ? Icons.pause_circle
+                            : Icons.play_circle,
+                      )),
+                  onTap: () {
+                    controller.isAutoSlide.value =
+                        !controller.isAutoSlide.value;
+                  },
+                ),
+                SpeedDialChild(
+                  label: "Play All",
+                  child: const Icon(Icons.play_arrow),
+                  onTap: () {},
+                ),
+                SpeedDialChild(
+                  label: "Restart",
+                  child: const Icon(Icons.restart_alt),
+                  onTap: () {
+                    controller.watchedList.clear();
+                  },
                 ),
               ],
             ));

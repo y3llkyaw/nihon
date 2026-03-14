@@ -288,14 +288,21 @@ class FlashCardWidget extends StatelessWidget {
                                   textAlign: TextAlign.start,
                                 ),
                                 const SizedBox(height: 4),
-                                Text(
-                                  exampleMeaning,
-                                  style: GoogleFonts.notoSansJavanese(
-                                    fontSize: 14,
-                                    color: _textColorWhite,
-                                    fontWeight: FontWeight.w500,
+                                Obx(
+                                  () => AnimatedOpacity(
+                                    opacity:
+                                        fcc.isMeaningShown.value ? 1.0 : 0.0,
+                                    duration: const Duration(milliseconds: 300),
+                                    child: Text(
+                                      exampleMeaning,
+                                      style: GoogleFonts.notoSansJavanese(
+                                        fontSize: 14,
+                                        color: _textColorWhite,
+                                        fontWeight: FontWeight.w500,
+                                      ),
+                                      textAlign: TextAlign.start,
+                                    ),
                                   ),
-                                  textAlign: TextAlign.start,
                                 ),
                               ],
                             ),

@@ -94,77 +94,159 @@ class StarredFlashCardPage extends StatelessWidget {
 
             return Column(
               children: [
-                // Toggle switches
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-                  child: Obx(() => Row(
-                        children: [
-                          Switch(
-                            value: controller.isMeaningShown.value,
-                            onChanged: (v) =>
-                                controller.isMeaningShown.value = v,
-                          ),
-                          Text("Meaning",
+                // Toggle switches — matching VocabFlashCardPage layout
+                Obx(
+                  () => Padding(
+                    padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
+                    child: Column(
+                      spacing: 10,
+                      children: [
+                        Row(
+                          spacing: 10,
+                          children: [
+                            Switch(
+                              value: controller.isMeaningShown.value,
+                              onChanged: (value) {
+                                controller.isMeaningShown.value = value;
+                              },
+                            ),
+                            Text(
+                              "Show Meaning",
                               style: GoogleFonts.notoSansJavanese(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white)),
-                          const SizedBox(width: 16),
-                          Switch(
-                            value: controller.isRomajiShown.value,
-                            onChanged: (v) =>
-                                controller.isRomajiShown.value = v,
-                          ),
-                          Text("Romaji",
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          spacing: 10,
+                          children: [
+                            AnimatedSwitcher(
+                              switchInCurve: Curves.easeInExpo,
+                              switchOutCurve: Curves.easeInExpo,
+                              duration: Duration(milliseconds: 300),
+                              child: Switch(
+                                value: controller.isRomajiShown.value,
+                                onChanged: (value) {
+                                  controller.isRomajiShown.value = value;
+                                },
+                              ),
+                            ),
+                            Text(
+                              "Show Romaji",
                               style: GoogleFonts.notoSansJavanese(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white)),
-                        ],
-                      )),
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          spacing: 10,
+                          children: [
+                            Switch(
+                              value: controller.isExampleSentenceSpoken.value,
+                              onChanged: (value) {
+                                controller.isExampleSentenceSpoken.value =
+                                    value;
+                              },
+                            ),
+                            Text(
+                              "Speak Example",
+                              style: GoogleFonts.notoSansJavanese(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          spacing: 10,
+                          children: [
+                            Switch(
+                              value: controller.isAutoSlide.value,
+                              onChanged: (value) {
+                                controller.isAutoSlide.value = value;
+                              },
+                            ),
+                            Text(
+                              "Auto Slide",
+                              style: GoogleFonts.notoSansJavanese(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
                 const Spacer(),
-                CarouselSlider(
-                  items: starredEntries.asMap().entries.map((entry) {
-                    final idx = entry.key;
-                    final e = entry.value;
-                    final vocab = VocabDisplayData.fromEntry(e);
+                Obx(
+                  () => CarouselSlider(
+                    items: starredEntries.asMap().entries.map((entry) {
+                      final idx = entry.key;
+                      final e = entry.value;
+                      final vocab = VocabDisplayData.fromEntry(e);
 
-                    return Obx(() => FlashCardWidget(
-                          isImageShow: controller.isImageShow.value,
-                          number: idx + 1,
-                          isStarred:
-                              userController.isVocabStarred(lessonIndex, e.key),
-                          onStarTap: () {
-                            userController.toggleStarVocab(lessonIndex, e.key);
-                          },
-                          onClick: () async {
-                            String textToSpeak = vocab.hiragana;
-                            if (controller.isExampleSentenceSpoken.value &&
-                                vocab.example.trim().isNotEmpty) {
-                              textToSpeak += "\u3002 ${vocab.example.trim()}";
-                            }
-                            if (textToSpeak.trim().isNotEmpty) {
-                              await tts.speak(textToSpeak);
-                            }
-                          },
-                          example: vocab.example,
-                          exampleMeaning: vocab.exampleMeaning,
-                          romaji: vocab.romaji,
-                          image: vocab.imageUrl,
-                          hiragana: vocab.hiragana,
-                          kenji: vocab.kanji,
-                          meaning: vocab.meaning,
-                          onAudioTap: () async {
-                            if (vocab.example.isNotEmpty) {
-                              await tts.speak(vocab.example);
-                            }
-                          },
-                        ));
-                  }).toList(),
-                  options: CarouselOptions(
-                    viewportFraction: 0.95,
-                    height: Get.height * 0.5,
-                    enlargeCenterPage: true,
+                      return Obx(() => FlashCardWidget(
+                            isImageShow: controller.isImageShow.value,
+                            number: idx + 1,
+                            isStarred: userController.isVocabStarred(
+                                lessonIndex, e.key),
+                            onStarTap: () {
+                              userController.toggleStarVocab(
+                                  lessonIndex, e.key);
+                            },
+                            onClick: () async {
+                              String textToSpeak = vocab.hiragana;
+                              if (controller.isExampleSentenceSpoken.value &&
+                                  vocab.example.trim().isNotEmpty) {
+                                textToSpeak += "\u3002 ${vocab.example.trim()}";
+                              }
+                              if (textToSpeak.trim().isNotEmpty) {
+                                await tts.speak(textToSpeak);
+                              }
+                            },
+                            example: vocab.example,
+                            exampleMeaning: vocab.exampleMeaning,
+                            romaji: vocab.romaji,
+                            image: vocab.imageUrl,
+                            hiragana: vocab.hiragana,
+                            kenji: vocab.kanji,
+                            meaning: vocab.meaning,
+                            onAudioTap: () async {
+                              if (vocab.example.isNotEmpty) {
+                                await tts.speak(vocab.example);
+                              }
+                            },
+                          ));
+                    }).toList(),
+                    options: CarouselOptions(
+                      viewportFraction: 0.95,
+                      autoPlay: controller.isAutoSlide.value,
+                      autoPlayInterval: Duration(
+                          seconds:
+                              controller.isExampleSentenceSpoken.value ? 4 : 2),
+                      onPageChanged: (index, reason) async {
+                        if (index < starredEntries.length) {
+                          final e = starredEntries[index];
+                          final vocab = VocabDisplayData.fromEntry(e);
+                          String textToSpeak = vocab.hiragana;
+                          if (controller.isExampleSentenceSpoken.value &&
+                              vocab.example.trim().isNotEmpty) {
+                            textToSpeak += "\u3002 ${vocab.example.trim()}";
+                          }
+                          if (textToSpeak.trim().isNotEmpty) {
+                            await tts.speak(textToSpeak);
+                          }
+                        }
+                      },
+                      height: Get.height * 0.5,
+                      enlargeCenterPage: true,
+                    ),
                   ),
                 ),
                 const Spacer(),

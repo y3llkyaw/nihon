@@ -7,6 +7,7 @@ class VocabFlashCardPageController extends GetxController {
   final isExampleSentenceSpoken = false.obs;
   final isAutoSlide = false.obs;
   final isImageShow = false.obs;
+  final isBurmeseSpoken = false.obs;
 
   @override
   void onInit() {
